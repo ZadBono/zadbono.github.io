@@ -10,138 +10,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* === General Styles === */
-        body { 
-            font-family: 'Cairo', sans-serif;
-            margin: 0;
-            padding-top: 70px;
-            background-color: #f0f4f8;
-            color: #073763;
-            text-align: center;
-        }
-
-        /* === Navigation Bar === */
-        .navbar {
-            background-color: #0b5394;
-            padding: 10px 20px;
-            position: fixed;
-            top: 0;
-            left: 0; /* Added for full width */
-            right: 0; /* Added for full width */
-            z-index: 1000;
+        body { font-family: 'Cairo', sans-serif; margin: 0; padding-top: 70px; background-color: #f0f4f8; color: #073763; text-align: center; }
+        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2 ); }
+        .navbar-brand { color: #ffd700; font-weight: bold; font-size: 1.5em; text-decoration: none; }
+        .navbar-links { display: flex; }
+        .navbar-links a { color: #ffffff; text-decoration: none; margin: 0 15px; font-size: 1.1em; }
+        .navbar-links a:hover { color: #ffd700; }
+        .menu-toggle { display: none; font-size: 30px; color: white; background: none; border: none; cursor: pointer; }
+        .container { max-width: 800px; margin: 40px auto; padding: 30px; }
+        .logo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid #ffd700; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        h1 { color: #0b5394; font-size: 2.5em; }
+        p { font-size: 1.2em; line-height: 1.7; margin-bottom: 30px; }
+        
+        /* === Download Buttons Container === */
+        .buttons-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2 );
+            justify-content: center;
+            gap: 20px; /* مسافة بين الزرين */
+            flex-wrap: wrap; /* للسماح للأزرار بالنزول تحت بعضها في الشاشات الصغيرة */
         }
-        .navbar-brand {
-            color: #ffd700;
-            font-weight: bold;
-            font-size: 1.5em;
-            text-decoration: none;
-        }
-        .navbar-links {
-            display: flex; /* Will be changed on mobile */
-        }
-        .navbar-links a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1em;
-        }
-        .navbar-links a:hover {
-            color: #ffd700;
-        }
-        
-        /* === Hamburger Menu Icon (Hidden on Desktop) === */
-        .menu-toggle {
-            display: none;
-            font-size: 30px;
-            color: white;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* === Main Content Container === */
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 30px;
-        }
-        
-        .logo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 4px solid #ffd700;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-
-        h1 { 
-            color: #0b5394;
-            font-size: 2.5em;
-        }
-        p { 
-            font-size: 1.2em;
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
-
         .download-button {
-            background-color: #ffd700;
-            color: #073763;
-            padding: 15px 30px;
-            font-size: 1.3em;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: transform 0.2s;
-            display: inline-block; /* Good practice for buttons */
+            background-color: #ffd700; color: #073763; padding: 15px 30px; font-size: 1.2em; font-weight: bold; text-decoration: none; border-radius: 50px; transition: transform 0.2s; display: inline-block;
         }
-        .download-button:hover {
-            transform: scale(1.05);
+        .download-button.secondary { /* تصميم مختلف قليلاً لزر الآيفون */
+            background-color: #ffffff;
+            border: 2px solid #0b5394;
         }
+        .download-button:hover { transform: scale(1.05); }
 
-        /* === Responsive Design for Mobile === */
         @media (max-width: 768px) {
-            .navbar-links {
-                display: none; /* Hide links by default on mobile */
-                flex-direction: column;
-                position: absolute;
-                top: 70px; /* Position below navbar */
-                left: 0;
-                width: 100%;
-                background-color: #0b5394;
-                padding: 10px 0;
-            }
-            .navbar-links.active {
-                display: flex; /* Show links when menu is open */
-            }
-            .navbar-links a {
-                margin: 10px 0;
-                text-align: center;
-            }
-            .menu-toggle {
-                display: block; /* Show hamburger icon on mobile */
-            }
-            h1 {
-                font-size: 2em;
-            }
-            p {
-                font-size: 1em;
-            }
+            .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: #0b5394; padding: 10px 0; }
+            .navbar-links.active { display: flex; }
+            .navbar-links a { margin: 10px 0; text-align: center; }
+            .menu-toggle { display: block; }
+            h1 { font-size: 2em; }
+            p { font-size: 1em; }
         }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="#" class="navbar-brand">Zad Bono</a>
+        <a href="index.html" class="navbar-brand">Zad Bono</a>
         <div class="navbar-links" id="navbar-links">
-            <a href="#">الرئيسية</a>
+            <a href="index.html">الرئيسية</a>
             <a href="#">شرح المميزات</a>
             <a href="#">اتصل بنا</a>
         </div>
@@ -152,17 +64,17 @@
         <img src="images/logo.jpg" alt="شعار تطبيق زاد بونو" class="logo">
         <h1>تطبيق Zad Bono</h1>
         <p>دليلك الذكي للعبادات اليومية. اكتشف تجربة إيمانية فريدة ومتكاملة بين يديك.</p>
-        <a href="#" class="download-button">تحميل التطبيق الآن (APK)</a>
+        
+        <div class="buttons-container">
+            <a href="#" class="download-button">تحميل للأندرويد (APK)</a>
+            <a href="iphone.html" class="download-button secondary">تحميل للآيفون</a>
+        </div>
     </div>
 
-    <!-- JavaScript to make the menu work -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const navbarLinks = document.getElementById('navbar-links');
-
-        menuToggle.addEventListener('click', () => {
-            navbarLinks.classList.toggle('active');
-        });
+        menuToggle.addEventListener('click', () => { navbarLinks.classList.toggle('active'); });
     </script>
 
 </body>
