@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zad Bono | الموقع الرسمي</title>
     
-    <!-- Google Fonts for a nice Arabic font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
@@ -13,21 +12,22 @@
     <style>
         /* === General Styles === */
         body { 
-            font-family: 'Cairo', sans-serif; /* استخدام خط عربي جميل */
+            font-family: 'Cairo', sans-serif;
             margin: 0;
-            padding-top: 70px; /* لإعطاء مساحة للشريط العلوي الثابت */
-            background-color: #f0f4f8; /* لون الخلفية العام */
-            color: #073763; /* لون النص الأساسي */
+            padding-top: 70px;
+            background-color: #f0f4f8;
+            color: #073763;
             text-align: center;
         }
 
         /* === Navigation Bar === */
         .navbar {
-            background-color: #0b5394; /* أزرق غامق من هوية التطبيق */
+            background-color: #0b5394;
             padding: 10px 20px;
-            position: fixed; /* تثبيت الشريط في الأعلى */
+            position: fixed;
             top: 0;
-            width: 100%;
+            left: 0; /* Added for full width */
+            right: 0; /* Added for full width */
             z-index: 1000;
             display: flex;
             justify-content: space-between;
@@ -35,10 +35,13 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2 );
         }
         .navbar-brand {
-            color: #ffd700; /* لون ذهبي */
+            color: #ffd700;
             font-weight: bold;
             font-size: 1.5em;
             text-decoration: none;
+        }
+        .navbar-links {
+            display: flex; /* Will be changed on mobile */
         }
         .navbar-links a {
             color: #ffffff;
@@ -47,7 +50,17 @@
             font-size: 1.1em;
         }
         .navbar-links a:hover {
-            color: #ffd700; /* تغيير اللون عند مرور الماوس */
+            color: #ffd700;
+        }
+        
+        /* === Hamburger Menu Icon (Hidden on Desktop) === */
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
 
         /* === Main Content Container === */
@@ -57,14 +70,13 @@
             padding: 30px;
         }
         
-        /* === Logo Styles === */
         .logo {
-            width: 180px;  /* حجم مناسب */
-            height: 180px; /* لضمان دائرة مثالية */
-            border-radius: 50%; /* لجعل الصورة دائرية */
-            object-fit: cover; /* لضمان ملء الصورة للدائرة بشكل صحيح */
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
             margin-bottom: 20px;
-            border: 4px solid #ffd700; /* إضافة إطار ذهبي حول الشعار */
+            border: 4px solid #ffd700;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
@@ -78,44 +90,80 @@
             margin-bottom: 30px;
         }
 
-        /* === Download Button === */
         .download-button {
-            background-color: #ffd700; /* لون ذهبي جذاب */
-            color: #073763; /* لون النص أزرق غامق */
+            background-color: #ffd700;
+            color: #073763;
             padding: 15px 30px;
             font-size: 1.3em;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 50px; /* حواف دائرية للزر */
+            border-radius: 50px;
             transition: transform 0.2s;
+            display: inline-block; /* Good practice for buttons */
         }
         .download-button:hover {
-            transform: scale(1.05); /* تكبير بسيط عند مرور الماوس */
+            transform: scale(1.05);
+        }
+
+        /* === Responsive Design for Mobile === */
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none; /* Hide links by default on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 70px; /* Position below navbar */
+                left: 0;
+                width: 100%;
+                background-color: #0b5394;
+                padding: 10px 0;
+            }
+            .navbar-links.active {
+                display: flex; /* Show links when menu is open */
+            }
+            .navbar-links a {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .menu-toggle {
+                display: block; /* Show hamburger icon on mobile */
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="#" class="navbar-brand">Zad Bono</a>
-        <div class="navbar-links">
+        <div class="navbar-links" id="navbar-links">
             <a href="#">الرئيسية</a>
             <a href="#">شرح المميزات</a>
             <a href="#">اتصل بنا</a>
         </div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
     </nav>
 
-    <!-- Main Content -->
     <div class="container">
         <img src="images/logo.jpg" alt="شعار تطبيق زاد بونو" class="logo">
-        
         <h1>تطبيق Zad Bono</h1>
-        
         <p>دليلك الذكي للعبادات اليومية. اكتشف تجربة إيمانية فريدة ومتكاملة بين يديك.</p>
-
         <a href="#" class="download-button">تحميل التطبيق الآن (APK)</a>
     </div>
+
+    <!-- JavaScript to make the menu work -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarLinks = document.getElementById('navbar-links');
+
+        menuToggle.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
