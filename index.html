@@ -3,44 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الموقع الرسمي لتطبيق Zad Bono</title>
+    <title>Zad Bono | الموقع الرسمي</title>
+    
+    <!-- Google Fonts for a nice Arabic font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+        /* === General Styles === */
         body { 
-            font-family: 'Arial', sans-serif; 
-            text-align: center; 
-            padding: 20px; 
-            background-color: #f0f4f8; /* لون خلفية أفتح قليلاً */
-            color: #073763; /* لون نص أساسي أزرق غامق */
+            font-family: 'Cairo', sans-serif; /* استخدام خط عربي جميل */
+            margin: 0;
+            padding-top: 70px; /* لإعطاء مساحة للشريط العلوي الثابت */
+            background-color: #f0f4f8; /* لون الخلفية العام */
+            color: #073763; /* لون النص الأساسي */
+            text-align: center;
         }
+
+        /* === Navigation Bar === */
+        .navbar {
+            background-color: #0b5394; /* أزرق غامق من هوية التطبيق */
+            padding: 10px 20px;
+            position: fixed; /* تثبيت الشريط في الأعلى */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2 );
+        }
+        .navbar-brand {
+            color: #ffd700; /* لون ذهبي */
+            font-weight: bold;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+        .navbar-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+        .navbar-links a:hover {
+            color: #ffd700; /* تغيير اللون عند مرور الماوس */
+        }
+
+        /* === Main Content Container === */
         .container {
             max-width: 800px;
-            margin: auto;
-            background-color: #ffffff;
+            margin: 40px auto;
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+        
+        /* === Logo Styles === */
         .logo {
-            max-width: 250px; /* يمكنك تعديل حجم اللوجو من هنا */
+            width: 180px;  /* حجم مناسب */
+            height: 180px; /* لضمان دائرة مثالية */
+            border-radius: 50%; /* لجعل الصورة دائرية */
+            object-fit: cover; /* لضمان ملء الصورة للدائرة بشكل صحيح */
             margin-bottom: 20px;
+            border: 4px solid #ffd700; /* إضافة إطار ذهبي حول الشعار */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
+
         h1 { 
-            color: #0b5394; /* درجة أزرق من هوية التطبيق */
+            color: #0b5394;
+            font-size: 2.5em;
         }
         p { 
-            font-size: 1.1em;
-            line-height: 1.6;
+            font-size: 1.2em;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        /* === Download Button === */
+        .download-button {
+            background-color: #ffd700; /* لون ذهبي جذاب */
+            color: #073763; /* لون النص أزرق غامق */
+            padding: 15px 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px; /* حواف دائرية للزر */
+            transition: transform 0.2s;
+        }
+        .download-button:hover {
+            transform: scale(1.05); /* تكبير بسيط عند مرور الماوس */
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">Zad Bono</a>
+        <div class="navbar-links">
+            <a href="#">الرئيسية</a>
+            <a href="#">شرح المميزات</a>
+            <a href="#">اتصل بنا</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
     <div class="container">
         <img src="images/logo.jpg" alt="شعار تطبيق زاد بونو" class="logo">
         
-        <h1>مرحباً بك في الموقع الرسمي لتطبيق Zad Bono</h1>
+        <h1>تطبيق Zad Bono</h1>
         
-        <p>دليلك الذكي للعبادات اليومية. نعمل حالياً على تجهيز الموقع ليعكس روعة التطبيق ومميزاته الفريدة. انتظرونا قريباً!</p>
+        <p>دليلك الذكي للعبادات اليومية. اكتشف تجربة إيمانية فريدة ومتكاملة بين يديك.</p>
+
+        <a href="#" class="download-button">تحميل التطبيق الآن (APK)</a>
     </div>
 
 </body>
