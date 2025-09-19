@@ -179,12 +179,11 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        /* --- MODIFIED: Video Container --- */
         .video-container {
             width: 100%;
             aspect-ratio: 16 / 9;
             border-radius: 10px;
-            overflow: hidden; /* To keep the rounded corners on the iframe */
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         .video-container iframe {
@@ -325,7 +324,6 @@
                     <h3>Our Philosophy</h3>
                     <p>At Setia, we believe in building long-term relationships with our clients. We take a collaborative approach, working closely with clients to understand their goals, challenges, and opportunities. Our goal is to provide personalized, strategic advice that helps our clients achieve success.</p>
                 </div>
-                <!-- === MODIFIED PART: YOUTUBE VIDEO EMBED === -->
                 <div class="section-image">
                     <div class="video-container">
                         <iframe 
@@ -337,7 +335,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> <!-- <<<<<< THIS WAS THE MISSING TAG -->
 
         <!-- Contact Us Section -->
         <section id="contact" class="container">
@@ -356,4 +354,33 @@ Clover Bay Tower, 33, Marasi Drive, Business Bay, Dubai, 00000</p>
                 </div>
                 <div class="map-container">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.493995549835!2d55.26659061500931!3d25.18658898390073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f1
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.493995549835!2d55.26659061500931!3d25.18658898390073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69aa31481c25%3A0x9a75c62145ce44d9!2sClover%20Bay%20Tower!5e0!3m2!1sen!2sae!4v1663612876543!5m2!1sen!2sae" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h2>Subscribe</h2>
+        <p>Sign up to hear from us.</p>
+        <form class="subscribe-form">
+            <input type="email" placeholder="Email" required>
+            <button type="submit" class="btn btn-primary">SIGN UP</button>
+        </form>
+        <div class="footer-bottom">
+            <p>SETIA BANKING CONSULTANCY LLC  
+CLOVER BAY TOWER 33, MARASI DRIVE, BUSINESS BAY, DUBAI</p>
+            <p>COPYRIGHT © 2025 AHMED - ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
