@@ -36,7 +36,7 @@
             transition: transform 0.2s;
         }
         .feature-card:hover { transform: translateY(-5px); }
-        .feature-icon { width: 80px; height: 80px; }
+        .feature-icon { width: 80px; height: 80px; flex-shrink: 0; } /* Prevents icon from shrinking */
         .feature-text h3 { margin-top: 0; color: #0b5394; font-size: 1.8em; }
         .feature-text p { margin-bottom: 0; line-height: 1.7; font-size: 1.1em; }
 
@@ -67,15 +67,16 @@
 
     <main class="features-container">
         
-        <!-- هنا سنضيف بطاقات المميزات -->
-        <!-- مثال لبطاقة الميزة (سيتم ملؤها لاحقاً) -->
+        <!-- بطاقة ميزة دليلك الذكي -->
         <div class="feature-card">
             <img src="images/ic_smart_guide.png" alt="أيقونة دليلك الذكي" class="feature-icon">
             <div class="feature-text">
-                <h3>دليلك الذكي</h3>
-                <p>هنا سيتم وضع الشرح الذي ستعطيني إياه عن هذه الميزة الرائعة...</p>
+                <h3>دليلك الذكي (مانوس)</h3>
+                <p>لأول مرة، نقدم لك مساعداً فقهياً يعمل بالذكاء الاصطناعي. اسأل "مانوس" عن أي مسألة في الفقه، التفسير، الحديث، أو السيرة، واحصل على إجابات دقيقة وموثوقة. إنه رفيقك في بحور العلم، مصمم خصيصاً لخدمة أسئلتك الدينية فقط.</p>
             </div>
         </div>
+
+        <!-- هنا سنضيف بطاقات المميزات الأخرى لاحقاً -->
 
     </main>
 
