@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* All CSS styles remain the same as the previous correct version */
         body { font-family: 'Cairo', sans-serif; margin: 0; padding-top: 70px; background-color: #f0f4f8; color: #073763; text-align: center; transition: all 0.3s; }
         .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2 ); }
         .navbar-brand { color: #ffd700; font-weight: bold; font-size: 1.5em; text-decoration: none; }
@@ -35,7 +34,7 @@
         .download-button.secondary { background-color: #ffffff; border: 2px solid #0b5394; }
         .download-button:hover { transform: scale(1.05); }
         .prayer-times-widget { background-color: #ffffff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 700px; margin: 0 auto; overflow: hidden; }
-        .date-bar { background-color: #0b5394; color: white; padding: 10px; font-size: 1.1em; }
+        .date-bar { background-color: #0b5394; color: white; padding: 10px; font-size: 1.1em; min-height: 1.5em; }
         .widget-body { padding: 20px; }
         .city-selector-container { margin-bottom: 20px; }
         .city-selector-container label { font-size: 1.2em; margin-left: 10px; }
@@ -94,13 +93,13 @@
         </div>
 
         <div class="prayer-times-widget">
-            <div class="date-bar" id="date-bar">...</div>
+            <div class="date-bar" id="date-bar">--:--</div>
             <div class="widget-body">
                 <div class="city-selector-container">
                     <label for="city-selector" data-translate="select_city">اختر المدينة:</label>
                     <select id="city-selector">
                         <optgroup label="الشرق الأوسط">
-                            <option value="Cairo,Egypt">القاهرة، مصر</option>
+                            <option value="Cairo,Egypt" selected>القاهرة، مصر</option>
                             <option value="Mecca,Saudi Arabia">مكة المكرمة، السعودية</option>
                             <option value="Riyadh,Saudi Arabia">الرياض، السعودية</option>
                             <option value="Dubai,United Arab Emirates">دبي، الإمارات</option>
@@ -159,7 +158,14 @@
     </div>
 
     <script>
-        // --- Script for Mobile Menu & Language Switcher (Same as before) ---
+        // --- Script for Mobile Menu ---
         const menuToggle = document.getElementById('menu-toggle');
         const navbarLinks = document.getElementById('navbar-links');
         menuToggle.addEventListener('click', () => { navbarLinks.classList.toggle('active'); });
+
+        // --- Script for Language Switcher ---
+        const translations = {
+            ar: { app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_contact: "اتصل بنا", main_title: "تطبيق Zad Bono", main_subtitle: "دليلك الذكي للعبادات اليومية. اكتشف تجربة إيمانية فريدة ومتكاملة بين يديك.", btn_android: "تحميل للأندرويد (APK)", btn_iphone: "تحميل للآيفون", lang_name: "العربية", select_city: "اختر المدينة:", prayer_fajr: "الفجر", prayer_dhuhr: "الظهر", prayer_asr: "العصر", prayer_maghrib: "المغرب", prayer_isha: "العشاء" },
+            en: { app_name: "Zad Bono", nav_home: "Home", nav_features: "Features", nav_contact: "Contact Us", main_title: "Zad Bono App", main_subtitle: "Your smart guide for daily worship. Discover a unique and integrated faith experience in your hands.", btn_android: "Download for Android (APK)", btn_iphone: "Download for iPhone", lang_name: "English", select_city: "Select City:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha" },
+            de: { app_name: "Zad Bono", nav_home: "Startseite", nav_features: "Funktionen", nav_contact: "Kontakt", main_title: "Zad Bono App", main_subtitle: "Ihr intelligenter Leitfaden für das tägliche Gebet. Entdecken Sie eine einzigartige und integrierte Glaubenserfahrung in Ihren Händen.", btn_android: "Download für Android (APK)", btn_iphone: "Download für iPhone", lang_name: "Deutsch", select_city: "Stadt wählen:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha" },
+            fr: { app_name: "Zad Bono", nav_home: "Accueil", nav_features: "Fonctionnalités", nav_contact: "Contactez-nous", main_title: "Application Zad Bono", main_subtitle: "Votre guide intelligent pour le culte quotidien. Découvrez une expérience de
