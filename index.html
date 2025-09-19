@@ -31,7 +31,7 @@
         .logo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid #ffd700; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
         h1 { color: #0b5394; font-size: 2.5em; }
         p { font-size: 1.2em; line-height: 1.7; margin-bottom: 30px; }
-        .buttons-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 50px; } /* Added margin-bottom */
+        .buttons-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 50px; }
         .download-button { background-color: #ffd700; color: #073763; padding: 15px 30px; font-size: 1.2em; font-weight: bold; text-decoration: none; border-radius: 50px; transition: transform 0.2s; display: inline-block; }
         .download-button.secondary { background-color: #ffffff; border: 2px solid #0b5394; }
         .download-button:hover { transform: scale(1.05); }
@@ -66,7 +66,27 @@
 <body>
 
     <nav class="navbar">
-        <!-- Navbar content remains the same -->
+        <a href="index.html" class="navbar-brand" data-translate="app_name">Zad Bono</a>
+        <div class="navbar-links" id="navbar-links">
+            <a href="index.html" data-translate="nav_home">الرئيسية</a>
+            <a href="features.html" data-translate="nav_features">شرح المميزات</a>
+            <a href="#" data-translate="nav_contact">اتصل بنا</a>
+            
+            <div class="language-switcher">
+                <button class="selected-lang" id="lang-toggle-btn">
+                    <span id="lang-text">العربية</span>
+                    <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
+                </button>
+                <ul class="lang-menu" id="lang-menu">
+                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم مصر"> العربية</a></li>
+                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم أمريكا"> English</a></li>
+                    <li><a href="#" onclick="setLanguage('de')"><img src="images/de.png" alt="علم ألمانيا"> Deutsch</a></li>
+                    <li><a href="#" onclick="setLanguage('fr')"><img src="images/fr.png" alt="علم فرنسا"> Français</a></li>
+                    <li><a href="#" onclick="setLanguage('cn')"><img src="images/cn.png" alt="علم الصين"> 中文</a></li>
+                </ul>
+            </div>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
     </nav>
 
     <div class="container">
@@ -123,7 +143,56 @@
     </div>
 
     <script>
-        // All previous scripts for menu and language switcher remain the same
+        // --- Script for Mobile Menu ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarLinks = document.getElementById('navbar-links');
+        menuToggle.addEventListener('click', () => { navbarLinks.classList.toggle('active'); });
+
+        // --- Script for Language Switcher ---
+        const translations = {
+            ar: { app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_contact: "اتصل بنا", main_title: "تطبيق Zad Bono", main_subtitle: "دليلك الذكي للعبادات اليومية. اكتشف تجربة إيمانية فريدة ومتكاملة بين يديك.", btn_android: "تحميل للأندرويد (APK)", btn_iphone: "تحميل للآيفون", lang_name: "العربية", select_city: "اختر المدينة:", prayer_fajr: "الفجر", prayer_dhuhr: "الظهر", prayer_asr: "العصر", prayer_maghrib: "المغرب", prayer_isha: "العشاء" },
+            en: { app_name: "Zad Bono", nav_home: "Home", nav_features: "Features", nav_contact: "Contact Us", main_title: "Zad Bono App", main_subtitle: "Your smart guide for daily worship. Discover a unique and integrated faith experience in your hands.", btn_android: "Download for Android (APK)", btn_iphone: "Download for iPhone", lang_name: "English", select_city: "Select City:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha" },
+            de: { app_name: "Zad Bono", nav_home: "Startseite", nav_features: "Funktionen", nav_contact: "Kontakt", main_title: "Zad Bono App", main_subtitle: "Ihr intelligenter Leitfaden für das tägliche Gebet. Entdecken Sie eine einzigartige und integrierte Glaubenserfahrung in Ihren Händen.", btn_android: "Download für Android (APK)", btn_iphone: "Download für iPhone", lang_name: "Deutsch", select_city: "Stadt wählen:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha" },
+            fr: { app_name: "Zad Bono", nav_home: "Accueil", nav_features: "Fonctionnalités", nav_contact: "Contactez-nous", main_title: "Application Zad Bono", main_subtitle: "Votre guide intelligent pour le culte quotidien. Découvrez une expérience de foi unique et intégrée entre vos mains.", btn_android: "Télécharger pour Android (APK)", btn_iphone: "Télécharger pour iPhone", lang_name: "Français", select_city: "Choisir la ville:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha" },
+            cn: { app_name: "Zad Bono", nav_home: "首页", nav_features: "功能", nav_contact: "联系我们", main_title: "Zad Bono 应用", main_subtitle: "您的日常敬拜智能指南。发现独特而完整的信仰体验。", btn_android: "下载安卓版 (APK)", btn_iphone: "下载iPhone版", lang_name: "中文", select_city: "选择城市:", prayer_fajr: "晨礼", prayer_dhuhr: "晌礼", prayer_asr: "晡礼", prayer_maghrib: "昏礼", prayer_isha: "宵礼" }
+        };
+
+        const langToggleButton = document.getElementById('lang-toggle-btn');
+        const langMenu = document.getElementById('lang-menu');
+        const selectedLangBtnText = document.getElementById('lang-text');
+        const selectedLangBtnFlag = document.getElementById('lang-flag');
+
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            selectedLangBtnText.textContent = translations[lang].lang_name;
+            selectedLangBtnFlag.src = `images/${lang}.png`;
+            localStorage.setItem('language', lang);
+            if(langMenu) langMenu.classList.remove('show');
+        }
+
+        langToggleButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            langMenu.classList.toggle('show');
+        });
+
+        window.addEventListener('click', () => {
+            if (langMenu.classList.contains('show')) {
+                langMenu.classList.remove('show');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'ar';
+            setLanguage(savedLang);
+        });
     </script>
 
 </body>
