@@ -11,13 +11,12 @@
 
     <style>
         body { font-family: 'Cairo', sans-serif; margin: 0; padding-top: 70px; background-color: #f0f4f8; color: #073763; text-align: center; transition: all 0.3s; }
-        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2 ); }
+        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2  ); }
         .navbar-brand { color: #ffd700; font-weight: bold; font-size: 1.5em; text-decoration: none; }
         .navbar-links { display: flex; align-items: center; }
         .navbar-links a { color: #ffffff; text-decoration: none; margin: 0 15px; font-size: 1.1em; }
         .navbar-links a:hover { color: #ffd700; }
         .menu-toggle { display: none; font-size: 30px; color: white; background: none; border: none; cursor: pointer; }
-        
         .language-switcher { position: relative; }
         .language-switcher .selected-lang { background-color: transparent; border: none; color: white; cursor: pointer; display: flex; align-items: center; font-family: 'Cairo', sans-serif; font-size: 1.1em; padding: 5px; }
         .language-switcher .selected-lang img { width: 24px; height: 24px; border-radius: 50%; margin-left: 8px; }
@@ -26,7 +25,6 @@
         .language-switcher .lang-menu li a { color: #073763; text-decoration: none; display: flex; align-items: center; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
         .language-switcher .lang-menu li a:hover { background-color: #e0e8f0; }
         .language-switcher .lang-menu li img { width: 24px; height: 24px; border-radius: 50%; margin-left: 10px; }
-
         .container { max-width: 800px; margin: 40px auto; padding: 30px; }
         .logo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid #ffd700; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
         h1 { color: #0b5394; font-size: 2.5em; }
@@ -35,22 +33,18 @@
         .download-button { background-color: #ffd700; color: #073763; padding: 15px 30px; font-size: 1.2em; font-weight: bold; text-decoration: none; border-radius: 50px; transition: transform 0.2s; display: inline-block; }
         .download-button.secondary { background-color: #ffffff; border: 2px solid #0b5394; }
         .download-button:hover { transform: scale(1.05); }
-
-        /* === Prayer Times Widget CSS === */
         .prayer-times-widget { background-color: #ffffff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 700px; margin: 0 auto; overflow: hidden; }
-        .date-bar { background-color: #0b5394; color: white; padding: 10px; font-size: 1.1em; }
+        .date-bar { background-color: #0b5394; color: white; padding: 10px; font-size: 1.1em; min-height: 1.5em; }
         .widget-body { padding: 20px; }
         .city-selector-container { margin-bottom: 20px; }
         .city-selector-container label { font-size: 1.2em; margin-left: 10px; }
         #city-selector { padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-family: 'Cairo', sans-serif; font-size: 1.1em; }
-        .digital-clock { font-size: 3.5em; font-weight: bold; color: #0b5394; margin-bottom: 20px; }
+        .digital-clock { font-size: 3.5em; font-weight: bold; color: #0b5394; margin-bottom: 20px; direction: ltr; }
         .prayer-table { width: 100%; border-collapse: collapse; }
         .prayer-table th, .prayer-table td { padding: 15px; text-align: center; border-bottom: 1px solid #eee; }
         .prayer-table th { background-color: #f0f4f8; font-size: 1.1em; }
-        .prayer-table td { font-size: 1.2em; font-weight: bold; }
+        .prayer-table td { font-size: 1.2em; font-weight: bold; direction: ltr; }
         .prayer-table tr:last-child td { border-bottom: none; }
-        /* === End Prayer Times Widget CSS === */
-
         @media (max-width: 850px) {
             .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: #0b5394; padding: 10px 0; }
             .navbar-links.active { display: flex; }
@@ -71,7 +65,6 @@
             <a href="index.html" data-translate="nav_home">الرئيسية</a>
             <a href="features.html" data-translate="nav_features">شرح المميزات</a>
             <a href="#" data-translate="nav_contact">اتصل بنا</a>
-            
             <div class="language-switcher">
                 <button class="selected-lang" id="lang-toggle-btn">
                     <span id="lang-text">العربية</span>
@@ -99,23 +92,47 @@
             <a href="iphone.html" class="download-button secondary" data-translate="btn_iphone">تحميل للآيفون</a>
         </div>
 
-        <!-- === Prayer Times Widget HTML === -->
         <div class="prayer-times-widget">
-            <div class="date-bar" id="date-bar">
-                الجمعة، 19 سبتمبر 2025 | 26 ربيع الأول 1447
-            </div>
+            <div class="date-bar" id="date-bar">--:--</div>
             <div class="widget-body">
                 <div class="city-selector-container">
                     <label for="city-selector" data-translate="select_city">اختر المدينة:</label>
                     <select id="city-selector">
-                        <option value="Cairo,Egypt">القاهرة، مصر</option>
-                        <option value="Riyadh,Saudi Arabia">الرياض، السعودية</option>
-                        <option value="Dubai,United Arab Emirates">دبي، الإمارات</option>
-                        <option value="Kuwait,Kuwait">الكويت</option>
-                        <option value="Doha,Qatar">الدوحة، قطر</option>
+                        <optgroup label="الشرق الأوسط">
+                            <option value="Cairo,Egypt" selected>القاهرة، مصر</option>
+                            <option value="Mecca,Saudi Arabia">مكة المكرمة، السعودية</option>
+                            <option value="Riyadh,Saudi Arabia">الرياض، السعودية</option>
+                            <option value="Dubai,United Arab Emirates">دبي، الإمارات</option>
+                            <option value="Kuwait,Kuwait">الكويت</option>
+                            <option value="Doha,Qatar">الدوحة، قطر</option>
+                            <option value="Amman,Jordan">عمان، الأردن</option>
+                            <option value="Baghdad,Iraq">بغداد، العراق</option>
+                            <option value="Beirut,Lebanon">بيروت، لبنان</option>
+                        </optgroup>
+                        <optgroup label="أفريقيا">
+                            <option value="Algiers,Algeria">الجزائر</option>
+                            <option value="Rabat,Morocco">الرباط، المغرب</option>
+                            <option value="Tunis,Tunisia">تونس</option>
+                            <option value="Khartoum,Sudan">الخرطوم، السودان</option>
+                        </optgroup>
+                        <optgroup label="آسيا">
+                            <option value="Istanbul,Turkey">إسطنبول، تركيا</option>
+                            <option value="Jakarta,Indonesia">جاكرتا، إندونيسيا</option>
+                            <option value="Kuala Lumpur,Malaysia">كوالالمبور، ماليزيا</option>
+                        </optgroup>
+                        <optgroup label="أوروبا">
+                            <option value="London,United Kingdom">لندن، بريطانيا</option>
+                            <option value="Paris,France">باريس، فرنسا</option>
+                            <option value="Berlin,Germany">برلين، ألمانيا</option>
+                            <option value="Moscow,Russia">موسكو، روسيا</option>
+                        </optgroup>
+                        <optgroup label="أمريكا الشمالية">
+                            <option value="New York,United States">نيويورك، أمريكا</option>
+                            <option value="Toronto,Canada">تورونتو، كندا</option>
+                        </optgroup>
                     </select>
                 </div>
-                <div class="digital-clock" id="digital-clock">04:30:00 ص</div>
+                <div class="digital-clock" id="digital-clock">--:--:--</div>
                 <table class="prayer-table">
                     <thead>
                         <tr>
@@ -128,18 +145,16 @@
                     </thead>
                     <tbody id="prayer-times-body">
                         <tr>
-                            <td id="fajr-time">04:30</td>
-                            <td id="dhuhr-time">11:50</td>
-                            <td id="asr-time">03:20</td>
-                            <td id="maghrib-time">05:55</td>
-                            <td id="isha-time">07:15</td>
+                            <td id="fajr-time">--:--</td>
+                            <td id="dhuhr-time">--:--</td>
+                            <td id="asr-time">--:--</td>
+                            <td id="maghrib-time">--:--</td>
+                            <td id="isha-time">--:--</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <!-- === End Prayer Times Widget HTML === -->
-
     </div>
 
     <script>
@@ -156,20 +171,13 @@
             fr: { app_name: "Zad Bono", nav_home: "Accueil", nav_features: "Fonctionnalités", nav_contact: "Contactez-nous", main_title: "Application Zad Bono", main_subtitle: "Votre guide intelligent pour le culte quotidien. Découvrez une expérience de foi unique et intégrée entre vos mains.", btn_android: "Télécharger pour Android (APK)", btn_iphone: "Télécharger pour iPhone", lang_name: "Français", select_city: "Choisir la ville:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha" },
             cn: { app_name: "Zad Bono", nav_home: "首页", nav_features: "功能", nav_contact: "联系我们", main_title: "Zad Bono 应用", main_subtitle: "您的日常敬拜智能指南。发现独特而完整的信仰体验。", btn_android: "下载安卓版 (APK)", btn_iphone: "下载iPhone版", lang_name: "中文", select_city: "选择城市:", prayer_fajr: "晨礼", prayer_dhuhr: "晌礼", prayer_asr: "晡礼", prayer_maghrib: "昏礼", prayer_isha: "宵礼" }
         };
-
         const langToggleButton = document.getElementById('lang-toggle-btn');
         const langMenu = document.getElementById('lang-menu');
         const selectedLangBtnText = document.getElementById('lang-text');
         const selectedLangBtnFlag = document.getElementById('lang-flag');
-
         function setLanguage(lang) {
             const elements = document.querySelectorAll('[data-translate]');
-            elements.forEach(el => {
-                const key = el.getAttribute('data-translate');
-                if (translations[lang] && translations[lang][key]) {
-                    el.textContent = translations[lang][key];
-                }
-            });
+            elements.forEach(el => { const key = el.getAttribute('data-translate'); if (translations[lang] && translations[lang][key]) { el.textContent = translations[lang][key]; } });
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             selectedLangBtnText.textContent = translations[lang].lang_name;
@@ -177,21 +185,65 @@
             localStorage.setItem('language', lang);
             if(langMenu) langMenu.classList.remove('show');
         }
+        langToggleButton.addEventListener('click', (event) => { event.stopPropagation(); langMenu.classList.toggle('show'); });
+        window.addEventListener('click', () => { if (langMenu.classList.contains('show')) { langMenu.classList.remove('show'); } });
+        
+        // --- Prayer Times Widget Script ---
+        const citySelector = document.getElementById('city-selector');
+        const dateBar = document.getElementById('date-bar');
+        const digitalClock = document.getElementById('digital-clock');
+        const fajrTime = document.getElementById('fajr-time');
+        const dhuhrTime = document.getElementById('dhuhr-time');
+        const asrTime = document.getElementById('asr-time');
+        const maghribTime = document.getElementById('maghrib-time');
+        const ishaTime = document.getElementById('isha-time');
+        let clockInterval;
 
-        langToggleButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            langMenu.classList.toggle('show');
-        });
+        function getPrayerTimes(city, country) {
+            if (clockInterval) clearInterval(clockInterval);
+            const url = `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city )}&country=${encodeURIComponent(country)}&method=5`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.code === 200) {
+                        const timings = data.data.timings;
+                        const date = data.data.date;
+                        const timezone = data.data.meta.timezone;
+                        fajrTime.textContent = timings.Fajr.split(' ')[0];
+                        dhuhrTime.textContent = timings.Dhuhr.split(' ')[0];
+                        asrTime.textContent = timings.Asr.split(' ')[0];
+                        maghribTime.textContent = timings.Maghrib.split(' ')[0];
+                        ishaTime.textContent = timings.Isha.split(' ')[0];
+                        dateBar.textContent = `${date.hijri.weekday.ar}, ${date.gregorian.day} ${date.gregorian.month.en} ${date.gregorian.year} | ${date.hijri.day} ${date.hijri.month.ar} ${date.hijri.year}`;
+                        startClock(timezone);
+                    } else {
+                        dateBar.textContent = "لا يمكن جلب البيانات لهذه المدينة";
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching prayer times:', error);
+                    dateBar.textContent = "حدث خطأ في جلب البيانات";
+                });
+        }
 
-        window.addEventListener('click', () => {
-            if (langMenu.classList.contains('show')) {
-                langMenu.classList.remove('show');
-            }
+        function startClock(timezone) {
+            clockInterval = setInterval(() => {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('en-GB', { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                digitalClock.textContent = timeString;
+            }, 1000);
+        }
+
+        citySelector.addEventListener('change', () => {
+            const [city, country] = citySelector.value.split(',');
+            getPrayerTimes(city, country);
         });
 
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('language') || 'ar';
             setLanguage(savedLang);
+            const [city, country] = citySelector.value.split(',');
+            getPrayerTimes(city, country);
         });
     </script>
 
