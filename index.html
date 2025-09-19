@@ -196,12 +196,44 @@
         .contact-info p { margin-bottom: 10px; }
         .contact-info strong { color: var(--dark-grey); }
         .contact-info a { color: var(--primary-color); text-decoration: none; }
-        .contact-info .btn { margin-top: 20px; }
+        .contact-info .btn { 
+            margin-top: 20px;
+            color: white; /* <<<< FIX: Made button text white */
+        }
         .map-container {
             width: 100%;
             height: 400px;
             border-radius: 10px;
             overflow: hidden;
+        }
+
+        /* --- NEW: Opening Hours Accordion --- */
+        .opening-hours {
+            cursor: pointer;
+            user-select: none;
+        }
+        .opening-hours .today {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .opening-hours .arrow {
+            transition: transform 0.3s ease;
+        }
+        .opening-hours.active .arrow {
+            transform: rotate(180deg);
+        }
+        .opening-hours .full-week {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            padding-left: 10px;
+            border-left: 2px solid var(--light-grey);
+            margin-left: 5px;
+        }
+        .opening-hours .full-week p {
+            margin: 5px 0;
+            font-size: 0.95rem;
         }
 
         /* --- Footer --- */
@@ -243,7 +275,7 @@
                 grid-template-columns: 1fr;
             }
             .section-grid .section-image {
-                order: -1; /* Image comes first on mobile */
+                order: -1;
             }
             .hero-content h1 {
                 font-size: 2.5rem;
@@ -275,39 +307,21 @@
     </header>
 
     <main>
-        <!-- Currency Prices Section (NEW) -->
+        <!-- Currency Prices Section -->
         <section id="prices" class="container currency-section">
             <h2>Live Market Prices</h2>
             <div class="currency-grid">
-                <div class="currency-card">
-                    <h3>USD / AED</h3>
-                    <p class="price">3.67</p>
-                    <p class="change positive">+0.02%</p>
-                </div>
-                <div class="currency-card">
-                    <h3>EUR / AED</h3>
-                    <p class="price">4.01</p>
-                    <p class="change negative">-0.11%</p>
-                </div>
-                <div class="currency-card">
-                    <h3>GBP / AED</h3>
-                    <p class="price">4.65</p>
-                    <p class="change positive">+0.05%</p>
-                </div>
-                <div class="currency-card">
-                    <h3>SAR / AED</h3>
-                    <p class="price">0.98</p>
-                    <p class="change positive">+0.01%</p>
-                </div>
+                <div class="currency-card"><h3>USD / AED</h3><p class="price">3.67</p><p class="change positive">+0.02%</p></div>
+                <div class="currency-card"><h3>EUR / AED</h3><p class="price">4.01</p><p class="change negative">-0.11%</p></div>
+                <div class="currency-card"><h3>GBP / AED</h3><p class="price">4.65</p><p class="change positive">+0.05%</p></div>
+                <div class="currency-card"><h3>SAR / AED</h3><p class="price">0.98</p><p class="change positive">+0.01%</p></div>
             </div>
         </section>
 
         <!-- Setia Investments Section -->
         <section id="investments" class="container">
             <div class="section-grid">
-                <div class="section-image">
-                    <img src="images/1.jpg" alt="Business meeting">
-                </div>
+                <div class="section-image"><img src="images/1.jpg" alt="Business meeting"></div>
                 <div class="section-text">
                     <h2>Setia Investments</h2>
                     <p>Welcome to Setia Investments, where we help you make informed investment decisions. Our team of experts provides valuable insights and industry-leading research to guide you towards financial success.</p>
@@ -326,16 +340,11 @@
                 </div>
                 <div class="section-image">
                     <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/6eXyTL8-2_A" 
-                            title="YouTube video player" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+                        <iframe src="https://www.youtube.com/embed/6eXyTL8-2_A" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
-        </section> <!-- <<<<<< THIS WAS THE MISSING TAG -->
+        </section>
 
         <!-- Contact Us Section -->
         <section id="contact" class="container">
@@ -349,19 +358,28 @@ Clover Bay Tower, 33, Marasi Drive, Business Bay, Dubai, 00000</p>
                     <p><a href="tel:+971585610244">+971585610244</a>  
 <a href="tel:+971585944545">+971585944545</a></p>
                     <p><a href="mailto:info@setiafinances.com">info@setiafinances.com</a></p>
-                    <p>Open today 09:00 am - 05:00 pm</p>
+                    
+                    <!-- NEW: Opening Hours Accordion -->
+                    <div class="opening-hours" id="hours-accordion">
+                        <div class="today">
+                            <span>Open today 09:00 am - 05:00 pm</span>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="full-week">
+                            <p>Mon: 09:00 am - 05:00 pm</p>
+                            <p>Tue: 09:00 am - 05:00 pm</p>
+                            <p>Wed: 09:00 am - 05:00 pm</p>
+                            <p>Thu: 09:00 am - 05:00 pm</p>
+                            <p>Fri: 09:00 am - 05:00 pm</p>
+                            <p>Sat: 09:00 am - 05:00 pm</p>
+                            <p>Sun: Closed</p>
+                        </div>
+                    </div>
+
                     <a href="#" class="btn btn-primary">CONTACT US</a>
                 </div>
                 <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.493995549835!2d55.26659061500931!3d25.18658898390073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69aa31481c25%3A0x9a75c62145ce44d9!2sClover%20Bay%20Tower!5e0!3m2!1sen!2sae!4v1663612876543!5m2!1sen!2sae" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.493995549835!2d55.26659061500931!3d25.18658898390073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69aa31481c25%3A0x9a75c62145ce44d9!2sClover%20Bay%20Tower!5e0!3m2!1sen!2sae!4v1663612876543!5m2!1sen!2sae" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
@@ -381,6 +399,21 @@ CLOVER BAY TOWER 33, MARASI DRIVE, BUSINESS BAY, DUBAI</p>
             <p>COPYRIGHT © 2025 AHMED - ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
+
+    <!-- NEW: Javascript for Accordion -->
+    <script>
+        const accordion = document.getElementById('hours-accordion' );
+        const fullWeek = accordion.querySelector('.full-week');
+
+        accordion.addEventListener('click', () => {
+            accordion.classList.toggle('active');
+            if (fullWeek.style.maxHeight) {
+                fullWeek.style.maxHeight = null;
+            } else {
+                fullWeek.style.maxHeight = fullWeek.scrollHeight + "px";
+            }
+        });
+    </script>
 
 </body>
 </html>
