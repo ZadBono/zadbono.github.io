@@ -11,7 +11,7 @@
 
     <style>
         body { font-family: 'Cairo', sans-serif; margin: 0; padding-top: 70px; background-color: #f0f4f8; color: #073763; text-align: center; transition: all 0.3s; }
-        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2  ); }
+        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2   ); }
         .navbar-brand { color: #ffd700; font-weight: bold; font-size: 1.5em; text-decoration: none; }
         .navbar-links { display: flex; align-items: center; }
         .navbar-links a { color: #ffffff; text-decoration: none; margin: 0 15px; font-size: 1.1em; }
@@ -34,7 +34,7 @@
         .download-button.secondary { background-color: #ffffff; border: 2px solid #0b5394; }
         .download-button:hover { transform: scale(1.05); }
         .prayer-times-widget { background-color: #ffffff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 700px; margin: 0 auto; overflow: hidden; }
-        .date-bar { background-color: #0b5394; color: white; padding: 10px; font-size: 1.1em; min-height: 1.5em; }
+        .date-bar { background-color: #0b5394; color: white; padding: 12px; font-size: 1.1em; min-height: 1.5em; display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; }
         .widget-body { padding: 20px; }
         .city-selector-container { margin-bottom: 20px; }
         .city-selector-container label { font-size: 1.2em; margin-left: 10px; }
@@ -201,7 +201,7 @@
 
         function getPrayerTimes(city, country) {
             if (clockInterval) clearInterval(clockInterval);
-            const url = `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city )}&country=${encodeURIComponent(country)}&method=5`;
+            const url = `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city  )}&country=${encodeURIComponent(country)}&method=5`;
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
@@ -214,7 +214,12 @@
                         asrTime.textContent = timings.Asr.split(' ')[0];
                         maghribTime.textContent = timings.Maghrib.split(' ')[0];
                         ishaTime.textContent = timings.Isha.split(' ')[0];
-                        dateBar.textContent = `${date.hijri.weekday.ar}, ${date.gregorian.day} ${date.gregorian.month.en} ${date.gregorian.year} | ${date.hijri.day} ${date.hijri.month.ar} ${date.hijri.year}`;
+                        
+                        // *** MODIFICATION 1: Date Bar Formatting ***
+                        const gregorianDate = `${date.gregorian.day} ${date.gregorian.month.en} ${date.gregorian.year}`;
+                        const hijriDate = `${date.hijri.day} ${date.hijri.month.ar} ${date.hijri.year}`;
+                        dateBar.innerHTML = `<span>${date.hijri.weekday.ar}</span> • <span>${gregorianDate}</span> • <span>${hijriDate}</span>`;
+
                         startClock(timezone);
                     } else {
                         dateBar.textContent = "لا يمكن جلب البيانات لهذه المدينة";
@@ -229,7 +234,8 @@
         function startClock(timezone) {
             clockInterval = setInterval(() => {
                 const now = new Date();
-                const timeString = now.toLocaleTimeString('en-GB', { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                // *** MODIFICATION 2: Clock Formatting with AM/PM ***
+                const timeString = now.toLocaleTimeString('ar-EG', { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
                 digitalClock.textContent = timeString;
             }, 1000);
         }
