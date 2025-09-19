@@ -17,35 +17,62 @@
         .navbar-links a { color: #ffffff; text-decoration: none; margin: 0 15px; font-size: 1.1em; }
         .navbar-links a:hover { color: #ffd700; }
         .menu-toggle { display: none; font-size: 30px; color: white; background: none; border: none; cursor: pointer; }
-
-        .page-header { text-align: center; margin: 40px 0; }
-        .page-header h1 { color: #0b5394; font-size: 2.8em; }
         
-        .features-container { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 20px; }
+        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
+        .page-title { text-align: center; font-size: 2.8em; color: #0b5394; margin-bottom: 40px; }
 
         .feature-card {
             background-color: #ffffff;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            max-width: 800px;
-            width: 90%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
             padding: 25px;
+            display: flex;
+            align-items: flex-start;
             gap: 25px;
-            transition: transform 0.2s;
         }
-        .feature-card:hover { transform: translateY(-5px); }
-        .feature-icon { width: 80px; height: 80px; flex-shrink: 0; } /* Prevents icon from shrinking */
-        .feature-text h3 { margin-top: 0; color: #0b5394; font-size: 1.8em; }
-        .feature-text p { margin-bottom: 0; line-height: 1.7; font-size: 1.1em; }
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        .feature-content {
+            flex: 1;
+        }
+        .feature-content h2 {
+            font-size: 1.8em;
+            color: #0b5394;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .feature-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .feature-content ul {
+            padding-right: 20px;
+            list-style-type: '★ ';
+        }
+        .feature-content li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #666;
+            background-color: #eef2f5;
+            padding: 10px;
+            border-radius: 8px;
+            border-right: 4px solid #ffd700;
+        }
 
         @media (max-width: 768px) {
             .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: #0b5394; padding: 10px 0; }
             .navbar-links.active { display: flex; }
             .navbar-links a { margin: 10px 0; text-align: center; }
             .menu-toggle { display: block; }
-            .feature-card { flex-direction: column; text-align: center; }
+            .feature-card { flex-direction: column; align-items: center; text-align: center; }
         }
     </style>
 </head>
@@ -61,24 +88,54 @@
         <button class="menu-toggle" id="menu-toggle">☰</button>
     </nav>
 
-    <header class="page-header">
-        <h1>مميزات التطبيق</h1>
-    </header>
+    <div class="container">
+        <h1 class="page-title">مميزات تطبيق Zad Bono</h1>
 
-    <main class="features-container">
-        
-        <!-- بطاقة ميزة دليلك الذكي -->
+        <!-- === بطاقة دليلك الذكي === -->
         <div class="feature-card">
             <img src="images/ic_smart_guide.png" alt="أيقونة دليلك الذكي" class="feature-icon">
-            <div class="feature-text">
-                <h3>دليلك الذكي (مانوس)</h3>
-                <p>لأول مرة، نقدم لك مساعداً فقهياً يعمل بالذكاء الاصطناعي. اسأل "مانوس" عن أي مسألة في الفقه، التفسير، الحديث، أو السيرة، واحصل على إجابات دقيقة وموثوقة. إنه رفيقك في بحور العلم، مصمم خصيصاً لخدمة أسئلتك الدينية فقط.</p>
+            <div class="feature-content">
+                <h2>دليلك الذكي "مانوس"</h2>
+                <p>نقدم لك "مانوس"، شريكك في رحلتك الإيمانية والمساعد الذكي الأول من نوعه في تطبيق إسلامي شامل. خُلق "مانوس" ليكون دليلك المتخصص في علوم ديننا الحنيف، من التفسير والحديث إلى السيرة والفقه.</p>
+                <ul>
+                    <li>اسأله ما شئت في أمور الدين، واحصل على إجابات دقيقة وموثوقة.</li>
+                    <li>مصمم خصيصاً للرد على الاستفسارات الدينية، معتذراً بلطف عن أي سؤال خارج هذا النطاق.</li>
+                    <li>تجربة تفاعلية فريدة لتعميق فهمك وبناء معرفتك الشرعية.</li>
+                </ul>
             </div>
         </div>
 
-        <!-- هنا سنضيف بطاقات المميزات الأخرى لاحقاً -->
+        <!-- === بطاقة البث المباشر === -->
+        <div class="feature-card">
+            <img src="images/ic_live_stream.png" alt="أيقونة البث المباشر" class="feature-icon">
+            <div class="feature-content">
+                <h2>البث المباشر</h2>
+                <p>عالم من المحتوى المرئي والمسموع بين يديك. تنقل بسلاسة بين مجموعة منتقاة من القنوات التلفزيونية والمحطات الإذاعية التي تثري يومك.</p>
+                <ul>
+                    <li><strong>قنوات دينية:</strong> شاهد برامجك الدينية المفضلة مباشرة.</li>
+                    <li><strong>محطات إذاعية:</strong> استمع إلى تلاوات القرآن الكريم والبرامج الدينية أينما كنت.</li>
+                    <li><strong>قنوات إخبارية:</strong> ابقَ على اطلاع بآخر المستجدات من حولك.</li>
+                </ul>
+                <p class="note">للاستمتاع بتجربة مشاهدة واستماع مثالية بدون تقطيع، نوصي باستخدام اتصال إنترنت جيد.</p>
+            </div>
+        </div>
 
-    </main>
+        <!-- === بطاقة القرآن الكريم === -->
+        <div class="feature-card">
+            <img src="images/ic_quran.png" alt="أيقونة القرآن الكريم" class="feature-icon">
+            <div class="feature-content">
+                <h2>القرآن الكريم: تجربة متكاملة</h2>
+                <p>تجربة قرآنية شاملة تجمع بين القراءة النصية والاستماع الصوتي والتفسير والبحث، مع خيارات متقدمة للتحكم الكامل بالمحتوى سواء بوجود اتصال بالإنترنت أو بدونه.</p>
+                <ul>
+                    <li><strong>قراءة بدون إنترنت:</strong> تصفح كامل نصوص القرآن الكريم في أي وقت ومكان.</li>
+                    <li><strong>مكتبة صوتية ضخمة:</strong> استمع للقرآن بصوت 11 من كبار المقرئين، مع إمكانية تحميل سورة واحدة أو المصحف كاملاً للاستماع لاحقاً بدون إنترنت.</li>
+                    <li><strong>تفسير ميسّر:</strong> اختر بين "التفسير الميسر" و "المختصر في التفسير" لفهم أعمق للآيات، وكلاهما يعمل بدون إنترنت.</li>
+                    <li><strong>متابعة القراءة والبحث:</strong> عد بسهولة إلى آخر آية توقفت عندها، وابحث عن أي كلمة أو آية في القرآن الكريم بسرعة ودقة.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
 
     <script>
         const menuToggle = document.getElementById('menu-toggle');
