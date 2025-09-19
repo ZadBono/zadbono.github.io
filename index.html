@@ -517,13 +517,13 @@ CLOVER BAY TOWER 33, MARASI DRIVE, BUSINESS BAY, DUBAI</p>
             function closeModal() { modalOverlay.style.display = 'none'; }
 
             openModalBtn.addEventListener('click', (e) => {
-                e.preventDefault();
+                e.preventDefault(); // <<<< THIS IS THE FIX
                 openModal();
             });
 
             closeModalBtn.addEventListener('click', closeModal);
             cancelModalBtn.addEventListener('click', (e) => {
-                e.preventDefault();
+                e.preventDefault(); // Good practice to have it here too
                 closeModal();
             });
             modalOverlay.addEventListener('click', (e) => {
@@ -537,11 +537,10 @@ CLOVER BAY TOWER 33, MARASI DRIVE, BUSINESS BAY, DUBAI</p>
             const baseCurrency = 'AED';
             const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${baseCurrency}`;
 
-            // Check if API key is just a placeholder
-            if (apiKey === 'YOUR_API_KEY' ) {
+            if (apiKey === 'YOUR_API_KEY' || apiKey === '' ) {
                 console.warn("API Key is a placeholder. Real data will not be fetched.");
                 document.querySelectorAll('.currency-card .price').forEach(p => p.textContent = 'Setup needed');
-                return; // Stop the function if key is not set
+                return;
             }
 
             fetch(apiUrl)
@@ -569,3 +568,12 @@ CLOVER BAY TOWER 33, MARASI DRIVE, BUSINESS BAY, DUBAI</p>
                         throw new Error('API error: ' + data['error-type']);
                     }
                 })
+                .catch(error => {
+                    console.error('Error fetching currency data:', error);
+                    document.querySelectorAll('.currency-card .price').forEach(p => p.textContent = 'Error');
+                });
+        });
+    </script>
+
+</body>
+</html>
