@@ -198,7 +198,7 @@
         .contact-info a { color: var(--primary-color); text-decoration: none; }
         .contact-info .btn { 
             margin-top: 20px;
-            color: white; /* <<<< FIX: Made button text white */
+            color: white;
         }
         .map-container {
             width: 100%;
@@ -207,7 +207,6 @@
             overflow: hidden;
         }
 
-        /* --- NEW: Opening Hours Accordion --- */
         .opening-hours {
             cursor: pointer;
             user-select: none;
@@ -359,7 +358,6 @@ Clover Bay Tower, 33, Marasi Drive, Business Bay, Dubai, 00000</p>
 <a href="tel:+971585944545">+971585944545</a></p>
                     <p><a href="mailto:info@setiafinances.com">info@setiafinances.com</a></p>
                     
-                    <!-- NEW: Opening Hours Accordion -->
                     <div class="opening-hours" id="hours-accordion">
                         <div class="today">
                             <span>Open today 09:00 am - 05:00 pm</span>
@@ -378,8 +376,9 @@ Clover Bay Tower, 33, Marasi Drive, Business Bay, Dubai, 00000</p>
 
                     <a href="#" class="btn btn-primary">CONTACT US</a>
                 </div>
+                <!-- === MAP CODE UPDATED HERE === -->
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.493995549835!2d55.26659061500931!3d25.18658898390073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69aa31481c25%3A0x9a75c62145ce44d9!2sClover%20Bay%20Tower!5e0!3m2!1sen!2sae!4v1663612876543!5m2!1sen!2sae" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d638.239522787366!2d55.27000180441502!3d25.18878642320684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f693afb4babe9%3A0xdda585df6ed9b8ae!2sClover%20Bay%20Tower!5e0!3m2!1sar!2sae!4v1758324259736!5m2!1sar!2sae" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
@@ -400,7 +399,7 @@ CLOVER BAY TOWER 33, MARASI DRIVE, BUSINESS BAY, DUBAI</p>
         </div>
     </footer>
 
-    <!-- NEW: Javascript for Accordion -->
+    <!-- Javascript for Accordion -->
     <script>
         const accordion = document.getElementById('hours-accordion' );
         const fullWeek = accordion.querySelector('.full-week');
