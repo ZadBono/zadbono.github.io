@@ -10,13 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Cairo', sans-serif; margin: 0; padding-top: 70px; background-color: #f0f4f8; color: #073763; text-align: center; transition: all 0.3s; }
-        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2   ); }
+        /* --- Global Styles --- */
+        body { font-family: 'Cairo', sans-serif; margin: 0; padding-top: 70px; background-color: #f0f4f8; color: #073763; transition: all 0.3s; }
+        .container { max-width: 1100px; margin: 40px auto; padding: 20px; }
+
+        /* --- Navbar Styles --- */
+        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2 ); }
         .navbar-brand { color: #ffd700; font-weight: bold; font-size: 1.5em; text-decoration: none; }
         .navbar-links { display: flex; align-items: center; }
         .navbar-links a { color: #ffffff; text-decoration: none; margin: 0 15px; font-size: 1.1em; }
         .navbar-links a:hover { color: #ffd700; }
         .menu-toggle { display: none; font-size: 30px; color: white; background: none; border: none; cursor: pointer; }
+        
+        /* --- Language Switcher Styles --- */
         .language-switcher { position: relative; }
         .language-switcher .selected-lang { background-color: transparent; border: none; color: white; cursor: pointer; display: flex; align-items: center; font-family: 'Cairo', sans-serif; font-size: 1.1em; padding: 5px; }
         .language-switcher .selected-lang img { width: 24px; height: 24px; border-radius: 50%; margin-left: 8px; }
@@ -25,15 +31,69 @@
         .language-switcher .lang-menu li a { color: #073763; text-decoration: none; display: flex; align-items: center; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
         .language-switcher .lang-menu li a:hover { background-color: #e0e8f0; }
         .language-switcher .lang-menu li img { width: 24px; height: 24px; border-radius: 50%; margin-left: 10px; }
-        .container { max-width: 800px; margin: 40px auto; padding: 30px; }
-        .logo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid #ffd700; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-        h1 { color: #0b5394; font-size: 2.5em; }
-        p { font-size: 1.2em; line-height: 1.7; margin-bottom: 30px; }
-        .buttons-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 50px; }
-        .download-button { background-color: #ffd700; color: #073763; padding: 15px 30px; font-size: 1.2em; font-weight: bold; text-decoration: none; border-radius: 50px; transition: transform 0.2s; display: inline-block; }
-        .download-button.secondary { background-color: #ffffff; border: 2px solid #0b5394; }
-        .download-button:hover { transform: scale(1.05); }
-        .prayer-times-widget { background-color: #ffffff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 700px; margin: 0 auto; overflow: hidden; }
+
+        /* --- NEW: Hero Section with Mockup --- */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: right;
+            margin-bottom: 60px;
+            gap: 40px;
+        }
+        .hero-text {
+            flex-basis: 50%;
+        }
+        .hero-text h1 {
+            color: #0b5394;
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .hero-text p {
+            font-size: 1.3em;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        .buttons-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .download-button {
+            background-color: #ffd700;
+            color: #073763;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+        .download-button.secondary {
+            background-color: #ffffff;
+            border: 2px solid #0b5394;
+        }
+        .download-button:hover {
+            transform: scale(1.05);
+        }
+        .hero-mockup {
+            flex-basis: 45%;
+            text-align: center;
+        }
+        .hero-mockup img {
+            max-width: 100%;
+            height: auto;
+            transform: rotate(5deg); /* Slight rotation for dynamic feel */
+            transition: transform 0.3s ease-in-out;
+        }
+        .hero-mockup img:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        /* --- Prayer Times Widget Styles --- */
+        .prayer-times-widget { background-color: #ffffff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 800px; margin: 0 auto; overflow: hidden; text-align: center; }
         .date-bar { background-color: #0b5394; color: white; padding: 12px; font-size: 1.1em; min-height: 1.5em; display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; }
         .widget-body { padding: 20px; }
         .city-selector-container { margin-bottom: 20px; }
@@ -45,13 +105,35 @@
         .prayer-table th { background-color: #f0f4f8; font-size: 1.1em; }
         .prayer-table td { font-size: 1.2em; font-weight: bold; direction: ltr; }
         .prayer-table tr:last-child td { border-bottom: none; }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 992px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text {
+                order: 2; /* Text comes after mockup on mobile */
+            }
+            .hero-mockup {
+                order: 1;
+                margin-bottom: 30px;
+            }
+            .hero-mockup img {
+                transform: rotate(0deg);
+                max-width: 70%;
+            }
+            .buttons-container {
+                justify-content: center;
+            }
+        }
         @media (max-width: 850px) {
             .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: #0b5394; padding: 10px 0; }
             .navbar-links.active { display: flex; }
             .navbar-links a, .language-switcher { margin: 10px 0; text-align: center; }
             .menu-toggle { display: block; }
-            h1 { font-size: 2em; }
-            p { font-size: 1em; }
+            .hero-text h1 { font-size: 2.2em; }
+            .hero-text p { font-size: 1.1em; }
             .digital-clock { font-size: 2.5em; }
             .prayer-table th, .prayer-table td { padding: 10px; }
         }
@@ -83,15 +165,24 @@
     </nav>
 
     <div class="container">
-        <img src="images/logo.jpg" alt="شعار تطبيق زاد بونو" class="logo">
-        <h1 data-translate="main_title">تطبيق Zad Bono</h1>
-        <p data-translate="main_subtitle">دليلك الذكي للعبادات اليومية. اكتشف تجربة إيمانية فريدة ومتكاملة بين يديك.</p>
         
-        <div class="buttons-container">
-            <a href="#" class="download-button" data-translate="btn_android">تحميل للأندرويد (APK)</a>
-            <a href="iphone.html" class="download-button secondary" data-translate="btn_iphone">تحميل للآيفون</a>
+        <!-- === NEW HERO SECTION === -->
+        <div class="hero-section">
+            <div class="hero-text">
+                <h1 data-translate="main_title">تطبيق Zad Bono</h1>
+                <p data-translate="main_subtitle">دليلك الذكي للعبادات اليومية. اكتشف تجربة إيمانية فريدة ومتكاملة بين يديك.</p>
+                <div class="buttons-container">
+                    <a href="#" class="download-button" data-translate="btn_android">تحميل للأندرويد (APK)</a>
+                    <a href="iphone.html" class="download-button secondary" data-translate="btn_iphone">تحميل للآيفون</a>
+                </div>
+            </div>
+            <div class="hero-mockup">
+                <!-- Make sure this image exists in your 'images' folder -->
+                <img src="images/app_mockup.png" alt="واجهة تطبيق زاد بونو">
+            </div>
         </div>
 
+        <!-- === PRAYER TIMES WIDGET (No changes here) === -->
         <div class="prayer-times-widget">
             <div class="date-bar" id="date-bar">--:--</div>
             <div class="widget-body">
@@ -158,6 +249,9 @@
     </div>
 
     <script>
+        // --- All your Javascript code remains the same ---
+        // --- I've copied it exactly as it was ---
+
         // --- Script for Mobile Menu ---
         const menuToggle = document.getElementById('menu-toggle');
         const navbarLinks = document.getElementById('navbar-links');
@@ -184,6 +278,12 @@
             selectedLangBtnFlag.src = `images/${lang}.png`;
             localStorage.setItem('language', lang);
             if(langMenu) langMenu.classList.remove('show');
+            // Re-align hero section based on language direction
+            const heroSection = document.querySelector('.hero-section');
+            if (heroSection) {
+                heroSection.style.textAlign = lang === 'ar' ? 'right' : 'left';
+                document.querySelector('.buttons-container').style.justifyContent = lang === 'ar' ? 'flex-start' : 'flex-start';
+            }
         }
         langToggleButton.addEventListener('click', (event) => { event.stopPropagation(); langMenu.classList.toggle('show'); });
         window.addEventListener('click', () => { if (langMenu.classList.contains('show')) { langMenu.classList.remove('show'); } });
@@ -201,7 +301,7 @@
 
         function getPrayerTimes(city, country) {
             if (clockInterval) clearInterval(clockInterval);
-            const url = `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city  )}&country=${encodeURIComponent(country)}&method=5`;
+            const url = `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city   )}&country=${encodeURIComponent(country)}&method=5`;
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
@@ -215,7 +315,6 @@
                         maghribTime.textContent = timings.Maghrib.split(' ')[0];
                         ishaTime.textContent = timings.Isha.split(' ')[0];
                         
-                        // *** MODIFICATION 1: Date Bar Formatting ***
                         const gregorianDate = `${date.gregorian.day} ${date.gregorian.month.en} ${date.gregorian.year}`;
                         const hijriDate = `${date.hijri.day} ${date.hijri.month.ar} ${date.hijri.year}`;
                         dateBar.innerHTML = `<span>${date.hijri.weekday.ar}</span> • <span>${gregorianDate}</span> • <span>${hijriDate}</span>`;
@@ -234,7 +333,6 @@
         function startClock(timezone) {
             clockInterval = setInterval(() => {
                 const now = new Date();
-                // *** MODIFICATION 2: Clock Formatting with AM/PM ***
                 const timeString = now.toLocaleTimeString('ar-EG', { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
                 digitalClock.textContent = timeString;
             }, 1000);
