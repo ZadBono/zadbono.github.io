@@ -11,7 +11,7 @@
 
     <style>
         body { font-family: 'Cairo', sans-serif; margin: 0; padding-top: 70px; background-color: #f0f4f8; color: #073763; text-align: center; transition: all 0.3s; }
-        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2    ); }
+        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2     ); }
         .navbar-brand { color: #ffd700; font-weight: bold; font-size: 1.5em; text-decoration: none; }
         .navbar-links { display: flex; align-items: center; }
         .navbar-links a { color: #ffffff; text-decoration: none; margin: 0 15px; font-size: 1.1em; }
@@ -64,8 +64,9 @@
         <div class="navbar-links" id="navbar-links">
             <a href="index.html" data-translate="nav_home">الرئيسية</a>
             <a href="features.html" data-translate="nav_features">شرح المميزات</a>
-            <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
             <!-- ===>>> [هذا هو السطر الجديد] <<<=== -->
+            <a href="install.html" data-translate="nav_install">التحميل والتثبيت</a>
+            <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
             <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
             <div class="language-switcher">
                 <button class="selected-lang" id="lang-toggle-btn">
@@ -167,11 +168,11 @@
 
         // --- Script for Language Switcher ---
         const translations = {
-            ar: { app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_contact: "اتصل بنا", nav_privacy: "سياسة الخصوصية", main_title: "تطبيق Zad Bono", main_subtitle: "دليلك الذكي للعبادات اليومية. اكتشف تجربة إيمانية فريدة ومتكاملة بين يديك.", btn_android: "تحميل للأندرويد (APK)", btn_iphone: "تحميل للآيفون", lang_name: "العربية", select_city: "اختر المدينة:", prayer_fajr: "الفجر", prayer_dhuhr: "الظهر", prayer_asr: "العصر", prayer_maghrib: "المغرب", prayer_isha: "العشاء" },
-            en: { app_name: "Zad Bono", nav_home: "Home", nav_features: "Features", nav_contact: "Contact Us", nav_privacy: "Privacy Policy", main_title: "Zad Bono App", main_subtitle: "Your smart guide for daily worship. Discover a unique and integrated faith experience in your hands.", btn_android: "Download for Android (APK)", btn_iphone: "Download for iPhone", lang_name: "English", select_city: "Select City:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha" },
-            de: { app_name: "Zad Bono", nav_home: "Startseite", nav_features: "Funktionen", nav_contact: "Kontakt", nav_privacy: "Datenschutz", main_title: "Zad Bono App", main_subtitle: "Ihr intelligenter Leitfaden für das tägliche Gebet. Entdecken Sie eine einzigartige und integrierte Glaubenserfahrung in Ihren Händen.", btn_android: "Download für Android (APK)", btn_iphone: "Download für iPhone", lang_name: "Deutsch", select_city: "Stadt wählen:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha" },
-            fr: { app_name: "Zad Bono", nav_home: "Accueil", nav_features: "Fonctionnalités", nav_contact: "Contactez-nous", nav_privacy: "Politique de confidentialité", main_title: "Application Zad Bono", main_subtitle: "Votre guide intelligent pour le culte quotidien. Découvrez une expérience de foi unique et intégrée entre vos mains.", btn_android: "Télécharger pour Android (APK)", btn_iphone: "Télécharger pour iPhone", lang_name: "Français", select_city: "Choisir la ville:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha" },
-            cn: { app_name: "Zad Bono", nav_home: "首页", nav_features: "功能", nav_contact: "联系我们", nav_privacy: "隐私政策", main_title: "Zad Bono 应用", main_subtitle: "您的日常敬拜智能指南。发现独特而完整的信仰体验。", btn_android: "下载安卓版 (APK)", btn_iphone: "下载iPhone版", lang_name: "中文", select_city: "选择城市:", prayer_fajr: "晨礼", prayer_dhuhr: "晌礼", prayer_asr: "晡礼", prayer_maghrib: "昏礼", prayer_isha: "宵礼" }
+            ar: { app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_install: "التحميل والتثبيت", nav_contact: "اتصل بنا", nav_privacy: "سياسة الخصوصية", main_title: "تطبيق Zad Bono", main_subtitle: "دليلك الذكي للعبادات اليومية. اكتشف تجربة إيمانية فريدة ومتكاملة بين يديك.", btn_android: "تحميل للأندرويد (APK)", btn_iphone: "تحميل للآيفون", lang_name: "العربية", select_city: "اختر المدينة:", prayer_fajr: "الفجر", prayer_dhuhr: "الظهر", prayer_asr: "العصر", prayer_maghrib: "المغرب", prayer_isha: "العشاء" },
+            en: { app_name: "Zad Bono", nav_home: "Home", nav_features: "Features", nav_install: "Installation", nav_contact: "Contact Us", nav_privacy: "Privacy Policy", main_title: "Zad Bono App", main_subtitle: "Your smart guide for daily worship. Discover a unique and integrated faith experience in your hands.", btn_android: "Download for Android (APK)", btn_iphone: "Download for iPhone", lang_name: "English", select_city: "Select City:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha" },
+            de: { app_name: "Zad Bono", nav_home: "Startseite", nav_features: "Funktionen", nav_install: "Installation", nav_contact: "Kontakt", nav_privacy: "Datenschutz", main_title: "Zad Bono App", main_subtitle: "Ihr intelligenter Leitfaden für das tägliche Gebet. Entdecken Sie eine einzigartige und integrierte Glaubenserfahrung in Ihren Händen.", btn_android: "Download für Android (APK)", btn_iphone: "Download für iPhone", lang_name: "Deutsch", select_city: "Stadt wählen:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha" },
+            fr: { app_name: "Zad Bono", nav_home: "Accueil", nav_features: "Fonctionnalités", nav_install: "Installation", nav_contact: "Contactez-nous", nav_privacy: "Politique de confidentialité", main_title: "Application Zad Bono", main_subtitle: "Votre guide intelligent pour le culte quotidien. Découvrez une expérience de foi unique et intégrée entre vos mains.", btn_android: "Télécharger pour Android (APK)", btn_iphone: "Télécharger pour iPhone", lang_name: "Français", select_city: "Choisir la ville:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha" },
+            cn: { app_name: "Zad Bono", nav_home: "首页", nav_features: "功能", nav_install: "安装", nav_contact: "联系我们", nav_privacy: "隐私政策", main_title: "Zad Bono 应用", main_subtitle: "您的日常敬拜智能指南。发现独特而完整的信仰体验。", btn_android: "下载安卓版 (APK)", btn_iphone: "下载iPhone版", lang_name: "中文", select_city: "选择城市:", prayer_fajr: "晨礼", prayer_dhuhr: "晌礼", prayer_asr: "晡礼", prayer_maghrib: "昏礼", prayer_isha: "宵礼" }
         };
         const langToggleButton = document.getElementById('lang-toggle-btn');
         const langMenu = document.getElementById('lang-menu');
@@ -203,7 +204,7 @@
 
         function getPrayerTimes(city, country) {
             if (clockInterval) clearInterval(clockInterval);
-            const url = `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city   )}&country=${encodeURIComponent(country)}&method=5`;
+            const url = `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city    )}&country=${encodeURIComponent(country)}&method=5`;
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
