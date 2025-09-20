@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zad Bono | التحميل والتثبيت</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+
+    <style>
+        /* === أنماط عامة مأخوذة من صفحتك الرئيسية === */
+        body { font-family: 'Cairo', sans-serif; margin: 0; padding-top: 70px; background-color: #f0f4f8; color: #073763; text-align: center; transition: all 0.3s; }
+        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2 ); }
+        .navbar-brand { color: #ffd700; font-weight: bold; font-size: 1.5em; text-decoration: none; }
+        .navbar-links { display: flex; align-items: center; }
+        .navbar-links a { color: #ffffff; text-decoration: none; margin: 0 15px; font-size: 1.1em; }
+        .navbar-links a:hover, .navbar-links a.active { color: #ffd700; } /* تمييز الصفحة النشطة */
+        .menu-toggle { display: none; font-size: 30px; color: white; background: none; border: none; cursor: pointer; }
+        .language-switcher { position: relative; }
+        .language-switcher .selected-lang { background-color: transparent; border: none; color: white; cursor: pointer; display: flex; align-items: center; font-family: 'Cairo', sans-serif; font-size: 1.1em; padding: 5px; }
+        .language-switcher .selected-lang img { width: 24px; height: 24px; border-radius: 50%; margin-left: 8px; }
+        .language-switcher .lang-menu { display: none; position: absolute; top: 120%; left: 50%; transform: translateX(-50%); background-color: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); list-style: none; padding: 5px; margin: 0; width: 180px; z-index: 1001; }
+        .language-switcher .lang-menu.show { display: block; }
+        .language-switcher .lang-menu li a { color: #073763; text-decoration: none; display: flex; align-items: center; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
+        .language-switcher .lang-menu li a:hover { background-color: #e0e8f0; }
+        .language-switcher .lang-menu li img { width: 24px; height: 24px; border-radius: 50%; margin-left: 10px; }
+        .buttons-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 50px; }
+        .download-button { background-color: #ffd700; color: #073763; padding: 15px 30px; font-size: 1.2em; font-weight: bold; text-decoration: none; border-radius: 50px; transition: transform 0.2s; display: inline-block; }
+        .download-button.secondary { background-color: #ffffff; border: 2px solid #0b5394; }
+        .download-button:hover { transform: scale(1.05); }
+
+        /* === أنماط خاصة بصفحة التحميل === */
+        .page-container { max-width: 900px; margin: 40px auto; padding: 20px; }
+        .page-title { color: #0b5394; font-size: 2.8em; margin-bottom: 40px; }
+        .steps-section { background-color: #ffffff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); padding: 40px; text-align: right; /* محاذاة لليمين للعربية */ }
+        .steps-section h2 { font-size: 2em; color: #0b5394; margin-bottom: 30px; text-align: center; }
+        .step { display: flex; align-items: flex-start; gap: 25px; margin-bottom: 40px; }
+        .step-icon { font-size: 2.5em; color: #ffd700; padding-top: 5px; }
+        .step-content h3 { font-size: 1.5em; margin-top: 0; margin-bottom: 10px; color: #073763; }
+        .step-content p { font-size: 1.1em; line-height: 1.8; margin-bottom: 15px; }
+        .step-content .warning-box { background-color: #fffbe6; border: 1px solid #ffe58f; border-radius: 8px; padding: 15px; }
+        .step-content .warning-box p { margin: 0; font-size: 1em; }
+        .step-image { max-width: 100%; border-radius: 8px; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        hr { border: 0; height: 1px; background-color: #e0e8f0; margin: 50px 0; }
+
+        @media (max-width: 850px) {
+            .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: #0b5394; padding: 10px 0; }
+            .navbar-links.active { display: flex; }
+            .navbar-links a, .language-switcher { margin: 10px 0; text-align: center; }
+            .menu-toggle { display: block; }
+            .page-title { font-size: 2.2em; }
+            .steps-section h2 { font-size: 1.8em; }
+            .step { flex-direction: column; align-items: center; text-align: center; }
+            .step-content { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand" data-translate="app_name">Zad Bono</a>
+        <div class="navbar-links" id="navbar-links">
+            <a href="index.html" data-translate="nav_home">الرئيسية</a>
+            <a href="features.html" data-translate="nav_features">شرح المميزات</a>
+            <a href="install.html" class="active" data-translate="nav_install">التحميل والتثبيت</a>
+            <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+            <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
+            <div class="language-switcher">
+                <button class="selected-lang" id="lang-toggle-btn">
+                    <span id="lang-text">العربية</span>
+                    <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
+                </button>
+                <ul class="lang-menu" id="lang-menu">
+                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم مصر"> العربية</a></li>
+                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم أمريكا"> English</a></li>
+                </ul>
+            </div>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+    </nav>
+
+    <div class="page-container">
+        <h1 class="page-title" data-translate="install_title">تحميل وتثبيت تطبيق Zad Bono</h1>
+        
+        <div class="buttons-container">
+            <!-- ضع هنا رابط ملف الـ APK الخاص بك -->
+            <a href="path/to/your/app.apk" class="download-button" data-translate="btn_android">تحميل للأندرويد (APK)</a>
+            <a href="iphone.html" class="download-button secondary" data-translate="btn_iphone">تحميل للآيفون</a>
+        </div>
+
+        <div class="steps-section">
+            
+            <!-- الخطوة الأولى: التحميل -->
+            <div class="step">
+                <i class="fas fa-cloud-download-alt step-icon"></i>
+                <div class="step-content">
+                    <h3 data-translate="step1_title">الخطوة 1: تحميل الملف</h3>
+                    <p data-translate="step1_desc">اضغط على زر "تحميل للأندرويد". قد تظهر لك رسالة تحذير بأن "الملف قد يكون ضاراً". هذا إجراء روتيني من المتصفح لأن التطبيق ليس من متجر جوجل. لا تقلق، تطبيقنا آمن تماماً.</p>
+                    <div class="warning-box">
+                        <p><i class="fas fa-exclamation-triangle"></i> <strong data-translate="step1_warn_title">لا تقلق!</strong> <span data-translate="step1_warn_text">اختر "تنزيل على أي حال" للمتابعة.</span></p>
+                    </div>
+                    <!-- يمكنك إضافة صورة توضيحية هنا -->
+                    <!-- <img src="images/install-step1.png" alt="رسالة تحذير التحميل" class="step-image"> -->
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- الخطوة الثانية: فتح الملف -->
+            <div class="step">
+                <i class="fas fa-folder-open step-icon"></i>
+                <div class="step-content">
+                    <h3 data-translate="step2_title">الخطوة 2: فتح الملف بعد التنزيل</h3>
+                    <p data-translate="step2_desc">بعد اكتمال التنزيل، افتح شريط الإشعارات واضغط على الملف الذي تم تنزيله، أو ابحث عنه في مجلد "التنزيلات" (Downloads) في مدير الملفات بهاتفك.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- الخطوة الثالثة: السماح بالتثبيت -->
+            <div class="step">
+                <i class="fas fa-shield-alt step-icon"></i>
+                <div class="step-content">
+                    <h3 data-translate="step3_title">الخطوة 3: السماح بتثبيت التطبيقات غير المعروفة</h3>
+                    <p data-translate="step3_desc">لأمانك، يمنع هاتفك تثبيت التطبيقات من خارج متجر جوجل بشكل افتراضي. ستظهر لك رسالة تطلب منك السماح بذلك. اضغط على "الإعدادات" (Settings).</p>
+                    <p data-translate="step3_desc2">في الشاشة التالية، قم بتفعيل خيار "السماح من هذا المصدر" (Allow from this source). هذا الإجراء آمن ومؤقت لتثبيت تطبيقنا فقط.</p>
+                    <!-- يمكنك إضافة صورة توضيحية هنا -->
+                    <!-- <img src="images/install-step3.png" alt="شاشة السماح بالتثبيت" class="step-image"> -->
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- الخطوة الرابعة: التثبيت النهائي -->
+            <div class="step">
+                <i class="fas fa-check-circle step-icon"></i>
+                <div class="step-content">
+                    <h3 data-translate="step4_title">الخطوة 4: التثبيت</h3>
+                    <p data-translate="step4_desc">بعد السماح للمصدر، ارجع للخلف وستظهر لك شاشة التثبيت. اضغط على "تثبيت" (Install) وانتظر قليلاً. مبروك! تم تثبيت التطبيق بنجاح على هاتفك.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- لا يوجد فوتر في هذه الصفحة لتركيز المستخدم على المحتوى -->
+
+    <script>
+        // --- Script for Mobile Menu ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarLinks = document.getElementById('navbar-links');
+        menuToggle.addEventListener('click', () => { navbarLinks.classList.toggle('active'); });
+
+        // --- Script for Language Switcher ---
+        const translations = {
+            ar: { 
+                app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_install: "التحميل والتثبيت", nav_contact: "اتصل بنا", nav_privacy: "سياسة الخصوصية", 
+                install_title: "تحميل وتثبيت تطبيق Zad Bono", btn_android: "تحميل للأندرويد (APK)", btn_iphone: "تحميل للآيفون",
+                step1_title: "الخطوة 1: تحميل الملف", step1_desc: "اضغط على زر \"تحميل للأندرويد\". قد تظهر لك رسالة تحذير بأن \"الملف قد يكون ضاراً\". هذا إجراء روتيني من المتصفح لأن التطبيق ليس من متجر جوجل. لا تقلق، تطبيقنا آمن تماماً.",
+                step1_warn_title: "لا تقلق!", step1_warn_text: "اختر \"تنزيل على أي حال\" للمتابعة.",
+                step2_title: "الخطوة 2: فتح الملف بعد التنزيل", step2_desc: "بعد اكتمال التنزيل، افتح شريط الإشعارات واضغط على الملف الذي تم تنزيله، أو ابحث عنه في مجلد \"التنزيلات\" (Downloads) في مدير الملفات بهاتفك.",
+                step3_title: "الخطوة 3: السماح بتثبيت التطبيقات غير المعروفة", step3_desc: "لأمانك، يمنع هاتفك تثبيت التطبيقات من خارج متجر جوجل بشكل افتراضي. ستظهر لك رسالة تطلب منك السماح بذلك. اضغط على \"الإعدادات\" (Settings).", step3_desc2: "في الشاشة التالية، قم بتفعيل خيار \"السماح من هذا المصدر\" (Allow from this source). هذا الإجراء آمن ومؤقت لتثبيت تطبيقنا فقط.",
+                step4_title: "الخطوة 4: التثبيت", step4_desc: "بعد السماح للمصدر، ارجع للخلف وستظهر لك شاشة التثبيت. اضغط على \"تثبيت\" (Install) وانتظر قليلاً. مبروك! تم تثبيت التطبيق بنجاح على هاتفك."
+            },
+            en: { 
+                app_name: "Zad Bono", nav_home: "Home", nav_features: "Features", nav_install: "Installation", nav_contact: "Contact Us", nav_privacy: "Privacy Policy",
+                install_title: "Download & Install Zad Bono App", btn_android: "Download for Android (APK)", btn_iphone: "Download for iPhone",
+                step1_title: "Step 1: Download the File", step1_desc: "Click the \"Download for Android\" button. You might see a warning that \"This file might be harmful.\" This is a standard browser message for apps outside the Google Play Store. Don't worry, our app is completely safe.",
+                step1_warn_title: "Don't worry!", step1_warn_text: "Choose \"Download anyway\" to proceed.",
+                step2_title: "Step 2: Open the File", step2_desc: "Once the download is complete, open your notification bar and tap on the downloaded file, or find it in the \"Downloads\" folder in your phone's file manager.",
+                step3_title: "Step 3: Allow Unknown Apps", step3_desc: "For your security, your phone blocks installations from unknown sources by default. You will see a prompt asking for permission. Tap on \"Settings\".", step3_desc2: "On the next screen, enable the \"Allow from this source\" option. This is a safe, one-time action just for installing our app.",
+                step4_title: "Step 4: Install", step4_desc: "After granting permission, go back, and the installation screen will appear. Tap \"Install\" and wait a moment. Congratulations! The app is now successfully installed on your phone."
+            }
+        };
+        // ... (بقية كود الجافاسكريبت الخاص بالترجمة والقائمة)
+        const langToggleButton = document.getElementById('lang-toggle-btn');
+        const langMenu = document.getElementById('lang-menu');
+        const selectedLangBtnText = document.getElementById('lang-text');
+        const selectedLangBtnFlag = document.getElementById('lang-flag');
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(el => { const key = el.getAttribute('data-translate'); if (translations[lang] && translations[lang][key]) { el.textContent = translations[lang][key]; } });
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            if(selectedLangBtnText) selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
+            if(selectedLangBtnFlag) selectedLangBtnFlag.src = `images/${lang}.png`;
+            localStorage.setItem('language', lang);
+            if(langMenu) langMenu.classList.remove('show');
+        }
+        if(langToggleButton) {
+            langToggleButton.addEventListener('click', (event) => { event.stopPropagation(); langMenu.classList.toggle('show'); });
+        }
+        window.addEventListener('click', () => { if (langMenu && langMenu.classList.contains('show')) { langMenu.classList.remove('show'); } });
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'ar';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>
