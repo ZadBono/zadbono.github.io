@@ -41,7 +41,7 @@
         .note { font-size: 0.9em; color: #666; background-color: #eef2f5; padding: 10px; border-radius: 8px; border-right: 4px solid #ffd700; }
         html[dir="ltr"] .note { border-right: none; border-left: 4px solid #ffd700; }
 
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
             .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: #0b5394; padding: 10px 0; }
             .navbar-links.active { display: flex; }
             .navbar-links a, .language-switcher { margin: 10px 0; text-align: center; }
@@ -297,4 +297,54 @@
             <img src="images/ic_prophet_stories.png" alt="أيقونة قصص الأنبياء" class="feature-icon">
             <div class="feature-content">
                 <h2 data-translate="f_stories_title">قصص الأنبياء</h2>
-                <p data-translate="f_stories_p">رحلة عبر الزمن مع سير الأنبياء والمرسلين، من بداية الخلق إلى خاتم المرسلين سيدنا محمد ﷺ. تُعرض القصص بأسلوب شيق ومترابط يأخذك
+                <p data-translate="f_stories_p">رحلة عبر الزمن مع سير الأنبياء والمرسلين، من بداية الخلق إلى خاتم المرسلين سيدنا محمد ﷺ. تُعرض القصص بأسلوب شيق ومترابط يأخذك في رحلة إيمانية ملهمة.</p>
+                <ul>
+                    <li data-translate="f_stories_l1"><strong>موسوعة شاملة:</strong> تصفح قائمة بأسماء الأنبياء، واختر القصة التي تود قراءتها.</li>
+                    <li data-translate="f_stories_l2"><strong>سرد متسلسل:</strong> كل قصة تبدأ بربطها بنهاية قصة النبي الذي سبقها لتكتمل الصورة.</li>
+                    <li data-translate="f_stories_l3"><strong>تفاصيل شاملة:</strong> تغطي كل قصة حياة النبي من مولده إلى وفاته، مع أبرز المحطات والمواعظ.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- === بطاقة أسماء الله الحسنى === -->
+        <div class="feature-card">
+            <img src="images/ic_allah_names.png" alt="أيقونة أسماء الله الحسنى" class="feature-icon">
+            <div class="feature-content">
+                <h2 data-translate="f_names_title">أسماء الله الحسنى</h2>
+                <p data-translate="f_names_p">تعرّف على الله سبحانه وتعالى وتدبّر في عظمته من خلال أسمائه الحسنى. تصميم تفاعلي يساعدك على فهم وحفظ معاني الأسماء الـ 99.</p>
+                <ul>
+                    <li data-translate="f_names_l1"><strong>عرض تفاعلي:</strong> 99 بطاقة مصممة بشكل جذاب، كل بطاقة تحمل اسماً من أسماء الله الحسنى.</li>
+                    <li data-translate="f_names_l2"><strong>شرح المعنى:</strong> اضغط على أي بطاقة ليظهر لك شرح مفصل لمعنى هذا الاسم العظيم.</li>
+                    <li data-translate="f_names_l3"><strong>تجربة إيمانية:</strong> وسيلة رائعة لتعميق صلتك بالله من خلال معرفة أسمائه وصفاته.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- === بطاقة فتاوى وأحكام === -->
+        <div class="feature-card">
+            <img src="images/ic_fatwa.png" alt="أيقونة فتاوى وأحكام" class="feature-icon">
+            <div class="feature-content">
+                <h2 data-translate="f_fatwa_title">فتاوى وأحكام</h2>
+                <p data-translate="f_fatwa_p">مرجعك الموثوق للإجابة على استفساراتك الفقهية والحياتية. يجمع لك التطبيق آلاف الفتاوى من مصادر رسمية ومعتمدة مثل دار الإفتاء المصرية.</p>
+                <ul>
+                    <li data-translate="f_fatwa_l1"><strong>أقسام متخصصة:</strong> تصفح الفتاوى بسهولة عبر أقسام منظمة (فقهية، أسرية، صيام، حج، طهارة، فتاوى معاصرة).</li>
+                    <li data-translate="f_fatwa_l2"><strong>موثوقية عالية:</strong> كل فتوى تُعرض بنص السؤال الأصلي وإجابة العلماء المعتمدين عليه.</li>
+                    <li data-translate="f_fatwa_l3"><strong>مرجع شامل:</strong> إجابات شافية لأغلب ما قد يطرأ على المسلم من أسئلة في عباداته ومعاملاته.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- Script for Mobile Menu ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarLinks = document.getElementById('navbar-links');
+        menuToggle.addEventListener('click', () => { navbarLinks.classList.toggle('active'); });
+
+        // --- Script for Language Switcher ---
+        const translations = {
+            ar: {
+                app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_install: "التحميل والتثبيت", nav_contact: "اتصل بنا", nav_privacy: "سياسة الخصوصية", lang_name: "العربية",
+                features_main_title: "مميزات تطبيق Zad Bono",
+                f_notifications_title: "منظومة الإشعارات التفاعلية", f_notifications_p: "اجعل يومك كله ذكراً لله مع نظام إشعارات ذكي وتفاعلي لم يسبق له مثيل. لن يمر وقت طويل دون أن نذكرك بالله، بل ونعينك على أداء العبادات في وقتها.", f_notifications_l1: "<strong>أذكار صوتية متجددة:</strong> استقبل إشعارات صوتية بأذكار متنوعة (استغفار، صلاة على النبي، تهليل) تجعل لسانك رطباً بذكر الله. يمكنك التحكم في تكرارها (كل ربع ساعة، ساعة، أو أكثر) أو إيقافها.", f_notifications_l2: "<strong>تنبيهات العبادات اليومية:</strong> إشعار صوتي لأ
