@@ -47,6 +47,10 @@
         .step-image { max-width: 100%; border-radius: 8px; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         hr { border: 0; height: 1px; background-color: #e0e8f0; margin: 50px 0; }
 
+        /* For LTR languages */
+        html[dir="ltr"] .steps-section { text-align: left; }
+        html[dir="ltr"] .step-icon { order: -1; }
+
         @media (max-width: 850px) {
             .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: #0b5394; padding: 10px 0; }
             .navbar-links.active { display: flex; }
@@ -56,6 +60,7 @@
             .steps-section h2 { font-size: 1.8em; }
             .step { flex-direction: column; align-items: center; text-align: center; }
             .step-content { text-align: center; }
+            html[dir="ltr"] .step-icon { order: 0; }
         }
     </style>
 </head>
@@ -77,6 +82,9 @@
                 <ul class="lang-menu" id="lang-menu">
                     <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم مصر"> العربية</a></li>
                     <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم أمريكا"> English</a></li>
+                    <li><a href="#" onclick="setLanguage('de')"><img src="images/de.png" alt="علم ألمانيا"> Deutsch</a></li>
+                    <li><a href="#" onclick="setLanguage('fr')"><img src="images/fr.png" alt="علم فرنسا"> Français</a></li>
+                    <li><a href="#" onclick="setLanguage('cn')"><img src="images/cn.png" alt="علم الصين"> 中文</a></li>
                 </ul>
             </div>
         </div>
@@ -103,8 +111,6 @@
                     <div class="warning-box">
                         <p><i class="fas fa-exclamation-triangle"></i> <strong data-translate="step1_warn_title">لا تقلق!</strong> <span data-translate="step1_warn_text">اختر "تنزيل على أي حال" للمتابعة.</span></p>
                     </div>
-                    <!-- يمكنك إضافة صورة توضيحية هنا -->
-                    <!-- <img src="images/install-step1.png" alt="رسالة تحذير التحميل" class="step-image"> -->
                 </div>
             </div>
 
@@ -128,8 +134,6 @@
                     <h3 data-translate="step3_title">الخطوة 3: السماح بتثبيت التطبيقات غير المعروفة</h3>
                     <p data-translate="step3_desc">لأمانك، يمنع هاتفك تثبيت التطبيقات من خارج متجر جوجل بشكل افتراضي. ستظهر لك رسالة تطلب منك السماح بذلك. اضغط على "الإعدادات" (Settings).</p>
                     <p data-translate="step3_desc2">في الشاشة التالية، قم بتفعيل خيار "السماح من هذا المصدر" (Allow from this source). هذا الإجراء آمن ومؤقت لتثبيت تطبيقنا فقط.</p>
-                    <!-- يمكنك إضافة صورة توضيحية هنا -->
-                    <!-- <img src="images/install-step3.png" alt="شاشة السماح بالتثبيت" class="step-image"> -->
                 </div>
             </div>
 
@@ -147,8 +151,6 @@
         </div>
     </div>
 
-    <!-- لا يوجد فوتر في هذه الصفحة لتركيز المستخدم على المحتوى -->
-
     <script>
         // --- Script for Mobile Menu ---
         const menuToggle = document.getElementById('menu-toggle');
@@ -157,26 +159,13 @@
 
         // --- Script for Language Switcher ---
         const translations = {
-            ar: { 
-                app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_install: "التحميل والتثبيت", nav_contact: "اتصل بنا", nav_privacy: "سياسة الخصوصية", 
-                install_title: "تحميل وتثبيت تطبيق Zad Bono", btn_android: "تحميل للأندرويد (APK)", btn_iphone: "تحميل للآيفون",
-                step1_title: "الخطوة 1: تحميل الملف", step1_desc: "اضغط على زر \"تحميل للأندرويد\". قد تظهر لك رسالة تحذير بأن \"الملف قد يكون ضاراً\". هذا إجراء روتيني من المتصفح لأن التطبيق ليس من متجر جوجل. لا تقلق، تطبيقنا آمن تماماً.",
-                step1_warn_title: "لا تقلق!", step1_warn_text: "اختر \"تنزيل على أي حال\" للمتابعة.",
-                step2_title: "الخطوة 2: فتح الملف بعد التنزيل", step2_desc: "بعد اكتمال التنزيل، افتح شريط الإشعارات واضغط على الملف الذي تم تنزيله، أو ابحث عنه في مجلد \"التنزيلات\" (Downloads) في مدير الملفات بهاتفك.",
-                step3_title: "الخطوة 3: السماح بتثبيت التطبيقات غير المعروفة", step3_desc: "لأمانك، يمنع هاتفك تثبيت التطبيقات من خارج متجر جوجل بشكل افتراضي. ستظهر لك رسالة تطلب منك السماح بذلك. اضغط على \"الإعدادات\" (Settings).", step3_desc2: "في الشاشة التالية، قم بتفعيل خيار \"السماح من هذا المصدر\" (Allow from this source). هذا الإجراء آمن ومؤقت لتثبيت تطبيقنا فقط.",
-                step4_title: "الخطوة 4: التثبيت", step4_desc: "بعد السماح للمصدر، ارجع للخلف وستظهر لك شاشة التثبيت. اضغط على \"تثبيت\" (Install) وانتظر قليلاً. مبروك! تم تثبيت التطبيق بنجاح على هاتفك."
-            },
-            en: { 
-                app_name: "Zad Bono", nav_home: "Home", nav_features: "Features", nav_install: "Installation", nav_contact: "Contact Us", nav_privacy: "Privacy Policy",
-                install_title: "Download & Install Zad Bono App", btn_android: "Download for Android (APK)", btn_iphone: "Download for iPhone",
-                step1_title: "Step 1: Download the File", step1_desc: "Click the \"Download for Android\" button. You might see a warning that \"This file might be harmful.\" This is a standard browser message for apps outside the Google Play Store. Don't worry, our app is completely safe.",
-                step1_warn_title: "Don't worry!", step1_warn_text: "Choose \"Download anyway\" to proceed.",
-                step2_title: "Step 2: Open the File", step2_desc: "Once the download is complete, open your notification bar and tap on the downloaded file, or find it in the \"Downloads\" folder in your phone's file manager.",
-                step3_title: "Step 3: Allow Unknown Apps", step3_desc: "For your security, your phone blocks installations from unknown sources by default. You will see a prompt asking for permission. Tap on \"Settings\".", step3_desc2: "On the next screen, enable the \"Allow from this source\" option. This is a safe, one-time action just for installing our app.",
-                step4_title: "Step 4: Install", step4_desc: "After granting permission, go back, and the installation screen will appear. Tap \"Install\" and wait a moment. Congratulations! The app is now successfully installed on your phone."
-            }
+            ar: { app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_install: "التحميل والتثبيت", nav_contact: "اتصل بنا", nav_privacy: "سياسة الخصوصية", lang_name: "العربية", install_title: "تحميل وتثبيت تطبيق Zad Bono", btn_android: "تحميل للأندرويد (APK)", btn_iphone: "تحميل للآيفون", step1_title: "الخطوة 1: تحميل الملف", step1_desc: "اضغط على زر \"تحميل للأندرويد\". قد تظهر لك رسالة تحذير بأن \"الملف قد يكون ضاراً\". هذا إجراء روتيني من المتصفح لأن التطبيق ليس من متجر جوجل. لا تقلق، تطبيقنا آمن تماماً.", step1_warn_title: "لا تقلق!", step1_warn_text: "اختر \"تنزيل على أي حال\" للمتابعة.", step2_title: "الخطوة 2: فتح الملف بعد التنزيل", step2_desc: "بعد اكتمال التنزيل، افتح شريط الإشعارات واضغط على الملف الذي تم تنزيله، أو ابحث عنه في مجلد \"التنزيلات\" (Downloads) في مدير الملفات بهاتفك.", step3_title: "الخطوة 3: السماح بتثبيت التطبيقات غير المعروفة", step3_desc: "لأمانك، يمنع هاتفك تثبيت التطبيقات من خارج متجر جوجل بشكل افتراضي. ستظهر لك رسالة تطلب منك السماح بذلك. اضغط على \"الإعدادات\" (Settings).", step3_desc2: "في الشاشة التالية، قم بتفعيل خيار \"السماح من هذا المصدر\" (Allow from this source). هذا الإجراء آمن ومؤقت لتثبيت تطبيقنا فقط.", step4_title: "الخطوة 4: التثبيت", step4_desc: "بعد السماح للمصدر، ارجع للخلف وستظهر لك شاشة التثبيت. اضغط على \"تثبيت\" (Install) وانتظر قليلاً. مبروك! تم تثبيت التطبيق بنجاح على هاتفك." },
+            en: { app_name: "Zad Bono", nav_home: "Home", nav_features: "Features", nav_install: "Installation", nav_contact: "Contact Us", nav_privacy: "Privacy Policy", lang_name: "English", install_title: "Download & Install Zad Bono App", btn_android: "Download for Android (APK)", btn_iphone: "Download for iPhone", step1_title: "Step 1: Download the File", step1_desc: "Click the \"Download for Android\" button. You might see a warning that \"This file might be harmful.\" This is a standard browser message for apps outside the Google Play Store. Don't worry, our app is completely safe.", step1_warn_title: "Don't worry!", step1_warn_text: "Choose \"Download anyway\" to proceed.", step2_title: "Step 2: Open the File", step2_desc: "Once the download is complete, open your notification bar and tap on the downloaded file, or find it in the \"Downloads\" folder in your phone's file manager.", step3_title: "Step 3: Allow Unknown Apps", step3_desc: "For your security, your phone blocks installations from unknown sources by default. You will see a prompt asking for permission. Tap on \"Settings\".", step3_desc2: "On the next screen, enable the \"Allow from this source\" option. This is a safe, one-time action just for installing our app.", step4_title: "Step 4: Install", step4_desc: "After granting permission, go back, and the installation screen will appear. Tap \"Install\" and wait a moment. Congratulations! The app is now successfully installed on your phone." },
+            de: { app_name: "Zad Bono", nav_home: "Startseite", nav_features: "Funktionen", nav_install: "Installation", nav_contact: "Kontakt", nav_privacy: "Datenschutz", lang_name: "Deutsch", install_title: "Zad Bono App herunterladen & installieren", btn_android: "Download für Android (APK)", btn_iphone: "Download für iPhone", step1_title: "Schritt 1: Datei herunterladen", step1_desc: "Klicken Sie auf \"Download für Android\". Möglicherweise wird eine Warnung angezeigt, dass \"diese Datei schädlich sein könnte\". Dies ist eine Standardmeldung des Browsers. Keine Sorge, unsere App ist sicher.", step1_warn_title: "Keine Sorge!", step1_warn_text: "Wählen Sie \"Trotzdem herunterladen\".", step2_title: "Schritt 2: Datei öffnen", step2_desc: "Öffnen Sie nach dem Download die Benachrichtigungsleiste und tippen Sie auf die Datei, oder finden Sie sie im \"Downloads\"-Ordner.", step3_title: "Schritt 3: Unbekannte Apps zulassen", step3_desc: "Ihr Telefon blockiert standardmäßig Installationen aus unbekannten Quellen. Tippen Sie in der angezeigten Meldung auf \"Einstellungen\".", step3_desc2: "Aktivieren Sie im nächsten Bildschirm die Option \"Aus dieser Quelle zulassen\". Dies ist eine sichere, einmalige Aktion.", step4_title: "Schritt 4: Installieren", step4_desc: "Gehen Sie zurück und tippen Sie auf \"Installieren\". Warten Sie einen Moment. Herzlichen Glückwunsch! Die App ist jetzt installiert." },
+            fr: { app_name: "Zad Bono", nav_home: "Accueil", nav_features: "Fonctionnalités", nav_install: "Installation", nav_contact: "Contactez-nous", nav_privacy: "Politique de confidentialité", lang_name: "Français", install_title: "Télécharger & Installer l'App Zad Bono", btn_android: "Télécharger pour Android (APK)", btn_iphone: "Télécharger pour iPhone", step1_title: "Étape 1: Télécharger le fichier", step1_desc: "Cliquez sur \"Télécharger pour Android\". Un avertissement peut apparaître. C'est un message standard du navigateur. Notre application est totalement sûre.", step1_warn_title: "Ne vous inquiétez pas!", step1_warn_text: "Choisissez \"Télécharger quand même\".", step2_title: "Étape 2: Ouvrir le fichier", step2_desc: "Une fois le téléchargement terminé, ouvrez la barre de notification et appuyez sur le fichier, ou trouvez-le dans le dossier \"Téléchargements\".", step3_title: "Étape 3: Autoriser les applications inconnues", step3_desc: "Votre téléphone bloque les installations de sources inconnues. Appuyez sur \"Paramètres\" dans l'invite.", step3_desc2: "Sur l'écran suivant, activez l'option \"Autoriser depuis cette source\". C'est une action sûre et unique.", step4_title: "Étape 4: Installer", step4_desc: "Revenez en arrière et appuyez sur \"Installer\". Attendez un instant. Félicitations! L'application est maintenant installée." },
+            cn: { app_name: "Zad Bono", nav_home: "首页", nav_features: "功能", nav_install: "安装", nav_contact: "联系我们", nav_privacy: "隐私政策", lang_name: "中文", install_title: "下载并安装 Zad Bono 应用", btn_android: "下载安卓版 (APK)", btn_iphone: "下载iPhone版", step1_title: "第1步：下载文件", step1_desc: "点击“下载安卓版”按钮。您可能会看到一条警告，提示“此文件可能有害”。这是针对非应用商店应用的浏览器标准消息。别担心，我们的应用是完全安全的。", step1_warn_title: "别担心！", step1_warn_text: "选择“仍然下载”以继续。", step2_title: "第2步：打开文件", step2_desc: "下载完成后，打开通知栏并点击下载的文件，或者在手机的文件管理器中的“下载”文件夹中找到它。", step3_title: "第3步：允许未知应用", step3_desc: "为了您的安全，您的手机默认阻止来自未知来源的安装。您会看到一个请求权限的提示。点击“设置”。", step3_desc2: "在下一个屏幕上，启用“允许来自此来源”选项。这是一个安全的一次性操作，仅用于安装我们的应用。", step4_title: "第4步：安装", step4_desc: "授予权限后，返回，安装屏幕将会出现。点击“安装”并稍等片刻。恭喜！应用现已成功安装在您的手机上。" }
         };
-        // ... (بقية كود الجافاسكريبت الخاص بالترجمة والقائمة)
+        
         const langToggleButton = document.getElementById('lang-toggle-btn');
         const langMenu = document.getElementById('lang-menu');
         const selectedLangBtnText = document.getElementById('lang-text');
@@ -186,7 +175,7 @@
             elements.forEach(el => { const key = el.getAttribute('data-translate'); if (translations[lang] && translations[lang][key]) { el.textContent = translations[lang][key]; } });
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            if(selectedLangBtnText) selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
+            if(selectedLangBtnText && translations[lang]) selectedLangBtnText.textContent = translations[lang].lang_name;
             if(selectedLangBtnFlag) selectedLangBtnFlag.src = `images/${lang}.png`;
             localStorage.setItem('language', lang);
             if(langMenu) langMenu.classList.remove('show');
