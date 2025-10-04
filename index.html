@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <style>
@@ -20,7 +19,6 @@
             --bg-light: #f0f4f8;
             --bg-white: #ffffff;
         }
-
         body { font-family: 'Cairo', sans-serif; margin: 0; padding-top: 70px; background-color: var(--bg-light ); color: var(--text-color); text-align: center; transition: all 0.3s; }
         
         /* --- Navbar Styles --- */
@@ -49,48 +47,14 @@
         .hero-section { padding-top: 60px; }
         .logo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid var(--secondary-color); box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
         .hero-section h1 { color: var(--primary-color); font-size: 2.8em; margin-bottom: 15px; }
-        .hero-section p { font-size: 1.3em; line-height: 1.7; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .buttons-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 50px; }
+        .hero-section p.subtitle { font-size: 1.3em; line-height: 1.7; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .buttons-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 50px 0; }
         .download-button { background-color: var(--secondary-color); color: var(--text-color); padding: 15px 30px; font-size: 1.2em; font-weight: bold; text-decoration: none; border-radius: 50px; transition: transform 0.2s; display: inline-block; }
         .download-button.secondary { background-color: var(--bg-white); border: 2px solid var(--primary-color); }
         .download-button:hover { transform: scale(1.05); }
 
-        /* --- Features Section --- */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; text-align: right; }
-        .feature-card { background: var(--bg-white); padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
-        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
-        .feature-card .icon { font-size: 3em; color: var(--secondary-color); margin-bottom: 20px; }
-        .feature-card h3 { font-size: 1.5em; color: var(--primary-color); margin-bottom: 10px; }
-        .feature-card p { font-size: 1em; line-height: 1.8; }
-
-        /* --- Stats Section --- */
-        .stats-section { background-color: var(--primary-color); color: white; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
-        .stat-item .icon { font-size: 2.5em; margin-bottom: 10px; color: var(--secondary-color); }
-        .stat-item .number { font-size: 2.8em; font-weight: bold; }
-        .stat-item .text { font-size: 1.1em; }
-
-        /* --- Testimonials Section --- */
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .testimonial-card { background: var(--bg-white); padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: right; }
-        .testimonial-card p { font-size: 1em; font-style: italic; line-height: 1.8; margin-bottom: 20px; }
-        .testimonial-card p::before { content: '“'; font-size: 2em; color: var(--secondary-color); font-weight: bold; float: right; margin-left: 8px; }
-        .testimonial-author { font-weight: bold; color: var(--primary-color); }
-        .testimonial-author span { font-weight: normal; color: #777; font-size: 0.9em; }
-
-        /* --- FAQ Section --- */
-        #faq { background-color: var(--bg-white); }
-        .faq-container { max-width: 800px; margin: 0 auto; text-align: right; }
-        .faq-item { border-bottom: 1px solid #e0e8f0; }
-        .faq-question { width: 100%; background: none; border: none; text-align: right; font-family: 'Cairo', sans-serif; font-size: 1.2em; font-weight: bold; padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text-color); }
-        .faq-question i { transition: transform 0.3s; }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
-        .faq-answer p { padding: 0 10px 20px; font-size: 1em; line-height: 1.8; margin: 0; }
-        .faq-item.active .faq-question i { transform: rotate(180deg); }
-        .faq-item.active .faq-answer { max-height: 200px; /* Adjust as needed */ }
-
         /* --- Prayer Times Widget --- */
-        .prayer-times-widget { background-color: var(--bg-white); border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 700px; margin: 0 auto; overflow: hidden; }
+        .prayer-times-widget { background-color: var(--bg-white); border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 700px; margin: 30px auto 0; overflow: hidden; }
         .date-bar { background-color: var(--primary-color); color: white; padding: 12px; font-size: 1.1em; min-height: 1.5em; display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; }
         .widget-body { padding: 20px; }
         .city-selector-container { margin-bottom: 20px; }
@@ -103,6 +67,33 @@
         .prayer-table td { font-size: 1.2em; font-weight: bold; direction: ltr; }
         .prayer-table tr:last-child td { border-bottom: none; }
 
+        /* --- Features Section --- */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; text-align: right; }
+        .feature-card { background: var(--bg-white); padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+        .feature-card .icon { font-size: 3em; color: var(--secondary-color); margin-bottom: 20px; }
+        .feature-card h3 { font-size: 1.5em; color: var(--primary-color); margin-bottom: 10px; }
+        .feature-card p { font-size: 1em; line-height: 1.8; }
+
+        /* --- Testimonials Section --- */
+        .testimonials-section { background-color: var(--bg-white); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .testimonial-card { background: #f9f9f9; padding: 25px; border-radius: 15px; border-right: 5px solid var(--secondary-color); box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: right; }
+        .testimonial-card p { font-size: 1em; font-style: italic; line-height: 1.8; margin-bottom: 20px; }
+        .testimonial-card p::before { content: '“'; font-size: 2em; color: var(--secondary-color); font-weight: bold; float: right; margin-left: 8px; }
+        .testimonial-author { font-weight: bold; color: var(--primary-color); }
+        .testimonial-author span { font-weight: normal; color: #777; font-size: 0.9em; }
+
+        /* --- FAQ Section --- */
+        .faq-container { max-width: 800px; margin: 0 auto; text-align: right; }
+        .faq-item { border-bottom: 1px solid #e0e8f0; }
+        .faq-question { width: 100%; background: none; border: none; text-align: right; font-family: 'Cairo', sans-serif; font-size: 1.2em; font-weight: bold; padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text-color); }
+        .faq-question i { transition: transform 0.3s; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
+        .faq-answer p { padding: 0 10px 20px; font-size: 1em; line-height: 1.8; margin: 0; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-item.active .faq-answer { max-height: 200px; }
+
         /* --- Responsive Styles --- */
         @media (max-width: 850px) {
             .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: var(--primary-color); padding: 10px 0; }
@@ -110,7 +101,7 @@
             .navbar-links a, .language-switcher { margin: 10px 0; text-align: center; }
             .menu-toggle { display: block; }
             .section-title, .hero-section h1 { font-size: 2em; }
-            .hero-section p { font-size: 1.1em; }
+            .hero-section p.subtitle { font-size: 1.1em; }
             .digital-clock { font-size: 2.5em; }
             .prayer-table th, .prayer-table td { padding: 10px; }
         }
@@ -135,19 +126,60 @@
                 <ul class="lang-menu" id="lang-menu">
                     <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم مصر"> العربية</a></li>
                     <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم أمريكا"> English</a></li>
-                    <!-- Add other languages as needed -->
                 </ul>
             </div>
         </div>
         <button class="menu-toggle" id="menu-toggle">☰</button>
     </nav>
 
-    <!-- ==================== Hero Section ==================== -->
+    <!-- ==================== Hero Section (New Order) ==================== -->
     <div class="container hero-section">
         <img src="images/logo.jpg" alt="شعار تطبيق زاد بونو" class="logo">
         <h1 data-translate="main_title">رفيقك الإيماني في جيبك</h1>
-        <p data-translate="main_subtitle">تطبيق إسلامي شامل يجمع لك كل ما تحتاجه من قرآن كريم، أذكار، مواقيت صلاة، ومساعد ذكي للإجابة على أسئلتك الدينية. ابدأ رحلتك اليوم.</p>
+        <p class="subtitle" data-translate="main_subtitle">تطبيق إسلامي شامل يجمع لك كل ما تحتاجه من قرآن كريم، أذكار، مواقيت صلاة، ومساعد ذكي للإجابة على أسئلتك الدينية.</p>
         
+        <!-- Prayer Times Widget Moved Here -->
+        <div class="prayer-times-widget">
+            <div class="date-bar" id="date-bar">--:--</div>
+            <div class="widget-body">
+                <div class="city-selector-container">
+                    <label for="city-selector" data-translate="select_city">اختر المدينة:</label>
+                    <select id="city-selector">
+                        <optgroup label="الشرق الأوسط">
+                            <option value="Cairo,Egypt" selected>القاهرة، مصر</option>
+                            <option value="Mecca,Saudi Arabia">مكة المكرمة، السعودية</option>
+                            <option value="Riyadh,Saudi Arabia">الرياض، السعودية</option>
+                            <option value="Dubai,United Arab Emirates">دبي، الإمارات</option>
+                            <option value="Kuwait,Kuwait">الكويت</option>
+                            <option value="Doha,Qatar">الدوحة، قطر</option>
+                            <option value="Amman,Jordan">عمان، الأردن</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="digital-clock" id="digital-clock">--:--:--</div>
+                <table class="prayer-table">
+                    <thead>
+                        <tr>
+                            <th data-translate="prayer_fajr">الفجر</th>
+                            <th data-translate="prayer_dhuhr">الظهر</th>
+                            <th data-translate="prayer_asr">العصر</th>
+                            <th data-translate="prayer_maghrib">المغرب</th>
+                            <th data-translate="prayer_isha">العشاء</th>
+                        </tr>
+                    </thead>
+                    <tbody id="prayer-times-body">
+                        <tr>
+                            <td id="fajr-time">--:--</td>
+                            <td id="dhuhr-time">--:--</td>
+                            <td id="asr-time">--:--</td>
+                            <td id="maghrib-time">--:--</td>
+                            <td id="isha-time">--:--</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <div class="buttons-container">
             <a href="install.html" class="download-button" data-translate="btn_android">تحميل للأندرويد (APK)</a>
             <a href="iphone.html" class="download-button secondary" data-translate="btn_iphone">تحميل للآيفون</a>
@@ -178,36 +210,8 @@
         </div>
     </section>
 
-    <!-- ==================== Stats Section ==================== -->
-    <section class="section stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="icon"><i class="fas fa-download"></i></div>
-                    <div class="number" data-translate="stats1_num">+5,000</div>
-                    <div class="text" data-translate="stats1_text">تحميل للتطبيق</div>
-                </div>
-                <div class="stat-item">
-                    <div class="icon"><i class="fas fa-book-open"></i></div>
-                    <div class="number" data-translate="stats2_num">+50</div>
-                    <div class="text" data-translate="stats2_text">كتاب في المكتبة</div>
-                </div>
-                <div class="stat-item">
-                    <div class="icon"><i class="fas fa-star"></i></div>
-                    <div class="number" data-translate="stats3_num">4.9</div>
-                    <div class="text" data-translate="stats3_text">تقييم المستخدمين</div>
-                </div>
-                <div class="stat-item">
-                    <div class="icon"><i class="fas fa-user-friends"></i></div>
-                    <div class="number" data-translate="stats4_num">+10,000</div>
-                    <div class="text" data-translate="stats4_text">مستخدم نشط</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ==================== Testimonials Section ==================== -->
-    <section class="section">
+    <section class="section testimonials-section">
         <div class="container">
             <h2 class="section-title" data-translate="testimonials_title">آراء المستخدمين</h2>
             <div class="testimonials-grid">
@@ -239,56 +243,8 @@
         </div>
     </section>
 
-    <!-- ==================== Prayer Times Widget Section ==================== -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title" data-translate="prayer_widget_title">مواقيت الصلاة</h2>
-            <div class="prayer-times-widget">
-                <div class="date-bar" id="date-bar">--:--</div>
-                <div class="widget-body">
-                    <div class="city-selector-container">
-                        <label for="city-selector" data-translate="select_city">اختر المدينة:</label>
-                        <select id="city-selector">
-                            <optgroup label="الشرق الأوسط">
-                                <option value="Cairo,Egypt" selected>القاهرة، مصر</option>
-                                <option value="Mecca,Saudi Arabia">مكة المكرمة، السعودية</option>
-                                <option value="Riyadh,Saudi Arabia">الرياض، السعودية</option>
-                                <option value="Dubai,United Arab Emirates">دبي، الإمارات</option>
-                                <option value="Kuwait,Kuwait">الكويت</option>
-                                <option value="Doha,Qatar">الدوحة، قطر</option>
-                                <option value="Amman,Jordan">عمان، الأردن</option>
-                            </optgroup>
-                            <!-- Add other city groups as needed -->
-                        </select>
-                    </div>
-                    <div class="digital-clock" id="digital-clock">--:--:--</div>
-                    <table class="prayer-table">
-                        <thead>
-                            <tr>
-                                <th data-translate="prayer_fajr">الفجر</th>
-                                <th data-translate="prayer_dhuhr">الظهر</th>
-                                <th data-translate="prayer_asr">العصر</th>
-                                <th data-translate="prayer_maghrib">المغرب</th>
-                                <th data-translate="prayer_isha">العشاء</th>
-                            </tr>
-                        </thead>
-                        <tbody id="prayer-times-body">
-                            <tr>
-                                <td id="fajr-time">--:--</td>
-                                <td id="dhuhr-time">--:--</td>
-                                <td id="asr-time">--:--</td>
-                                <td id="maghrib-time">--:--</td>
-                                <td id="isha-time">--:--</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ==================== FAQ Section ==================== -->
-    <section class="section" id="faq">
+    <section class="section">
         <div class="container">
             <h2 class="section-title" data-translate="faq_title">أسئلة شائعة</h2>
             <div class="faq-container">
@@ -338,9 +294,6 @@
         const navbarLinks = document.getElementById('navbar-links');
         menuToggle.addEventListener('click', () => { navbarLinks.classList.toggle('active'); });
 
-        // --- Script for Language Switcher ---
-        // ... (Your existing language switcher script) ...
-
         // --- Script for FAQ Accordion ---
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
@@ -354,21 +307,78 @@
             });
         });
 
-        // --- Prayer Times Widget Script ---
-        // ... (Your existing prayer times script) ...
+        // --- Language and Prayer Times Scripts (Corrected and Combined) ---
+        const translations = {
+            ar: { app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_install: "التحميل والتثبيت", nav_contact: "اتصل بنا", nav_privacy: "سياسة الخصوصية", main_title: "رفيقك الإيماني في جيبك", main_subtitle: "تطبيق إسلامي شامل يجمع لك كل ما تحتاجه...", lang_name: "العربية", select_city: "اختر المدينة:", prayer_fajr: "الفجر", prayer_dhuhr: "الظهر", prayer_asr: "العصر", prayer_maghrib: "المغرب", prayer_isha: "العشاء", btn_android: "تحميل للأندرويد (APK)", btn_iphone: "تحميل للآيفون", features_title: "لماذا زاد بونو هو اختيارك الأول؟", feature1_title: "قرآن كريم متكامل", feature1_desc: "اقرأ واستمع للقرآن الكريم كاملاً بدون إنترنت...", feature2_title: "المساعد الذكي \"مانوس\"", feature2_desc: "اسأل \"مانوس\" عن أي مسألة في الدين...", feature3_title: "إشعارات إيمانية ذكية", feature3_desc: "اجعل لسانك رطباً بذكر الله...", testimonials_title: "آراء المستخدمين", testimonial1_text: "أخيراً وجدت التطبيق الذي يجمع كل شيء...", testimonial1_author: "أحمد محمود - مصر", /* ... other testimonials ... */ faq_title: "أسئلة شائعة", faq1_q: "هل تطبيق زاد بونو مجاني؟", faq1_a: "نعم، تطبيق زاد بونو مجاني بالكامل...", prayer_widget_title: "مواقيت الصلاة" },
+            en: { app_name: "Zad Bono", nav_home: "Home", nav_features: "Features", nav_install: "Installation", nav_contact: "Contact Us", nav_privacy: "Privacy Policy", main_title: "Your Faith Companion in Your Pocket", main_subtitle: "A comprehensive Islamic app that brings together everything you need...", lang_name: "English", select_city: "Select City:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", prayer_maghrib: "Maghrib", prayer_isha: "Isha", btn_android: "Download for Android (APK)", btn_iphone: "Download for iPhone", features_title: "Why is Zad Bono Your First Choice?", feature1_title: "Integrated Holy Quran", feature1_desc: "Read and listen to the full Quran offline...", feature2_title: "Smart Assistant \"Manus\"", feature2_desc: "Ask \"Manus\" any religious question...", feature3_title: "Smart Faith Notifications", feature3_desc: "Keep your tongue moist with the remembrance of Allah...", testimonials_title: "User Reviews", faq_title: "Frequently Asked Questions", prayer_widget_title: "Prayer Times" }
+        };
+        
+        const langToggleButton = document.getElementById('lang-toggle-btn');
+        const langMenu = document.getElementById('lang-menu');
+        const selectedLangBtnText = document.getElementById('lang-text');
+        const selectedLangBtnFlag = document.getElementById('lang-flag');
+        
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            if (selectedLangBtnText && translations[lang]) selectedLangBtnText.textContent = translations[lang].lang_name;
+            if (selectedLangBtnFlag) selectedLangBtnFlag.src = `images/${lang}.png`;
+            localStorage.setItem('language', lang);
+            if (langMenu) langMenu.classList.remove('show');
+        }
 
-        // --- Simplified Language and Prayer Times Loader ---
-        document.addEventListener('DOMContentLoaded', () => {
-            // Load language first
-            const savedLang = localStorage.getItem('language') || 'ar';
-            // setLanguage(savedLang); // Assuming setLanguage function exists
-
-            // Then load prayer times
-            const citySelector = document.getElementById('city-selector');
-            const [city, country] = citySelector.value.split(',');
-            // getPrayerTimes(city, country); // Assuming getPrayerTimes function exists
+        if (langToggleButton) {
+            langToggleButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                langMenu.classList.toggle('show');
+            });
+        }
+        window.addEventListener('click', () => {
+            if (langMenu && langMenu.classList.contains('show')) {
+                langMenu.classList.remove('show');
+            }
         });
-    </script>
 
-</body>
-</html>
+        const citySelector = document.getElementById('city-selector');
+        const dateBar = document.getElementById('date-bar');
+        const digitalClock = document.getElementById('digital-clock');
+        const fajrTime = document.getElementById('fajr-time');
+        const dhuhrTime = document.getElementById('dhuhr-time');
+        const asrTime = document.getElementById('asr-time');
+        const maghribTime = document.getElementById('maghrib-time');
+        const ishaTime = document.getElementById('isha-time');
+        let clockInterval;
+
+        function getPrayerTimes(city, country) {
+            if (clockInterval) clearInterval(clockInterval);
+            const url = `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city )}&country=${encodeURIComponent(country)}&method=5`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.code === 200) {
+                        const timings = data.data.timings;
+                        const date = data.data.date;
+                        const timezone = data.data.meta.timezone;
+                        fajrTime.textContent = timings.Fajr.split(' ')[0];
+                        dhuhrTime.textContent = timings.Dhuhr.split(' ')[0];
+                        asrTime.textContent = timings.Asr.split(' ')[0];
+                        maghribTime.textContent = timings.Maghrib.split(' ')[0];
+                        ishaTime.textContent = timings.Isha.split(' ')[0];
+                        
+                        const gregorianDate = `${date.gregorian.day} ${date.gregorian.month.en} ${date.gregorian.year}`;
+                        const hijriDate = `${date.hijri.day} ${date.hijri.month.ar} ${date.hijri.year}`;
+                        dateBar.innerHTML = `<span>${date.hijri.weekday.ar}</span> • <span>${gregorianDate}</span> • <span>${hijriDate}</span>`;
+
+                        startClock(timezone);
+                    } else {
+                        dateBar.textContent = "لا يمكن جلب البيانات لهذه المدينة";
+                    }
+                })
+                .catch(error => {
