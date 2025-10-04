@@ -1,21 +1,765 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zad Bono | نسخة الآيفون</title>
+    <meta name="description" content="نسخة الآيفون من تطبيق Zad Bono قادمة قريباً. كن أول من يعلم عند إطلاق التطبيق على متجر آبل">
+    <title>نسخة الآيفون | Zad Bono - تطبيق العبادات الشامل</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
     <style>
-        body { font-family: 'Cairo', sans-serif; text-align: center; padding: 50px; background-color: #f0f4f8; color: #073763; }
-        h1 { color: #0b5394; }
-        a { color: #0b5394; font-weight: bold; text-decoration: none; }
+        :root {
+            --primary-blue: #0b5394;
+            --dark-blue: #073763;
+            --gold: #ffd700;
+            --light-bg: #f0f4f8;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: var(--light-bg); 
+            color: var(--dark-blue); 
+            padding-top: 70px;
+        }
+
+        /* النافبار */
+        .navbar { 
+            background-color: var(--primary-blue); 
+            padding: 12px 20px; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            z-index: 1000; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand { 
+            color: var(--gold); 
+            font-weight: bold; 
+            font-size: 1.4em; 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .navbar-links { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px;
+        }
+
+        .navbar-links a { 
+            color: var(--white); 
+            text-decoration: none; 
+            font-size: 1em; 
+            transition: color 0.3s; 
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .navbar-links a:hover, 
+        .navbar-links a.active { 
+            color: var(--gold); 
+            background-color: rgba(255,215,0,0.1);
+        }
+
+        .menu-toggle { 
+            display: none; 
+            font-size: 24px; 
+            color: white; 
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+        }
+
+        /* سويتشر اللغة */
+        .language-switcher { 
+            position: relative; 
+        }
+
+        .selected-lang { 
+            background-color: transparent; 
+            border: none; 
+            color: white; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .selected-lang:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .selected-lang img { 
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+        }
+
+        .lang-menu { 
+            display: none; 
+            position: absolute; 
+            top: 100%;
+            left: 0;
+            background-color: var(--white); 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            list-style: none; 
+            padding: 8px;
+            margin: 5px 0 0 0;
+            width: 140px;
+            z-index: 1001;
+        }
+
+        .lang-menu.show { 
+            display: block; 
+        }
+
+        .lang-menu li a { 
+            color: var(--dark-blue); 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+            padding: 10px;
+            border-radius: 5px; 
+            transition: background-color 0.2s; 
+            font-size: 0.9em;
+        }
+
+        .lang-menu li a:hover { 
+            background-color: #e0e8f0; 
+        }
+
+        .lang-menu li img { 
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+        }
+
+        /* المحتوى الرئيسي */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .coming-soon-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 80px 40px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .iphone-icon {
+            font-size: 5em;
+            color: var(--gold);
+            margin-bottom: 30px;
+            display: block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* نموذج الانتظار */
+        .waitlist-section {
+            background-color: var(--white);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+
+        .waitlist-section h2 {
+            color: var(--primary-blue);
+            font-size: 2.2em;
+            margin-bottom: 15px;
+        }
+
+        .waitlist-section p {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .waitlist-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--dark-blue);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .notify-button {
+            background: linear-gradient(135deg, var(--gold) 0%, #ffed4e 100%);
+            color: var(--dark-blue);
+            padding: 16px 40px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+            width: 100%;
+        }
+
+        .notify-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+        }
+
+        /* قسم المميزات */
+        .features-preview {
+            background-color: var(--white);
+            padding: 60px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .features-preview h2 {
+            color: var(--primary-blue);
+            font-size: 2.2em;
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            padding: 30px 25px;
+            background: var(--light-bg);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-item i {
+            font-size: 2.5em;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-item h3 {
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .feature-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* أزرار التنقل */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .primary-button {
+            background: linear-gradient(135deg, var(--gold) 0%, #ffed4e 100%);
+            color: var(--dark-blue);
+            padding: 16px 35px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+        }
+
+        .secondary-button {
+            background: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            padding: 16px 35px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+        }
+
+        .secondary-button:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* For LTR languages */
+        html[dir="ltr"] .form-group {
+            text-align: left;
+        }
+
+        /* الفوتر */
+        .footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 30px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9em;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 0.85em;
+        }
+
+        /* الوسائط المتجاوبة */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .navbar-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background-color: var(--primary-blue); 
+                padding: 20px; 
+                gap: 15px;
+            }
+
+            .navbar-links.active { 
+                display: flex; 
+            }
+
+            .menu-toggle { 
+                display: block; 
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+
+            .coming-soon-section {
+                padding: 60px 25px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .iphone-icon {
+                font-size: 4em;
+            }
+
+            .waitlist-section,
+            .features-preview {
+                padding: 40px 25px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .primary-button,
+            .secondary-button {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .coming-soon-section {
+                padding: 40px 20px;
+            }
+
+            .waitlist-section,
+            .features-preview {
+                padding: 30px 20px;
+            }
+
+            .iphone-icon {
+                font-size: 3em;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>نسخة تطبيق Zad Bono لأجهزة الآيفون قادمة قريباً بإذن الله</h1>
-    <p>نعمل بجد لتوفير التطبيق على متجر آبل. شكراً لاهتمامك!</p>
-      
 
-    <a href="index.html">العودة إلى الصفحة الرئيسية</a>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand" data-translate="app_name">
+            <img src="images/logo.jpg" alt="شعار Zad Bono">
+            Zad Bono
+        </a>
+        <div class="navbar-links" id="navbar-links">
+            <a href="index.html" data-translate="nav_home">الرئيسية</a>
+            <a href="features.html" data-translate="nav_features">شرح المميزات</a>
+            <a href="install.html" data-translate="nav_install">التحميل والتثبيت</a>
+            <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+            <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
+            <div class="language-switcher">
+                <button class="selected-lang" id="lang-toggle-btn">
+                    <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
+                    <span id="lang-text">العربية</span>
+                </button>
+                <ul class="lang-menu" id="lang-menu">
+                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم العربية"> العربية</a></li>
+                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم الإنجليزية"> English</a></li>
+                </ul>
+            </div>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+    </nav>
+
+    <div class="container">
+        <!-- قسم Coming Soon -->
+        <div class="coming-soon-section">
+            <i class="fab fa-apple iphone-icon"></i>
+            <h1 data-translate="coming_soon_title">نسخة الآيفون قادمة قريباً</h1>
+            <p class="subtitle" data-translate="coming_soon_subtitle">نعمل بجد لتوفير تجربة Zad Bono الكاملة على أجهزة آيفون. كن أول من يعلم عند الإطلاق!</p>
+        </div>
+
+        <!-- نموذج قائمة الانتظار -->
+        <div class="waitlist-section">
+            <h2 data-translate="waitlist_title">كن أول من يعلم!</h2>
+            <p data-translate="waitlist_subtitle">سجل بريدك الإلكتروني وسنخبرك فور إطلاق التطبيق على متجر آبل</p>
+            
+            <form class="waitlist-form" id="waitlist-form">
+                <div class="form-group">
+                    <label for="email" data-translate="email_label">البريد الإلكتروني</label>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+                </div>
+                <button type="submit" class="notify-button" data-translate="notify_button">
+                    <i class="fas fa-bell"></i>
+                    أخبرني عند الإطلاق
+                </button>
+            </form>
+        </div>
+
+        <!-- معاينة المميزات -->
+        <div class="features-preview">
+            <h2 data-translate="features_title">جميع المميزات ستكون متاحة</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-quran"></i>
+                    <h3 data-translate="feature1_title">القرآن الكريم</h3>
+                    <p data-translate="feature1_desc">تلاوة، استماع، وتفسير كامل مع إمكانية التحميل</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <h3 data-translate="feature2_title">مواقيت الصلاة</h3>
+                    <p data-translate="feature2_desc">أذان دقيق وتنبيهات ذكية لجميع الصلوات</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <h3 data-translate="feature3_title">المساعد الذكي</h3>
+                    <p data-translate="feature3_desc">مانوس - مساعدك الشخصي للإجابة على أسئلتك</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-book"></i>
+                    <h3 data-translate="feature4_title">المكتبة الإسلامية</h3>
+                    <p data-translate="feature4_desc">مئات الكتب والمراجع في مختلف العلوم الشرعية</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- أزرار التنقل -->
+        <div class="action-buttons">
+            <a href="index.html" class="primary-button" data-translate="home_button">
+                <i class="fas fa-home"></i>
+                العودة للرئيسية
+            </a>
+            <a href="features.html" class="secondary-button" data-translate="features_button">
+                <i class="fas fa-star"></i>
+                استكشاف المميزات
+            </a>
+        </div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
+                <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+                <a href="features.html" data-translate="nav_features">المميزات</a>
+                <a href="install.html" data-translate="nav_install">التثبيت</a>
+            </div>
+            <div class="copyright">
+                © 2024 Zad Bono. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Script for Mobile Menu ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarLinks = document.getElementById('navbar-links');
+        
+        menuToggle.addEventListener('click', () => { 
+            navbarLinks.classList.toggle('active'); 
+        });
+
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', (event) => {
+            if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navbarLinks.classList.remove('active');
+            }
+        });
+
+        // --- Script for Language Switcher ---
+        const translations = {
+            ar: { 
+                app_name: "Zad Bono", 
+                nav_home: "الرئيسية", 
+                nav_features: "شرح المميزات", 
+                nav_install: "التحميل والتثبيت", 
+                nav_contact: "اتصل بنا", 
+                nav_privacy: "سياسة الخصوصية", 
+                coming_soon_title: "نسخة الآيفون قادمة قريباً",
+                coming_soon_subtitle: "نعمل بجد لتوفير تجربة Zad Bono الكاملة على أجهزة آيفون. كن أول من يعلم عند الإطلاق!",
+                waitlist_title: "كن أول من يعلم!",
+                waitlist_subtitle: "سجل بريدك الإلكتروني وسنخبرك فور إطلاق التطبيق على متجر آبل",
+                email_label: "البريد الإلكتروني",
+                notify_button: "أخبرني عند الإطلاق",
+                features_title: "جميع المميزات ستكون متاحة",
+                feature1_title: "القرآن الكريم",
+                feature1_desc: "تلاوة، استماع، وتفسير كامل مع إمكانية التحميل",
+                feature2_title: "مواقيت الصلاة",
+                feature2_desc: "أذان دقيق وتنبيهات ذكية لجميع الصلوات",
+                feature3_title: "المساعد الذكي",
+                feature3_desc: "مانوس - مساعدك الشخصي للإجابة على أسئلتك",
+                feature4_title: "المكتبة الإسلامية",
+                feature4_desc: "مئات الكتب والمراجع في مختلف العلوم الشرعية",
+                home_button: "العودة للرئيسية",
+                features_button: "استكشاف المميزات"
+            },
+            en: { 
+                app_name: "Zad Bono", 
+                nav_home: "Home", 
+                nav_features: "Features", 
+                nav_install: "Installation", 
+                nav_contact: "Contact Us", 
+                nav_privacy: "Privacy Policy", 
+                coming_soon_title: "iPhone Version Coming Soon",
+                coming_soon_subtitle: "We're working hard to bring the full Zad Bono experience to iPhone devices. Be the first to know when we launch!",
+                waitlist_title: "Be the First to Know!",
+                waitlist_subtitle: "Register your email and we'll notify you as soon as the app launches on the Apple Store",
+                email_label: "Email Address",
+                notify_button: "Notify Me on Launch",
+                features_title: "All Features Will Be Available",
+                feature1_title: "Holy Quran",
+                feature1_desc: "Complete recitation, listening, and interpretation with download options",
+                feature2_title: "Prayer Times",
+                feature2_desc: "Accurate azan and smart notifications for all prayers",
+                feature3_title: "Smart Assistant",
+                feature3_desc: "Manus - your personal assistant for answering your questions",
+                feature4_title: "Islamic Library",
+                feature4_desc: "Hundreds of books and references in various Islamic sciences",
+                home_button: "Back to Home",
+                features_button: "Explore Features"
+            }
+        };
+
+        const langToggleButton = document.getElementById('lang-toggle-btn');
+        const langMenu = document.getElementById('lang-menu');
+        const selectedLangBtnText = document.getElementById('lang-text');
+        const selectedLangBtnFlag = document.getElementById('lang-flag');
+        
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(el => { 
+                const key = el.getAttribute('data-translate'); 
+                if (translations[lang] && translations[lang][key]) { 
+                    el.textContent = translations[lang][key]; 
+                } 
+            });
+            
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
+            selectedLangBtnFlag.src = `images/${lang}.png`;
+            localStorage.setItem('language', lang);
+            
+            if(langMenu) langMenu.classList.remove('show');
+        }
+
+        langToggleButton.addEventListener('click', (event) => { 
+            event.stopPropagation(); 
+            langMenu.classList.toggle('show'); 
+        });
+
+        // إغلاق قائمة اللغة عند النقر خارجها
+        window.addEventListener('click', () => { 
+            if (langMenu.classList.contains('show')) { 
+                langMenu.classList.remove('show'); 
+            } 
+        });
+
+        // معالجة نموذج قائمة الانتظار
+        const waitlistForm = document.getElementById('waitlist-form');
+        waitlistForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            
+            // هنا يمكنك إضافة كود إرسال البريد الإلكتروني
+            alert('شكراً لتسجيلك! سنخبرك فور إطلاق التطبيق على الآيفون.');
+            waitlistForm.reset();
+        });
+
+        // التهيئة عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'ar';
+            setLanguage(savedLang);
+        });
+    </script>
+
 </body>
 </html>
