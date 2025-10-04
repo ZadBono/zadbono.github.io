@@ -1,66 +1,466 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اتصل بنا | Zad Bono</title>
+    <meta name="description" content="اتصل بنا - تطبيق Zad Bono. نرحب بملاحظاتك واستفساراتك. تواصل معنا عبر النموذج أو البريد الإلكتروني">
+    <title>اتصل بنا | Zad Bono - تطبيق العبادات الشامل</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Cairo', sans-serif; margin: 0; padding-top: 70px; background-color: #f0f4f8; color: #073763; }
-        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2 ); }
-        .navbar-brand { color: #ffd700; font-weight: bold; font-size: 1.5em; text-decoration: none; }
-        .navbar-links { display: flex; align-items: center; }
-        .navbar-links a { color: #ffffff; text-decoration: none; margin: 0 15px; font-size: 1.1em; }
-        .navbar-links a:hover, .navbar-links a.active { color: #ffd700; }
-        .menu-toggle { display: none; font-size: 30px; color: white; background: none; border: none; cursor: pointer; }
-        .language-switcher { position: relative; }
-        .language-switcher .selected-lang { background-color: transparent; border: none; color: white; cursor: pointer; display: flex; align-items: center; font-family: 'Cairo', sans-serif; font-size: 1.1em; padding: 5px; }
-        .language-switcher .selected-lang img { width: 24px; height: 24px; border-radius: 50%; margin-left: 8px; }
-        .language-switcher .lang-menu { display: none; position: absolute; top: 120%; left: 50%; transform: translateX(-50%); background-color: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); list-style: none; padding: 5px; margin: 0; width: 180px; z-index: 1001; }
-        .language-switcher .lang-menu.show { display: block; }
-        .language-switcher .lang-menu li a { color: #073763; text-decoration: none; display: flex; align-items: center; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
-        .language-switcher .lang-menu li a:hover { background-color: #e0e8f0; }
-        .language-switcher .lang-menu li img { width: 24px; height: 24px; border-radius: 50%; margin-left: 10px; }
-        
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
-        .page-title { text-align: center; font-size: 2.8em; color: #0b5394; margin-bottom: 15px; }
-        .page-subtitle { text-align: center; font-size: 1.2em; color: #555; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+        :root {
+            --primary-blue: #0b5394;
+            --dark-blue: #073763;
+            --gold: #ffd700;
+            --light-bg: #f0f4f8;
+            --white: #ffffff;
+        }
 
-        .contact-form { background-color: #ffffff; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); padding: 30px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; text-align: right; margin-bottom: 8px; font-weight: bold; font-size: 1.1em; }
-        html[dir="ltr"] .form-group label { text-align: left; } /* Align labels to left for LTR languages */
-        .form-group input, .form-group select, .form-group textarea {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: var(--light-bg); 
+            color: var(--dark-blue); 
+            padding-top: 70px;
+        }
+
+        /* النافبار */
+        .navbar { 
+            background-color: var(--primary-blue); 
+            padding: 12px 20px; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            z-index: 1000; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand { 
+            color: var(--gold); 
+            font-weight: bold; 
+            font-size: 1.4em; 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .navbar-links { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px;
+        }
+
+        .navbar-links a { 
+            color: var(--white); 
+            text-decoration: none; 
+            font-size: 1em; 
+            transition: color 0.3s; 
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .navbar-links a:hover, 
+        .navbar-links a.active { 
+            color: var(--gold); 
+            background-color: rgba(255,215,0,0.1);
+        }
+
+        .menu-toggle { 
+            display: none; 
+            font-size: 24px; 
+            color: white; 
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+        }
+
+        /* سويتشر اللغة */
+        .language-switcher { 
+            position: relative; 
+        }
+
+        .selected-lang { 
+            background-color: transparent; 
+            border: none; 
+            color: white; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .selected-lang:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .selected-lang img { 
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+        }
+
+        .lang-menu { 
+            display: none; 
+            position: absolute; 
+            top: 100%;
+            left: 0;
+            background-color: var(--white); 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            list-style: none; 
+            padding: 8px;
+            margin: 5px 0 0 0;
+            width: 140px;
+            z-index: 1001;
+        }
+
+        .lang-menu.show { 
+            display: block; 
+        }
+
+        .lang-menu li a { 
+            color: var(--dark-blue); 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+            padding: 10px;
+            border-radius: 5px; 
+            transition: background-color 0.2s; 
+            font-size: 0.9em;
+        }
+
+        .lang-menu li a:hover { 
+            background-color: #e0e8f0; 
+        }
+
+        .lang-menu li img { 
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+        }
+
+        /* المحتوى الرئيسي */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-title { 
+            text-align: center; 
+            font-size: 2.5em; 
+            color: var(--primary-blue); 
+            margin-bottom: 15px; 
+        }
+
+        .page-subtitle { 
+            text-align: center; 
+            font-size: 1.2em; 
+            color: #555; 
+            margin-bottom: 50px; 
+            max-width: 700px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            line-height: 1.7; 
+        }
+
+        /* شبكة الاتصال */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* معلومات الاتصال */
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h2 {
+            color: var(--gold);
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-method:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: var(--dark-blue);
+        }
+
+        .contact-details h3 {
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        .contact-details p {
+            opacity: 0.9;
+            font-size: 0.95em;
+        }
+
+        /* نموذج الاتصال */
+        .contact-form { 
+            background-color: var(--white); 
+            border-radius: 16px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+            padding: 40px 30px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .form-group { 
+            margin-bottom: 25px; 
+        }
+
+        .form-group label { 
+            display: block; 
+            margin-bottom: 10px; 
+            font-weight: bold; 
+            font-size: 1.1em; 
+            color: var(--dark-blue);
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
             font-family: 'Cairo', sans-serif;
             font-size: 1em;
             box-sizing: border-box;
+            transition: border-color 0.3s;
+            background-color: #fafafa;
         }
-        .form-group textarea { resize: vertical; min-height: 150px; }
-        .submit-btn {
-            background-color: #ffd700; color: #073763; padding: 15px 40px; font-size: 1.2em; font-weight: bold; text-decoration: none; border-radius: 50px; transition: transform 0.2s; display: inline-block; border: none; cursor: pointer;
-        }
-        .submit-btn:hover { transform: scale(1.05); }
 
-        @media (max-width: 850px) {
-            .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: #0b5394; padding: 10px 0; }
-            .navbar-links.active { display: flex; }
-            .navbar-links a, .language-switcher { margin: 10px 0; text-align: center; }
-            .menu-toggle { display: block; }
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            background-color: var(--white);
+        }
+
+        .form-group textarea { 
+            resize: vertical; 
+            min-height: 150px; 
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--gold) 0%, #ffed4e 100%);
+            color: var(--dark-blue); 
+            padding: 16px 45px; 
+            font-size: 1.1em; 
+            font-weight: bold; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            transition: all 0.3s; 
+            display: inline-block; 
+            border: none; 
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+            width: 100%;
+        }
+
+        .submit-btn:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+        }
+
+        /* قسم الأسئلة الشائعة */
+        .faq-section {
+            background-color: var(--white);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background-color: var(--light-bg);
+            padding: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #e8eff5;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.show {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        /* الفوتر */
+        .footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 30px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9em;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 0.85em;
+        }
+
+        /* الوسائط المتجاوبة */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .navbar-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background-color: var(--primary-blue); 
+                padding: 20px; 
+                gap: 15px;
+            }
+
+            .navbar-links.active { 
+                display: flex; 
+            }
+
+            .menu-toggle { 
+                display: block; 
+            }
+
+            .page-title { 
+                font-size: 2em; 
+            }
+
+            .page-subtitle { 
+                font-size: 1.1em; 
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            .faq-section {
+                padding: 30px 20px;
+            }
+
+            .faq-section h2 {
+                font-size: 1.6em;
+            }
         }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="navbar-brand" data-translate="app_name">Zad Bono</a>
+        <a href="index.html" class="navbar-brand" data-translate="app_name">
+            <img src="images/logo.jpg" alt="شعار Zad Bono">
+            Zad Bono
+        </a>
         <div class="navbar-links" id="navbar-links">
             <a href="index.html" data-translate="nav_home">الرئيسية</a>
             <a href="features.html" data-translate="nav_features">شرح المميزات</a>
@@ -69,15 +469,12 @@
             <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
             <div class="language-switcher">
                 <button class="selected-lang" id="lang-toggle-btn">
-                    <span id="lang-text">العربية</span>
                     <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
+                    <span id="lang-text">العربية</span>
                 </button>
                 <ul class="lang-menu" id="lang-menu">
-                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم مصر"> العربية</a></li>
-                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم أمريكا"> English</a></li>
-                    <li><a href="#" onclick="setLanguage('de')"><img src="images/de.png" alt="علم ألمانيا"> Deutsch</a></li>
-                    <li><a href="#" onclick="setLanguage('fr')"><img src="images/fr.png" alt="علم فرنسا"> Français</a></li>
-                    <li><a href="#" onclick="setLanguage('cn')"><img src="images/cn.png" alt="علم الصين"> 中文</a></li>
+                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم العربية"> العربية</a></li>
+                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم الإنجليزية"> English</a></li>
                 </ul>
             </div>
         </div>
@@ -88,65 +485,275 @@
         <h1 class="page-title" data-translate="contact_title">تواصل معنا</h1>
         <p class="page-subtitle" data-translate="contact_subtitle">نسعد بتلقي استفساراتك وملاحظاتك. استخدم النموذج التالي لمراسلتنا مباشرة، وسنحرص على الرد في أقرب وقت ممكن.</p>
 
-        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xblandgw" method="POST">
-            <div class="form-group">
-                <label for="name" data-translate="form_name">الاسم</label>
-                <input type="text" id="name" name="name" required>
+        <div class="contact-grid">
+            <!-- معلومات الاتصال -->
+            <div class="contact-info">
+                <h2 data-translate="contact_info_title">معلومات التواصل</h2>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-details">
+                        <h3 data-translate="contact_email">البريد الإلكتروني</h3>
+                        <p>support@zadbono.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-details">
+                        <h3 data-translate="contact_support">الدعم الفني</h3>
+                        <p data-translate="support_hours">متاح 24/7 للاستفسارات الفنية</p>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon">⏰</div>
+                    <div class="contact-details">
+                        <h3 data-translate="contact_response">وقت الاستجابة</h3>
+                        <p data-translate="response_time">خلال 24 ساعة كحد أقصى</p>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-details">
+                        <h3 data-translate="contact_feedback">ملاحظاتك تهمنا</h3>
+                        <p data-translate="feedback_desc">نسعى دائماً لتطوير التطبيق بناءً على ملاحظاتكم</p>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email" data-translate="form_email">البريد الإلكتروني</label>
-                <input type="email" id="email" name="email" required>
+
+            <!-- نموذج الاتصال -->
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/xblandgw" method="POST">
+                <div class="form-group">
+                    <label for="name" data-translate="form_name">الاسم الكامل</label>
+                    <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" data-translate="form_email">البريد الإلكتروني</label>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject" data-translate="form_subject">نوع الاستفسار</label>
+                    <select id="subject" name="subject">
+                        <option value="suggestion" data-translate="subject_suggestion">اقتراح لتحسين التطبيق</option>
+                        <option value="bug" data-translate="subject_bug">الإبلاغ عن مشكلة فنية</option>
+                        <option value="general" data-translate="subject_general">استفسار عام</option>
+                        <option value="partnership" data-translate="subject_partnership">شراكة أو تعاون</option>
+                        <option value="feature" data-translate="subject_feature">طلب إضافة ميزة جديدة</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" data-translate="form_message">الرسالة</label>
+                    <textarea id="message" name="message" required placeholder="اكتب رسالتك هنا بالتفصيل..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" data-translate="form_submit">
+                    <span>إرسال الرسالة</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- الأسئلة الشائعة -->
+        <div class="faq-section">
+            <h2 data-translate="faq_title">أسئلة شائعة</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span data-translate="faq1_question">كيف يمكنني تحديث التطبيق؟</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p data-translate="faq1_answer">لتحميل أحدث إصدار من التطبيق، توجه إلى صفحة "التحميل والتثبيت" وقم بتحميل الإصدار الجديد. سيتم استبدال الإصدار القديم تلقائياً.</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="subject" data-translate="form_subject">الموضوع</label>
-                <select id="subject" name="subject">
-                    <option data-translate="subject_suggestion">اقتراح لتحسين التطبيق</option>
-                    <option data-translate="subject_bug">الإبلاغ عن مشكلة فنية</option>
-                    <option data-translate="subject_general">استفسار عام</option>
-                    <option data-translate="subject_partnership">شراكة أو تعاون</option>
-                </select>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span data-translate="faq2_question">هل التطبيق مجاني بالكامل؟</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p data-translate="faq2_answer">نعم، تطبيق Zad Bono مجاني بالكامل ولا يحتوي على أي مشتريات داخلية أو إعلانات. نحن نؤمن بتقديم خدمة مجانية لوجه الله.</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="message" data-translate="form_message">الرسالة</label>
-                <textarea id="message" name="message" required></textarea>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span data-translate="faq3_question">كيف أعيد ضبط إعدادات التطبيق؟</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p data-translate="faq3_answer">يمكنك الوصول إلى الإعدادات من القائمة الرئيسية في التطبيق. هناك خيار "إعادة الضبط" يمكنك استخدامه لإعادة كل الإعدادات إلى الوضع الافتراضي.</p>
+                </div>
             </div>
-            <button type="submit" class="submit-btn" data-translate="form_submit">إرسال الرسالة</button>
-        </form>
+        </div>
     </div>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
+                <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+                <a href="features.html" data-translate="nav_features">المميزات</a>
+                <a href="install.html" data-translate="nav_install">التثبيت</a>
+            </div>
+            <div class="copyright">
+                © 2024 Zad Bono. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
 
     <script>
         // --- Script for Mobile Menu ---
-        const menuToggle = document.getElementById('menu-toggle' );
+        const menuToggle = document.getElementById('menu-toggle');
         const navbarLinks = document.getElementById('navbar-links');
-        menuToggle.addEventListener('click', () => { navbarLinks.classList.toggle('active'); });
+        
+        menuToggle.addEventListener('click', () => { 
+            navbarLinks.classList.toggle('active'); 
+        });
+
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', (event) => {
+            if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navbarLinks.classList.remove('active');
+            }
+        });
 
         // --- Script for Language Switcher ---
         const translations = {
-            ar: { app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_install: "التحميل والتثبيت", nav_contact: "اتصل بنا", nav_privacy: "سياسة الخصوصية", lang_name: "العربية", contact_title: "تواصل معنا", contact_subtitle: "نسعد بتلقي استفساراتك وملاحظاتك. استخدم النموذج التالي لمراسلتنا مباشرة، وسنحرص على الرد في أقرب وقت ممكن.", form_name: "الاسم", form_email: "البريد الإلكتروني", form_subject: "الموضوع", subject_suggestion: "اقتراح لتحسين التطبيق", subject_bug: "الإبلاغ عن مشكلة فنية", subject_general: "استفسار عام", subject_partnership: "شراكة أو تعاون", form_message: "الرسالة", form_submit: "إرسال الرسالة" },
-            en: { app_name: "Zad Bono", nav_home: "Home", nav_features: "Features", nav_install: "Installation", nav_contact: "Contact Us", nav_privacy: "Privacy Policy", lang_name: "English", contact_title: "Contact Us", contact_subtitle: "We are happy to receive your inquiries and feedback. Use the form below to message us directly, and we will get back to you as soon as possible.", form_name: "Name", form_email: "Email", form_subject: "Subject", subject_suggestion: "Suggestion to improve the app", subject_bug: "Report a technical issue", subject_general: "General inquiry", subject_partnership: "Partnership or collaboration", form_message: "Message", form_submit: "Send Message" },
-            de: { app_name: "Zad Bono", nav_home: "Startseite", nav_features: "Funktionen", nav_install: "Installation", nav_contact: "Kontakt", nav_privacy: "Datenschutz", lang_name: "Deutsch", contact_title: "Kontaktieren Sie uns", contact_subtitle: "Wir freuen uns auf Ihre Anfragen und Ihr Feedback. Nutzen Sie das folgende Formular, um uns direkt zu kontaktieren.", form_name: "Name", form_email: "E-Mail", form_subject: "Betreff", subject_suggestion: "Verbesserungsvorschlag", subject_bug: "Technisches Problem melden", subject_general: "Allgemeine Anfrage", subject_partnership: "Partnerschaft", form_message: "Nachricht", form_submit: "Nachricht senden" },
-            fr: { app_name: "Zad Bono", nav_home: "Accueil", nav_features: "Fonctionnalités", nav_install: "Installation", nav_contact: "Contactez-nous", nav_privacy: "Politique de confidentialité", lang_name: "Français", contact_title: "Contactez-nous", contact_subtitle: "Nous sommes heureux de recevoir vos questions et commentaires. Utilisez le formulaire ci-dessous pour nous envoyer un message.", form_name: "Nom", form_email: "Email", form_subject: "Sujet", subject_suggestion: "Suggestion d'amélioration", subject_bug: "Signaler un problème technique", subject_general: "Demande générale", subject_partnership: "Partenariat", form_message: "Message", form_submit: "Envoyer le message" },
-            cn: { app_name: "Zad Bono", nav_home: "首页", nav_features: "功能", nav_install: "安装", nav_contact: "联系我们", nav_privacy: "隐私政策", lang_name: "中文", contact_title: "联系我们", contact_subtitle: "我们很高兴收到您的咨询和反馈。请使用下面的表格直接给我们留言，我们会尽快回复您。", form_name: "姓名", form_email: "电子邮件", form_subject: "主题", subject_suggestion: "改进应用的建议", subject_bug: "报告技术问题", subject_general: "一般查询", subject_partnership: "合作", form_message: "信息", form_submit: "发送信息" }
+            ar: { 
+                app_name: "Zad Bono", 
+                nav_home: "الرئيسية", 
+                nav_features: "شرح المميزات", 
+                nav_install: "التحميل والتثبيت", 
+                nav_contact: "اتصل بنا", 
+                nav_privacy: "سياسة الخصوصية", 
+                contact_title: "تواصل معنا", 
+                contact_subtitle: "نسعد بتلقي استفساراتك وملاحظاتك. استخدم النموذج التالي لمراسلتنا مباشرة، وسنحرص على الرد في أقرب وقت ممكن.", 
+                contact_info_title: "معلومات التواصل",
+                contact_email: "البريد الإلكتروني",
+                contact_support: "الدعم الفني", 
+                support_hours: "متاح 24/7 للاستفسارات الفنية",
+                contact_response: "وقت الاستجابة",
+                response_time: "خلال 24 ساعة كحد أقصى",
+                contact_feedback: "ملاحظاتك تهمنا",
+                feedback_desc: "نسعى دائماً لتطوير التطبيق بناءً على ملاحظاتكم",
+                form_name: "الاسم الكامل", 
+                form_email: "البريد الإلكتروني", 
+                form_subject: "نوع الاستفسار", 
+                subject_suggestion: "اقتراح لتحسين التطبيق", 
+                subject_bug: "الإبلاغ عن مشكلة فنية", 
+                subject_general: "استفسار عام", 
+                subject_partnership: "شراكة أو تعاون", 
+                subject_feature: "طلب إضافة ميزة جديدة",
+                form_message: "الرسالة", 
+                form_submit: "إرسال الرسالة",
+                faq_title: "أسئلة شائعة",
+                faq1_question: "كيف يمكنني تحديث التطبيق؟",
+                faq1_answer: "لتحميل أحدث إصدار من التطبيق، توجه إلى صفحة 'التحميل والتثبيت' وقم بتحميل الإصدار الجديد. سيتم استبدال الإصدار القديم تلقائياً.",
+                faq2_question: "هل التطبيق مجاني بالكامل؟",
+                faq2_answer: "نعم، تطبيق Zad Bono مجاني بالكامل ولا يحتوي على أي مشتريات داخلية أو إعلانات. نحن نؤمن بتقديم خدمة مجانية لوجه الله.",
+                faq3_question: "كيف أعيد ضبط إعدادات التطبيق؟",
+                faq3_answer: "يمكنك الوصول إلى الإعدادات من القائمة الرئيسية في التطبيق. هناك خيار 'إعادة الضبط' يمكنك استخدامه لإعادة كل الإعدادات إلى الوضع الافتراضي."
+            },
+            en: { 
+                app_name: "Zad Bono", 
+                nav_home: "Home", 
+                nav_features: "Features", 
+                nav_install: "Installation", 
+                nav_contact: "Contact Us", 
+                nav_privacy: "Privacy Policy", 
+                contact_title: "Contact Us", 
+                contact_subtitle: "We are happy to receive your inquiries and feedback. Use the form below to message us directly, and we will get back to you as soon as possible.", 
+                contact_info_title: "Contact Information",
+                contact_email: "Email Address",
+                contact_support: "Technical Support", 
+                support_hours: "Available 24/7 for technical inquiries",
+                contact_response: "Response Time",
+                response_time: "Within 24 hours maximum",
+                contact_feedback: "Your Feedback Matters",
+                feedback_desc: "We always strive to develop the app based on your feedback",
+                form_name: "Full Name", 
+                form_email: "Email Address", 
+                form_subject: "Inquiry Type", 
+                subject_suggestion: "Suggestion to improve the app", 
+                subject_bug: "Report a technical issue", 
+                subject_general: "General inquiry", 
+                subject_partnership: "Partnership or collaboration", 
+                subject_feature: "Request new feature",
+                form_message: "Message", 
+                form_submit: "Send Message",
+                faq_title: "Frequently Asked Questions",
+                faq1_question: "How can I update the app?",
+                faq1_answer: "To download the latest version of the app, go to the 'Download and Installation' page and download the new version. The old version will be automatically replaced.",
+                faq2_question: "Is the app completely free?",
+                faq2_answer: "Yes, Zad Bono app is completely free and does not contain any in-app purchases or advertisements. We believe in providing free service for the sake of Allah.",
+                faq3_question: "How do I reset the app settings?",
+                faq3_answer: "You can access the settings from the main menu in the app. There is a 'Reset' option that you can use to restore all settings to default."
+            }
         };
-        
+
         const langToggleButton = document.getElementById('lang-toggle-btn');
         const langMenu = document.getElementById('lang-menu');
         const selectedLangBtnText = document.getElementById('lang-text');
         const selectedLangBtnFlag = document.getElementById('lang-flag');
+        
         function setLanguage(lang) {
             const elements = document.querySelectorAll('[data-translate]');
-            elements.forEach(el => { const key = el.getAttribute('data-translate'); if (translations[lang] && translations[lang][key]) { el.textContent = translations[lang][key]; } });
+            elements.forEach(el => { 
+                const key = el.getAttribute('data-translate'); 
+                if (translations[lang] && translations[lang][key]) { 
+                    el.textContent = translations[lang][key]; 
+                } 
+            });
+            
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            if(selectedLangBtnText && translations[lang]) selectedLangBtnText.textContent = translations[lang].lang_name;
-            if(selectedLangBtnFlag) selectedLangBtnFlag.src = `images/${lang}.png`;
+            selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
+            selectedLangBtnFlag.src = `images/${lang}.png`;
             localStorage.setItem('language', lang);
+            
             if(langMenu) langMenu.classList.remove('show');
         }
-        if(langToggleButton) {
-            langToggleButton.addEventListener('click', (event) => { event.stopPropagation(); langMenu.classList.toggle('show'); });
+
+        langToggleButton.addEventListener('click', (event) => { 
+            event.stopPropagation(); 
+            langMenu.classList.toggle('show'); 
+        });
+
+        // إغلاق قائمة اللغة عند النقر خارجها
+        window.addEventListener('click', () => { 
+            if (langMenu.classList.contains('show')) { 
+                langMenu.classList.remove('show'); 
+            } 
+        });
+
+        // تبديل الأسئلة الشائعة
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isOpen = answer.classList.contains('show');
+            
+            // إغلاق جميع الإجابات الأخرى
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                ans.classList.remove('show');
+            });
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.querySelector('span:last-child').textContent = '+';
+            });
+            
+            // فتح/إغلاق السؤال الحالي
+            if (!isOpen) {
+                answer.classList.add('show');
+                element.querySelector('span:last-child').textContent = '−';
+            }
         }
-        window.addEventListener('click', () => { if (langMenu && langMenu.classList.contains('show')) { langMenu.classList.remove('show'); } });
+
+        // التهيئة عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('language') || 'ar';
             setLanguage(savedLang);
