@@ -37,7 +37,7 @@
         .page-container { max-width: 900px; margin: 40px auto; padding: 20px; }
         .page-title { color: #0b5394; font-size: 2.8em; margin-bottom: 40px; }
         
-        /* === الأنماط الجديدة للفيديو === */
+        /* === الأنماط الجديدة والمعدلة للفيديو === */
         .video-section {
             margin: 50px 0;
             background-color: #ffffff;
@@ -53,13 +53,17 @@
         }
         .video-wrapper {
             position: relative;
-            padding-bottom: 177.77%; /* 9:16 Aspect Ratio for Shorts */
-            height: 0;
-            overflow: hidden;
-            max-width: 315px; /* Max-width for the video player */
+            width: 100%;
+            max-width: 360px; /* زيادة العرض الأقصى للفيديو */
             margin: 0 auto;
             border-radius: 12px;
+            overflow: hidden; /* لإخفاء أي زوائد وضمان شكل الحواف الدائرية */
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .video-wrapper::before {
+            content: '';
+            display: block;
+            padding-top: 222.22%; /* النسبة الجديدة بناءً على 2400/1080 */
         }
         .video-wrapper iframe {
             position: absolute;
@@ -67,6 +71,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border: 0;
         }
         /* === نهاية الأنماط الجديدة === */
 
@@ -141,7 +146,6 @@
                 <iframe 
                     src="https://www.youtube.com/embed/CmXzE9TqXrA" 
                     title="YouTube video player" 
-                    frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen>
                 </iframe>
