@@ -1,85 +1,675 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية - Zad Bono</title>
+    <meta name="description" content="سياسة الخصوصية وشروط الخدمة لتطبيق Zad Bono. تعرف على كيفية حماية بياناتك وحقوقك كمستخدم">
+    <title>سياسة الخصوصية | Zad Bono - تطبيق العبادات الشامل</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
     <style>
-        body { font-family: 'Cairo', sans-serif; line-height: 1.8; color: #333; background-color: #f9f9f9; margin: 0; padding: 0; }
-        .navbar { background-color: #0b5394; padding: 10px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.2 ); text-align: center; }
-        .navbar-brand { color: #ffd700; font-weight: bold; font-size: 1.5em; text-decoration: none; }
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1, h2 { color: #0b5394; }
-        h1 { font-size: 2.2em; border-bottom: 2px solid #ffd700; padding-bottom: 10px; margin-bottom: 20px; }
-        h2 { font-size: 1.6em; margin-top: 30px; }
-        p, li { font-size: 1.1em; }
-        ul { padding-right: 20px; }
-        a { color: #0b5394; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .last-updated { color: #777; font-style: italic; margin-bottom: 30px; }
-        .highlight { background-color: #fffbe6; border-left: 4px solid #ffd700; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        :root {
+            --primary-blue: #0b5394;
+            --dark-blue: #073763;
+            --gold: #ffd700;
+            --light-bg: #f0f4f8;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            line-height: 1.8; 
+            color: #333; 
+            background-color: var(--light-bg); 
+            padding-top: 70px;
+        }
+
+        /* النافبار */
+        .navbar { 
+            background-color: var(--primary-blue); 
+            padding: 12px 20px; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            z-index: 1000; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand { 
+            color: var(--gold); 
+            font-weight: bold; 
+            font-size: 1.4em; 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .navbar-links { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px;
+        }
+
+        .navbar-links a { 
+            color: var(--white); 
+            text-decoration: none; 
+            font-size: 1em; 
+            transition: color 0.3s; 
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .navbar-links a:hover, 
+        .navbar-links a.active { 
+            color: var(--gold); 
+            background-color: rgba(255,215,0,0.1);
+        }
+
+        .menu-toggle { 
+            display: none; 
+            font-size: 24px; 
+            color: white; 
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+        }
+
+        /* سويتشر اللغة */
+        .language-switcher { 
+            position: relative; 
+        }
+
+        .selected-lang { 
+            background-color: transparent; 
+            border: none; 
+            color: white; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .selected-lang:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .selected-lang img { 
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+        }
+
+        .lang-menu { 
+            display: none; 
+            position: absolute; 
+            top: 100%;
+            left: 0;
+            background-color: var(--white); 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            list-style: none; 
+            padding: 8px;
+            margin: 5px 0 0 0;
+            width: 140px;
+            z-index: 1001;
+        }
+
+        .lang-menu.show { 
+            display: block; 
+        }
+
+        .lang-menu li a { 
+            color: var(--dark-blue); 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+            padding: 10px;
+            border-radius: 5px; 
+            transition: background-color 0.2s; 
+            font-size: 0.9em;
+        }
+
+        .lang-menu li a:hover { 
+            background-color: #e0e8f0; 
+        }
+
+        .lang-menu li img { 
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+        }
+
+        /* المحتوى الرئيسي */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        h1 { 
+            color: var(--primary-blue); 
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .last-updated { 
+            color: #777; 
+            font-style: italic; 
+            margin-bottom: 30px;
+            font-size: 1em;
+        }
+
+        h2 { 
+            color: var(--primary-blue); 
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-bg);
+        }
+
+        h3 {
+            color: var(--dark-blue);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p, li { 
+            font-size: 1.1em; 
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        ul { 
+            padding-right: 25px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        li::before {
+            content: '•';
+            color: var(--gold);
+            font-weight: bold;
+            position: absolute;
+            right: -20px;
+        }
+
+        .highlight { 
+            background-color: #fffbe6; 
+            border: 2px solid var(--gold);
+            border-radius: 12px; 
+            padding: 25px; 
+            margin: 25px 0; 
+        }
+
+        .highlight ol {
+            padding-right: 25px;
+        }
+
+        .highlight li {
+            margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background-color: #ffeaa7;
+            border: 2px solid #fdcb6e;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box i {
+            color: #e17055;
+            margin-left: 10px;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--dark-blue);
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,215,0,0.3);
+        }
+
+        a { 
+            color: var(--primary-blue); 
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover { 
+            color: var(--dark-blue);
+            text-decoration: underline;
+        }
+
+        /* For LTR languages */
+        html[dir="ltr"] .container {
+            text-align: left;
+        }
+
+        html[dir="ltr"] ul {
+            padding-right: 0;
+            padding-left: 25px;
+        }
+
+        html[dir="ltr"] li::before {
+            right: auto;
+            left: -20px;
+        }
+
+        html[dir="ltr"] .highlight ol {
+            padding-right: 0;
+            padding-left: 25px;
+        }
+
+        /* الفوتر */
+        .footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 30px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9em;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 0.85em;
+        }
+
+        /* الوسائط المتجاوبة */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .navbar-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background-color: var(--primary-blue); 
+                padding: 20px; 
+                gap: 15px;
+            }
+
+            .navbar-links.active { 
+                display: flex; 
+            }
+
+            .menu-toggle { 
+                display: block; 
+            }
+
+            .container {
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .page-header {
+                margin-bottom: 30px;
+            }
+
+            .highlight {
+                padding: 20px 15px;
+            }
+
+            .contact-info {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            p, li {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="navbar-brand">Zad Bono | العودة للرئيسية</a>
+        <a href="index.html" class="navbar-brand" data-translate="app_name">
+            <img src="images/logo.jpg" alt="شعار Zad Bono">
+            Zad Bono
+        </a>
+        <div class="navbar-links" id="navbar-links">
+            <a href="index.html" data-translate="nav_home">الرئيسية</a>
+            <a href="features.html" data-translate="nav_features">شرح المميزات</a>
+            <a href="install.html" data-translate="nav_install">التحميل والتثبيت</a>
+            <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+            <a href="privacy-policy.html" class="active" data-translate="nav_privacy">سياسة الخصوصية</a>
+            <div class="language-switcher">
+                <button class="selected-lang" id="lang-toggle-btn">
+                    <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
+                    <span id="lang-text">العربية</span>
+                </button>
+                <ul class="lang-menu" id="lang-menu">
+                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم العربية"> العربية</a></li>
+                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم الإنجليزية"> English</a></li>
+                </ul>
+            </div>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
     </nav>
 
     <div class="container">
-        <h1>سياسة الخصوصية وشروط الخدمة لتطبيق Zad Bono</h1>
-        <p class="last-updated">آخر تحديث: 20 سبتمبر 2025</p>
+        <div class="page-header">
+            <h1 data-translate="privacy_title">سياسة الخصوصية وشروط الخدمة</h1>
+            <p class="last-updated" data-translate="last_updated">آخر تحديث: 20 سبتمبر 2025</p>
+        </div>
 
-        <p>نحن في تطبيق "Zad Bono" نقدر خصوصيتك ونسعى لحماية معلوماتك الشخصية. توضح هذه الوثيقة سياسة الخصوصية وشروط الخدمة عند استخدامك للتطبيق.</p>
+        <p data-translate="intro_text">نحن في تطبيق "Zad Bono" نقدر خصوصيتك ونسعى لحماية معلوماتك الشخصية. توضح هذه الوثيقة سياسة الخصوصية وشروط الخدمة عند استخدامك للتطبيق.</p>
 
-        <h2>1. المعلومات التي نجمعها</h2>
-        <p>عند استخدامك لخدمة تسجيل الدخول عبر موفري الهوية (مثل Google و Facebook)، قد نجمع المعلومات التالية التي توافق على مشاركتها:</p>
+        <h2 data-translate="section1_title">1. المعلومات التي نجمعها</h2>
+        <p data-translate="section1_desc">عند استخدامك لخدمة تسجيل الدخول عبر موفري الهوية (مثل Google و Facebook)، قد نجمع المعلومات التالية التي توافق على مشاركتها:</p>
         <ul>
-            <li><strong>معلومات الحساب الأساسية:</strong> مثل الاسم، عنوان البريد الإلكتروني، وصورة الملف الشخصي.</li>
-            <li><strong>معرّف المستخدم الفريد:</strong> وهو معرّف فريد يوفره مزود الخدمة (Google/Facebook) لربط حسابك بتطبيقنا.</li>
+            <li data-translate="section1_item1"><strong>معلومات الحساب الأساسية:</strong> مثل الاسم، عنوان البريد الإلكتروني، وصورة الملف الشخصي.</li>
+            <li data-translate="section1_item2"><strong>معرّف المستخدم الفريد:</strong> وهو معرّف فريد يوفره مزود الخدمة (Google/Facebook) لربط حسابك بتطبيقنا.</li>
         </ul>
-        <p>نحن لا نجمع أي معلومات حساسة إضافية مثل تاريخ الميلاد، قائمة الأصدقاء، أو المنشورات.</p>
+        <div class="warning-box">
+            <p><i class="fas fa-exclamation-circle"></i> <span data-translate="section1_warning">نحن لا نجمع أي معلومات حساسة إضافية مثل تاريخ الميلاد، قائمة الأصدقاء، أو المنشورات.</span></p>
+        </div>
 
-        <h2>2. كيفية استخدام المعلومات</h2>
-        <p>نستخدم المعلومات التي نجمعها للأغراض التالية:</p>
+        <h2 data-translate="section2_title">2. كيفية استخدام المعلومات</h2>
+        <p data-translate="section2_desc">نستخدم المعلومات التي نجمعها للأغراض التالية:</p>
         <ul>
-            <li>لإنشاء وإدارة حسابك الشخصي داخل تطبيق "Zad Bono".</li>
-            <li>لتخصيص تجربتك داخل التطبيق، مثل عرض اسمك.</li>
-            <li>للتواصل معك بشأن التحديثات الهامة المتعلقة بحسابك أو التطبيق.</li>
+            <li data-translate="section2_item1">لإنشاء وإدارة حسابك الشخصي داخل تطبيق "Zad Bono".</li>
+            <li data-translate="section2_item2">لتخصيص تجربتك داخل التطبيق، مثل عرض اسمك.</li>
+            <li data-translate="section2_item3">للتواصل معك بشأن التحديثات الهامة المتعلقة بحسابك أو التطبيق.</li>
         </ul>
 
-        <h2>3. مشاركة المعلومات</h2>
-        <p>نحن لا نبيع أو نؤجر أو نشارك معلوماتك الشخصية مع أي طرف ثالث لأغراض تسويقية. تظل معلوماتك محفوظة بشكل آمن ضمن خدمات Firebase التي نستخدمها لإدارة المصادقة.</p>
+        <h2 data-translate="section3_title">3. مشاركة المعلومات</h2>
+        <p data-translate="section3_desc">نحن لا نبيع أو نؤجر أو نشارك معلوماتك الشخصية مع أي طرف ثالث لأغراض تسويقية. تظل معلوماتك محفوظة بشكل آمن ضمن خدمات Firebase التي نستخدمها لإدارة المصادقة.</p>
 
-        <h2>4. أمان البيانات</h2>
-        <p>نحن نتخذ إجراءات أمنية معقولة لحماية معلوماتك من الوصول غير المصرح به أو التغيير أو الكشف. يتم تخزين البيانات على خوادم آمنة مقدمة من Google Firebase.</p>
+        <h2 data-translate="section4_title">4. أمان البيانات</h2>
+        <p data-translate="section4_desc">نحن نتخذ إجراءات أمنية معقولة لحماية معلوماتك من الوصول غير المصرح به أو التغيير أو الكشف. يتم تخزين البيانات على خوادم آمنة مقدمة من Google Firebase.</p>
         
-        <!-- ===>>> [هذه هي الفقرة الجديدة والمهمة] <<<=== -->
-        <h2>5. تعليمات حذف بيانات المستخدم</h2>
-        <p>نحن نحترم حقك في التحكم في بياناتك. لحذف حسابك وجميع البيانات المرتبطة به نهائيًا من خوادمنا، يرجى اتباع الخطوات التالية:</p>
+        <h2 data-translate="section5_title">5. تعليمات حذف بيانات المستخدم</h2>
+        <p data-translate="section5_desc">نحن نحترم حقك في التحكم في بياناتك. لحذف حسابك وجميع البيانات المرتبطة به نهائيًا من خوادمنا، يرجى اتباع الخطوات التالية:</p>
         <div class="highlight">
             <ol>
-                <li>افتح تطبيق "Zad Bono".</li>
-                <li>اذهب إلى قسم "الاقتراحات والدعم".</li>
-                <li>اختر نوع الرسالة "استفسار عام" أو "أخرى".</li>
-                <li>في نص الرسالة، اكتب بوضوح: "أرغب في حذف حسابي وبياناتي بشكل دائم".</li>
-                <li>اضغط على "إرسال".</li>
+                <li data-translate="section5_step1">افتح تطبيق "Zad Bono".</li>
+                <li data-translate="section5_step2">اذهب إلى قسم "الاقتراحات والدعم".</li>
+                <li data-translate="section5_step3">اختر نوع الرسالة "استفسار عام" أو "أخرى".</li>
+                <li data-translate="section5_step4">في نص الرسالة، اكتب بوضوح: "أرغب في حذف حسابي وبياناتي بشكل دائم".</li>
+                <li data-translate="section5_step5">اضغط على "إرسال".</li>
             </ol>
-            <p>سنتلقى طلبك ونقوم بمعالجته وحذف جميع بياناتك المرتبطة بحسابك من أنظمتنا في غضون فترة زمنية معقولة.</p>
+            <p data-translate="section5_note">سنتلقى طلبك ونقوم بمعالجته وحذف جميع بياناتك المرتبطة بحسابك من أنظمتنا في غضون فترة زمنية معقولة.</p>
         </div>
         
-        <h2>6. شروط الخدمة</h2>
-        <p>باستخدامك لتطبيق "Zad Bono"، فإنك توافق على عدم استخدام التطبيق في أي نشاط غير قانوني أو ضار. أنت مسؤول عن الحفاظ على أمان معلومات تسجيل الدخول الخاصة بك.</p>
+        <h2 data-translate="section6_title">6. شروط الخدمة</h2>
+        <p data-translate="section6_desc">باستخدامك لتطبيق "Zad Bono"، فإنك توافق على عدم استخدام التطبيق في أي نشاط غير قانوني أو ضار. أنت مسؤول عن الحفاظ على أمان معلومات تسجيل الدخول الخاصة بك.</p>
 
-        <h2>7. التغييرات على هذه الوثيقة</h2>
-        <p>قد نقوم بتحديث سياسة الخصوصية وشروط الخدمة هذه من وقت لآخر. سنقوم بإعلامك بأي تغييرات عن طريق نشر الوثيقة الجديدة على هذه الصفحة. يُنصح بمراجعة هذه الصفحة بشكل دوري للاطلاع على أي تغييرات.</p>
+        <h2 data-translate="section7_title">7. التغييرات على هذه الوثيقة</h2>
+        <p data-translate="section7_desc">قد نقوم بتحديث سياسة الخصوصية وشروط الخدمة هذه من وقت لآخر. سنقوم بإعلامك بأي تغييرات عن طريق نشر الوثيقة الجديدة على هذه الصفحة. يُنصح بمراجعة هذه الصفحة بشكل دوري للاطلاع على أي تغييرات.</p>
 
-        <h2>8. الاتصال بنا</h2>
-        <p>إذا كان لديك أي أسئلة حول هذه الوثيقة، يمكنك التواصل معنا عبر قسم "الاقتراحات والدعم" داخل التطبيق.</p>
+        <div class="contact-info">
+            <h3 data-translate="contact_title">هل لديك أسئلة؟</h3>
+            <p data-translate="contact_desc">إذا كان لديك أي استفسارات حول سياسة الخصوصية أو تريد حذف بياناتك، لا تتردد في التواصل معنا</p>
+            <a href="contact.html" class="contact-button" data-translate="contact_button">اتصل بنا الآن</a>
+        </div>
     </div>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
+                <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+                <a href="features.html" data-translate="nav_features">المميزات</a>
+                <a href="install.html" data-translate="nav_install">التثبيت</a>
+            </div>
+            <div class="copyright">
+                © 2024 Zad Bono. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Script for Mobile Menu ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarLinks = document.getElementById('navbar-links');
+        
+        menuToggle.addEventListener('click', () => { 
+            navbarLinks.classList.toggle('active'); 
+        });
+
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', (event) => {
+            if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navbarLinks.classList.remove('active');
+            }
+        });
+
+        // --- Script for Language Switcher ---
+        const translations = {
+            ar: { 
+                app_name: "Zad Bono", 
+                nav_home: "الرئيسية", 
+                nav_features: "شرح المميزات", 
+                nav_install: "التحميل والتثبيت", 
+                nav_contact: "اتصل بنا", 
+                nav_privacy: "سياسة الخصوصية", 
+                privacy_title: "سياسة الخصوصية وشروط الخدمة",
+                last_updated: "آخر تحديث: 20 سبتمبر 2025",
+                intro_text: "نحن في تطبيق \"Zad Bono\" نقدر خصوصيتك ونسعى لحماية معلوماتك الشخصية. توضح هذه الوثيقة سياسة الخصوصية وشروط الخدمة عند استخدامك للتطبيق.",
+                section1_title: "1. المعلومات التي نجمعها",
+                section1_desc: "عند استخدامك لخدمة تسجيل الدخول عبر موفري الهوية (مثل Google و Facebook)، قد نجمع المعلومات التالية التي توافق على مشاركتها:",
+                section1_item1: "معلومات الحساب الأساسية: مثل الاسم، عنوان البريد الإلكتروني، وصورة الملف الشخصي.",
+                section1_item2: "معرّف المستخدم الفريد: وهو معرّف فريد يوفره مزود الخدمة (Google/Facebook) لربط حسابك بتطبيقنا.",
+                section1_warning: "نحن لا نجمع أي معلومات حساسة إضافية مثل تاريخ الميلاد، قائمة الأصدقاء، أو المنشورات.",
+                section2_title: "2. كيفية استخدام المعلومات",
+                section2_desc: "نستخدم المعلومات التي نجمعها للأغراض التالية:",
+                section2_item1: "لإنشاء وإدارة حسابك الشخصي داخل تطبيق \"Zad Bono\".",
+                section2_item2: "لتخصيص تجربتك داخل التطبيق، مثل عرض اسمك.",
+                section2_item3: "للتواصل معك بشأن التحديثات الهامة المتعلقة بحسابك أو التطبيق.",
+                section3_title: "3. مشاركة المعلومات",
+                section3_desc: "نحن لا نبيع أو نؤجر أو نشارك معلوماتك الشخصية مع أي طرف ثالث لأغراض تسويقية. تظل معلوماتك محفوظة بشكل آمن ضمن خدمات Firebase التي نستخدمها لإدارة المصادقة.",
+                section4_title: "4. أمان البيانات",
+                section4_desc: "نحن نتخذ إجراءات أمنية معقولة لحماية معلوماتك من الوصول غير المصرح به أو التغيير أو الكشف. يتم تخزين البيانات على خوادم آمنة مقدمة من Google Firebase.",
+                section5_title: "5. تعليمات حذف بيانات المستخدم",
+                section5_desc: "نحن نحترم حقك في التحكم في بياناتك. لحذف حسابك وجميع البيانات المرتبطة به نهائيًا من خوادمنا، يرجى اتباع الخطوات التالية:",
+                section5_step1: "افتح تطبيق \"Zad Bono\".",
+                section5_step2: "اذهب إلى قسم \"الاقتراحات والدعم\".",
+                section5_step3: "اختر نوع الرسالة \"استفسار عام\" أو \"أخرى\".",
+                section5_step4: "في نص الرسالة، اكتب بوضوح: \"أرغب في حذف حسابي وبياناتي بشكل دائم\".",
+                section5_step5: "اضغط على \"إرسال\".",
+                section5_note: "سنتلقى طلبك ونقوم بمعالجته وحذف جميع بياناتك المرتبطة بحسابك من أنظمتنا في غضون فترة زمنية معقولة.",
+                section6_title: "6. شروط الخدمة",
+                section6_desc: "باستخدامك لتطبيق \"Zad Bono\"، فإنك توافق على عدم استخدام التطبيق في أي نشاط غير قانوني أو ضار. أنت مسؤول عن الحفاظ على أمان معلومات تسجيل الدخول الخاصة بك.",
+                section7_title: "7. التغييرات على هذه الوثيقة",
+                section7_desc: "قد نقوم بتحديث سياسة الخصوصية وشروط الخدمة هذه من وقت لآخر. سنقوم بإعلامك بأي تغييرات عن طريق نشر الوثيقة الجديدة على هذه الصفحة. يُنصح بمراجعة هذه الصفحة بشكل دوري للاطلاع على أي تغييرات.",
+                contact_title: "هل لديك أسئلة؟",
+                contact_desc: "إذا كان لديك أي استفسارات حول سياسة الخصوصية أو تريد حذف بياناتك، لا تتردد في التواصل معنا",
+                contact_button: "اتصل بنا الآن"
+            },
+            en: { 
+                app_name: "Zad Bono", 
+                nav_home: "Home", 
+                nav_features: "Features", 
+                nav_install: "Installation", 
+                nav_contact: "Contact Us", 
+                nav_privacy: "Privacy Policy", 
+                privacy_title: "Privacy Policy & Terms of Service",
+                last_updated: "Last Updated: September 20, 2025",
+                intro_text: "We at \"Zad Bono\" app value your privacy and strive to protect your personal information. This document explains the privacy policy and terms of service when you use the app.",
+                section1_title: "1. Information We Collect",
+                section1_desc: "When you use the login service through identity providers (such as Google and Facebook), we may collect the following information that you agree to share:",
+                section1_item1: "Basic Account Information: Such as name, email address, and profile picture.",
+                section1_item2: "Unique User Identifier: A unique identifier provided by the service provider (Google/Facebook) to link your account to our app.",
+                section1_warning: "We do not collect any additional sensitive information such as date of birth, friends list, or posts.",
+                section2_title: "2. How We Use Information",
+                section2_desc: "We use the information we collect for the following purposes:",
+                section2_item1: "To create and manage your personal account within the \"Zad Bono\" app.",
+                section2_item2: "To customize your experience within the app, such as displaying your name.",
+                section2_item3: "To communicate with you about important updates related to your account or the app.",
+                section3_title: "3. Information Sharing",
+                section3_desc: "We do not sell, rent, or share your personal information with any third party for marketing purposes. Your information remains securely stored within the Firebase services we use for authentication management.",
+                section4_title: "4. Data Security",
+                section4_desc: "We take reasonable security measures to protect your information from unauthorized access, alteration, or disclosure. Data is stored on secure servers provided by Google Firebase.",
+                section5_title: "5. User Data Deletion Instructions",
+                section5_desc: "We respect your right to control your data. To delete your account and all associated data permanently from our servers, please follow these steps:",
+                section5_step1: "Open the \"Zad Bono\" app.",
+                section5_step2: "Go to the \"Suggestions and Support\" section.",
+                section5_step3: "Choose the message type \"General Inquiry\" or \"Other\".",
+                section5_step4: "In the message text, write clearly: \"I want to delete my account and data permanently\".",
+                section5_step5: "Press \"Send\".",
+                section5_note: "We will receive your request and process it, deleting all your data associated with your account from our systems within a reasonable time frame.",
+                section6_title: "6. Terms of Service",
+                section6_desc: "By using the \"Zad Bono\" app, you agree not to use the app in any illegal or harmful activity. You are responsible for maintaining the security of your login information.",
+                section7_title: "7. Changes to This Document",
+                section7_desc: "We may update this privacy policy and terms of service from time to time. We will notify you of any changes by posting the new document on this page. It is recommended to review this page periodically for any changes.",
+                contact_title: "Have Questions?",
+                contact_desc: "If you have any inquiries about the privacy policy or want to delete your data, feel free to contact us",
+                contact_button: "Contact Us Now"
+            }
+        };
+
+        const langToggleButton = document.getElementById('lang-toggle-btn');
+        const langMenu = document.getElementById('lang-menu');
+        const selectedLangBtnText = document.getElementById('lang-text');
+        const selectedLangBtnFlag = document.getElementById('lang-flag');
+        
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(el => { 
+                const key = el.getAttribute('data-translate'); 
+                if (translations[lang] && translations[lang][key]) { 
+                    el.textContent = translations[lang][key]; 
+                } 
+            });
+            
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
+            selectedLangBtnFlag.src = `images/${lang}.png`;
+            localStorage.setItem('language', lang);
+            
+            if(langMenu) langMenu.classList.remove('show');
+        }
+
+        langToggleButton.addEventListener('click', (event) => { 
+            event.stopPropagation(); 
+            langMenu.classList.toggle('show'); 
+        });
+
+        // إغلاق قائمة اللغة عند النقر خارجها
+        window.addEventListener('click', () => { 
+            if (langMenu.classList.contains('show')) { 
+                langMenu.classList.remove('show'); 
+            } 
+        });
+
+        // التهيئة عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'ar';
+            setLanguage(savedLang);
+        });
+    </script>
 
 </body>
 </html>
