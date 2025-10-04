@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="تطبيق Zad Bono - دليلك الذكي للعبادات اليومية. قرآن، صلاة، أذكار، فتاوى، وبث مباشر. حمّل الآن مجاناً">
+    <meta name="description" content="Zad Bono - تطبيق العبادات الشامل. قرآن، صلاة، أذكار، وتنبيهات ذكية. حمّل الآن مجاناً">
     <link rel="icon" type="image/jpeg" href="images/logo.jpg">
     <title>Zad Bono | تطبيق العبادات الشامل - Quran, Prayer, Azkar</title>
     
@@ -20,19 +20,24 @@
             --white: #ffffff;
         }
 
-        body { 
-            font-family: 'Cairo', sans-serif; 
-            margin: 0; 
-            padding-top: 70px; 
-            background-color: var(--light-bg); 
-            color: var(--dark-blue); 
-            text-align: center; 
-            transition: all 0.3s; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: var(--light-bg); 
+            color: var(--dark-blue); 
+            text-align: center;
+            padding-top: 70px;
+        }
+
+        /* النافبار */
         .navbar { 
             background-color: var(--primary-blue); 
-            padding: 10px 20px; 
+            padding: 12px 20px; 
             position: fixed; 
             top: 0; 
             left: 0; 
@@ -41,213 +46,474 @@
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .navbar-brand { 
             color: var(--gold); 
             font-weight: bold; 
-            font-size: 1.5em; 
+            font-size: 1.4em; 
             text-decoration: none; 
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .navbar-links { display: flex; align-items: center; }
-        .navbar-links a { color: var(--white); text-decoration: none; margin: 0 15px; font-size: 1.1em; transition: color 0.3s; }
-        .navbar-links a:hover, .navbar-links a.active { color: var(--gold); }
-        .menu-toggle { display: none; font-size: 30px; color: white; background: none; border: none; cursor: pointer; }
+        .navbar-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
 
-        /* لغة */
-        .language-switcher { position: relative; }
-        .language-switcher .selected-lang { background-color: transparent; border: none; color: white; cursor: pointer; display: flex; align-items: center; font-family: 'Cairo', sans-serif; font-size: 1.1em; padding: 5px; }
-        .language-switcher .selected-lang img { width: 24px; height: 24px; border-radius: 50%; margin-left: 8px; }
-        .language-switcher .lang-menu { display: none; position: absolute; top: 120%; left: 50%; transform: translateX(-50%); background-color: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); list-style: none; padding: 5px; margin: 0; width: 180px; z-index: 1001; }
-        .language-switcher .lang-menu.show { display: block; }
-        .language-switcher .lang-menu li a { color: var(--dark-blue); text-decoration: none; display: flex; align-items: center; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
-        .language-switcher .lang-menu li a:hover { background-color: #e0e8f0; }
-        .language-switcher .lang-menu li img { width: 24px; height: 24px; border-radius: 50%; margin-left: 10px; }
+        .navbar-links { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px;
+        }
 
-        /* الهيرو */
+        .navbar-links a { 
+            color: var(--white); 
+            text-decoration: none; 
+            font-size: 1em; 
+            transition: color 0.3s; 
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .navbar-links a:hover, 
+        .navbar-links a.active { 
+            color: var(--gold); 
+            background-color: rgba(255,215,0,0.1);
+        }
+
+        .menu-toggle { 
+            display: none; 
+            font-size: 24px; 
+            color: white; 
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+        }
+
+        /* سويتشر اللغة */
+        .language-switcher { 
+            position: relative; 
+        }
+
+        .selected-lang { 
+            background-color: transparent; 
+            border: none; 
+            color: white; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .selected-lang:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .selected-lang img { 
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+        }
+
+        .lang-menu { 
+            display: none; 
+            position: absolute; 
+            top: 100%;
+            left: 0;
+            background-color: var(--white); 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            list-style: none; 
+            padding: 8px;
+            margin: 5px 0 0 0;
+            width: 140px;
+            z-index: 1001;
+        }
+
+        .lang-menu.show { 
+            display: block; 
+        }
+
+        .lang-menu li a { 
+            color: var(--dark-blue); 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+            padding: 10px;
+            border-radius: 5px; 
+            transition: background-color 0.2s; 
+            font-size: 0.9em;
+        }
+
+        .lang-menu li a:hover { 
+            background-color: #e0e8f0; 
+        }
+
+        .lang-menu li img { 
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+        }
+
+        /* الهيرو سيكشن */
         .hero-section { 
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
             color: white;
-            padding: 60px 20px;
-            margin-bottom: 50px;
+            padding: 60px 20px 40px;
+            margin-bottom: 40px;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .logo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid var(--gold); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
-        h1 { color: var(--white); font-size: 2.8em; margin-bottom: 15px; }
-        .subtitle { font-size: 1.3em; line-height: 1.6; margin-bottom: 30px; opacity: 0.9; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        .buttons-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+        .logo { 
+            width: 120px; 
+            height: 120px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            margin-bottom: 20px; 
+            border: 4px solid var(--gold); 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3); 
+        }
+
+        h1 { 
+            color: var(--white); 
+            font-size: 2.2em; 
+            margin-bottom: 15px; 
+            line-height: 1.3;
+        }
+
+        .subtitle { 
+            font-size: 1.1em; 
+            line-height: 1.6; 
+            margin-bottom: 30px; 
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* أزرار التحميل */
+        .buttons-container { 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+            margin-bottom: 30px; 
+        }
+
         .download-button { 
             background-color: var(--gold); 
             color: var(--dark-blue); 
-            padding: 15px 35px; 
-            font-size: 1.2em; 
+            padding: 14px 28px; 
+            font-size: 1em; 
             font-weight: bold; 
             text-decoration: none; 
             border-radius: 50px; 
             transition: all 0.3s; 
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+            border: none;
+            cursor: pointer;
         }
+
         .download-button.secondary { 
             background-color: transparent; 
             border: 2px solid var(--gold);
             color: var(--gold);
         }
+
         .download-button:hover { 
-            transform: translateY(-3px); 
+            transform: translateY(-2px); 
             box-shadow: 0 6px 20px rgba(255,215,0,0.4);
         }
+
         .download-button.secondary:hover {
             background-color: var(--gold);
             color: var(--dark-blue);
         }
 
-        /* المميزات السريعة */
+        /* الإحصائيات المصغرة */
+        .stats-preview {
+            margin-top: 30px;
+        }
+
+        .stats-preview .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-preview-item {
+            text-align: center;
+        }
+
+        .stat-preview-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--gold);
+            display: block;
+        }
+
+        .stat-preview-label {
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+
+        /* المميزات البارزة */
         .features-section {
-            padding: 60px 20px;
+            padding: 50px 20px;
             background-color: var(--white);
         }
 
         .section-title {
-            font-size: 2.5em;
+            font-size: 2em;
             color: var(--dark-blue);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             position: relative;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
+            width: 60px;
+            height: 3px;
             background-color: var(--gold);
             border-radius: 2px;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
         }
 
         .feature-card {
             background: var(--white);
-            padding: 30px 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             border: 1px solid #f0f0f0;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
 
         .feature-icon {
-            width: 70px;
-            height: 70px;
-            margin-bottom: 20px;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
             object-fit: contain;
         }
 
         .feature-card h3 {
             color: var(--primary-blue);
-            font-size: 1.4em;
-            margin-bottom: 15px;
+            font-size: 1.2em;
+            margin-bottom: 12px;
         }
 
         .feature-card p {
             color: #666;
-            line-height: 1.6;
-            font-size: 1em;
+            line-height: 1.5;
+            font-size: 0.9em;
+        }
+
+        /* ويدجيت الصلاة */
+        .prayer-section {
+            padding: 40px 20px;
+        }
+
+        .prayer-times-widget { 
+            background-color: var(--white); 
+            border-radius: 16px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+            max-width: 800px; 
+            margin: 0 auto; 
+            overflow: hidden; 
+            border: 1px solid #e0e0e0;
+        }
+
+        .date-bar { 
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%); 
+            color: white; 
+            padding: 16px; 
+            font-size: 1em; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+        }
+
+        .widget-body { 
+            padding: 25px; 
+        }
+
+        .city-selector-container { 
+            margin-bottom: 20px; 
+        }
+
+        .city-selector-container label { 
+            font-size: 1em; 
+            margin-left: 8px; 
+            font-weight: bold; 
+            color: var(--dark-blue); 
+        }
+
+        #city-selector { 
+            padding: 10px 16px; 
+            border-radius: 8px; 
+            border: 2px solid #e0e0e0; 
+            font-family: 'Cairo', sans-serif; 
+            font-size: 1em; 
+            background: var(--white);
+            color: var(--dark-blue);
+            transition: border-color 0.3s;
+            margin-top: 8px;
+        }
+
+        #city-selector:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .digital-clock { 
+            font-size: 3em; 
+            font-weight: bold; 
+            color: var(--primary-blue); 
+            margin-bottom: 25px; 
+            direction: ltr;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .prayer-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+
+        .prayer-table th, 
+        .prayer-table td { 
+            padding: 15px 10px; 
+            text-align: center; 
+            border-bottom: 1px solid #eee; 
+        }
+
+        .prayer-table th { 
+            background-color: var(--light-bg); 
+            font-size: 1em; 
+            color: var(--dark-blue); 
+            font-weight: bold; 
+        }
+
+        .prayer-table td { 
+            font-size: 1.1em; 
+            font-weight: bold; 
+            direction: ltr; 
+            color: var(--dark-blue); 
+        }
+
+        .prayer-table tr:last-child td { 
+            border-bottom: none; 
+        }
+
+        .prayer-table tr:hover td {
+            background-color: #f8f9fa;
         }
 
         /* الإحصائيات */
         .stats-section {
             background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
             color: white;
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .stat-item {
-            padding: 20px;
+            padding: 20px 15px;
         }
 
         .stat-number {
-            font-size: 3em;
+            font-size: 2.2em;
             font-weight: bold;
             color: var(--gold);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: block;
         }
 
         .stat-label {
-            font-size: 1.2em;
+            font-size: 1em;
             opacity: 0.9;
         }
 
-        /* التقييمات */
+        /* آراء المستخدمين */
         .testimonials-section {
-            padding: 80px 20px;
+            padding: 60px 20px;
             background-color: var(--light-bg);
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .testimonial-card {
             background: var(--white);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             text-align: right;
         }
 
         .testimonial-text {
-            font-size: 1.1em;
-            line-height: 1.7;
+            font-size: 1em;
+            line-height: 1.6;
             color: #555;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-style: italic;
         }
 
         .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .author-avatar {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             object-fit: cover;
         }
@@ -255,138 +521,85 @@
         .author-info h4 {
             margin: 0;
             color: var(--primary-blue);
-            font-size: 1.1em;
+            font-size: 1em;
         }
 
         .author-info p {
-            margin: 5px 0 0 0;
+            margin: 4px 0 0 0;
             color: #888;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
 
         .rating {
             color: var(--gold);
-            font-size: 1.1em;
-            margin-top: 5px;
-        }
-
-        /* ويدجيت الصلاة */
-        .prayer-times-widget { 
-            background-color: var(--white); 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-            max-width: 900px; 
-            margin: 50px auto; 
-            overflow: hidden; 
-            border: 1px solid #e0e0e0;
-        }
-        .date-bar { 
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%); 
-            color: white; 
-            padding: 20px; 
-            font-size: 1.2em; 
-            min-height: 1.5em; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            gap: 20px; 
-            flex-wrap: wrap; 
-        }
-        .widget-body { padding: 30px; }
-        .city-selector-container { margin-bottom: 25px; }
-        .city-selector-container label { font-size: 1.2em; margin-left: 10px; font-weight: bold; color: var(--dark-blue); }
-        #city-selector { 
-            padding: 12px 20px; 
-            border-radius: 10px; 
-            border: 2px solid #e0e0e0; 
-            font-family: 'Cairo', sans-serif; 
-            font-size: 1.1em; 
-            background: var(--white);
-            color: var(--dark-blue);
-            transition: border-color 0.3s;
-        }
-        #city-selector:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-        }
-        .digital-clock { 
-            font-size: 4em; 
-            font-weight: bold; 
-            color: var(--primary-blue); 
-            margin-bottom: 30px; 
-            direction: ltr;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        .prayer-table { width: 100%; border-collapse: collapse; }
-        .prayer-table th, .prayer-table td { padding: 18px; text-align: center; border-bottom: 1px solid #eee; }
-        .prayer-table th { background-color: var(--light-bg); font-size: 1.2em; color: var(--dark-blue); font-weight: bold; }
-        .prayer-table td { font-size: 1.3em; font-weight: bold; direction: ltr; color: var(--dark-blue); }
-        .prayer-table tr:last-child td { border-bottom: none; }
-        .prayer-table tr:hover td {
-            background-color: #f8f9fa;
+            font-size: 1em;
+            margin-top: 4px;
         }
 
         /* التحديثات */
         .updates-section {
-            padding: 60px 20px;
+            padding: 50px 20px;
             background-color: var(--white);
         }
 
         .updates-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .update-card {
             background: var(--light-bg);
-            padding: 25px;
-            border-radius: 15px;
-            border-right: 5px solid var(--gold);
+            padding: 20px;
+            border-radius: 12px;
+            border-right: 4px solid var(--gold);
             text-align: right;
         }
 
         .update-date {
             color: var(--primary-blue);
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: block;
+            font-size: 0.9em;
         }
 
         .update-card h4 {
             color: var(--dark-blue);
-            margin: 10px 0;
-            font-size: 1.2em;
+            margin: 8px 0;
+            font-size: 1.1em;
         }
 
         .update-card p {
             color: #666;
-            line-height: 1.6;
+            line-height: 1.5;
             margin: 0;
+            font-size: 0.9em;
         }
 
         /* الفوتر */
         .footer {
             background-color: var(--dark-blue);
             color: white;
-            padding: 40px 20px;
-            margin-top: 50px;
+            padding: 30px 20px;
+            margin-top: 40px;
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 25px;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .footer-links a {
             color: #ccc;
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 0.9em;
         }
 
         .footer-links a:hover {
@@ -395,21 +608,83 @@
 
         .copyright {
             color: #999;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
 
-        /* الوسائط */
-        @media (max-width: 850px) {
-            .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: var(--primary-blue); padding: 20px 0; }
-            .navbar-links.active { display: flex; }
-            .navbar-links a, .language-switcher { margin: 10px 0; text-align: center; }
-            .menu-toggle { display: block; }
-            h1 { font-size: 2.2em; }
-            .subtitle { font-size: 1.1em; }
-            .digital-clock { font-size: 2.8em; }
-            .features-grid, .stats-grid, .testimonials-grid, .updates-grid { grid-template-columns: 1fr; }
-            .section-title { font-size: 2em; }
-            .stat-number { font-size: 2.5em; }
+        /* الوسائط المتجاوبة */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .navbar-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background-color: var(--primary-blue); 
+                padding: 20px; 
+                gap: 15px;
+            }
+
+            .navbar-links.active { 
+                display: flex; 
+            }
+
+            .menu-toggle { 
+                display: block; 
+            }
+
+            h1 { 
+                font-size: 1.8em; 
+            }
+
+            .subtitle { 
+                font-size: 1em; 
+            }
+
+            .digital-clock { 
+                font-size: 2.2em; 
+            }
+
+            .features-grid, 
+            .stats-grid, 
+            .testimonials-grid, 
+            .updates-grid { 
+                grid-template-columns: 1fr; 
+            }
+
+            .section-title { 
+                font-size: 1.6em; 
+            }
+
+            .stat-number { 
+                font-size: 1.8em; 
+            }
+
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .download-button {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .date-bar {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .prayer-table th, 
+            .prayer-table td { 
+                padding: 10px 5px; 
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
@@ -417,7 +692,7 @@
 
     <nav class="navbar">
         <a href="index.html" class="navbar-brand" data-translate="app_name">
-            <img src="images/logo.jpg" alt="شعار Zad Bono" style="width: 35px; height: 35px; border-radius: 50%;">
+            <img src="images/logo.jpg" alt="شعار Zad Bono">
             Zad Bono
         </a>
         <div class="navbar-links" id="navbar-links">
@@ -428,15 +703,12 @@
             <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
             <div class="language-switcher">
                 <button class="selected-lang" id="lang-toggle-btn">
-                    <span id="lang-text">العربية</span>
                     <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
+                    <span id="lang-text">العربية</span>
                 </button>
                 <ul class="lang-menu" id="lang-menu">
-                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم مصر"> العربية</a></li>
-                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم أمريكا"> English</a></li>
-                    <li><a href="#" onclick="setLanguage('de')"><img src="images/de.png" alt="علم ألمانيا"> Deutsch</a></li>
-                    <li><a href="#" onclick="setLanguage('fr')"><img src="images/fr.png" alt="علم فرنسا"> Français</a></li>
-                    <li><a href="#" onclick="setLanguage('cn')"><img src="images/cn.png" alt="علم الصين"> 中文</a></li>
+                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم العربية"> العربية</a></li>
+                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم الإنجليزية"> English</a></li>
                 </ul>
             </div>
         </div>
@@ -452,7 +724,7 @@
             
             <div class="buttons-container">
                 <a href="https://archive.org/download/zad-bono-v-1.3/Zad%20Bono%20V%201.3.apk" class="download-button" data-translate="btn_android">
-                    📥 تحميل للأندرويد (APK)
+                    📥 تحميل للأندرويد
                 </a>
                 <a href="iphone.html" class="download-button secondary" data-translate="btn_iphone">
                     📱 تحميل للآيفون
@@ -460,18 +732,18 @@
             </div>
 
             <div class="stats-preview">
-                <div style="display: inline-flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 2em; font-weight: bold; color: var(--gold);">+10K</div>
-                        <div style="font-size: 0.9em;">مستخدم نشط</div>
+                <div class="stats-grid">
+                    <div class="stat-preview-item">
+                        <span class="stat-preview-number">+500</span>
+                        <span class="stat-preview-label">مستخدم نشط</span>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2em; font-weight: bold; color: var(--gold);">⭐ 4.8</div>
-                        <div style="font-size: 0.9em;">تقييم التطبيق</div>
+                    <div class="stat-preview-item">
+                        <span class="stat-preview-number">⭐ 4.5</span>
+                        <span class="stat-preview-label">تقييم التطبيق</span>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2em; font-weight: bold; color: var(--gold);">50+</div>
-                        <div style="font-size: 0.9em;">ميزة متنوعة</div>
+                    <div class="stat-preview-item">
+                        <span class="stat-preview-number">30+</span>
+                        <span class="stat-preview-label">ميزة متنوعة</span>
                     </div>
                 </div>
             </div>
@@ -508,50 +780,51 @@
     </section>
 
     <!-- ويدجيت الصلاة -->
-    <div class="container">
-        <div class="prayer-times-widget">
-            <div class="date-bar" id="date-bar">--:--</div>
-            <div class="widget-body">
-                <div class="city-selector-container">
-                    <label for="city-selector" data-translate="select_city">اختر المدينة:</label>
-                    <select id="city-selector">
-                        <optgroup label="الشرق الأوسط">
-                            <option value="Cairo,Egypt" selected>القاهرة، مصر</option>
-                            <option value="Mecca,Saudi Arabia">مكة المكرمة، السعودية</option>
-                            <option value="Riyadh,Saudi Arabia">الرياض، السعودية</option>
-                            <option value="Dubai,United Arab Emirates">دبي، الإمارات</option>
-                        </optgroup>
-                        <optgroup label="العالم">
-                            <option value="London,United Kingdom">لندن، بريطانيا</option>
-                            <option value="New York,United States">نيويورك، أمريكا</option>
-                            <option value="Kuala Lumpur,Malaysia">كوالالمبور، ماليزيا</option>
-                        </optgroup>
-                    </select>
+    <section class="prayer-section">
+        <div class="container">
+            <div class="prayer-times-widget">
+                <div class="date-bar" id="date-bar">--:--</div>
+                <div class="widget-body">
+                    <div class="city-selector-container">
+                        <label for="city-selector" data-translate="select_city">اختر المدينة:</label>
+                        <select id="city-selector">
+                            <optgroup label="الشرق الأوسط">
+                                <option value="Cairo,Egypt" selected>القاهرة، مصر</option>
+                                <option value="Mecca,Saudi Arabia">مكة المكرمة، السعودية</option>
+                                <option value="Riyadh,Saudi Arabia">الرياض، السعودية</option>
+                                <option value="Dubai,United Arab Emirates">دبي، الإمارات</option>
+                            </optgroup>
+                            <optgroup label="العالم">
+                                <option value="London,United Kingdom">لندن، بريطانيا</option>
+                                <option value="New York,United States">نيويورك، أمريكا</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="digital-clock" id="digital-clock">--:--:--</div>
+                    <table class="prayer-table">
+                        <thead>
+                            <tr>
+                                <th data-translate="prayer_fajr">الفجر</th>
+                                <th data-translate="prayer_dhuhr">الظهر</th>
+                                <th data-translate="prayer_asr">العصر</th>
+                                <th data-translate="prayer_maghrib">المغرب</th>
+                                <th data-translate="prayer_isha">العشاء</th>
+                            </tr>
+                        </thead>
+                        <tbody id="prayer-times-body">
+                            <tr>
+                                <td id="fajr-time">--:--</td>
+                                <td id="dhuhr-time">--:--</td>
+                                <td id="asr-time">--:--</td>
+                                <td id="maghrib-time">--:--</td>
+                                <td id="isha-time">--:--</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="digital-clock" id="digital-clock">--:--:--</div>
-                <table class="prayer-table">
-                    <thead>
-                        <tr>
-                            <th data-translate="prayer_fajr">الفجر</th>
-                            <th data-translate="prayer_dhuhr">الظهر</th>
-                            <th data-translate="prayer_asr">العصر</th>
-                            <th data-translate="prayer_maghrib">المغرب</th>
-                            <th data-translate="prayer_isha">العشاء</th>
-                        </tr>
-                    </thead>
-                    <tbody id="prayer-times-body">
-                        <tr>
-                            <td id="fajr-time">--:--</td>
-                            <td id="dhuhr-time">--:--</td>
-                            <td id="asr-time">--:--</td>
-                            <td id="maghrib-time">--:--</td>
-                            <td id="isha-time">--:--</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- الإحصائيات -->
     <section class="stats-section">
@@ -559,19 +832,19 @@
             <h2 class="section-title" style="color: white;">تطبيق زاد بونو بالأرقام</h2>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <span class="stat-number" id="stat-users">10,000+</span>
+                    <span class="stat-number" id="stat-users">500+</span>
                     <span class="stat-label">مستخدم نشط</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" id="stat-downloads">50,000+</span>
+                    <span class="stat-number" id="stat-downloads">1,200+</span>
                     <span class="stat-label">تحميل</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">4.8</span>
+                    <span class="stat-number">4.5</span>
                     <span class="stat-label">تقييم ⭐</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">50+</span>
+                    <span class="stat-number">30+</span>
                     <span class="stat-label">ميزة متنوعة</span>
                 </div>
             </div>
@@ -585,40 +858,40 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "التطبيق غير حياتي الروحانية! الإشعارات الذكية تساعدني على المداومة على الأذكار والصلوات في وقتها."
+                        "التطبيق جميل وسهل الاستخدام. الإشعارات بتذكرني بالأذكار والصلوات في وقتها."
                     </div>
                     <div class="testimonial-author">
                         <img src="https://ui-avatars.com/api/?name=محمد+أ&background=0b5394&color=fff" alt="محمد" class="author-avatar">
                         <div class="author-info">
                             <h4>محمد أحمد</h4>
-                            <p>مستخدم منذ 6 أشهر</p>
+                            <p>مستخدم منذ أسبوع</p>
                             <div class="rating">⭐⭐⭐⭐⭐</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "خاصية المساعد الذكي مانوس رائعة! يجيب على جميع أسئلتي الدينية بدقة ووضوح."
+                        "خاصية القرآن بدون نت رائعة! بقدر أسمع القرآن في أي وقت ومكان."
                     </div>
                     <div class="testimonial-author">
                         <img src="https://ui-avatars.com/api/?name=فاطمة+س&background=0b5394&color=fff" alt="فاطمة" class="author-avatar">
                         <div class="author-info">
                             <h4>فاطمة سليمان</h4>
-                            <p>مستخدمة منذ 3 أشهر</p>
+                            <p>مستخدمة منذ 3 أيام</p>
                             <div class="rating">⭐⭐⭐⭐⭐</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "أفضل تطبيق إسلامي استخدمته! شامل وسهل الاستخدام ويغطي جميع احتياجاتي الروحانية."
+                        "التطبيق بيساعدني في المحافظة على الصلوات والأذكار. شكراً لكم!"
                     </div>
                     <div class="testimonial-author">
                         <img src="https://ui-avatars.com/api/?name=خالد+ر&background=0b5394&color=fff" alt="خالد" class="author-avatar">
                         <div class="author-info">
                             <h4>خالد راشد</h4>
-                            <p>مستخدم منذ سنة</p>
-                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                            <p>مستخدم منذ أسبوعين</p>
+                            <div class="rating">⭐⭐⭐⭐</div>
                         </div>
                     </div>
                 </div>
@@ -642,9 +915,9 @@
                     <p>إشعارات أكثر ذكاءً وتفاعلاً مع المستخدم</p>
                 </div>
                 <div class="update-card">
-                    <span class="update-date">أكتوبر 2024</span>
-                    <h4>إضافة متتبع الختمة الجماعية</h4>
-                    <p>مشاركة الأصدقاء في ختم القرآن جماعياً</p>
+                    <span class="update-date">نوفمبر 2024</span>
+                    <h4>إضافة متتبع الختمة</h4>
+                    <p>متابعة تقدمك في ختم القرآن الكريم</p>
                 </div>
             </div>
         </div>
@@ -660,7 +933,7 @@
                 <a href="install.html" data-translate="nav_install">التثبيت</a>
             </div>
             <div class="copyright">
-                © 2025 Zad Bono. جميع الحقوق محفوظة.
+                © 2024 Zad Bono. جميع الحقوق محفوظة.
             </div>
         </div>
     </footer>
@@ -669,37 +942,78 @@
         // --- Script for Mobile Menu ---
         const menuToggle = document.getElementById('menu-toggle');
         const navbarLinks = document.getElementById('navbar-links');
-        menuToggle.addEventListener('click', () => { navbarLinks.classList.toggle('active'); });
+        
+        menuToggle.addEventListener('click', () => { 
+            navbarLinks.classList.toggle('active'); 
+        });
+
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', (event) => {
+            if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navbarLinks.classList.remove('active');
+            }
+        });
 
         // --- Script for Language Switcher ---
         const translations = {
             ar: { 
-                app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_install: "التحميل والتثبيت", 
-                nav_contact: "اتصل بنا", nav_privacy: "سياسة الخصوصية", main_title: "تطبيق Zad Bono", 
+                app_name: "Zad Bono", 
+                nav_home: "الرئيسية", 
+                nav_features: "شرح المميزات", 
+                nav_install: "التحميل والتثبيت", 
+                nav_contact: "اتصل بنا", 
+                nav_privacy: "سياسة الخصوصية", 
+                main_title: "تطبيق Zad Bono", 
                 main_subtitle: "دليلك الذكي للعبادات اليومية. اكتشف تجربة إيمانية فريدة ومتكاملة بين يديك.", 
-                btn_android: "تحميل للأندرويد (APK)", btn_iphone: "تحميل للآيفون", lang_name: "العربية", 
-                select_city: "اختر المدينة:", prayer_fajr: "الفجر", prayer_dhuhr: "الظهر", prayer_asr: "العصر", 
-                prayer_maghrib: "المغرب", prayer_isha: "العشاء", features_title: "أبرز المميزات",
-                feature1_title: "القرآن الكريم", feature1_desc: "تلاوة واستماع وتفسير كامل مع إمكانية التحميل للاستماع بدون إنترنت",
-                feature2_title: "مواقيت الصلاة", feature2_desc: "أذان دقيق وتنبيهات ذكية مع تحديد اتجاه القبلة",
-                feature3_title: "إشعارات تفاعلية", feature3_desc: "تذكيرات أذكار وتنبيهات عبادات طوال اليوم",
-                feature4_title: "المساعد الذكي", feature4_desc: "مانوس - مساعدك الشخصي للإجابة على أسئلتك الدينية",
-                testimonials_title: "آراء المستخدمين", updates_title: "آخر التحديثات"
+                btn_android: "تحميل للأندرويد", 
+                btn_iphone: "تحميل للآيفون", 
+                select_city: "اختر المدينة:", 
+                prayer_fajr: "الفجر", 
+                prayer_dhuhr: "الظهر", 
+                prayer_asr: "العصر", 
+                prayer_maghrib: "المغرب", 
+                prayer_isha: "العشاء", 
+                features_title: "أبرز المميزات",
+                feature1_title: "القرآن الكريم", 
+                feature1_desc: "تلاوة واستماع وتفسير كامل مع إمكانية التحميل للاستماع بدون إنترنت",
+                feature2_title: "مواقيت الصلاة", 
+                feature2_desc: "أذان دقيق وتنبيهات ذكية مع تحديد اتجاه القبلة",
+                feature3_title: "إشعارات تفاعلية", 
+                feature3_desc: "تذكيرات أذكار وتنبيهات عبادات طوال اليوم",
+                feature4_title: "المساعد الذكي", 
+                feature4_desc: "مانوس - مساعدك الشخصي للإجابة على أسئلتك الدينية",
+                testimonials_title: "آراء المستخدمين", 
+                updates_title: "آخر التحديثات"
             },
             en: { 
-                app_name: "Zad Bono", nav_home: "Home", nav_features: "Features", nav_install: "Installation", 
-                nav_contact: "Contact Us", nav_privacy: "Privacy Policy", main_title: "Zad Bono App", 
+                app_name: "Zad Bono", 
+                nav_home: "Home", 
+                nav_features: "Features", 
+                nav_install: "Installation", 
+                nav_contact: "Contact Us", 
+                nav_privacy: "Privacy Policy", 
+                main_title: "Zad Bono App", 
                 main_subtitle: "Your smart guide for daily worship. Discover a unique and integrated faith experience in your hands.", 
-                btn_android: "Download for Android (APK)", btn_iphone: "Download for iPhone", lang_name: "English", 
-                select_city: "Select City:", prayer_fajr: "Fajr", prayer_dhuhr: "Dhuhr", prayer_asr: "Asr", 
-                prayer_maghrib: "Maghrib", prayer_isha: "Isha", features_title: "Key Features",
-                feature1_title: "Holy Quran", feature1_desc: "Complete recitation, listening and interpretation with offline download",
-                feature2_title: "Prayer Times", feature2_desc: "Accurate azan and smart notifications with Qibla direction",
-                feature3_title: "Interactive Notifications", feature3_desc: "Azkar reminders and worship alerts throughout the day",
-                feature4_title: "Smart Assistant", feature4_desc: "Manus - your personal assistant for religious questions",
-                testimonials_title: "User Reviews", updates_title: "Latest Updates"
+                btn_android: "Download for Android", 
+                btn_iphone: "Download for iPhone", 
+                select_city: "Select City:", 
+                prayer_fajr: "Fajr", 
+                prayer_dhuhr: "Dhuhr", 
+                prayer_asr: "Asr", 
+                prayer_maghrib: "Maghrib", 
+                prayer_isha: "Isha", 
+                features_title: "Key Features",
+                feature1_title: "Holy Quran", 
+                feature1_desc: "Complete recitation, listening and interpretation with offline download",
+                feature2_title: "Prayer Times", 
+                feature2_desc: "Accurate azan and smart notifications with Qibla direction",
+                feature3_title: "Interactive Notifications", 
+                feature3_desc: "Azkar reminders and worship alerts throughout the day",
+                feature4_title: "Smart Assistant", 
+                feature4_desc: "Manus - your personal assistant for religious questions",
+                testimonials_title: "User Reviews", 
+                updates_title: "Latest Updates"
             }
-            // ... باقي اللغات
         };
 
         const langToggleButton = document.getElementById('lang-toggle-btn');
@@ -715,11 +1029,13 @@
                     el.textContent = translations[lang][key]; 
                 } 
             });
+            
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            selectedLangBtnText.textContent = translations[lang].lang_name;
+            selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
             selectedLangBtnFlag.src = `images/${lang}.png`;
             localStorage.setItem('language', lang);
+            
             if(langMenu) langMenu.classList.remove('show');
         }
 
@@ -728,6 +1044,7 @@
             langMenu.classList.toggle('show'); 
         });
 
+        // إغلاق قائمة اللغة عند النقر خارجها
         window.addEventListener('click', () => { 
             if (langMenu.classList.contains('show')) { 
                 langMenu.classList.remove('show'); 
@@ -748,6 +1065,7 @@
         function getPrayerTimes(city, country) {
             if (clockInterval) clearInterval(clockInterval);
             const url = `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city)}&country=${encodeURIComponent(country)}&method=5`;
+            
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
@@ -796,21 +1114,19 @@
             getPrayerTimes(city, country);
         });
 
+        // التهيئة عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('language') || 'ar';
             setLanguage(savedLang);
+            
             const [city, country] = citySelector.value.split(',');
             getPrayerTimes(city, country);
 
-            // تأثيرات الأرقام المتحركة
-            const statUsers = document.getElementById('stat-users');
-            const statDownloads = document.getElementById('stat-downloads');
-            
-            // محاكاة عدادات متحركة
+            // تأثيرات بسيطة للأرقام
             setTimeout(() => {
-                statUsers.textContent = '10,000+';
-                statDownloads.textContent = '50,000+';
-            }, 1000);
+                document.getElementById('stat-users').textContent = '500+';
+                document.getElementById('stat-downloads').textContent = '1,200+';
+            }, 500);
         });
     </script>
 
