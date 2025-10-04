@@ -1,60 +1,523 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مميزات تطبيق Zad Bono</title>
+    <meta name="description" content="اكتشف مميزات تطبيق Zad Bono - قرآن، صلاة، أذكار، مساعد ذكي، بث مباشر، مكتبة إسلامية، وأكثر من 30 ميزة متنوعة">
+    <title>مميزات تطبيق Zad Bono | تطبيق العبادات الشامل</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Cairo', sans-serif; margin: 0; padding-top: 70px; background-color: #f0f4f8; color: #073763; }
-        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2 ); }
-        .navbar-brand { color: #ffd700; font-weight: bold; font-size: 1.5em; text-decoration: none; }
-        .navbar-links { display: flex; align-items: center; }
-        .navbar-links a { color: #ffffff; text-decoration: none; margin: 0 15px; font-size: 1.1em; }
-        .navbar-links a:hover, .navbar-links a.active { color: #ffd700; }
-        .menu-toggle { display: none; font-size: 30px; color: white; background: none; border: none; cursor: pointer; }
-        .language-switcher { position: relative; }
-        .language-switcher .selected-lang { background-color: transparent; border: none; color: white; cursor: pointer; display: flex; align-items: center; font-family: 'Cairo', sans-serif; font-size: 1.1em; padding: 5px; }
-        .language-switcher .selected-lang img { width: 24px; height: 24px; border-radius: 50%; margin-left: 8px; }
-        .language-switcher .lang-menu { display: none; position: absolute; top: 120%; left: 50%; transform: translateX(-50%); background-color: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); list-style: none; padding: 5px; margin: 0; width: 180px; z-index: 1001; }
-        .language-switcher .lang-menu.show { display: block; }
-        .language-switcher .lang-menu li a { color: #073763; text-decoration: none; display: flex; align-items: center; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
-        .language-switcher .lang-menu li a:hover { background-color: #e0e8f0; }
-        .language-switcher .lang-menu li img { width: 24px; height: 24px; border-radius: 50%; margin-left: 10px; }
-        
-        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
-        .page-title { text-align: center; font-size: 2.8em; color: #0b5394; margin-bottom: 40px; }
+        :root {
+            --primary-blue: #0b5394;
+            --dark-blue: #073763;
+            --gold: #ffd700;
+            --light-bg: #f0f4f8;
+            --white: #ffffff;
+        }
 
-        .feature-card { background-color: #ffffff; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 30px; padding: 25px; display: flex; align-items: flex-start; gap: 25px; text-align: right; }
-        html[dir="ltr"] .feature-card { text-align: left; }
-        .feature-icon { width: 80px; height: 80px; object-fit: contain; }
-        .feature-content { flex: 1; }
-        .feature-content h2 { font-size: 1.8em; color: #0b5394; margin-top: 0; margin-bottom: 10px; }
-        .feature-content p { font-size: 1.1em; line-height: 1.8; margin-bottom: 15px; }
-        .feature-content ul { padding-right: 20px; list-style-type: '★ '; }
-        html[dir="ltr"] .feature-content ul { padding-right: 0; padding-left: 20px; list-style-type: '★ '; }
-        .feature-content li { margin-bottom: 10px; font-size: 1.05em; }
-        .note { font-size: 0.9em; color: #666; background-color: #eef2f5; padding: 10px; border-radius: 8px; border-right: 4px solid #ffd700; }
-        html[dir="ltr"] .note { border-right: none; border-left: 4px solid #ffd700; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        @media (max-width: 850px) {
-            .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: #0b5394; padding: 10px 0; }
-            .navbar-links.active { display: flex; }
-            .navbar-links a, .language-switcher { margin: 10px 0; text-align: center; }
-            .menu-toggle { display: block; }
-            .feature-card { flex-direction: column; align-items: center; text-align: center; }
-            html[dir="ltr"] .feature-card { text-align: center; }
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: var(--light-bg); 
+            color: var(--dark-blue); 
+            padding-top: 70px;
+        }
+
+        /* النافبار */
+        .navbar { 
+            background-color: var(--primary-blue); 
+            padding: 12px 20px; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            z-index: 1000; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand { 
+            color: var(--gold); 
+            font-weight: bold; 
+            font-size: 1.4em; 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .navbar-links { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px;
+        }
+
+        .navbar-links a { 
+            color: var(--white); 
+            text-decoration: none; 
+            font-size: 1em; 
+            transition: color 0.3s; 
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .navbar-links a:hover, 
+        .navbar-links a.active { 
+            color: var(--gold); 
+            background-color: rgba(255,215,0,0.1);
+        }
+
+        .menu-toggle { 
+            display: none; 
+            font-size: 24px; 
+            color: white; 
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+        }
+
+        /* سويتشر اللغة */
+        .language-switcher { 
+            position: relative; 
+        }
+
+        .selected-lang { 
+            background-color: transparent; 
+            border: none; 
+            color: white; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .selected-lang:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .selected-lang img { 
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+        }
+
+        .lang-menu { 
+            display: none; 
+            position: absolute; 
+            top: 100%;
+            left: 0;
+            background-color: var(--white); 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            list-style: none; 
+            padding: 8px;
+            margin: 5px 0 0 0;
+            width: 140px;
+            z-index: 1001;
+        }
+
+        .lang-menu.show { 
+            display: block; 
+        }
+
+        .lang-menu li a { 
+            color: var(--dark-blue); 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+            padding: 10px;
+            border-radius: 5px; 
+            transition: background-color 0.2s; 
+            font-size: 0.9em;
+        }
+
+        .lang-menu li a:hover { 
+            background-color: #e0e8f0; 
+        }
+
+        .lang-menu li img { 
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+        }
+
+        /* المحتوى الرئيسي */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-title { 
+            text-align: center; 
+            font-size: 2.5em; 
+            color: var(--primary-blue); 
+            margin-bottom: 15px; 
+        }
+
+        .page-subtitle { 
+            text-align: center; 
+            font-size: 1.2em; 
+            color: #555; 
+            margin-bottom: 50px; 
+            max-width: 700px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            line-height: 1.6; 
+        }
+
+        /* فلاتر التصنيفات */
+        .categories-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .category-btn {
+            background: var(--white);
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.95em;
+            font-weight: bold;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* شبكة المميزات */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card { 
+            background-color: var(--white); 
+            border-radius: 16px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+            padding: 30px; 
+            display: flex; 
+            align-items: flex-start; 
+            gap: 20px; 
+            text-align: right; 
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--primary-blue) 100%);
+            transition: width 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            width: 6px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon { 
+            width: 70px; 
+            height: 70px; 
+            object-fit: contain; 
+            flex-shrink: 0;
+        }
+
+        .feature-content { 
+            flex: 1; 
+        }
+
+        .feature-content h2 { 
+            font-size: 1.5em; 
+            color: var(--primary-blue); 
+            margin-top: 0; 
+            margin-bottom: 12px; 
+        }
+
+        .feature-content p { 
+            font-size: 1em; 
+            line-height: 1.7; 
+            margin-bottom: 15px; 
+            color: #555;
+        }
+
+        .feature-content ul { 
+            padding-right: 20px; 
+            list-style-type: none;
+        }
+
+        .feature-content li { 
+            margin-bottom: 8px; 
+            font-size: 0.95em; 
+            position: relative;
+            padding-right: 25px;
+        }
+
+        .feature-content li::before {
+            content: '★';
+            position: absolute;
+            right: 0;
+            color: var(--gold);
+            font-size: 1.1em;
+        }
+
+        .note { 
+            font-size: 0.85em; 
+            color: #666; 
+            background-color: #f8f9fa; 
+            padding: 12px 15px; 
+            border-radius: 8px; 
+            border-right: 4px solid var(--gold); 
+            margin-top: 15px;
+        }
+
+        /* قسم الإحصائيات */
+        .stats-section {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 16px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* دعوة للتحميل */
+        .cta-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+
+        .cta-title {
+            color: var(--primary-blue);
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-button { 
+            background: linear-gradient(135deg, var(--gold) 0%, #ffed4e 100%);
+            color: var(--dark-blue); 
+            padding: 16px 40px; 
+            font-size: 1.1em; 
+            font-weight: bold; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            transition: all 0.3s; 
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+        }
+
+        .download-button:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+        }
+
+        /* الفوتر */
+        .footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 30px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9em;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 0.85em;
+        }
+
+        /* الوسائط المتجاوبة */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .navbar-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background-color: var(--primary-blue); 
+                padding: 20px; 
+                gap: 15px;
+            }
+
+            .navbar-links.active { 
+                display: flex; 
+            }
+
+            .menu-toggle { 
+                display: block; 
+            }
+
+            .page-title { 
+                font-size: 2em; 
+            }
+
+            .page-subtitle { 
+                font-size: 1.1em; 
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 25px 20px;
+            }
+
+            .feature-content li::before {
+                position: static;
+                margin-left: 8px;
+            }
+
+            .feature-content ul {
+                padding-right: 0;
+            }
+
+            .categories-filter {
+                gap: 10px;
+            }
+
+            .category-btn {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-card {
+                margin: 0 10px;
+            }
         }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="navbar-brand" data-translate="app_name">Zad Bono</a>
+        <a href="index.html" class="navbar-brand" data-translate="app_name">
+            <img src="images/logo.jpg" alt="شعار Zad Bono">
+            Zad Bono
+        </a>
         <div class="navbar-links" id="navbar-links">
             <a href="index.html" data-translate="nav_home">الرئيسية</a>
             <a href="features.html" class="active" data-translate="nav_features">شرح المميزات</a>
@@ -63,15 +526,12 @@
             <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
             <div class="language-switcher">
                 <button class="selected-lang" id="lang-toggle-btn">
-                    <span id="lang-text">العربية</span>
                     <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
+                    <span id="lang-text">العربية</span>
                 </button>
                 <ul class="lang-menu" id="lang-menu">
-                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم مصر"> العربية</a></li>
-                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم أمريكا"> English</a></li>
-                    <li><a href="#" onclick="setLanguage('de')"><img src="images/de.png" alt="علم ألمانيا"> Deutsch</a></li>
-                    <li><a href="#" onclick="setLanguage('fr')"><img src="images/fr.png" alt="علم فرنسا"> Français</a></li>
-                    <li><a href="#" onclick="setLanguage('cn')"><img src="images/cn.png" alt="علم الصين"> 中文</a></li>
+                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم العربية"> العربية</a></li>
+                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم الإنجليزية"> English</a></li>
                 </ul>
             </div>
         </div>
@@ -80,271 +540,385 @@
 
     <div class="container">
         <h1 class="page-title" data-translate="features_main_title">مميزات تطبيق Zad Bono</h1>
+        <p class="page-subtitle" data-translate="features_subtitle">اكتشف أكثر من 30 ميزة متنوعة تجعل تطبيق Zad Bono رفيقك المثالي في رحلتك الإيمانية</p>
 
-        <!-- === بطاقة منظومة الإشعارات === -->
-        <div class="feature-card">
-            <img src="images/ic_notifications.png" alt="أيقونة الإشعارات" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_notifications_title">منظومة الإشعارات التفاعلية</h2>
-                <p data-translate="f_notifications_p">اجعل يومك كله ذكراً لله مع نظام إشعارات ذكي وتفاعلي لم يسبق له مثيل. لن يمر وقت طويل دون أن نذكرك بالله، بل ونعينك على أداء العبادات في وقتها.</p>
-                <ul>
-                    <li data-translate="f_notifications_l1"><strong>أذكار صوتية متجددة:</strong> استقبل إشعارات صوتية بأذكار متنوعة (استغفار، صلاة على النبي، تهليل) تجعل لسانك رطباً بذكر الله. يمكنك التحكم في تكرارها (كل ربع ساعة، ساعة، أو أكثر) أو إيقافها.</li>
-                    <li data-translate="f_notifications_l2"><strong>تنبيهات العبادات اليومية:</strong> إشعار صوتي لأذكار الصباح والمساء، تذكير بقيام الليل، وتنبيه بقراءة سورة الكهف يوم الجمعة وصيام الاثنين والخميس.</li>
-                    <li data-translate="f_notifications_l3"><strong>رفيقك إلى الصلاة:</strong> قبل كل صلاة، نرسل لك تنبيهاً للاستعداد والتهيؤ، ثم نذكرك مرة أخرى عند دخول وقت الأذان مباشرة.</li>
-                </ul>
+        <!-- فلاتر التصنيفات -->
+        <div class="categories-filter">
+            <button class="category-btn active" onclick="filterFeatures('all')" data-translate="filter_all">جميع المميزات</button>
+            <button class="category-btn" onclick="filterFeatures('quran')" data-translate="filter_quran">القرآن الكريم</button>
+            <button class="category-btn" onclick="filterFeatures('prayer')" data-translate="filter_prayer">الصلاة والأذان</button>
+            <button class="category-btn" onclick="filterFeatures('learning')" data-translate="filter_learning">التعليم والمراجع</button>
+            <button class="category-btn" onclick="filterFeatures('tools')" data-translate="filter_tools">أدوات مساعدة</button>
+        </div>
+
+        <div class="features-grid">
+            <!-- === منظومة الإشعارات === -->
+            <div class="feature-card" data-category="tools">
+                <img src="images/ic_notifications.png" alt="أيقونة الإشعارات" class="feature-icon">
+                <div class="feature-content">
+                    <h2 data-translate="f_notifications_title">منظومة الإشعارات التفاعلية</h2>
+                    <p data-translate="f_notifications_p">اجعل يومك كله ذكراً لله مع نظام إشعارات ذكي وتفاعلي لم يسبق له مثيل.</p>
+                    <ul>
+                        <li data-translate="f_notifications_l1"><strong>أذكار صوتية متجددة:</strong> استقبل إشعارات صوتية بأذكار متنوعة تجعل لسانك رطباً بذكر الله.</li>
+                        <li data-translate="f_notifications_l2"><strong>تنبيهات العبادات اليومية:</strong> إشعار صوتي لأذكار الصباح والمساء وتذكير بقيام الليل.</li>
+                        <li data-translate="f_notifications_l3"><strong>رفيقك إلى الصلاة:</strong> تنبيهات قبل كل صلاة للاستعداد والتهيؤ.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- === الأذان ومواقيت الصلاة === -->
+            <div class="feature-card" data-category="prayer">
+                <img src="images/ic_prayer_times.png" alt="أيقونة الأذان" class="feature-icon">
+                <div class="feature-content">
+                    <h2 data-translate="f_prayer_title">الأذان ومواقيت الصلاة</h2>
+                    <p data-translate="f_prayer_p">لن تفوتك صلاة بعد اليوم. نقدم لك نظاماً دقيقاً لمواقيت الصلاة مع تجربة أذان كاملة.</p>
+                    <ul>
+                        <li data-translate="f_prayer_l1"><strong>مواقيت دقيقة:</strong> حساب أوتوماتيكي لمواقيت الصلاة بناءً على موقعك الجغرافي.</li>
+                        <li data-translate="f_prayer_l2"><strong>أذان كامل:</strong> استمع للأذان كاملاً بصوت الشيخ مشاري بن راشد العفاسي.</li>
+                        <li data-translate="f_prayer_l3"><strong>تنبيهات مخصصة:</strong> تفعيل تنبيهات قبل وبعد الأذان.</li>
+                    </ul>
+                    <p class="note" data-translate="f_prayer_note">تأكد من منح التطبيق صلاحية الوصول إلى الموقع لضمان دقة مواقيت الصلاة.</p>
+                </div>
+            </div>
+
+            <!-- === دليلك الذكي === -->
+            <div class="feature-card" data-category="learning">
+                <img src="images/ic_smart_guide.png" alt="أيقونة دليلك الذكي" class="feature-icon">
+                <div class="feature-content">
+                    <h2 data-translate="f_manus_title">دليلك الذكي "مانوس"</h2>
+                    <p data-translate="f_manus_p">شريكك في رحلتك الإيمانية والمساعد الذكي الأول من نوعه في تطبيق إسلامي شامل.</p>
+                    <ul>
+                        <li data-translate="f_manus_l1">اسأله ما شئت في أمور الدين، واحصل على إجابات دقيقة وموثوقة.</li>
+                        <li data-translate="f_manus_l2">مصمم خصيصاً للرد على الاستفسارات الدينية.</li>
+                        <li data-translate="f_manus_l3">تجربة تفاعلية فريدة لتعميق فهمك وبناء معرفتك الشرعية.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- === القرآن الكريم === -->
+            <div class="feature-card" data-category="quran">
+                <img src="images/ic_quran.png" alt="أيقونة القرآن الكريم" class="feature-icon">
+                <div class="feature-content">
+                    <h2 data-translate="f_quran_title">القرآن الكريم: تجربة متكاملة</h2>
+                    <p data-translate="f_quran_p">تجربة قرآنية شاملة تجمع بين القراءة النصية والاستماع الصوتي والتفسير والبحث.</p>
+                    <ul>
+                        <li data-translate="f_quran_l1"><strong>قراءة بدون إنترنت:</strong> تصفح كامل نصوص القرآن الكريم في أي وقت ومكان.</li>
+                        <li data-translate="f_quran_l2"><strong>مكتبة صوتية ضخمة:</strong> استمع للقرآن بصوت 11 من كبار المقرئين.</li>
+                        <li data-translate="f_quran_l3"><strong>تفسير ميسّر:</strong> اختر بين "التفسير الميسر" و "المختصر في التفسير".</li>
+                        <li data-translate="f_quran_l4"><strong>متابعة القراءة والبحث:</strong> عد بسهولة إلى آخر آية توقفت عندها.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- === البث المباشر === -->
+            <div class="feature-card" data-category="tools">
+                <img src="images/ic_live_stream.png" alt="أيقونة البث المباشر" class="feature-icon">
+                <div class="feature-content">
+                    <h2 data-translate="f_live_title">البث المباشر</h2>
+                    <p data-translate="f_live_p">عالم من المحتوى المرئي والمسموع بين يديك. تنقل بسلاسة بين مجموعة منتقاة.</p>
+                    <ul>
+                        <li data-translate="f_live_l1"><strong>قنوات دينية:</strong> شاهد برامجك الدينية المفضلة مباشرة.</li>
+                        <li data-translate="f_live_l2"><strong>محطات إذاعية:</strong> استمع إلى تلاوات القرآن الكريم والبرامج الدينية.</li>
+                        <li data-translate="f_live_l3"><strong>قنوات إخبارية:</strong> ابقَ على اطلاع بآخر المستجدات.</li>
+                    </ul>
+                    <p class="note" data-translate="f_live_note">للاستمتاع بتجربة مشاهدة واستماع مثالية، نوصي باستخدام اتصال إنترنت جيد.</p>
+                </div>
+            </div>
+
+            <!-- === حصن المسلم === -->
+            <div class="feature-card" data-category="learning">
+                <img src="images/ic_hisn_almuslim.png" alt="أيقونة حصن المسلم" class="feature-icon">
+                <div class="feature-content">
+                    <h2 data-translate="f_hisn_title">حصن المسلم</h2>
+                    <p data-translate="f_hisn_p">رفيقك اليومي الذي لا غنى عنه. يجمع لك التطبيق كامل محتوى كتاب "حصن المسلم".</p>
+                    <ul>
+                        <li data-translate="f_hisn_l1">أذكار الصباح والمساء، أذكار النوم، أدعية الدخول والخروج.</li>
+                        <li data-translate="f_hisn_l2">تنظيم سهل وواضح للوصول إلى الذكر أو الدعاء الذي تحتاجه في وقته.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- === متتبع الصلوات === -->
+            <div class="feature-card" data-category="prayer">
+                <img src="images/ic_prayer_tracker.png" alt="أيقونة متتبع الصلوات" class="feature-icon">
+                <div class="feature-content">
+                    <h2 data-translate="f_salah_tracker_title">متتبع الصلوات</h2>
+                    <p data-translate="f_salah_tracker_p">أداة قوية لمساعدتك على المحافظة على صلاتك وتقييم أدائك.</p>
+                    <ul>
+                        <li data-translate="f_salah_tracker_l1"><strong>تسجيل يومي سهل:</strong> بلمسة زر سجل حالة كل صلاة.</li>
+                        <li data-translate="f_salah_tracker_l2"><strong>إحصائيات شهرية:</strong> احصل على تقرير مفصل عن أدائك.</li>
+                        <li data-translate="f_salah_tracker_l3"><strong>نظام إنجازات تحفيزي:</strong> احصل على شارات تشجيعية.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- === متتبع الختمة === -->
+            <div class="feature-card" data-category="quran">
+                <img src="images/ic_quran_tracker.png" alt="أيقونة متتبع الختمة" class="feature-icon">
+                <div class="feature-content">
+                    <h2 data-translate="f_khatma_title">متتبع الختمة (فردي وجماعي)</h2>
+                    <p data-translate="f_khatma_p">نظام اجتماعي فريد لتحفيزك على ختم القرآن الكريم.</p>
+                    <ul>
+                        <li data-translate="f_khatma_l1"><strong>الختمة الفردية:</strong> ابدأ ختمتك الخاصة، سجل تقدمك بسهولة.</li>
+                        <li data-translate="f_khatma_l2"><strong>الختمة الجماعية:</strong> أنشئ ختمة جماعية وادعُ أصدقاءك.</li>
+                        <li data-translate="f_khatma_l3"><strong>نظام حجز الأجزاء:</strong> يمكن لكل مشارك حجز جزء لقراءته.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <!-- === بطاقة الأذان ومواقيت الصلاة === -->
-        <div class="feature-card">
-            <img src="images/ic_prayer_times.png" alt="أيقونة الأذان" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_prayer_title">الأذان ومواقيت الصلاة</h2>
-                <p data-translate="f_prayer_p">لن تفوتك صلاة بعد اليوم. نقدم لك نظاماً دقيقاً لمواقيت الصلاة مع تجربة أذان كاملة بصوت يخشع له القلب، أينما كنت في العالم.</p>
-                <ul>
-                    <li data-translate="f_prayer_l1"><strong>مواقيت دقيقة:</strong> حساب أوتوماتيكي لمواقيت الصلاة بناءً على موقعك الجغرافي بدقة متناهية.</li>
-                    <li data-translate="f_prayer_l2"><strong>أذان كامل:</strong> استمع للأذان كاملاً بصوت الشيخ مشاري بن راشد العفاسي عند حلول وقت كل صلاة.</li>
-                    <li data-translate="f_prayer_l3"><strong>تنبيهات مخصصة:</strong> بالإضافة إلى الأذان، يمكنك تفعيل تنبيهات قبل وبعد الأذان لتكون على أتم استعداد للقاء الله.</li>
-                </ul>
-                <p class="note" data-translate="f_prayer_note">تأكد من منح التطبيق صلاحية الوصول إلى الموقع لضمان دقة مواقيت الصلاة والأذان.</p>
+        <!-- قسم الإحصائيات -->
+        <div class="stats-section">
+            <h2 class="page-title" style="color: white;">تطبيق زاد بونو بالأرقام</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">ميزة متنوعة</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">قارئ للقرآن</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">دعم فني</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">مجاني</span>
+                </div>
             </div>
         </div>
 
-        <!-- === بطاقة دليلك الذكي === -->
-        <div class="feature-card">
-            <img src="images/ic_smart_guide.png" alt="أيقونة دليلك الذكي" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_manus_title">دليلك الذكي "مانوس"</h2>
-                <p data-translate="f_manus_p">نقدم لك "مانوس"، شريكك في رحلتك الإيمانية والمساعد الذكي الأول من نوعه في تطبيق إسلامي شامل. خُلق "مانوس" ليكون دليلك المتخصص في علوم ديننا الحنيف، من التفسير والحديث إلى السيرة والفقه.</p>
-                <ul>
-                    <li data-translate="f_manus_l1">اسأله ما شئت في أمور الدين، واحصل على إجابات دقيقة وموثوقة.</li>
-                    <li data-translate="f_manus_l2">مصمم خصيصاً للرد على الاستفسارات الدينية، معتذراً بلطف عن أي سؤال خارج هذا النطاق.</li>
-                    <li data-translate="f_manus_l3">تجربة تفاعلية فريدة لتعميق فهمك وبناء معرفتك الشرعية.</li>
-                </ul>
-            </div>
+        <!-- دعوة للتحميل -->
+        <div class="cta-section">
+            <h2 class="cta-title" data-translate="cta_title">جاهز لبدء رحلتك الإيمانية؟</h2>
+            <p class="cta-subtitle" data-translate="cta_subtitle">حمّل تطبيق Zad Bono الآن واستمتع بتجربة إيمانية شاملة ومتكاملة</p>
+            <a href="install.html" class="download-button" data-translate="cta_button">
+                📥 حمل التطبيق الآن
+            </a>
         </div>
-
-        <!-- === بطاقة البث المباشر === -->
-        <div class="feature-card">
-            <img src="images/ic_live_stream.png" alt="أيقونة البث المباشر" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_live_title">البث المباشر</h2>
-                <p data-translate="f_live_p">عالم من المحتوى المرئي والمسموع بين يديك. تنقل بسلاسة بين مجموعة منتقاة من القنوات التلفزيونية والمحطات الإذاعية التي تثري يومك.</p>
-                <ul>
-                    <li data-translate="f_live_l1"><strong>قنوات دينية:</strong> شاهد برامجك الدينية المفضلة مباشرة.</li>
-                    <li data-translate="f_live_l2"><strong>محطات إذاعية:</strong> استمع إلى تلاوات القرآن الكريم والبرامج الدينية أينما كنت.</li>
-                    <li data-translate="f_live_l3"><strong>قنوات إخبارية:</strong> ابقَ على اطلاع بآخر المستجدات من حولك.</li>
-                </ul>
-                <p class="note" data-translate="f_live_note">للاستمتاع بتجربة مشاهدة واستماع مثالية بدون تقطيع، نوصي باستخدام اتصال إنترنت جيد.</p>
-            </div>
-        </div>
-
-        <!-- === بطاقة القرآن الكريم === -->
-        <div class="feature-card">
-            <img src="images/ic_quran.png" alt="أيقونة القرآن الكريم" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_quran_title">القرآن الكريم: تجربة متكاملة</h2>
-                <p data-translate="f_quran_p">تجربة قرآنية شاملة تجمع بين القراءة النصية والاستماع الصوتي والتفسير والبحث، مع خيارات متقدمة للتحكم الكامل بالمحتوى سواء بوجود اتصال بالإنترنت أو بدونه.</p>
-                <ul>
-                    <li data-translate="f_quran_l1"><strong>قراءة بدون إنترنت:</strong> تصفح كامل نصوص القرآن الكريم في أي وقت ومكان.</li>
-                    <li data-translate="f_quran_l2"><strong>مكتبة صوتية ضخمة:</strong> استمع للقرآن بصوت 11 من كبار المقرئين، مع إمكانية تحميل سورة واحدة أو المصحف كاملاً للاستماع لاحقاً بدون إنترنت.</li>
-                    <li data-translate="f_quran_l3"><strong>تفسير ميسّر:</strong> اختر بين "التفسير الميسر" و "المختصر في التفسير" لفهم أعمق للآيات، وكلاهما يعمل بدون إنترنت.</li>
-                    <li data-translate="f_quran_l4"><strong>متابعة القراءة والبحث:</strong> عد بسهولة إلى آخر آية توقفت عندها، وابحث عن أي كلمة أو آية في القرآن الكريم بسرعة ودقة.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- === بطاقة فيديوهات مختارة === -->
-        <div class="feature-card">
-            <img src="images/ic_videos.png" alt="أيقونة فيديوهات مختارة" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_videos_title">فيديوهات مختارة</h2>
-                <p data-translate="f_videos_p">مكتبة مرئية متجددة تضم كنوزاً من العلم والمعرفة. شاهد وحمّل مقاطع فيديو دينية قيمة لمشاهدتها في أي وقت، حتى بدون اتصال بالإنترنت.</p>
-                <ul>
-                    <li data-translate="f_videos_l1">شاهد فيديوهات متنوعة تشمل قصص الأنبياء، خطب مؤثرة، وأحاديث نبوية مشروحة.</li>
-                    <li data-translate="f_videos_l2">حمّل المقاطع التي تهمك على جهازك بضغطة زر للمشاهدة لاحقاً.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- === بطاقة المكتبة الإسلامية === -->
-        <div class="feature-card">
-            <img src="images/ic_library.png" alt="أيقونة المكتبة" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_library_title">المكتبة الإسلامية (PDF)</h2>
-                <p data-translate="f_library_p">مكتبتك الشرعية الخاصة التي ترافقك أينما ذهبت. تصفح وحمّل عشرات الكتب القيمة في مختلف العلوم الشرعية بصيغة PDF.</p>
-                <ul>
-                    <li data-translate="f_library_l1"><strong>أقسام متنوعة:</strong> كتب في التفسير، الحديث، الفقه، السيرة، العقيدة، قصص الأنبياء، وغيرها.</li>
-                    <li data-translate="f_library_l2"><strong>تحميل مباشر:</strong> حمّل أي كتاب ليبقى على جهازك بشكل دائم للقراءة بدون إنترنت.</li>
-                    <li data-translate="f_library_l3"><strong>سهولة الوصول:</strong> التطبيق يتذكر الكتب التي حملتها ويسمح لك بفتحها مباشرة من داخل القسم.</li>
-                </ul>
-                <p class="note" data-translate="f_library_note">لأفضل تجربة قراءة، نوجهك لتحميل قارئ ملفات PDF الموصى به من متجر التطبيقات.</p>
-            </div>
-        </div>
-
-        <!-- === بطاقة حصن المسلم === -->
-        <div class="feature-card">
-            <img src="images/ic_hisn_almuslim.png" alt="أيقونة حصن المسلم" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_hisn_title">حصن المسلم</h2>
-                <p data-translate="f_hisn_p">رفيقك اليومي الذي لا غنى عنه. يجمع لك التطبيق كامل محتوى كتاب "حصن المسلم" من الأذكار والأدعية المأثورة عن النبي صلى الله عليه وسلم.</p>
-                <ul>
-                    <li data-translate="f_hisn_l1">أذكار الصباح والمساء، أذكار النوم، أدعية الدخول والخروج، وغيرها الكثير.</li>
-                    <li data-translate="f_hisn_l2">تنظيم سهل وواضح للوصول إلى الذكر أو الدعاء الذي تحتاجه في وقته.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- === بطاقة القبلة === -->
-        <div class="feature-card">
-            <img src="images/ic_qibla.png" alt="أيقونة القبلة" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_qibla_title">تحديد اتجاه القبلة</h2>
-                <p data-translate="f_qibla_p">أينما كنت حول العالم، لن تفوتك الصلاة في وقتها. استخدم بوصلة القبلة الذكية لتحديد اتجاه الكعبة المشرفة بدقة وسهولة.</p>
-                <ul>
-                    <li data-translate="f_qibla_l1">تحديد دقيق للقبلة باستخدام مستشعرات جهازك.</li>
-                    <li data-translate="f_qibla_l2">واجهة بسيطة وواضحة، فقط وجّه هاتفك حتى يضيء المؤشر الأخضر.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- === بطاقة السبحة الإلكترونية === -->
-        <div class="feature-card">
-            <img src="images/ic_tasbeeh.png" alt="أيقونة السبحة" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_tasbeeh_title">السبحة الإلكترونية</h2>
-                <p data-translate="f_tasbeeh_p">سبحتك الرقمية بتصميم جذاب وخيارات تخصيص كاملة لتجعل ذكر الله أيسر وأمتع.</p>
-                <ul>
-                    <li data-translate="f_tasbeeh_l1"><strong>أهداف تسبيح:</strong> اختر بين عداد 33، 99، أو اتركه مفتوحاً.</li>
-                    <li data-translate="f_tasbeeh_l2"><strong>تنبيهات ذكية:</strong> اهتزاز أو صوت عند كل تسبيحة، مع تنبيه خاص عند إتمام الهدف.</li>
-                    <li data-translate="f_tasbeeh_l3"><strong>تحكم كامل:</strong> يمكنك تفعيل أو إلغاء الاهتزاز والصوت، وتصفير العداد بلمسة زر.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- === بطاقة متتبع الختمة === -->
-        <div class="feature-card">
-            <img src="images/ic_quran_tracker.png" alt="أيقونة متتبع الختمة" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_khatma_title">متتبع الختمة (فردي وجماعي)</h2>
-                <p data-translate="f_khatma_p">نظام اجتماعي فريد لتحفيزك على ختم القرآن الكريم، سواء بمفردك أو بمشاركة الأصدقاء والأحبة من جميع أنحاء العالم.</p>
-                <ul>
-                    <li data-translate="f_khatma_l1"><strong>الختمة الفردية:</strong> ابدأ ختمتك الخاصة، سجل تقدمك بسهولة، وتابع ما تبقى لك لإتمامها.</li>
-                    <li data-translate="f_khatma_l2"><strong>الختمة الجماعية:</strong> أنشئ ختمة جماعية وادعُ أصدقاءك، أو انضم إلى ختمات متاحة.</li>
-                    <li data-translate="f_khatma_l3"><strong>نظام حجز الأجزاء:</strong> يمكن لكل مشارك حجز جزء لقراءته، وعند إتمامه يتم تحديث شريط التقدم العام للختمة.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- === بطاقة متتبع الصلوات === -->
-        <div class="feature-card">
-            <img src="images/ic_prayer_tracker.png" alt="أيقونة متتبع الصلوات" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_salah_tracker_title">متتبع الصلوات</h2>
-                <p data-translate="f_salah_tracker_p">أداة قوية لمساعدتك على المحافظة على صلاتك وتقييم أدائك. سجل صلواتك اليومية (جماعة، منفرداً، قضاء) وشاهد التزامك ينمو.</p>
-                <ul>
-                    <li data-translate="f_salah_tracker_l1"><strong>تسجيل يومي سهل:</strong> بلمسة زر سجل حالة كل صلاة من الصلوات الخمس.</li>
-                    <li data-translate="f_salah_tracker_l2"><strong>إحصائيات شهرية:</strong> احصل على تقرير مفصل عن أدائك، أفضل صلاة حافظت عليها، والصلاة التي تحتاج إلى تحسين.</li>
-                    <li data-translate="f_salah_tracker_l3"><strong>نظام إنجازات تحفيزي:</strong> احصل على شارات مثل "بطل الفجر" و "محب الجماعة" لتشجيعك على الاستمرار.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- === بطاقة الرقية الشرعية === -->
-        <div class="feature-card">
-            <img src="images/ic_ruqyah.png" alt="أيقونة الرقية الشرعية" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_ruqyah_title">الرقية الشرعية الشاملة</h2>
-                <p data-translate="f_ruqyah_p">حصنك الكامل من كل سوء. يجمع لك التطبيق الرقية الشرعية من القرآن والسنة بتصميم واضح ومريح للعين.</p>
-                <ul>
-                    <li data-translate="f_ruqyah_l1"><strong>آيات الرقية:</strong> عرض كامل لآيات الرقية الشرعية، كل آية في بطاقة منفصلة مع ذكر السورة ورقم الآية.</li>
-                    <li data-translate="f_ruqyah_l2"><strong>أدعية من السنة:</strong> مجموعة من الأدعية النبوية المأثورة للرقية مع ذكر مصدرها.</li>
-                    <li data-translate="f_ruqyah_l3"><strong>آيات السحر:</strong> قسم مخصص لآيات إبطال السحر، بنفس طريقة العرض المنظمة.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- === بطاقة زاد التعليمي === -->
-        <div class="feature-card">
-            <img src="images/ic_education.png" alt="أيقونة زاد التعليمي" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_education_title">زاد التعليمي</h2>
-                <p data-translate="f_education_p">دليلك المصوّر خطوة بخطوة لإتقان العبادات الأساسية. صُمم هذا القسم لتعليمك كيفية أداء الشعائر الدينية بشكل صحيح ومبسط من خلال الصور والشروحات الواضحة.</p>
-                <ul>
-                    <li data-translate="f_education_l1"><strong>تعلم العبادات:</strong> شرح مفصل لكيفية الوضوء، التيمم، وأداء الصلاة.</li>
-                    <li data-translate="f_education_l2"><strong>صلوات ومناسك:</strong> دليل شامل لأداء صلاة العيدين، صلاة الجنازة، ومناسك الحج والعمرة.</li>
-                    <li data-translate="f_education_l3"><strong>وسائل إيضاح:</strong> كل خطوة مدعومة بصورة توضيحية وشرح دقيق لضمان وصول المعلومة بسهولة.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- === بطاقة التقويم الهجري والميلادي === -->
-        <div class="feature-card">
-            <img src="images/ic_calendar.png" alt="أيقونة التقويم" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_calendar_title">التقويم المزدوج والأحداث</h2>
-                <p data-translate="f_calendar_p">ابقَ على علم بالتواريخ والمناسبات الهامة مع تقويم يجمع بين الهجري والميلادي في واجهة واحدة. لا تفوّت أي حدث ديني أو مناسبة خاصة.</p>
-                <ul>
-                    <li data-translate="f_calendar_l1"><strong>عرض شهري متكامل:</strong> تصفح التقويمين الهجري والميلادي معاً بوضوح.</li>
-                    <li data-translate="f_calendar_l2"><strong>بطاقة أحداث اليوم:</strong> اضغط على أي يوم لعرض بطاقة تفصيلية تظهر لك المناسبات المرتبطة به.</li>
-                    <li data-translate="f_calendar_l3"><strong>تنبيهات ذكية:</strong> يذكرك بأيام الصيام المستحبة (الاثنين والخميس)، الأعياد، المناسبات الدينية، والإجازات الرسمية.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- === بطاقة قصص الأنبياء === -->
-        <div class="feature-card">
-            <img src="images/ic_prophet_stories.png" alt="أيقونة قصص الأنبياء" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_stories_title">قصص الأنبياء</h2>
-                <p data-translate="f_stories_p">رحلة عبر الزمن مع سير الأنبياء والمرسلين، من بداية الخلق إلى خاتم المرسلين سيدنا محمد ﷺ. تُعرض القصص بأسلوب شيق ومترابط يأخذك في رحلة إيمانية ملهمة.</p>
-                <ul>
-                    <li data-translate="f_stories_l1"><strong>موسوعة شاملة:</strong> تصفح قائمة بأسماء الأنبياء، واختر القصة التي تود قراءتها.</li>
-                    <li data-translate="f_stories_l2"><strong>سرد متسلسل:</strong> كل قصة تبدأ بربطها بنهاية قصة النبي الذي سبقها لتكتمل الصورة.</li>
-                    <li data-translate="f_stories_l3"><strong>تفاصيل شاملة:</strong> تغطي كل قصة حياة النبي من مولده إلى وفاته، مع أبرز المحطات والمواعظ.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- === بطاقة أسماء الله الحسنى === -->
-        <div class="feature-card">
-            <img src="images/ic_allah_names.png" alt="أيقونة أسماء الله الحسنى" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_names_title">أسماء الله الحسنى</h2>
-                <p data-translate="f_names_p">تعرّف على الله سبحانه وتعالى وتدبّر في عظمته من خلال أسمائه الحسنى. تصميم تفاعلي يساعدك على فهم وحفظ معاني الأسماء الـ 99.</p>
-                <ul>
-                    <li data-translate="f_names_l1"><strong>عرض تفاعلي:</strong> 99 بطاقة مصممة بشكل جذاب، كل بطاقة تحمل اسماً من أسماء الله الحسنى.</li>
-                    <li data-translate="f_names_l2"><strong>شرح المعنى:</strong> اضغط على أي بطاقة ليظهر لك شرح مفصل لمعنى هذا الاسم العظيم.</li>
-                    <li data-translate="f_names_l3"><strong>تجربة إيمانية:</strong> وسيلة رائعة لتعميق صلتك بالله من خلال معرفة أسمائه وصفاته.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- === بطاقة فتاوى وأحكام === -->
-        <div class="feature-card">
-            <img src="images/ic_fatwa.png" alt="أيقونة فتاوى وأحكام" class="feature-icon">
-            <div class="feature-content">
-                <h2 data-translate="f_fatwa_title">فتاوى وأحكام</h2>
-                <p data-translate="f_fatwa_p">مرجعك الموثوق للإجابة على استفساراتك الفقهية والحياتية. يجمع لك التطبيق آلاف الفتاوى من مصادر رسمية ومعتمدة مثل دار الإفتاء المصرية.</p>
-                <ul>
-                    <li data-translate="f_fatwa_l1"><strong>أقسام متخصصة:</strong> تصفح الفتاوى بسهولة عبر أقسام منظمة (فقهية، أسرية، صيام، حج، طهارة، فتاوى معاصرة).</li>
-                    <li data-translate="f_fatwa_l2"><strong>موثوقية عالية:</strong> كل فتوى تُعرض بنص السؤال الأصلي وإجابة العلماء المعتمدين عليه.</li>
-                    <li data-translate="f_fatwa_l3"><strong>مرجع شامل:</strong> إجابات شافية لأغلب ما قد يطرأ على المسلم من أسئلة في عباداته ومعاملاته.</li>
-                </ul>
-            </div>
-        </div>
-
     </div>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
+                <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+                <a href="features.html" data-translate="nav_features">المميزات</a>
+                <a href="install.html" data-translate="nav_install">التثبيت</a>
+            </div>
+            <div class="copyright">
+                © 2024 Zad Bono. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
 
     <script>
         // --- Script for Mobile Menu ---
         const menuToggle = document.getElementById('menu-toggle');
         const navbarLinks = document.getElementById('navbar-links');
-        menuToggle.addEventListener('click', () => { navbarLinks.classList.toggle('active'); });
+        
+        menuToggle.addEventListener('click', () => { 
+            navbarLinks.classList.toggle('active'); 
+        });
+
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', (event) => {
+            if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navbarLinks.classList.remove('active');
+            }
+        });
 
         // --- Script for Language Switcher ---
         const translations = {
-            ar: {
-                app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_install: "التحميل والتثبيت", nav_contact: "اتصل بنا", nav_privacy: "سياسة الخصوصية", lang_name: "العربية",
+            ar: { 
+                app_name: "Zad Bono", 
+                nav_home: "الرئيسية", 
+                nav_features: "شرح المميزات", 
+                nav_install: "التحميل والتثبيت", 
+                nav_contact: "اتصل بنا", 
+                nav_privacy: "سياسة الخصوصية", 
                 features_main_title: "مميزات تطبيق Zad Bono",
-                f_notifications_title: "منظومة الإشعارات التفاعلية", f_notifications_p: "اجعل يومك كله ذكراً لله مع نظام إشعارات ذكي وتفاعلي لم يسبق له مثيل. لن يمر وقت طويل دون أن ن
+                features_subtitle: "اكتشف أكثر من 30 ميزة متنوعة تجعل تطبيق Zad Bono رفيقك المثالي في رحلتك الإيمانية",
+                filter_all: "جميع المميزات",
+                filter_quran: "القرآن الكريم", 
+                filter_prayer: "الصلاة والأذان",
+                filter_learning: "التعليم والمراجع",
+                filter_tools: "أدوات مساعدة",
+                f_notifications_title: "منظومة الإشعارات التفاعلية", 
+                f_notifications_p: "اجعل يومك كله ذكراً لله مع نظام إشعارات ذكي وتفاعلي لم يسبق له مثيل.", 
+                f_notifications_l1: "أذكار صوتية متجددة: استقبل إشعارات صوتية بأذكار متنوعة تجعل لسانك رطباً بذكر الله.", 
+                f_notifications_l2: "تنبيهات العبادات اليومية: إشعار صوتي لأذكار الصباح والمساء وتذكير بقيام الليل.", 
+                f_notifications_l3: "رفيقك إلى الصلاة: تنبيهات قبل كل صلاة للاستعداد والتهيؤ.", 
+                f_prayer_title: "الأذان ومواقيت الصلاة", 
+                f_prayer_p: "لن تفوتك صلاة بعد اليوم. نقدم لك نظاماً دقيقاً لمواقيت الصلاة مع تجربة أذان كاملة.", 
+                f_prayer_l1: "مواقيت دقيقة: حساب أوتوماتيكي لمواقيت الصلاة بناءً على موقعك الجغرافي.", 
+                f_prayer_l2: "أذان كامل: استمع للأذان كاملاً بصوت الشيخ مشاري بن راشد العفاسي.", 
+                f_prayer_l3: "تنبيهات مخصصة: تفعيل تنبيهات قبل وبعد الأذان.", 
+                f_prayer_note: "تأكد من منح التطبيق صلاحية الوصول إلى الموقع لضمان دقة مواقيت الصلاة.", 
+                f_manus_title: "دليلك الذكي \"مانوس\"", 
+                f_manus_p: "شريكك في رحلتك الإيمانية والمساعد الذكي الأول من نوعه في تطبيق إسلامي شامل.", 
+                f_manus_l1: "اسأله ما شئت في أمور الدين، واحصل على إجابات دقيقة وموثوقة.", 
+                f_manus_l2: "مصمم خصيصاً للرد على الاستفسارات الدينية.", 
+                f_manus_l3: "تجربة تفاعلية فريدة لتعميق فهمك وبناء معرفتك الشرعية.", 
+                f_quran_title: "القرآن الكريم: تجربة متكاملة", 
+                f_quran_p: "تجربة قرآنية شاملة تجمع بين القراءة النصية والاستماع الصوتي والتفسير والبحث.", 
+                f_quran_l1: "قراءة بدون إنترنت: تصفح كامل نصوص القرآن الكريم في أي وقت ومكان.", 
+                f_quran_l2: "مكتبة صوتية ضخمة: استمع للقرآن بصوت 11 من كبار المقرئين.", 
+                f_quran_l3: "تفسير ميسّر: اختر بين \"التفسير الميسر\" و \"المختصر في التفسير\".", 
+                f_quran_l4: "متابعة القراءة والبحث: عد بسهولة إلى آخر آية توقفت عندها.", 
+                f_live_title: "البث المباشر", 
+                f_live_p: "عالم من المحتوى المرئي والمسموع بين يديك. تنقل بسلاسة بين مجموعة منتقاة.", 
+                f_live_l1: "قنوات دينية: شاهد برامجك الدينية المفضلة مباشرة.", 
+                f_live_l2: "محطات إذاعية: استمع إلى تلاوات القرآن الكريم والبرامج الدينية.", 
+                f_live_l3: "قنوات إخبارية: ابقَ على اطلاع بآخر المستجدات.", 
+                f_live_note: "للاستمتاع بتجربة مشاهدة واستماع مثالية، نوصي باستخدام اتصال إنترنت جيد.", 
+                f_hisn_title: "حصن المسلم", 
+                f_hisn_p: "رفيقك اليومي الذي لا غنى عنه. يجمع لك التطبيق كامل محتوى كتاب \"حصن المسلم\".", 
+                f_hisn_l1: "أذكار الصباح والمساء، أذكار النوم، أدعية الدخول والخروج.", 
+                f_hisn_l2: "تنظيم سهل وواضح للوصول إلى الذكر أو الدعاء الذي تحتاجه في وقته.", 
+                f_salah_tracker_title: "متتبع الصلوات", 
+                f_salah_tracker_p: "أداة قوية لمساعدتك على المحافظة على صلاتك وتقييم أدائك.", 
+                f_salah_tracker_l1: "تسجيل يومي سهل: بلمسة زر سجل حالة كل صلاة.", 
+                f_salah_tracker_l2: "إحصائيات شهرية: احصل على تقرير مفصل عن أدائك.", 
+                f_salah_tracker_l3: "نظام إنجازات تحفيزي: احصل على شارات تشجيعية.", 
+                f_khatma_title: "متتبع الختمة (فردي وجماعي)", 
+                f_khatma_p: "نظام اجتماعي فريد لتحفيزك على ختم القرآن الكريم.", 
+                f_khatma_l1: "الختمة الفردية: ابدأ ختمتك الخاصة، سجل تقدمك بسهولة.", 
+                f_khatma_l2: "الختمة الجماعية: أنشئ ختمة جماعية وادعُ أصدقاءك.", 
+                f_khatma_l3: "نظام حجز الأجزاء: يمكن لكل مشارك حجز جزء لقراءته.", 
+                cta_title: "جاهز لبدء رحلتك الإيمانية؟",
+                cta_subtitle: "حمّل تطبيق Zad Bono الآن واستمتع بتجربة إيمانية شاملة ومتكاملة",
+                cta_button: "حمل التطبيق الآن"
+            },
+            en: { 
+                app_name: "Zad Bono", 
+                nav_home: "Home", 
+                nav_features: "Features", 
+                nav_install: "Installation", 
+                nav_contact: "Contact Us", 
+                nav_privacy: "Privacy Policy", 
+                features_main_title: "Zad Bono App Features",
+                features_subtitle: "Discover over 30 diverse features that make Zad Bono your perfect companion in your faith journey",
+                filter_all: "All Features",
+                filter_quran: "Holy Quran", 
+                filter_prayer: "Prayer & Azan",
+                filter_learning: "Education & References",
+                filter_tools: "Helper Tools",
+                f_notifications_title: "Interactive Notifications System", 
+                f_notifications_p: "Make your entire day a remembrance of Allah with a smart and interactive notification system like never before.", 
+                f_notifications_l1: "Renewable Audio Azkar: Receive audio notifications with various azkar that keep your tongue moist with the remembrance of Allah.", 
+                f_notifications_l2: "Daily Worship Alerts: Audio notifications for morning and evening azkar, and reminders for night prayers.", 
+                f_notifications_l3: "Your Prayer Companion: Notifications before each prayer for preparation and readiness.", 
+                f_prayer_title: "Azan and Prayer Times", 
+                f_prayer_p: "You won't miss a prayer anymore. We provide you with an accurate prayer times system with a complete azan experience.", 
+                f_prayer_l1: "Accurate Times: Automatic calculation of prayer times based on your geographical location.", 
+                f_prayer_l2: "Complete Azan: Listen to the full azan with the voice of Sheikh Mishary Rashid Alafasy.", 
+                f_prayer_l3: "Custom Alerts: Activate notifications before and after azan.", 
+                f_prayer_note: "Make sure to grant the app location access to ensure accurate prayer times.", 
+                f_manus_title: "Your Smart Guide \"Manus\"", 
+                f_manus_p: "Your partner in your faith journey and the first smart assistant of its kind in a comprehensive Islamic app.", 
+                f_manus_l1: "Ask him anything about religious matters and get accurate, reliable answers.", 
+                f_manus_l2: "Specifically designed to respond to religious inquiries.", 
+                f_manus_l3: "A unique interactive experience to deepen your understanding and build your Islamic knowledge.", 
+                f_quran_title: "Holy Quran: Complete Experience", 
+                f_quran_p: "A comprehensive Quranic experience that combines text reading, audio listening, interpretation, and search.", 
+                f_quran_l1: "Offline Reading: Browse complete Quran texts anytime, anywhere.", 
+                f_quran_l2: "Huge Audio Library: Listen to the Quran with the voices of 11 major reciters.", 
+                f_quran_l3: "Simplified Interpretation: Choose between \"Simplified Interpretation\" and \"Brief Interpretation\".", 
+                f_quran_l4: "Reading Tracking & Search: Easily return to the last verse you stopped at.", 
+                f_live_title: "Live Streaming", 
+                f_live_p: "A world of visual and audio content at your fingertips. Seamlessly switch between a curated selection.", 
+                f_live_l1: "Religious Channels: Watch your favorite religious programs live.", 
+                f_live_l2: "Radio Stations: Listen to Quran recitations and religious programs.", 
+                f_live_l3: "News Channels: Stay updated with the latest developments.", 
+                f_live_note: "For an optimal viewing and listening experience, we recommend using a good internet connection.", 
+                f_hisn_title: "Fortress of the Muslim", 
+                f_hisn_p: "Your daily indispensable companion. The app collects the complete content of the book \"Fortress of the Muslim\".", 
+                f_hisn_l1: "Morning and Evening Azkar, Sleep Azkar, Entry and Exit Duas.", 
+                f_hisn_l2: "Easy and clear organization to access the needed zikr or dua at its time.", 
+                f_salah_tracker_title: "Prayer Tracker", 
+                f_salah_tracker_p: "A powerful tool to help you maintain your prayers and evaluate your performance.", 
+                f_salah_tracker_l1: "Easy Daily Recording: Record the status of each prayer with one tap.", 
+                f_salah_tracker_l2: "Monthly Statistics: Get a detailed report about your performance.", 
+                f_salah_tracker_l3: "Motivational Achievement System: Earn encouraging badges.", 
+                f_khatma_title: "Khatma Tracker (Individual & Group)", 
+                f_khatma_p: "A unique social system to motivate you to complete the Quran.", 
+                f_khatma_l1: "Individual Khatma: Start your own khatma, easily track your progress.", 
+                f_khatma_l2: "Group Khatma: Create a group khatma and invite your friends.", 
+                f_khatma_l3: "Part Reservation System: Each participant can reserve a part to read.", 
+                cta_title: "Ready to Start Your Faith Journey?",
+                cta_subtitle: "Download Zad Bono app now and enjoy a comprehensive, integrated faith experience",
+                cta_button: "Download App Now"
+            }
+        };
+
+        const langToggleButton = document.getElementById('lang-toggle-btn');
+        const langMenu = document.getElementById('lang-menu');
+        const selectedLangBtnText = document.getElementById('lang-text');
+        const selectedLangBtnFlag = document.getElementById('lang-flag');
+        
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(el => { 
+                const key = el.getAttribute('data-translate'); 
+                if (translations[lang] && translations[lang][key]) { 
+                    el.textContent = translations[lang][key]; 
+                } 
+            });
+            
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
+            selectedLangBtnFlag.src = `images/${lang}.png`;
+            localStorage.setItem('language', lang);
+            
+            if(langMenu) langMenu.classList.remove('show');
+        }
+
+        langToggleButton.addEventListener('click', (event) => { 
+            event.stopPropagation(); 
+            langMenu.classList.toggle('show'); 
+        });
+
+        // إغلاق قائمة اللغة عند النقر خارجها
+        window.addEventListener('click', () => { 
+            if (langMenu.classList.contains('show')) { 
+                langMenu.classList.remove('show'); 
+            } 
+        });
+
+        // تصفية المميزات
+        function filterFeatures(category) {
+            const features = document.querySelectorAll('.feature-card');
+            const buttons = document.querySelectorAll('.category-btn');
+            
+            // تحديث الأزرار النشطة
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick').includes(category)) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // تصفية البطاقات
+            features.forEach(feature => {
+                if (category === 'all' || feature.getAttribute('data-category') === category) {
+                    feature.style.display = 'flex';
+                } else {
+                    feature.style.display = 'none';
+                }
+            });
+        }
+
+        // التهيئة عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'ar';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>
