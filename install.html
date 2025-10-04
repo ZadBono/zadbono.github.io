@@ -3,68 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zad Bono | التحميل والتثبيت</title>
+    <meta name="description" content="حمّل تطبيق Zad Bono للأندرويد والآيفون. دليل تثبيت سهل مع فيديو توضيحي. تطبيق إسلامي مجاني بالكامل">
+    <title>التحميل والتثبيت | Zad Bono - تطبيق العبادات الشامل</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
-
     <style>
-        /* === أنماط عامة مأخوذة من صفحتك الرئيسية === */
-        body { font-family: 'Cairo', sans-serif; margin: 0; padding-top: 70px; background-color: #f0f4f8; color: #073763; text-align: center; transition: all 0.3s; }
-        .navbar { background-color: #0b5394; padding: 10px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2  ); }
-        .navbar-brand { color: #ffd700; font-weight: bold; font-size: 1.5em; text-decoration: none; }
-        .navbar-links { display: flex; align-items: center; }
-        .navbar-links a { color: #ffffff; text-decoration: none; margin: 0 15px; font-size: 1.1em; }
-        .navbar-links a:hover, .navbar-links a.active { color: #ffd700; } /* تمييز الصفحة النشطة */
-        .menu-toggle { display: none; font-size: 30px; color: white; background: none; border: none; cursor: pointer; }
-        .language-switcher { position: relative; }
-        .language-switcher .selected-lang { background-color: transparent; border: none; color: white; cursor: pointer; display: flex; align-items: center; font-family: 'Cairo', sans-serif; font-size: 1.1em; padding: 5px; }
-        .language-switcher .selected-lang img { width: 24px; height: 24px; border-radius: 50%; margin-left: 8px; }
-        .language-switcher .lang-menu { display: none; position: absolute; top: 120%; left: 50%; transform: translateX(-50%); background-color: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); list-style: none; padding: 5px; margin: 0; width: 180px; z-index: 1001; }
-        .language-switcher .lang-menu.show { display: block; }
-        .language-switcher .lang-menu li a { color: #073763; text-decoration: none; display: flex; align-items: center; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
-        .language-switcher .lang-menu li a:hover { background-color: #e0e8f0; }
-        .language-switcher .lang-menu li img { width: 24px; height: 24px; border-radius: 50%; margin-left: 10px; }
-        .buttons-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 50px; }
-        .download-button { background-color: #ffd700; color: #073763; padding: 15px 30px; font-size: 1.2em; font-weight: bold; text-decoration: none; border-radius: 50px; transition: transform 0.2s; display: inline-block; }
-        .download-button.secondary { background-color: #ffffff; border: 2px solid #0b5394; }
-        .download-button:hover { transform: scale(1.05); }
+        :root {
+            --primary-blue: #0b5394;
+            --dark-blue: #073763;
+            --gold: #ffd700;
+            --light-bg: #f0f4f8;
+            --white: #ffffff;
+        }
 
-        /* === أنماط خاصة بصفحة التحميل === */
-        .page-container { max-width: 900px; margin: 40px auto; padding: 20px; }
-        .page-title { color: #0b5394; font-size: 2.8em; margin-bottom: 40px; }
-        
-        /* === الأنماط الجديدة والمعدلة للفيديو === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: var(--light-bg); 
+            color: var(--dark-blue); 
+            padding-top: 70px;
+        }
+
+        /* النافبار */
+        .navbar { 
+            background-color: var(--primary-blue); 
+            padding: 12px 20px; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            z-index: 1000; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand { 
+            color: var(--gold); 
+            font-weight: bold; 
+            font-size: 1.4em; 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .navbar-links { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px;
+        }
+
+        .navbar-links a { 
+            color: var(--white); 
+            text-decoration: none; 
+            font-size: 1em; 
+            transition: color 0.3s; 
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .navbar-links a:hover, 
+        .navbar-links a.active { 
+            color: var(--gold); 
+            background-color: rgba(255,215,0,0.1);
+        }
+
+        .menu-toggle { 
+            display: none; 
+            font-size: 24px; 
+            color: white; 
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+        }
+
+        /* سويتشر اللغة */
+        .language-switcher { 
+            position: relative; 
+        }
+
+        .selected-lang { 
+            background-color: transparent; 
+            border: none; 
+            color: white; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .selected-lang:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .selected-lang img { 
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+        }
+
+        .lang-menu { 
+            display: none; 
+            position: absolute; 
+            top: 100%;
+            left: 0;
+            background-color: var(--white); 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            list-style: none; 
+            padding: 8px;
+            margin: 5px 0 0 0;
+            width: 140px;
+            z-index: 1001;
+        }
+
+        .lang-menu.show { 
+            display: block; 
+        }
+
+        .lang-menu li a { 
+            color: var(--dark-blue); 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+            padding: 10px;
+            border-radius: 5px; 
+            transition: background-color 0.2s; 
+            font-size: 0.9em;
+        }
+
+        .lang-menu li a:hover { 
+            background-color: #e0e8f0; 
+        }
+
+        .lang-menu li img { 
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+        }
+
+        /* المحتوى الرئيسي */
+        .page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-title { 
+            color: var(--primary-blue); 
+            font-size: 2.5em; 
+            margin-bottom: 40px; 
+            text-align: center;
+        }
+
+        /* أزرار التحميل */
+        .buttons-container { 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+            margin-bottom: 50px; 
+        }
+
+        .download-button { 
+            background: linear-gradient(135deg, var(--gold) 0%, #ffed4e 100%);
+            color: var(--dark-blue); 
+            padding: 16px 35px; 
+            font-size: 1.1em; 
+            font-weight: bold; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            transition: all 0.3s; 
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+        }
+
+        .download-button.secondary { 
+            background: transparent; 
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .download-button:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+        }
+
+        .download-button.secondary:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* قسم الفيديو */
         .video-section {
             margin: 50px 0;
-            background-color: #ffffff;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background-color: var(--white);
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
         }
+
         .video-section h2 {
-            font-size: 2em;
-            color: #0b5394;
+            font-size: 1.8em;
+            color: var(--primary-blue);
             margin-top: 0;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
+
         .video-wrapper {
             position: relative;
             width: 100%;
-            max-width: 360px; /* زيادة العرض الأقصى للفيديو */
+            max-width: 600px;
             margin: 0 auto;
             border-radius: 12px;
-            overflow: hidden; /* لإخفاء أي زوائد وضمان شكل الحواف الدائرية */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
+
         .video-wrapper::before {
             content: '';
             display: block;
-            padding-top: 222.22%; /* النسبة الجديدة بناءً على 2400/1080 */
+            padding-top: 56.25%; /* نسبة 16:9 */
         }
+
         .video-wrapper iframe {
             position: absolute;
             top: 0;
@@ -73,32 +258,269 @@
             height: 100%;
             border: 0;
         }
-        /* === نهاية الأنماط الجديدة === */
 
-        .steps-section { background-color: #ffffff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); padding: 40px; text-align: right; /* محاذاة لليمين للعربية */ }
-        .steps-section h2 { font-size: 2em; color: #0b5394; margin-bottom: 30px; text-align: center; }
-        .step { display: flex; align-items: flex-start; gap: 25px; margin-bottom: 40px; }
-        .step-icon { font-size: 2.5em; color: #ffd700; padding-top: 5px; }
-        .step-content h3 { font-size: 1.5em; margin-top: 0; margin-bottom: 10px; color: #073763; }
-        .step-content p { font-size: 1.1em; line-height: 1.8; margin-bottom: 15px; }
-        .step-content .warning-box { background-color: #fffbe6; border: 1px solid #ffe58f; border-radius: 8px; padding: 15px; }
-        .step-content .warning-box p { margin: 0; font-size: 1em; }
-        .step-image { max-width: 100%; border-radius: 8px; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        hr { border: 0; height: 1px; background-color: #e0e8f0; margin: 50px 0; }
+        /* قسم الخطوات */
+        .steps-section { 
+            background-color: var(--white); 
+            border-radius: 16px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+            padding: 40px; 
+            text-align: right;
+            margin-top: 40px;
+        }
+
+        .steps-section h2 { 
+            font-size: 2em; 
+            color: var(--primary-blue); 
+            margin-bottom: 40px; 
+            text-align: center; 
+        }
+
+        .step { 
+            display: flex; 
+            align-items: flex-start; 
+            gap: 25px; 
+            margin-bottom: 40px; 
+            padding: 25px;
+            border-radius: 12px;
+            background: var(--light-bg);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .step-icon { 
+            font-size: 2.5em; 
+            color: var(--gold); 
+            padding-top: 5px; 
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .step-content { 
+            flex: 1; 
+        }
+
+        .step-content h3 { 
+            font-size: 1.5em; 
+            margin-top: 0; 
+            margin-bottom: 15px; 
+            color: var(--dark-blue); 
+        }
+
+        .step-content p { 
+            font-size: 1.1em; 
+            line-height: 1.7; 
+            margin-bottom: 15px; 
+            color: #555;
+        }
+
+        .warning-box { 
+            background-color: #fffbe6; 
+            border: 2px solid var(--gold); 
+            border-radius: 10px; 
+            padding: 20px; 
+            margin-top: 15px;
+        }
+
+        .warning-box p { 
+            margin: 0; 
+            font-size: 1em; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-box i {
+            color: #ffa500;
+            font-size: 1.2em;
+        }
+
+        .step-image { 
+            max-width: 100%; 
+            border-radius: 8px; 
+            margin-top: 15px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+        }
+
+        hr { 
+            border: 0; 
+            height: 2px; 
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+            margin: 40px 0; 
+        }
+
+        /* قسم المعلومات الإضافية */
+        .info-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .info-item {
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-item i {
+            font-size: 2.5em;
+            color: var(--gold);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .info-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .info-item p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
 
         /* For LTR languages */
         html[dir="ltr"] .steps-section { text-align: left; }
         html[dir="ltr"] .step-icon { order: -1; }
+        html[dir="ltr"] .step:hover { transform: translateX(5px); }
 
-        @media (max-width: 850px) {
-            .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: #0b5394; padding: 10px 0; }
-            .navbar-links.active { display: flex; }
-            .navbar-links a, .language-switcher { margin: 10px 0; text-align: center; }
-            .menu-toggle { display: block; }
-            .page-title { font-size: 2.2em; }
-            .steps-section h2, .video-section h2 { font-size: 1.8em; }
-            .step { flex-direction: column; align-items: center; text-align: center; }
-            .step-content { text-align: center; }
+        /* الفوتر */
+        .footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 30px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9em;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 0.85em;
+        }
+
+        /* الوسائط المتجاوبة */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .navbar-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background-color: var(--primary-blue); 
+                padding: 20px; 
+                gap: 15px;
+            }
+
+            .navbar-links.active { 
+                display: flex; 
+            }
+
+            .menu-toggle { 
+                display: block; 
+            }
+
+            .page-title { 
+                font-size: 2em; 
+            }
+
+            .page-container {
+                padding: 20px 15px;
+            }
+
+            .steps-section {
+                padding: 25px 20px;
+            }
+
+            .steps-section h2 {
+                font-size: 1.6em;
+            }
+
+            .step { 
+                flex-direction: column; 
+                align-items: center; 
+                text-align: center; 
+                padding: 20px;
+            }
+
+            .step-content { 
+                text-align: center; 
+            }
+
+            .step-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2em;
+            }
+
+            .video-section {
+                padding: 30px 20px;
+            }
+
+            .video-section h2 {
+                font-size: 1.5em;
+            }
+
+            .info-section {
+                padding: 30px 20px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
             html[dir="ltr"] .step-icon { order: 0; }
         }
     </style>
@@ -106,7 +528,10 @@
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="navbar-brand" data-translate="app_name">Zad Bono</a>
+        <a href="index.html" class="navbar-brand" data-translate="app_name">
+            <img src="images/logo.jpg" alt="شعار Zad Bono">
+            Zad Bono
+        </a>
         <div class="navbar-links" id="navbar-links">
             <a href="index.html" data-translate="nav_home">الرئيسية</a>
             <a href="features.html" data-translate="nav_features">شرح المميزات</a>
@@ -115,15 +540,12 @@
             <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
             <div class="language-switcher">
                 <button class="selected-lang" id="lang-toggle-btn">
-                    <span id="lang-text">العربية</span>
                     <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
+                    <span id="lang-text">العربية</span>
                 </button>
                 <ul class="lang-menu" id="lang-menu">
-                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم مصر"> العربية</a></li>
-                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم أمريكا"> English</a></li>
-                    <li><a href="#" onclick="setLanguage('de')"><img src="images/de.png" alt="علم ألمانيا"> Deutsch</a></li>
-                    <li><a href="#" onclick="setLanguage('fr')"><img src="images/fr.png" alt="علم فرنسا"> Français</a></li>
-                    <li><a href="#" onclick="setLanguage('cn')"><img src="images/cn.png" alt="علم الصين"> 中文</a></li>
+                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم العربية"> العربية</a></li>
+                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم الإنجليزية"> English</a></li>
                 </ul>
             </div>
         </div>
@@ -134,12 +556,17 @@
         <h1 class="page-title" data-translate="install_title">تحميل وتثبيت تطبيق Zad Bono</h1>
         
         <div class="buttons-container">
-            <!-- ضع هنا رابط ملف الـ APK الخاص بك -->
-            <a href="https://archive.org/download/zad-bono-v-1.3/Zad%20Bono%20V%201.3.apk" class="download-button" data-translate="btn_android">تحميل للأندرويد (APK  )</a>
-            <a href="iphone.html" class="download-button secondary" data-translate="btn_iphone">تحميل للآيفون</a>
+            <a href="https://archive.org/download/zad-bono-v-1.3/Zad%20Bono%20V%201.3.apk" class="download-button" data-translate="btn_android">
+                <i class="fab fa-android"></i>
+                تحميل للأندرويد
+            </a>
+            <a href="iphone.html" class="download-button secondary" data-translate="btn_iphone">
+                <i class="fab fa-apple"></i>
+                تحميل للآيفون
+            </a>
         </div>
 
-        <!-- ================== قسم الفيديو المضاف ================== -->
+        <!-- قسم الفيديو -->
         <div class="video-section">
             <h2 data-translate="video_guide_title">شرح التثبيت بالفيديو</h2>
             <div class="video-wrapper">
@@ -151,18 +578,24 @@
                 </iframe>
             </div>
         </div>
-        <!-- ================== نهاية قسم الفيديو ================== -->
 
         <div class="steps-section">
+            <h2 data-translate="steps_title">دليل التثبيت خطوة بخطوة</h2>
             
             <!-- الخطوة الأولى: التحميل -->
             <div class="step">
-                <i class="fas fa-cloud-download-alt step-icon"></i>
+                <div class="step-icon">
+                    <i class="fas fa-cloud-download-alt"></i>
+                </div>
                 <div class="step-content">
                     <h3 data-translate="step1_title">الخطوة 1: تحميل الملف</h3>
                     <p data-translate="step1_desc">اضغط على زر "تحميل للأندرويد". قد تظهر لك رسالة تحذير بأن "الملف قد يكون ضاراً". هذا إجراء روتيني من المتصفح لأن التطبيق ليس من متجر جوجل. لا تقلق، تطبيقنا آمن تماماً.</p>
                     <div class="warning-box">
-                        <p><i class="fas fa-exclamation-triangle"></i> <strong data-translate="step1_warn_title">لا تقلق!</strong> <span data-translate="step1_warn_text">اختر "تنزيل على أي حال" للمتابعة.</span></p>
+                        <p>
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <strong data-translate="step1_warn_title">لا تقلق!</strong>
+                            <span data-translate="step1_warn_text">اختر "تنزيل على أي حال" للمتابعة.</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -171,10 +604,12 @@
 
             <!-- الخطوة الثانية: فتح الملف -->
             <div class="step">
-                <i class="fas fa-folder-open step-icon"></i>
+                <div class="step-icon">
+                    <i class="fas fa-folder-open"></i>
+                </div>
                 <div class="step-content">
                     <h3 data-translate="step2_title">الخطوة 2: فتح الملف بعد التنزيل</h3>
-                    <p data-translate="step2_desc">بعد اكتمال التنزيل، افتح شريط الإشعارات واضغط على الملف الذي تم تنزيله، أو ابحث عنه في مجلد "التنزيلات" (Downloads ) في مدير الملفات بهاتفك.</p>
+                    <p data-translate="step2_desc">بعد اكتمال التنزيل، افتح شريط الإشعارات واضغط على الملف الذي تم تنزيله، أو ابحث عنه في مجلد "التنزيلات" (Downloads) في مدير الملفات بهاتفك.</p>
                 </div>
             </div>
 
@@ -182,7 +617,9 @@
 
             <!-- الخطوة الثالثة: السماح بالتثبيت -->
             <div class="step">
-                <i class="fas fa-shield-alt step-icon"></i>
+                <div class="step-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
                 <div class="step-content">
                     <h3 data-translate="step3_title">الخطوة 3: السماح بتثبيت التطبيقات غير المعروفة</h3>
                     <p data-translate="step3_desc">لأمانك، يمنع هاتفك تثبيت التطبيقات من خارج متجر جوجل بشكل افتراضي. ستظهر لك رسالة تطلب منك السماح بذلك. اضغط على "الإعدادات" (Settings).</p>
@@ -194,49 +631,181 @@
 
             <!-- الخطوة الرابعة: التثبيت النهائي -->
             <div class="step">
-                <i class="fas fa-check-circle step-icon"></i>
+                <div class="step-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
                 <div class="step-content">
                     <h3 data-translate="step4_title">الخطوة 4: التثبيت</h3>
                     <p data-translate="step4_desc">بعد السماح للمصدر، ارجع للخلف وستظهر لك شاشة التثبيت. اضغط على "تثبيت" (Install) وانتظر قليلاً. مبروك! تم تثبيت التطبيق بنجاح على هاتفك.</p>
                 </div>
             </div>
+        </div>
 
+        <!-- قسم المعلومات الإضافية -->
+        <div class="info-section">
+            <h2 data-translate="info_title">معلومات مهمة</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 data-translate="info1_title">آمن 100%</h3>
+                    <p data-translate="info1_desc">التطبيق خالي تماماً من الفيروسات والبرمجيات الخبيثة</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3 data-translate="info2_title">مجاني بالكامل</h3>
+                    <p data-translate="info2_desc">لا توجد مشتريات داخلية أو إعلانات مزعجة</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-headset"></i>
+                    <h3 data-translate="info3_title">دعم فني</h3>
+                    <p data-translate="info3_desc">فريق دعم متاح لمساعدتك في أي استفسار</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3 data-translate="info4_title">تحديثات مستمرة</h3>
+                    <p data-translate="info4_desc">نضيف ميزات جديدة وتحسينات باستمرار</p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
+                <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+                <a href="features.html" data-translate="nav_features">المميزات</a>
+                <a href="install.html" data-translate="nav_install">التثبيت</a>
+            </div>
+            <div class="copyright">
+                © 2024 Zad Bono. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
 
     <script>
         // --- Script for Mobile Menu ---
         const menuToggle = document.getElementById('menu-toggle');
         const navbarLinks = document.getElementById('navbar-links');
-        menuToggle.addEventListener('click', () => { navbarLinks.classList.toggle('active'); });
+        
+        menuToggle.addEventListener('click', () => { 
+            navbarLinks.classList.toggle('active'); 
+        });
+
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', (event) => {
+            if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navbarLinks.classList.remove('active');
+            }
+        });
 
         // --- Script for Language Switcher ---
         const translations = {
-            ar: { app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_install: "التحميل والتثبيت", nav_contact: "اتصل بنا", nav_privacy: "سياسة الخصوصية", lang_name: "العربية", install_title: "تحميل وتثبيت تطبيق Zad Bono", btn_android: "تحميل للأندرويد (APK)", btn_iphone: "تحميل للآيفون", video_guide_title: "شرح التثبيت بالفيديو", step1_title: "الخطوة 1: تحميل الملف", step1_desc: "اضغط على زر \"تحميل للأندرويد\". قد تظهر لك رسالة تحذير بأن \"الملف قد يكون ضاراً\". هذا إجراء روتيني من المتصفح لأن التطبيق ليس من متجر جوجل. لا تقلق، تطبيقنا آمن تماماً.", step1_warn_title: "لا تقلق!", step1_warn_text: "اختر \"تنزيل على أي حال\" للمتابعة.", step2_title: "الخطوة 2: فتح الملف بعد التنزيل", step2_desc: "بعد اكتمال التنزيل، افتح شريط الإشعارات واضغط على الملف الذي تم تنزيله، أو ابحث عنه في مجلد \"التنزيلات\" (Downloads) في مدير الملفات بهاتفك.", step3_title: "الخطوة 3: السماح بتثبيت التطبيقات غير المعروفة", step3_desc: "لأمانك، يمنع هاتفك تثبيت التطبيقات من خارج متجر جوجل بشكل افتراضي. ستظهر لك رسالة تطلب منك السماح بذلك. اضغط على \"الإعدادات\" (Settings).", step3_desc2: "في الشاشة التالية، قم بتفعيل خيار \"السماح من هذا المصدر\" (Allow from this source). هذا الإجراء آمن ومؤقت لتثبيت تطبيقنا فقط.", step4_title: "الخطوة 4: التثبيت", step4_desc: "بعد السماح للمصدر، ارجع للخلف وستظهر لك شاشة التثبيت. اضغط على \"تثبيت\" (Install) وانتظر قليلاً. مبروك! تم تثبيت التطبيق بنجاح على هاتفك." },
-            en: { app_name: "Zad Bono", nav_home: "Home", nav_features: "Features", nav_install: "Installation", nav_contact: "Contact Us", nav_privacy: "Privacy Policy", lang_name: "English", install_title: "Download & Install Zad Bono App", btn_android: "Download for Android (APK)", btn_iphone: "Download for iPhone", video_guide_title: "Video Installation Guide", step1_title: "Step 1: Download the File", step1_desc: "Click the \"Download for Android\" button. You might see a warning that \"This file might be harmful.\" This is a standard browser message for apps outside the Google Play Store. Don't worry, our app is completely safe.", step1_warn_title: "Don't worry!", step1_warn_text: "Choose \"Download anyway\" to proceed.", step2_title: "Step 2: Open the File", step2_desc: "Once the download is complete, open your notification bar and tap on the downloaded file, or find it in the \"Downloads\" folder in your phone's file manager.", step3_title: "Step 3: Allow Unknown Apps", step3_desc: "For your security, your phone blocks installations from unknown sources by default. You will see a prompt asking for permission. Tap on \"Settings\".", step3_desc2: "On the next screen, enable the \"Allow from this source\" option. This is a safe, one-time action just for installing our app.", step4_title: "Step 4: Install", step4_desc: "After granting permission, go back, and the installation screen will appear. Tap \"Install\" and wait a moment. Congratulations! The app is now successfully installed on your phone." },
-            de: { app_name: "Zad Bono", nav_home: "Startseite", nav_features: "Funktionen", nav_install: "Installation", nav_contact: "Kontakt", nav_privacy: "Datenschutz", lang_name: "Deutsch", install_title: "Zad Bono App herunterladen & installieren", btn_android: "Download für Android (APK)", btn_iphone: "Download für iPhone", video_guide_title: "Video-Installationsanleitung", step1_title: "Schritt 1: Datei herunterladen", step1_desc: "Klicken Sie auf \"Download für Android\". Möglicherweise wird eine Warnung angezeigt, dass \"diese Datei schädlich sein könnte\". Dies ist eine Standardmeldung des Browsers. Keine Sorge, unsere App ist sicher.", step1_warn_title: "Keine Sorge!", step1_warn_text: "Wählen Sie \"Trotzdem herunterladen\".", step2_title: "Schritt 2: Datei öffnen", step2_desc: "Öffnen Sie nach dem Download die Benachrichtigungsleiste und tippen Sie auf die Datei, oder finden Sie sie im \"Downloads\"-Ordner.", step3_title: "Schritt 3: Unbekannte Apps zulassen", step3_desc: "Ihr Telefon blockiert standardmäßig Installationen aus unbekannten Quellen. Tippen Sie in der angezeigten Meldung auf \"Einstellungen\".", step3_desc2: "Aktivieren Sie im nächsten Bildschirm die Option \"Aus dieser Quelle zulassen\". Dies ist eine sichere, einmalige Aktion.", step4_title: "Schritt 4: Installieren", step4_desc: "Gehen Sie zurück und tippen Sie auf \"Installieren\". Warten Sie einen Moment. Herzlichen Glückwunsch! Die App ist jetzt installiert." },
-            fr: { app_name: "Zad Bono", nav_home: "Accueil", nav_features: "Fonctionnalités", nav_install: "Installation", nav_contact: "Contactez-nous", nav_privacy: "Politique de confidentialité", lang_name: "Français", install_title: "Télécharger & Installer l'App Zad Bono", btn_android: "Télécharger pour Android (APK)", btn_iphone: "Télécharger pour iPhone", video_guide_title: "Guide d'installation vidéo", step1_title: "Étape 1: Télécharger le fichier", step1_desc: "Cliquez sur \"Télécharger pour Android\". Un avertissement peut apparaître. C'est un message standard du navigateur. Notre application est totalement sûre.", step1_warn_title: "Ne vous inquiétez pas!", step1_warn_text: "Choisissez \"Télécharger quand même\".", step2_title: "Étape 2: Ouvrir le fichier", step2_desc: "Une fois le téléchargement terminé, ouvrez la barre de notification et appuyez sur le fichier, ou trouvez-le dans le dossier \"Téléchargements\".", step3_title: "Étape 3: Autoriser les applications inconnues", step3_desc: "Votre téléphone bloque les installations de sources inconnues. Appuyez sur \"Paramètres\" dans l'invite.", step3_desc2: "Sur l'écran suivant, activez l'option \"Autoriser depuis cette source\". C'est une action sûre et unique.", step4_title: "Étape 4: Installer", step4_desc: "Revenez en arrière et appuyez sur \"Installer\". Attendez un instant. Félicitations! L'application est maintenant installée." },
-            cn: { app_name: "Zad Bono", nav_home: "首页", nav_features: "功能", nav_install: "安装", nav_contact: "联系我们", nav_privacy: "隐私政策", lang_name: "中文", install_title: "下载并安装 Zad Bono 应用", btn_android: "下载安卓版 (APK)", btn_iphone: "下载iPhone版", video_guide_title: "视频安装指南", step1_title: "第1步：下载文件", step1_desc: "点击“下载安卓版”按钮。您可能会看到一条警告，提示“此文件可能有害”。这是针对非应用商店应用的浏览器标准消息。别担心，我们的应用是完全安全的。", step1_warn_title: "别担心！", step1_warn_text: "选择“仍然下载”以继续。", step2_title: "第2步：打开文件", step2_desc: "下载完成后，打开通知栏并点击下载的文件，或者在手机的文件管理器中的“下载”文件夹中找到它。", step3_title: "第3步：允许未知应用", step3_desc: "为了您的安全，您的手机默认阻止来自未知来源的安装。您会看到一个请求权限的提示。点击“设置”。", step3_desc2: "在下一个屏幕上，启用“允许来自此来源”选项。这是一个安全的一次性操作，仅用于安装我们的应用。", step4_title: "第4步：安装", step4_desc: "授予权限后，返回，安装屏幕将会出现。点击“安装”并稍等片刻。恭喜！应用现已成功安装在您的手机上。" }
+            ar: { 
+                app_name: "Zad Bono", 
+                nav_home: "الرئيسية", 
+                nav_features: "شرح المميزات", 
+                nav_install: "التحميل والتثبيت", 
+                nav_contact: "اتصل بنا", 
+                nav_privacy: "سياسة الخصوصية", 
+                install_title: "تحميل وتثبيت تطبيق Zad Bono", 
+                btn_android: "تحميل للأندرويد", 
+                btn_iphone: "تحميل للآيفون", 
+                video_guide_title: "شرح التثبيت بالفيديو",
+                steps_title: "دليل التثبيت خطوة بخطوة",
+                step1_title: "الخطوة 1: تحميل الملف", 
+                step1_desc: "اضغط على زر \"تحميل للأندرويد\". قد تظهر لك رسالة تحذير بأن \"الملف قد يكون ضاراً\". هذا إجراء روتيني من المتصفح لأن التطبيق ليس من متجر جوجل. لا تقلق، تطبيقنا آمن تماماً.", 
+                step1_warn_title: "لا تقلق!", 
+                step1_warn_text: "اختر \"تنزيل على أي حال\" للمتابعة.", 
+                step2_title: "الخطوة 2: فتح الملف بعد التنزيل", 
+                step2_desc: "بعد اكتمال التنزيل، افتح شريط الإشعارات واضغط على الملف الذي تم تنزيله، أو ابحث عنه في مجلد \"التنزيلات\" (Downloads) في مدير الملفات بهاتفك.", 
+                step3_title: "الخطوة 3: السماح بتثبيت التطبيقات غير المعروفة", 
+                step3_desc: "لأمانك، يمنع هاتفك تثبيت التطبيقات من خارج متجر جوجل بشكل افتراضي. ستظهر لك رسالة تطلب منك السماح بذلك. اضغط على \"الإعدادات\" (Settings).", 
+                step3_desc2: "في الشاشة التالية، قم بتفعيل خيار \"السماح من هذا المصدر\" (Allow from this source). هذا الإجراء آمن ومؤقت لتثبيت تطبيقنا فقط.", 
+                step4_title: "الخطوة 4: التثبيت", 
+                step4_desc: "بعد السماح للمصدر، ارجع للخلف وستظهر لك شاشة التثبيت. اضغط على \"تثبيت\" (Install) وانتظر قليلاً. مبروك! تم تثبيت التطبيق بنجاح على هاتفك.",
+                info_title: "معلومات مهمة",
+                info1_title: "آمن 100%",
+                info1_desc: "التطبيق خالي تماماً من الفيروسات والبرمجيات الخبيثة",
+                info2_title: "مجاني بالكامل",
+                info2_desc: "لا توجد مشتريات داخلية أو إعلانات مزعجة",
+                info3_title: "دعم فني",
+                info3_desc: "فريق دعم متاح لمساعدتك في أي استفسار",
+                info4_title: "تحديثات مستمرة",
+                info4_desc: "نضيف ميزات جديدة وتحسينات باستمرار"
+            },
+            en: { 
+                app_name: "Zad Bono", 
+                nav_home: "Home", 
+                nav_features: "Features", 
+                nav_install: "Installation", 
+                nav_contact: "Contact Us", 
+                nav_privacy: "Privacy Policy", 
+                install_title: "Download & Install Zad Bono App", 
+                btn_android: "Download for Android", 
+                btn_iphone: "Download for iPhone", 
+                video_guide_title: "Video Installation Guide",
+                steps_title: "Step-by-Step Installation Guide",
+                step1_title: "Step 1: Download the File", 
+                step1_desc: "Click the \"Download for Android\" button. You might see a warning that \"This file might be harmful.\" This is a standard browser message for apps outside the Google Play Store. Don't worry, our app is completely safe.", 
+                step1_warn_title: "Don't worry!", 
+                step1_warn_text: "Choose \"Download anyway\" to proceed.", 
+                step2_title: "Step 2: Open the File", 
+                step2_desc: "Once the download is complete, open your notification bar and tap on the downloaded file, or find it in the \"Downloads\" folder in your phone's file manager.", 
+                step3_title: "Step 3: Allow Unknown Apps", 
+                step3_desc: "For your security, your phone blocks installations from unknown sources by default. You will see a prompt asking for permission. Tap on \"Settings\".", 
+                step3_desc2: "On the next screen, enable the \"Allow from this source\" option. This is a safe, one-time action just for installing our app.", 
+                step4_title: "Step 4: Install", 
+                step4_desc: "After granting permission, go back, and the installation screen will appear. Tap \"Install\" and wait a moment. Congratulations! The app is now successfully installed on your phone.",
+                info_title: "Important Information",
+                info1_title: "100% Safe",
+                info1_desc: "The app is completely free from viruses and malware",
+                info2_title: "Completely Free",
+                info2_desc: "No in-app purchases or annoying ads",
+                info3_title: "Technical Support",
+                info3_desc: "Support team available to help with any inquiry",
+                info4_title: "Continuous Updates",
+                info4_desc: "We continuously add new features and improvements"
+            }
         };
-        
+
         const langToggleButton = document.getElementById('lang-toggle-btn');
         const langMenu = document.getElementById('lang-menu');
         const selectedLangBtnText = document.getElementById('lang-text');
         const selectedLangBtnFlag = document.getElementById('lang-flag');
+        
         function setLanguage(lang) {
             const elements = document.querySelectorAll('[data-translate]');
-            elements.forEach(el => { const key = el.getAttribute('data-translate'); if (translations[lang] && translations[lang][key]) { el.textContent = translations[lang][key]; } });
+            elements.forEach(el => { 
+                const key = el.getAttribute('data-translate'); 
+                if (translations[lang] && translations[lang][key]) { 
+                    el.textContent = translations[lang][key]; 
+                } 
+            });
+            
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            if(selectedLangBtnText && translations[lang]) selectedLangBtnText.textContent = translations[lang].lang_name;
-            if(selectedLangBtnFlag) selectedLangBtnFlag.src = `images/${lang}.png`;
+            selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
+            selectedLangBtnFlag.src = `images/${lang}.png`;
             localStorage.setItem('language', lang);
+            
             if(langMenu) langMenu.classList.remove('show');
         }
-        if(langToggleButton) {
-            langToggleButton.addEventListener('click', (event) => { event.stopPropagation(); langMenu.classList.toggle('show'); });
-        }
-        window.addEventListener('click', () => { if (langMenu && langMenu.classList.contains('show')) { langMenu.classList.remove('show'); } });
+
+        langToggleButton.addEventListener('click', (event) => { 
+            event.stopPropagation(); 
+            langMenu.classList.toggle('show'); 
+        });
+
+        // إغلاق قائمة اللغة عند النقر خارجها
+        window.addEventListener('click', () => { 
+            if (langMenu.classList.contains('show')) { 
+                langMenu.classList.remove('show'); 
+            } 
+        });
+
+        // التهيئة عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('language') || 'ar';
             setLanguage(savedLang);
