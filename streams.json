@@ -1,0 +1,128 @@
+[
+  {
+    "title": "قناة القرآن الكريم",
+    "url": "",
+    "youtubeVideoId": "zIl0NYIsBCE",
+    "type": "YOUTUBE_LIVE",
+    "category": "RELIGIOUS_CHANNELS"
+  },
+  {
+    "title": "قناة القرآن الكريم مكة",
+    "url": "https://cdn-globecast.akamaized.net/live/eds/saudi_quran/hls_roku/index.m3u8",
+    "youtubeVideoId": null,
+    "type": "HLS_STREAM",
+    "category": "RELIGIOUS_CHANNELS"
+  },
+  {
+    "title": "قناة البحرين للقرآن الكريم",
+    "url": "https://5c7b683162943.streamlock.net/live/ngrp:bahrainquran_all/playlist.m3u8",
+    "youtubeVideoId": null,
+    "type": "HLS_STREAM",
+    "category": "RELIGIOUS_CHANNELS"
+  },
+  {
+    "title": "قناة اقرأ",
+    "url": "https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv2/playlist.m3u8",
+    "youtubeVideoId": null,
+    "type": "HLS_STREAM",
+    "category": "RELIGIOUS_CHANNELS"
+  },
+  {
+    "title": "قناة الفتح",
+    "url": "https://alfat7-q.com:5443/LiveApp/streams/986613792230697141226562.m3u8",
+    "youtubeVideoId": null,
+    "type": "HLS_STREAM",
+    "category": "RELIGIOUS_CHANNELS"
+  },
+  {
+    "title": "قناة القران الكريم ( الشارقة  )",
+    "url": "https://live.kwikmotion.com/smcquranlive/quranradiolive/playlist.m3u8",
+    "youtubeVideoId": null,
+    "type": "HLS_STREAM",
+    "category": "RELIGIOUS_CHANNELS"
+  },
+  {
+    "title": "قناة القران الكريم ( نابلس  )",
+    "url": "http://streaming.zaytonatube.com:8080/holyquran/holyquran/video.m3u8",
+    "youtubeVideoId": null,
+    "type": "HLS_STREAM",
+    "category": "RELIGIOUS_CHANNELS"
+  },
+  {
+    "title": "قناة السنة النبوية",
+    "url": "",
+    "youtubeVideoId": "SamCZxYysF4",
+    "type": "YOUTUBE_LIVE",
+    "category": "RELIGIOUS_CHANNELS"
+  },
+  {
+    "title": "قناة السنة النبوية 2",
+    "url": "",
+    "youtubeVideoId": "TpT8b8JFZ6E",
+    "type": "YOUTUBE_LIVE",
+    "category": "RELIGIOUS_CHANNELS"
+  },
+  {
+    "title": "قناة الجزيرة",
+    "url": "",
+    "youtubeVideoId": "bNyUyrR0PHo",
+    "type": "YOUTUBE_LIVE",
+    "category": "NEWS_CHANNELS"
+  },
+  {
+    "title": "قناة الغد",
+    "url": "https://eazyvwqssi.erbvr.com/alghadtv/alghadtv.m3u8",
+    "youtubeVideoId": null,
+    "type": "HLS_STREAM",
+    "category": "NEWS_CHANNELS"
+  },
+  {
+    "title": "قناة العربية",
+    "url": "",
+    "youtubeVideoId": "n7eQejkXbnM",
+    "type": "YOUTUBE_LIVE",
+    "category": "NEWS_CHANNELS"
+  },
+  {
+    "title": "قناة الحدث",
+    "url": "",
+    "youtubeVideoId": "zi9knajcejY",
+    "type": "YOUTUBE_LIVE",
+    "category": "NEWS_CHANNELS"
+  },
+  {
+    "title": "قناة العربي",
+    "url": "",
+    "youtubeVideoId": "e2RgSa1Wt5o",
+    "type": "YOUTUBE_LIVE",
+    "category": "NEWS_CHANNELS"
+  },
+  {
+    "title": "قناة سكاي نيوز عربية - Sky News Arabia Live",
+    "url": "",
+    "youtubeVideoId": "XoiHZyPaozY",
+    "type": "YOUTUBE_LIVE",
+    "category": "NEWS_CHANNELS"
+  },
+  {
+    "title": "إذاعة القرآن الكريم – القاهرة",
+    "url": "https://stream.radiojar.com/8s5u5tpdtwzuv",
+    "youtubeVideoId": null,
+    "type": "AUDIO_STREAM",
+    "category": "RADIO_STATIONS"
+  },
+  {
+    "title": "إذاعة القرآن الكريم – السعودية",
+    "url": "https://stream.radiojar.com/4wqre23fytzuv",
+    "youtubeVideoId": null,
+    "type": "AUDIO_STREAM",
+    "category": "RADIO_STATIONS"
+  },
+  {
+    "title": "ماهر المعيقلي",
+    "url": "https://Qurango.net/radio/maher",
+    "youtubeVideoId": null,
+    "type": "AUDIO_STREAM",
+    "category": "RADIO_STATIONS"
+  }
+]
