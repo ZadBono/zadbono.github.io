@@ -49,14 +49,7 @@
     "category": "RELIGIOUS_CHANNELS"
   },
   {
-    "title": "قناة السنة النبوية",
-    "url": "",
-    "youtubeVideoId": "SamCZxYysF4",
-    "type": "YOUTUBE_LIVE",
-    "category": "RELIGIOUS_CHANNELS"
-  },
-  {
-    "title": "قناة السنة النبوية 2",
+    "title": "قناة السنة النبوية ",
     "url": "",
     "youtubeVideoId": "TpT8b8JFZ6E",
     "type": "YOUTUBE_LIVE",
@@ -126,3 +119,4 @@
     "category": "RADIO_STATIONS"
   }
 ]
+
