@@ -431,30 +431,32 @@
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="index.html" class="navbar-brand" data-translate="app_name">
-            <img src="images/logo.jpg" alt="شعار Zad Bono">
-            Zad Bono
-        </a>
-        <div class="navbar-links" id="navbar-links">
-            <a href="index.html" data-translate="nav_home">الرئيسية</a>
-            <a href="features.html" data-translate="nav_features">شرح المميزات</a>
-            <a href="install.html" data-translate="nav_install">التحميل والتثبيت</a>
-            <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
-            <a href="privacy-policy.html" class="active" data-translate="nav_privacy">سياسة الخصوصية</a>
-            <div class="language-switcher">
-                <button class="selected-lang" id="lang-toggle-btn">
-                    <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
-                    <span id="lang-text">العربية</span>
-                </button>
-                <ul class="lang-menu" id="lang-menu">
-                    <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم العربية"> العربية</a></li>
-                    <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم الإنجليزية"> English</a></li>
-                </ul>
-            </div>
+<nav class="navbar">
+    <a href="index.html" class="navbar-brand" data-translate="app_name">
+        <img src="images/logo.jpg" alt="شعار Zad Bono">
+        Zad Bono
+    </a>
+    <div class="navbar-links" id="navbar-links">
+        <a href="index.html" data-translate="nav_home">الرئيسية</a>
+        <a href="features.html" data-translate="nav_features">شرح المميزات</a>
+        <a href="install.html" data-translate="nav_install">التحميل والتثبيت</a>
+        <a href="blog.html" data-translate="nav_blog">المدونة</a> <!-- ✨ الرابط الجديد هنا -->
+        <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+        <a href="privacy-policy.html" class="active" data-translate="nav_privacy">سياسة الخصوصية</a>
+        <div class="language-switcher">
+            <button class="selected-lang" id="lang-toggle-btn">
+                <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
+                <span id="lang-text">العربية</span>
+            </button>
+            <ul class="lang-menu" id="lang-menu">
+                <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم العربية"> العربية</a></li>
+                <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم الإنجليزية"> English</a></li>
+            </ul>
         </div>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
-    </nav>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+</nav>
+
 
     <div class="container">
         <div class="page-header">
@@ -552,6 +554,7 @@
                 nav_home: "الرئيسية", 
                 nav_features: "شرح المميزات", 
                 nav_install: "التحميل والتثبيت", 
+                nav_blog: "المدونة",      // <--- أضف هذا السطر
                 nav_contact: "اتصل بنا", 
                 nav_privacy: "سياسة الخصوصية", 
                 privacy_title: "سياسة الخصوصية وشروط الخدمة",
@@ -591,7 +594,8 @@
                 app_name: "Zad Bono", 
                 nav_home: "Home", 
                 nav_features: "Features", 
-                nav_install: "Installation", 
+                nav_install: "Installation",
+                nav_blog: "Blog",          // <--- وأضف هذا السطر
                 nav_contact: "Contact Us", 
                 nav_privacy: "Privacy Policy", 
                 privacy_title: "Privacy Policy & Terms of Service",
