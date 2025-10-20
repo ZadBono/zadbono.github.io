@@ -5,6 +5,7 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+<!-- الصفحات الأساسية -->
 <url>
   <loc>https://zadbono.github.io/index.html</loc>
   <lastmod>2025-10-21T00:00:00+00:00</lastmod>
@@ -29,6 +30,33 @@
   <loc>https://zadbono.github.io/privacy-policy.html</loc>
   <lastmod>2025-10-21T00:00:00+00:00</lastmod>
   <priority>0.50</priority>
+</url>
+
+<!-- ✨ الصفحات الجديدة - المدونة والمقالات ✨ -->
+<url>
+  <loc>https://zadbono.github.io/blog.html</loc>
+  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://zadbono.github.io/articles/how-to-make-dua-answered.html</loc>
+  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://zadbono.github.io/articles/is-my-prayer-accepted.html</loc>
+  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://zadbono.github.io/articles/5-quran-secrets.html</loc>
+  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://zadbono.github.io/articles/how-to-maintain-azkar.html</loc>
+  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
 </url>
 
 </urlset>
