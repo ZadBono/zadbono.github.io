@@ -1,12 +1,5 @@
 [
   {
-    "title": "قناة القرآن الكريم",
-    "url": "",
-    "youtubeVideoId": "zIl0NYIsBCE",
-    "type": "YOUTUBE_LIVE",
-    "category": "RELIGIOUS_CHANNELS"
-  },
-  {
     "title": "قناة القرآن الكريم مكة",
     "url": "https://cdn-globecast.akamaized.net/live/eds/saudi_quran/hls_roku/index.m3u8",
     "youtubeVideoId": null,
@@ -119,4 +112,5 @@
     "category": "RADIO_STATIONS"
   }
 ]
+
 
