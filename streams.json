@@ -84,13 +84,6 @@
     "category": "NEWS_CHANNELS"
   },
   {
-    "title": "قناة سكاي نيوز عربية - Sky News Arabia Live",
-    "url": "",
-    "youtubeVideoId": "XoiHZyPaozY",
-    "type": "YOUTUBE_LIVE",
-    "category": "NEWS_CHANNELS"
-  },
-  {
     "title": "إذاعة القرآن الكريم – القاهرة",
     "url": "https://stream.radiojar.com/8s5u5tpdtwzuv",
     "youtubeVideoId": null,
@@ -112,5 +105,6 @@
     "category": "RADIO_STATIONS"
   }
 ]
+
 
 
