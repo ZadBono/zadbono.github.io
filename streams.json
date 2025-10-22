@@ -42,13 +42,6 @@
     "category": "RELIGIOUS_CHANNELS"
   },
   {
-    "title": "قناة السنة النبوية ",
-    "url": "",
-    "youtubeVideoId": "TpT8b8JFZ6E",
-    "type": "YOUTUBE_LIVE",
-    "category": "RELIGIOUS_CHANNELS"
-  },
-  {
     "title": "قناة الجزيرة",
     "url": "https://live-hls-web-aja.getaj.net/AJA/01.m3u8",
     "youtubeVideoId": null,
@@ -67,20 +60,6 @@
     "url": "https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8",
     "youtubeVideoId": null,
     "type": "HLS_STREAM",
-    "category": "NEWS_CHANNELS"
-  },
-  {
-    "title": "قناة الحدث",
-    "url": "",
-    "youtubeVideoId": "zi9knajcejY",
-    "type": "YOUTUBE_LIVE",
-    "category": "NEWS_CHANNELS"
-  },
-  {
-    "title": "قناة العربي",
-    "url": "",
-    "youtubeVideoId": "e2RgSa1Wt5o",
-    "type": "YOUTUBE_LIVE",
     "category": "NEWS_CHANNELS"
   },
   {
@@ -112,6 +91,7 @@
     "category": "RADIO_STATIONS"
   }
 ]
+
 
 
 
