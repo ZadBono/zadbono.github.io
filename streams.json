@@ -83,6 +83,13 @@
     "type": "AUDIO_STREAM",
     "category": "RADIO_STATIONS"
   },
+    {
+    "title": "فارس عباد",
+    "url": "https://Qurango.net/radio/fares_abbad",
+    "youtubeVideoId": null,
+    "type": "AUDIO_STREAM",
+    "category": "RADIO_STATIONS"
+  },
   {
     "title": "ماهر المعيقلي",
     "url": "https://Qurango.net/radio/maher",
@@ -91,6 +98,7 @@
     "category": "RADIO_STATIONS"
   }
 ]
+
 
 
 
