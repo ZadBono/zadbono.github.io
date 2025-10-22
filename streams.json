@@ -50,9 +50,9 @@
   },
   {
     "title": "قناة الجزيرة",
-    "url": "",
-    "youtubeVideoId": "bNyUyrR0PHo",
-    "type": "YOUTUBE_LIVE",
+    "url": "https://live-hls-web-aja.getaj.net/AJA/01.m3u8",
+    "youtubeVideoId": null,
+    "type": "HLS_STREAM",
     "category": "NEWS_CHANNELS"
   },
   {
@@ -64,9 +64,9 @@
   },
   {
     "title": "قناة العربية",
-    "url": "",
-    "youtubeVideoId": "n7eQejkXbnM",
-    "type": "YOUTUBE_LIVE",
+    "url": "https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8",
+    "youtubeVideoId": null,
+    "type": "HLS_STREAM",
     "category": "NEWS_CHANNELS"
   },
   {
@@ -81,6 +81,13 @@
     "url": "",
     "youtubeVideoId": "e2RgSa1Wt5o",
     "type": "YOUTUBE_LIVE",
+    "category": "NEWS_CHANNELS"
+  },
+  {
+      "title": "قناة سكاي نيوز العربية",
+    "url": "https://stream.skynewsarabia.com/hls/sna.m3u8",
+    "youtubeVideoId": null,
+    "type": "HLS_STREAM",
     "category": "NEWS_CHANNELS"
   },
   {
@@ -105,6 +112,7 @@
     "category": "RADIO_STATIONS"
   }
 ]
+
 
 
 
