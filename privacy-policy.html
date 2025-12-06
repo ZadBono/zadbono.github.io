@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="سياسة الخصوصية وشروط الخدمة لتطبيق Zad Bono. تعرف على كيفية حماية بياناتك وحقوقك كمستخدم">
+    <meta name="description" content="سياسة الخصوصية لتطبيق Zad Bono. تعرف على كيفية جمع واستخدام وحماية بياناتك الشخصية وحقوقك كمستخدم.">
     <title>سياسة الخصوصية | Zad Bono - تطبيق العبادات الشامل</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@
             font-family: 'Cairo', sans-serif; 
             line-height: 1.8; 
             color: #333; 
-            background-color: var(--light-bg); 
+            background-color: var(--light-bg ); 
             padding-top: 70px;
         }
 
@@ -250,19 +250,6 @@
             margin-bottom: 15px;
         }
 
-        .warning-box {
-            background-color: #ffeaa7;
-            border: 2px solid #fdcb6e;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .warning-box i {
-            color: #e17055;
-            margin-left: 10px;
-        }
-
         .contact-info {
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
             color: white;
@@ -275,23 +262,6 @@
         .contact-info h3 {
             color: var(--gold);
             margin-bottom: 15px;
-        }
-
-        .contact-button {
-            display: inline-block;
-            background-color: var(--gold);
-            color: var(--dark-blue);
-            padding: 12px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: all 0.3s;
-        }
-
-        .contact-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255,215,0,0.3);
         }
 
         a { 
@@ -396,284 +366,101 @@
             h2 {
                 font-size: 1.5em;
             }
-
-            .page-header {
-                margin-bottom: 30px;
-            }
-
-            .highlight {
-                padding: 20px 15px;
-            }
-
-            .contact-info {
-                padding: 25px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px 15px;
-            }
-
-            h1 {
-                font-size: 1.8em;
-            }
-
-            h2 {
-                font-size: 1.3em;
-            }
-
-            p, li {
-                font-size: 1em;
-            }
         }
     </style>
 </head>
 <body>
 
 <nav class="navbar">
-    <a href="index.html" class="navbar-brand" data-translate="app_name">
+    <a href="index.html" class="navbar-brand">
         <img src="images/logo.jpg" alt="شعار Zad Bono">
         Zad Bono
     </a>
     <div class="navbar-links" id="navbar-links">
-        <a href="index.html" data-translate="nav_home">الرئيسية</a>
-        <a href="features.html" data-translate="nav_features">شرح المميزات</a>
-        <a href="install.html" data-translate="nav_install">التحميل والتثبيت</a>
-        <a href="blog.html" data-translate="nav_blog">المدونة</a> <!-- ✨ الرابط الجديد هنا -->
-        <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
-        <a href="privacy-policy.html" class="active" data-translate="nav_privacy">سياسة الخصوصية</a>
-        <div class="language-switcher">
-            <button class="selected-lang" id="lang-toggle-btn">
-                <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
-                <span id="lang-text">العربية</span>
-            </button>
-            <ul class="lang-menu" id="lang-menu">
-                <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم العربية"> العربية</a></li>
-                <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم الإنجليزية"> English</a></li>
-            </ul>
-        </div>
+        <a href="index.html">الرئيسية</a>
+        <a href="features.html">شرح المميزات</a>
+        <a href="install.html">التحميل والتثبيت</a>
+        <a href="privacy-policy.html" class="active">سياسة الخصوصية</a>
     </div>
     <button class="menu-toggle" id="menu-toggle">☰</button>
 </nav>
 
-
-    <div class="container">
-        <div class="page-header">
-            <h1 data-translate="privacy_title">سياسة الخصوصية وشروط الخدمة</h1>
-            <p class="last-updated" data-translate="last_updated">آخر تحديث: 20 سبتمبر 2025</p>
-        </div>
-
-        <p data-translate="intro_text">نحن في تطبيق "Zad Bono" نقدر خصوصيتك ونسعى لحماية معلوماتك الشخصية. توضح هذه الوثيقة سياسة الخصوصية وشروط الخدمة عند استخدامك للتطبيق.</p>
-
-        <h2 data-translate="section1_title">1. المعلومات التي نجمعها</h2>
-        <p data-translate="section1_desc">عند استخدامك لخدمة تسجيل الدخول عبر موفري الهوية (مثل Google و Facebook)، قد نجمع المعلومات التالية التي توافق على مشاركتها:</p>
-        <ul>
-            <li data-translate="section1_item1"><strong>معلومات الحساب الأساسية:</strong> مثل الاسم، عنوان البريد الإلكتروني، وصورة الملف الشخصي.</li>
-            <li data-translate="section1_item2"><strong>معرّف المستخدم الفريد:</strong> وهو معرّف فريد يوفره مزود الخدمة (Google/Facebook) لربط حسابك بتطبيقنا.</li>
-        </ul>
-        <div class="warning-box">
-            <p><i class="fas fa-exclamation-circle"></i> <span data-translate="section1_warning">نحن لا نجمع أي معلومات حساسة إضافية مثل تاريخ الميلاد، قائمة الأصدقاء، أو المنشورات.</span></p>
-        </div>
-
-        <h2 data-translate="section2_title">2. كيفية استخدام المعلومات</h2>
-        <p data-translate="section2_desc">نستخدم المعلومات التي نجمعها للأغراض التالية:</p>
-        <ul>
-            <li data-translate="section2_item1">لإنشاء وإدارة حسابك الشخصي داخل تطبيق "Zad Bono".</li>
-            <li data-translate="section2_item2">لتخصيص تجربتك داخل التطبيق، مثل عرض اسمك.</li>
-            <li data-translate="section2_item3">للتواصل معك بشأن التحديثات الهامة المتعلقة بحسابك أو التطبيق.</li>
-        </ul>
-
-        <h2 data-translate="section3_title">3. مشاركة المعلومات</h2>
-        <p data-translate="section3_desc">نحن لا نبيع أو نؤجر أو نشارك معلوماتك الشخصية مع أي طرف ثالث لأغراض تسويقية. تظل معلوماتك محفوظة بشكل آمن ضمن خدمات Firebase التي نستخدمها لإدارة المصادقة.</p>
-
-        <h2 data-translate="section4_title">4. أمان البيانات</h2>
-        <p data-translate="section4_desc">نحن نتخذ إجراءات أمنية معقولة لحماية معلوماتك من الوصول غير المصرح به أو التغيير أو الكشف. يتم تخزين البيانات على خوادم آمنة مقدمة من Google Firebase.</p>
-        
-        <h2 data-translate="section5_title">5. تعليمات حذف بيانات المستخدم</h2>
-        <p data-translate="section5_desc">نحن نحترم حقك في التحكم في بياناتك. لحذف حسابك وجميع البيانات المرتبطة به نهائيًا من خوادمنا، يرجى اتباع الخطوات التالية:</p>
-        <div class="highlight">
-            <ol>
-                <li data-translate="section5_step1">افتح تطبيق "Zad Bono".</li>
-                <li data-translate="section5_step2">اذهب إلى قسم "الاقتراحات والدعم".</li>
-                <li data-translate="section5_step3">اختر نوع الرسالة "استفسار عام" أو "أخرى".</li>
-                <li data-translate="section5_step4">في نص الرسالة، اكتب بوضوح: "أرغب في حذف حسابي وبياناتي بشكل دائم".</li>
-                <li data-translate="section5_step5">اضغط على "إرسال".</li>
-            </ol>
-            <p data-translate="section5_note">سنتلقى طلبك ونقوم بمعالجته وحذف جميع بياناتك المرتبطة بحسابك من أنظمتنا في غضون فترة زمنية معقولة.</p>
-        </div>
-        
-        <h2 data-translate="section6_title">6. شروط الخدمة</h2>
-        <p data-translate="section6_desc">باستخدامك لتطبيق "Zad Bono"، فإنك توافق على عدم استخدام التطبيق في أي نشاط غير قانوني أو ضار. أنت مسؤول عن الحفاظ على أمان معلومات تسجيل الدخول الخاصة بك.</p>
-
-        <h2 data-translate="section7_title">7. التغييرات على هذه الوثيقة</h2>
-        <p data-translate="section7_desc">قد نقوم بتحديث سياسة الخصوصية وشروط الخدمة هذه من وقت لآخر. سنقوم بإعلامك بأي تغييرات عن طريق نشر الوثيقة الجديدة على هذه الصفحة. يُنصح بمراجعة هذه الصفحة بشكل دوري للاطلاع على أي تغييرات.</p>
-
-        <div class="contact-info">
-            <h3 data-translate="contact_title">هل لديك أسئلة؟</h3>
-            <p data-translate="contact_desc">إذا كان لديك أي استفسارات حول سياسة الخصوصية أو تريد حذف بياناتك، لا تتردد في التواصل معنا</p>
-            <a href="contact.html" class="contact-button" data-translate="contact_button">اتصل بنا الآن</a>
-        </div>
+<div class="container">
+    <div class="page-header">
+        <h1>سياسة الخصوصية لتطبيق "Zad Bono"</h1>
+        <p class="last-updated">آخر تحديث: 6 ديسمبر 2025</p>
     </div>
 
-    <!-- الفوتر -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
-                <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
-                <a href="features.html" data-translate="nav_features">المميزات</a>
-                <a href="install.html" data-translate="nav_install">التثبيت</a>
-            </div>
-            <div class="copyright">
-                © 2024 Zad Bono. جميع الحقوق محفوظة.
-            </div>
-        </div>
-    </footer>
+    <p>نحن في تطبيق "Zad Bono" ("نحن"، "تطبيقنا") نأخذ خصوصيتك على محمل الجد. توضح سياسة الخصوصية هذه أنواع المعلومات التي قد نجمعها وكيف نستخدمها ونحميها. باستخدامك للتطبيق، فإنك توافق على الممارسات الموضحة في هذه السياسة.</p>
 
-    <script>
-        // --- Script for Mobile Menu ---
-        const menuToggle = document.getElementById('menu-toggle');
-        const navbarLinks = document.getElementById('navbar-links');
-        
-        menuToggle.addEventListener('click', () => { 
-            navbarLinks.classList.toggle('active'); 
-        });
+    <h2>1. المعلومات التي نجمعها وكيفية استخدامها</h2>
+    
+    <h3>معلومات الحساب (عند التسجيل)</h3>
+    <p>عند استخدامك لخدمة تسجيل الدخول عبر Google أو البريد الإلكتروني، نجمع المعلومات الأساسية التي توافق على مشاركتها مثل الاسم وعنوان البريد الإلكتروني. نستخدم هذه المعلومات لإنشاء حسابك الشخصي، تخصيص تجربتك (مثل عرض اسمك)، وحفظ تقدمك في الميزات التفاعلية مثل ختمة القرآن.</p>
 
-        // إغلاق القائمة عند النقر خارجها
-        document.addEventListener('click', (event) => {
-            if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
-                navbarLinks.classList.remove('active');
-            }
-        });
+    <h3>بيانات الموقع الجغرافي (<code>ACCESS_FINE_LOCATION</code>)</h3>
+    <p>نطلب إذن الوصول إلى موقعك الجغرافي <strong>لغرض واحد فقط</strong>: وهو حساب مواقيت الصلاة واتجاه القبلة بدقة بناءً على موقعك الحالي. <strong>نحن لا نخزن تاريخ مواقعك ولا نشارك هذه المعلومات مع أي طرف ثالث.</strong></p>
 
-        // --- Script for Language Switcher ---
-        const translations = {
-            ar: { 
-                app_name: "Zad Bono", 
-                nav_home: "الرئيسية", 
-                nav_features: "شرح المميزات", 
-                nav_install: "التحميل والتثبيت", 
-                nav_blog: "المدونة",      // <--- أضف هذا السطر
-                nav_contact: "اتصل بنا", 
-                nav_privacy: "سياسة الخصوصية", 
-                privacy_title: "سياسة الخصوصية وشروط الخدمة",
-                last_updated: "آخر تحديث: 20 سبتمبر 2025",
-                intro_text: "نحن في تطبيق \"Zad Bono\" نقدر خصوصيتك ونسعى لحماية معلوماتك الشخصية. توضح هذه الوثيقة سياسة الخصوصية وشروط الخدمة عند استخدامك للتطبيق.",
-                section1_title: "1. المعلومات التي نجمعها",
-                section1_desc: "عند استخدامك لخدمة تسجيل الدخول عبر موفري الهوية (مثل Google و Facebook)، قد نجمع المعلومات التالية التي توافق على مشاركتها:",
-                section1_item1: "معلومات الحساب الأساسية: مثل الاسم، عنوان البريد الإلكتروني، وصورة الملف الشخصي.",
-                section1_item2: "معرّف المستخدم الفريد: وهو معرّف فريد يوفره مزود الخدمة (Google/Facebook) لربط حسابك بتطبيقنا.",
-                section1_warning: "نحن لا نجمع أي معلومات حساسة إضافية مثل تاريخ الميلاد، قائمة الأصدقاء، أو المنشورات.",
-                section2_title: "2. كيفية استخدام المعلومات",
-                section2_desc: "نستخدم المعلومات التي نجمعها للأغراض التالية:",
-                section2_item1: "لإنشاء وإدارة حسابك الشخصي داخل تطبيق \"Zad Bono\".",
-                section2_item2: "لتخصيص تجربتك داخل التطبيق، مثل عرض اسمك.",
-                section2_item3: "للتواصل معك بشأن التحديثات الهامة المتعلقة بحسابك أو التطبيق.",
-                section3_title: "3. مشاركة المعلومات",
-                section3_desc: "نحن لا نبيع أو نؤجر أو نشارك معلوماتك الشخصية مع أي طرف ثالث لأغراض تسويقية. تظل معلوماتك محفوظة بشكل آمن ضمن خدمات Firebase التي نستخدمها لإدارة المصادقة.",
-                section4_title: "4. أمان البيانات",
-                section4_desc: "نحن نتخذ إجراءات أمنية معقولة لحماية معلوماتك من الوصول غير المصرح به أو التغيير أو الكشف. يتم تخزين البيانات على خوادم آمنة مقدمة من Google Firebase.",
-                section5_title: "5. تعليمات حذف بيانات المستخدم",
-                section5_desc: "نحن نحترم حقك في التحكم في بياناتك. لحذف حسابك وجميع البيانات المرتبطة به نهائيًا من خوادمنا، يرجى اتباع الخطوات التالية:",
-                section5_step1: "افتح تطبيق \"Zad Bono\".",
-                section5_step2: "اذهب إلى قسم \"الاقتراحات والدعم\".",
-                section5_step3: "اختر نوع الرسالة \"استفسار عام\" أو \"أخرى\".",
-                section5_step4: "في نص الرسالة، اكتب بوضوح: \"أرغب في حذف حسابي وبياناتي بشكل دائم\".",
-                section5_step5: "اضغط على \"إرسال\".",
-                section5_note: "سنتلقى طلبك ونقوم بمعالجته وحذف جميع بياناتك المرتبطة بحسابك من أنظمتنا في غضون فترة زمنية معقولة.",
-                section6_title: "6. شروط الخدمة",
-                section6_desc: "باستخدامك لتطبيق \"Zad Bono\"، فإنك توافق على عدم استخدام التطبيق في أي نشاط غير قانوني أو ضار. أنت مسؤول عن الحفاظ على أمان معلومات تسجيل الدخول الخاصة بك.",
-                section7_title: "7. التغييرات على هذه الوثيقة",
-                section7_desc: "قد نقوم بتحديث سياسة الخصوصية وشروط الخدمة هذه من وقت لآخر. سنقوم بإعلامك بأي تغييرات عن طريق نشر الوثيقة الجديدة على هذه الصفحة. يُنصح بمراجعة هذه الصفحة بشكل دوري للاطلاع على أي تغييرات.",
-                contact_title: "هل لديك أسئلة؟",
-                contact_desc: "إذا كان لديك أي استفسارات حول سياسة الخصوصية أو تريد حذف بياناتك، لا تتردد في التواصل معنا",
-                contact_button: "اتصل بنا الآن"
-            },
-            en: { 
-                app_name: "Zad Bono", 
-                nav_home: "Home", 
-                nav_features: "Features", 
-                nav_install: "Installation",
-                nav_blog: "Blog",          // <--- وأضف هذا السطر
-                nav_contact: "Contact Us", 
-                nav_privacy: "Privacy Policy", 
-                privacy_title: "Privacy Policy & Terms of Service",
-                last_updated: "Last Updated: September 20, 2025",
-                intro_text: "We at \"Zad Bono\" app value your privacy and strive to protect your personal information. This document explains the privacy policy and terms of service when you use the app.",
-                section1_title: "1. Information We Collect",
-                section1_desc: "When you use the login service through identity providers (such as Google and Facebook), we may collect the following information that you agree to share:",
-                section1_item1: "Basic Account Information: Such as name, email address, and profile picture.",
-                section1_item2: "Unique User Identifier: A unique identifier provided by the service provider (Google/Facebook) to link your account to our app.",
-                section1_warning: "We do not collect any additional sensitive information such as date of birth, friends list, or posts.",
-                section2_title: "2. How We Use Information",
-                section2_desc: "We use the information we collect for the following purposes:",
-                section2_item1: "To create and manage your personal account within the \"Zad Bono\" app.",
-                section2_item2: "To customize your experience within the app, such as displaying your name.",
-                section2_item3: "To communicate with you about important updates related to your account or the app.",
-                section3_title: "3. Information Sharing",
-                section3_desc: "We do not sell, rent, or share your personal information with any third party for marketing purposes. Your information remains securely stored within the Firebase services we use for authentication management.",
-                section4_title: "4. Data Security",
-                section4_desc: "We take reasonable security measures to protect your information from unauthorized access, alteration, or disclosure. Data is stored on secure servers provided by Google Firebase.",
-                section5_title: "5. User Data Deletion Instructions",
-                section5_desc: "We respect your right to control your data. To delete your account and all associated data permanently from our servers, please follow these steps:",
-                section5_step1: "Open the \"Zad Bono\" app.",
-                section5_step2: "Go to the \"Suggestions and Support\" section.",
-                section5_step3: "Choose the message type \"General Inquiry\" or \"Other\".",
-                section5_step4: "In the message text, write clearly: \"I want to delete my account and data permanently\".",
-                section5_step5: "Press \"Send\".",
-                section5_note: "We will receive your request and process it, deleting all your data associated with your account from our systems within a reasonable time frame.",
-                section6_title: "6. Terms of Service",
-                section6_desc: "By using the \"Zad Bono\" app, you agree not to use the app in any illegal or harmful activity. You are responsible for maintaining the security of your login information.",
-                section7_title: "7. Changes to This Document",
-                section7_desc: "We may update this privacy policy and terms of service from time to time. We will notify you of any changes by posting the new document on this page. It is recommended to review this page periodically for any changes.",
-                contact_title: "Have Questions?",
-                contact_desc: "If you have any inquiries about the privacy policy or want to delete your data, feel free to contact us",
-                contact_button: "Contact Us Now"
-            }
-        };
+    <h3>ملفات الوسائط (الوصول للتخزين)</h3>
+    <p>يقوم التطبيق بتحميل ملفات وسائط (صوتية ومرئية) لتحسين تجربتك والسماح بالاستخدام دون الحاجة للاتصال بالإنترنت. يتم حفظ هذه الملفات في <strong>مجلد خاص بالتطبيق</strong> لا يمكن للتطبيقات الأخرى الوصول إليه، ولا نقوم بالوصول إلى أي ملفات شخصية أخرى على جهازك.</p>
 
-        const langToggleButton = document.getElementById('lang-toggle-btn');
-        const langMenu = document.getElementById('lang-menu');
-        const selectedLangBtnText = document.getElementById('lang-text');
-        const selectedLangBtnFlag = document.getElementById('lang-flag');
-        
-        function setLanguage(lang) {
-            const elements = document.querySelectorAll('[data-translate]');
-            elements.forEach(el => { 
-                const key = el.getAttribute('data-translate'); 
-                if (translations[lang] && translations[lang][key]) { 
-                    el.textContent = translations[lang][key]; 
-                } 
-            });
-            
-            document.documentElement.lang = lang;
-            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
-            selectedLangBtnFlag.src = `images/${lang}.png`;
-            localStorage.setItem('language', lang);
-            
-            if(langMenu) langMenu.classList.remove('show');
+    <h2>2. الإعلانات (AdMob)</h2>
+    <p>يستخدم تطبيقنا شبكة Google AdMob لعرض الإعلانات. قد تستخدم AdMob معرفات الأجهزة لجمع بيانات مجهولة المصدر بهدف عرض إعلانات ذات صلة باهتماماتك. نحن لا نشارك أي معلومات شخصية من حسابك (مثل اسمك أو بريدك الإلكتروني) مع AdMob. لمزيد من المعلومات حول كيفية استخدام جوجل للبيانات، يرجى مراجعة <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">سياسة خصوصية جوجل وشركائها</a>.</p>
+
+    <h2>3. الخدمات والأطراف الثالثة (Third-Party Services )</h2>
+    <p>نحن نستخدم خدمات مقدمة من أطراف ثالثة لضمان عمل التطبيق بكفاءة. هذه الخدمات تشمل:</p>
+    <ul>
+        <li><strong>Google Firebase:</strong> نستخدمه للمصادقة (تسجيل الدخول)، قاعدة البيانات (Firestore لحفظ البيانات السحابية)، والتحليلات (Analytics لفهم كيفية استخدام التطبيق بشكل مجهول المصدر لتحسينه).</li>
+        <li><strong>Google Play Services:</strong> ضرورية لعمل الإعلانات وخدمات جوجل الأخرى.</li>
+    </ul>
+    <p>هذه الخدمات قد تجمع بيانات تعريفية ومجهولة المصدر خاصة بها. نحن نختار شركاءنا بعناية فائقة لضمان التزامهم بأعلى معايير الخصوصية.</p>
+
+    <h2>4. أمان البيانات</h2>
+    <p>نتخذ إجراءات أمنية تقنية وتنظيمية معقولة لحماية معلوماتك من الوصول غير المصرح به أو التغيير أو الكشف. يتم تخزين البيانات على خوادم آمنة وموثوقة.</p>
+    
+    <h2>5. حذف بيانات المستخدم</h2>
+    <p>نحترم حقك الكامل في التحكم ببياناتك. لحذف حسابك وجميع البيانات المرتبطة به نهائياً من خوادمنا، يرجى اتباع الخطوات التالية:</p>
+    <div class="highlight">
+        <ol>
+            <li>افتح تطبيق "Zad Bono".</li>
+            <li>اذهب إلى قسم "الاقتراحات والدعم".</li>
+            <li>في نص الرسالة، اكتب بوضوح: "أرغب في حذف حسابي وبياناتي بشكل دائم".</li>
+            <li>اضغط على "إرسال".</li>
+        </ol>
+        <p>سنتلقى طلبك ونقوم بمعالجته وحذف جميع بياناتك المرتبطة بحسابك من أنظمتنا في غضون 30 يوماً.</p>
+    </div>
+    
+    <h2>6. حقوق الملكية الفكرية للمحتوى</h2>
+    <p>المحتوى الصوتي والمرئي والمقروء المستخدم في التطبيق إما أن يكون في الملكية العامة (Public Domain)، أو مستخدماً بموجب ترخيص يسمح بإعادة الاستخدام (مثل Creative Commons)، أو تم الحصول على إذن من أصحاب الحقوق. إذا كنت تعتقد أن أي محتوى ينتهك حقوق الملكية الخاصة بك، يرجى التواصل معنا فوراً.</p>
+
+    <h2>7. التغييرات على سياسة الخصوصية</h2>
+    <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنقوم بإعلامك بأي تغييرات جوهرية عن طريق نشر السياسة الجديدة على هذه الصفحة وتحديث تاريخ "آخر تحديث".</p>
+
+    <h2>8. كيفية التواصل معنا</h2>
+    <p>إذا كان لديك أي أسئلة أو استفسارات حول سياسة الخصوصية هذه، يرجى التواصل معنا عبر قسم "الاقتراحات والدعم" داخل التطبيق.</p>
+</div>
+
+<footer class="footer">
+    <div class="copyright">
+        © 2025 Zad Bono. جميع الحقوق محفوظة.
+    </div>
+</footer>
+
+<script>
+    // --- Script for Mobile Menu ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbarLinks = document.getElementById('navbar-links');
+    
+    menuToggle.addEventListener('click', () => { 
+        navbarLinks.classList.toggle('active'); 
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+            navbarLinks.classList.remove('active');
         }
-
-        langToggleButton.addEventListener('click', (event) => { 
-            event.stopPropagation(); 
-            langMenu.classList.toggle('show'); 
-        });
-
-        // إغلاق قائمة اللغة عند النقر خارجها
-        window.addEventListener('click', () => { 
-            if (langMenu.classList.contains('show')) { 
-                langMenu.classList.remove('show'); 
-            } 
-        });
-
-        // التهيئة عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('language') || 'ar';
-            setLanguage(savedLang);
-        });
-    </script>
+    });
+</script>
 
 </body>
 </html>
