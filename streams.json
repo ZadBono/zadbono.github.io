@@ -1,6 +1,13 @@
 [
   {
     "title": "قناة القرآن الكريم مكة",
+    "url": "https://live.kwikmotion.com/sbrksaquranradiolive/srpksaquranradio/playlist.m3u8",
+    "youtubeVideoId": null,
+    "type": "HLS_STREAM",
+    "category": "RELIGIOUS_CHANNELS"
+  },
+  {
+    "title": "قناة القرآن الكريم مكة (بديل)",
     "url": "https://cdn-globecast.akamaized.net/live/eds/saudi_quran/hls_roku/index.m3u8",
     "youtubeVideoId": null,
     "type": "HLS_STREAM",
@@ -63,7 +70,7 @@
     "category": "NEWS_CHANNELS"
   },
   {
-      "title": "قناة سكاي نيوز العربية",
+    "title": "قناة سكاي نيوز العربية",
     "url": "https://stream.skynewsarabia.com/hls/sna.m3u8",
     "youtubeVideoId": null,
     "type": "HLS_STREAM",
@@ -83,7 +90,7 @@
     "type": "AUDIO_STREAM",
     "category": "RADIO_STATIONS"
   },
-    {
+  {
     "title": "فارس عباد",
     "url": "https://Qurango.net/radio/fares_abbad",
     "youtubeVideoId": null,
@@ -98,9 +105,3 @@
     "category": "RADIO_STATIONS"
   }
 ]
-
-
-
-
-
-
