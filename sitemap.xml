@@ -5,57 +5,64 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+<!-- الرابط الأساسي للموقع (أهم واحد ) -->
+<url>
+  <loc>https://zadbono.github.io/</loc>
+  <lastmod>2026-07-30T00:00:00+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+
 <!-- الصفحات الأساسية -->
 <url>
   <loc>https://zadbono.github.io/index.html</loc>
-  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
-  <priority>1.00</priority>
+  <lastmod>2026-07-30T00:00:00+00:00</lastmod>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://zadbono.github.io/features.html</loc>
-  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://zadbono.github.io/install.html</loc>
-  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://zadbono.github.io/contact.html</loc>
-  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   <priority>0.60</priority>
 </url>
 <url>
   <loc>https://zadbono.github.io/privacy-policy.html</loc>
-  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   <priority>0.50</priority>
 </url>
 
 <!-- ✨ الصفحات الجديدة - المدونة والمقالات ✨ -->
 <url>
   <loc>https://zadbono.github.io/blog.html</loc>
-  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>https://zadbono.github.io/articles/how-to-make-dua-answered.html</loc>
-  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
   <loc>https://zadbono.github.io/articles/is-my-prayer-accepted.html</loc>
-  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
   <loc>https://zadbono.github.io/articles/5-quran-secrets.html</loc>
-  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
   <loc>https://zadbono.github.io/articles/how-to-maintain-azkar.html</loc>
-  <lastmod>2025-10-21T00:00:00+00:00</lastmod>
+  <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 
