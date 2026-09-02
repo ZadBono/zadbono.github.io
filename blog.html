@@ -393,7 +393,7 @@
             animation: fadeInUp 0.8s ease 0.2s backwards;
         }
 
-        /* فلاتر التصنيفات (اختياري) */
+        /* فلاتر التصنيفات */
         .categories-filter {
             display: flex;
             justify-content: center;
@@ -846,18 +846,22 @@
         <h1 class="page-title" data-translate="blog_main_title">مدونة زاد بونو</h1>
         <p class="page-subtitle" data-translate="blog_subtitle">مقالات إيمانية ملهمة، وأفكار عملية لحياة أكثر قربًا من الله.</p>
 
-        <!-- فلاتر التصنيفات (اختياري) -->
+        <!-- فلاتر التصنيفات -->
         <div class="categories-filter">
-            <button class="category-btn active" data-translate="filter_all">الكل</button>
-            <button class="category-btn" data-translate="filter_quran">القرآن</button>
-            <button class="category-btn" data-translate="filter_prayer">الصلاة</button>
-            <button class="category-btn" data-translate="filter_azkar">الأذكار</button>
-            <button class="category-btn" data-translate="filter_stories">قصص</button>
+            <button class="category-btn active" data-filter="all" data-translate="filter_all">الكل</button>
+            <button class="category-btn" data-filter="quran" data-translate="filter_quran">القرآن</button>
+            <button class="category-btn" data-filter="prayer" data-translate="filter_prayer">الصلاة</button>
+            <button class="category-btn" data-filter="azkar" data-translate="filter_azkar">الأذكار</button>
+            <button class="category-btn" data-filter="dua" data-translate="filter_dua">الدعاء</button>
+            <button class="category-btn" data-filter="stories" data-translate="filter_stories">قصص</button>
+            <button class="category-btn" data-filter="tawbah" data-translate="filter_tawbah">التوبة</button>
+            <button class="category-btn" data-filter="tech" data-translate="filter_tech">تقني</button>
+            <button class="category-btn" data-filter="entertainment" data-translate="filter_entertainment">الترفيه</button>
         </div>
 
         <!-- شبكة المقالات -->
         <div class="blog-grid">
-            <!-- المقال 1 -->
+            <!-- المقال 1 - الأذكار -->
             <div class="blog-card" data-category="azkar">
                 <div class="blog-image">
                     <img src="images/azkar-card.jpg" alt="صورة مقال الأذكار">
@@ -874,7 +878,7 @@
                 </div>
             </div>
 
-            <!-- المقال 2 -->
+            <!-- المقال 2 - القرآن -->
             <div class="blog-card" data-category="quran">
                 <div class="blog-image">
                     <img src="images/quran-card.jpg" alt="صورة مقال أسرار القرآن">
@@ -891,7 +895,7 @@
                 </div>
             </div>
 
-            <!-- المقال 3 -->
+            <!-- المقال 3 - الصلاة -->
             <div class="blog-card" data-category="prayer">
                 <div class="blog-image">
                     <img src="images/prayer-card.jpg" alt="صورة مقال الصلاة">
@@ -908,8 +912,8 @@
                 </div>
             </div>
 
-            <!-- المقال 4 -->
-            <div class="blog-card" data-category="prayer">
+            <!-- المقال 4 - الدعاء -->
+            <div class="blog-card" data-category="dua">
                 <div class="blog-image">
                     <img src="images/dua-card.jpg" alt="صورة مقال الدعاء">
                     <span class="blog-category" data-translate="cat_dua">الدعاء</span>
@@ -925,8 +929,8 @@
                 </div>
             </div>
 
-            <!-- المقال 5 -->
-            <div class="blog-card" data-category="stories">
+            <!-- المقال 5 - الترفيه -->
+            <div class="blog-card" data-category="entertainment">
                 <div class="blog-image">
                     <img src="images/logo.jpg" alt="صورة مقال">
                     <span class="blog-category" data-translate="cat_entertainment">الترفيه</span>
@@ -942,7 +946,7 @@
                 </div>
             </div>
 
-            <!-- المقال 6 -->
+            <!-- المقال 6 - الصلاة -->
             <div class="blog-card" data-category="prayer">
                 <div class="blog-image">
                     <img src="images/logo.jpg" alt="صورة مقال">
@@ -959,8 +963,8 @@
                 </div>
             </div>
 
-            <!-- المقال 7 -->
-            <div class="blog-card" data-category="stories">
+            <!-- المقال 7 - التوبة -->
+            <div class="blog-card" data-category="tawbah">
                 <div class="blog-image">
                     <img src="images/taoba.jpg" alt="صورة مقال">
                     <span class="blog-category" data-translate="cat_tawbah">التوبة</span>
@@ -976,8 +980,8 @@
                 </div>
             </div>
 
-            <!-- المقال 8 -->
-            <div class="blog-card" data-category="tools">
+            <!-- المقال 8 - تقني -->
+            <div class="blog-card" data-category="tech">
                 <div class="blog-image">
                     <img src="images/stop-bad-ads.jpg" alt="صورة مقال">
                     <span class="blog-category" data-translate="cat_tech">تقني</span>
@@ -993,7 +997,7 @@
                 </div>
             </div>
 
-            <!-- المقال 9 -->
+            <!-- المقال 9 - الصلاة -->
             <div class="blog-card" data-category="prayer">
                 <div class="blog-image">
                     <img src="images/ftor_fe_el3bada.jpg" alt="صورة مقال">
@@ -1010,7 +1014,7 @@
                 </div>
             </div>
 
-            <!-- المقال 10 -->
+            <!-- المقال 10 - القرآن -->
             <div class="blog-card" data-category="quran">
                 <div class="blog-image">
                     <img src="images/logo.jpg" alt="صورة مقال">
@@ -1107,7 +1111,11 @@
                 filter_quran: "القرآن",
                 filter_prayer: "الصلاة",
                 filter_azkar: "الأذكار",
+                filter_dua: "الدعاء",
                 filter_stories: "قصص",
+                filter_tawbah: "التوبة",
+                filter_tech: "تقني",
+                filter_entertainment: "الترفيه",
                 cat_azkar: "الأذكار",
                 cat_quran: "القرآن",
                 cat_prayer: "الصلاة",
@@ -1155,7 +1163,11 @@
                 filter_quran: "Quran",
                 filter_prayer: "Prayer",
                 filter_azkar: "Azkar",
+                filter_dua: "Dua",
                 filter_stories: "Stories",
+                filter_tawbah: "Tawbah",
+                filter_tech: "Tech",
+                filter_entertainment: "Entertainment",
                 cat_azkar: "Azkar",
                 cat_quran: "Quran",
                 cat_prayer: "Prayer",
@@ -1232,43 +1244,31 @@
             const cards = document.querySelectorAll('.blog-card');
             const buttons = document.querySelectorAll('.category-btn');
             
-            buttons.forEach(btn => btn.classList.remove('active'));
+            // Update active button
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('active');
+                }
+            });
             
+            // Filter cards
             cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
                     card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
                 }
             });
-            
-            // Highlight active button
-            buttons.forEach(btn => {
-                const btnCategory = btn.getAttribute('data-filter');
-                if (btnCategory === category) {
-                    btn.classList.add('active');
-                }
-            });
         }
 
-        // Attach filter function to buttons
+        // Attach click event to filter buttons
         document.querySelectorAll('.category-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                const filter = this.getAttribute('data-filter') || 'all';
+                const filter = this.getAttribute('data-filter');
                 filterPosts(filter);
             });
-            // Set data-filter attribute for each button
-            if (this.textContent.includes('الكل') || this.textContent.includes('All')) {
-                this.setAttribute('data-filter', 'all');
-            } else if (this.textContent.includes('القرآن') || this.textContent.includes('Quran')) {
-                this.setAttribute('data-filter', 'quran');
-            } else if (this.textContent.includes('الصلاة') || this.textContent.includes('Prayer')) {
-                this.setAttribute('data-filter', 'prayer');
-            } else if (this.textContent.includes('الأذكار') || this.textContent.includes('Azkar')) {
-                this.setAttribute('data-filter', 'azkar');
-            } else if (this.textContent.includes('قصص') || this.textContent.includes('Stories')) {
-                this.setAttribute('data-filter', 'stories');
-            }
         });
 
         // ========================================
