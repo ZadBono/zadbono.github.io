@@ -4,20 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="سياسة الخصوصية لتطبيق Zad Bono. تعرف على كيفية جمع واستخدام وحماية بياناتك الشخصية وحقوقك كمستخدم.">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
     <title>سياسة الخصوصية | Zad Bono - تطبيق العبادات الشامل</title>
-    
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zadbono.github.io/privacy-policy.html">
+    <meta property="og:title" content="سياسة الخصوصية | Zad Bono">
+    <meta property="og:description" content="تعرف على كيفية جمع واستخدام وحماية بياناتك الشخصية وحقوقك كمستخدم.">
+    <meta property="og:image" content="https://zadbono.github.io/images/logo.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://zadbono.github.io/privacy-policy.html">
+    <meta name="twitter:title" content="سياسة الخصوصية | Zad Bono">
+    <meta name="twitter:description" content="تعرف على كيفية جمع واستخدام وحماية بياناتك الشخصية.">
+    <meta name="twitter:image" content="https://zadbono.github.io/images/logo.jpg">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary-blue: #0b5394;
-            --dark-blue: #073763;
-            --gold: #ffd700;
-            --light-bg: #f0f4f8;
-            --white: #ffffff;
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gold-gradient: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            
+            --primary: #667eea;
+            --primary-dark: #5568d3;
+            --secondary: #f5576c;
+            --accent: #00f2fe;
+            --gold: #fda085;
+            
+            --bg-primary: #f8f9ff;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --border-color: rgba(103, 126, 234, 0.1);
+            --shadow-sm: 0 2px 8px rgba(103, 126, 234, 0.08);
+            --shadow-md: 0 4px 16px rgba(103, 126, 234, 0.12);
+            --shadow-lg: 0 8px 32px rgba(103, 126, 234, 0.16);
+            --shadow-xl: 0 12px 48px rgba(103, 126, 234, 0.2);
+            
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            
+            --transition-fast: 0.2s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            --bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f0f23;
+            --bg-secondary: #1a1a2e;
+            --bg-card: rgba(26, 26, 46, 0.9);
+            --text-primary: #e2e8f0;
+            --text-secondary: #cbd5e0;
+            --text-muted: #a0aec0;
+            --border-color: rgba(103, 126, 234, 0.2);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.6);
+            --glass-bg: rgba(26, 26, 46, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         * {
@@ -26,116 +81,218 @@
             box-sizing: border-box;
         }
 
-        body { 
-            font-family: 'Cairo', sans-serif; 
-            line-height: 1.8; 
-            color: #333; 
-            background-color: var(--light-bg ); 
-            padding-top: 70px;
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
-        /* النافبار */
+        body { 
+            font-family: 'Cairo', 'Tajawal', sans-serif; 
+            background: var(--bg-primary);
+            color: var(--text-primary); 
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 87, 108, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 242, 254, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            animation: backgroundMove 20s ease infinite;
+        }
+
+        @keyframes backgroundMove {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
         .navbar { 
-            background-color: var(--primary-blue); 
-            padding: 12px 20px; 
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 16px 0;
             position: fixed; 
             top: 0; 
             left: 0; 
             right: 0; 
             z-index: 1000; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+        }
+
+        .navbar.scrolled {
+            padding: 12px 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .navbar-brand { 
-            color: var(--gold); 
-            font-weight: bold; 
-            font-size: 1.4em; 
+            color: var(--text-primary);
+            font-weight: 700; 
+            font-size: 1.5em; 
             text-decoration: none; 
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            transition: transform var(--transition-base);
+        }
+
+        .navbar-brand:hover {
+            transform: translateY(-2px);
         }
 
         .navbar-brand img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-base);
+        }
+
+        .navbar-brand:hover img {
+            transform: rotate(5deg) scale(1.05);
+            box-shadow: var(--shadow-md);
         }
 
         .navbar-links { 
             display: flex; 
             align-items: center; 
-            gap: 20px;
+            gap: 8px;
         }
 
         .navbar-links a { 
-            color: var(--white); 
+            color: var(--text-secondary);
             text-decoration: none; 
-            font-size: 1em; 
-            transition: color 0.3s; 
-            padding: 8px 12px;
-            border-radius: 5px;
+            font-size: 0.95em;
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: 12px;
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
         }
 
-        .navbar-links a:hover, 
+        .navbar-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            opacity: 0;
+            transition: opacity var(--transition-base);
+            z-index: -1;
+        }
+
+        .navbar-links a:hover,
         .navbar-links a.active { 
-            color: var(--gold); 
-            background-color: rgba(255,215,0,0.1);
+            color: white;
+            transform: translateY(-2px);
         }
 
-        .menu-toggle { 
-            display: none; 
-            font-size: 24px; 
-            color: white; 
-            background: none; 
-            border: none; 
-            cursor: pointer; 
+        .navbar-links a:hover::before,
+        .navbar-links a.active::before {
+            opacity: 1;
         }
 
-        /* سويتشر اللغة */
+        .theme-toggle {
+            background: var(--glass-bg);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            transition: all var(--transition-base);
+            margin-right: 8px;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(15deg) scale(1.05);
+            border-color: var(--primary);
+        }
+
         .language-switcher { 
             position: relative; 
         }
 
         .selected-lang { 
-            background-color: transparent; 
-            border: none; 
-            color: white; 
+            background: var(--glass-bg);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
             cursor: pointer; 
             display: flex; 
             align-items: center; 
             gap: 8px;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            padding: 10px 16px;
+            border-radius: 12px;
+            transition: all var(--transition-base);
+            font-weight: 500;
         }
 
         .selected-lang:hover {
-            background-color: rgba(255,255,255,0.1);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
 
         .selected-lang img { 
-            width: 20px; 
-            height: 20px; 
-            border-radius: 50%; 
+            width: 24px; 
+            height: 24px; 
+            border-radius: 50%;
+            box-shadow: var(--shadow-sm);
         }
 
         .lang-menu { 
             display: none; 
             position: absolute; 
-            top: 100%;
+            top: calc(100% + 8px);
             left: 0;
-            background-color: var(--white); 
-            border-radius: 8px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px; 
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-xl);
             list-style: none; 
             padding: 8px;
-            margin: 5px 0 0 0;
-            width: 140px;
+            min-width: 160px;
             z-index: 1001;
+            animation: slideDown 0.3s var(--bounce);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .lang-menu.show { 
@@ -143,211 +300,394 @@
         }
 
         .lang-menu li a { 
-            color: var(--dark-blue); 
+            color: var(--text-primary);
             text-decoration: none; 
             display: flex; 
             align-items: center; 
-            gap: 10px;
-            padding: 10px;
-            border-radius: 5px; 
-            transition: background-color 0.2s; 
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 10px; 
+            transition: all var(--transition-fast);
             font-size: 0.9em;
+            font-weight: 500;
         }
 
         .lang-menu li a:hover { 
-            background-color: #e0e8f0; 
+            background: var(--primary-gradient);
+            color: white;
+            transform: translateX(-4px);
         }
 
         .lang-menu li img { 
-            width: 20px; 
-            height: 20px; 
-            border-radius: 50%; 
+            width: 24px; 
+            height: 24px; 
+            border-radius: 50%;
+            box-shadow: var(--shadow-sm);
         }
 
-        /* المحتوى الرئيسي */
+        .menu-toggle { 
+            display: none; 
+            font-size: 28px; 
+            color: var(--text-primary);
+            background: none; 
+            border: none; 
+            cursor: pointer;
+            transition: transform var(--transition-base);
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
         .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 40px;
-            background-color: var(--white);
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 120px 24px 40px;
         }
 
-        .page-header {
+        .page-title { 
+            text-align: center; 
+            font-size: 3em; 
+            margin-bottom: 10px;
+            font-weight: 900;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .last-updated {
             text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid var(--gold);
-        }
-
-        h1 { 
-            color: var(--primary-blue); 
-            font-size: 2.5em;
-            margin-bottom: 15px;
-        }
-
-        .last-updated { 
-            color: #777; 
-            font-style: italic; 
-            margin-bottom: 30px;
+            color: var(--text-muted);
             font-size: 1em;
+            margin-bottom: 50px;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
         }
 
-        h2 { 
-            color: var(--primary-blue); 
-            font-size: 1.8em;
-            margin-top: 40px;
+        .privacy-content {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px 45px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+        }
+
+        .privacy-content:hover {
+            box-shadow: var(--shadow-xl);
+        }
+
+        .privacy-content p {
+            color: var(--text-secondary);
+            font-size: 1.05em;
+            line-height: 1.9;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--light-bg);
         }
 
-        h3 {
-            color: var(--dark-blue);
+        .privacy-content h2 {
+            font-size: 1.8em;
+            color: var(--text-primary);
+            margin-top: 45px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .privacy-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
+
+        .privacy-content h3 {
             font-size: 1.3em;
-            margin-top: 25px;
+            color: var(--text-primary);
+            margin-top: 30px;
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
-        p, li { 
-            font-size: 1.1em; 
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        ul { 
+        .privacy-content ul,
+        .privacy-content ol {
             padding-right: 25px;
             margin-bottom: 20px;
+            color: var(--text-secondary);
         }
 
-        li {
+        .privacy-content ul li,
+        .privacy-content ol li {
+            font-size: 1.05em;
+            line-height: 1.8;
             margin-bottom: 10px;
             position: relative;
         }
 
-        li::before {
+        .privacy-content ul li::before {
             content: '•';
-            color: var(--gold);
+            color: var(--primary);
             font-weight: bold;
             position: absolute;
             right: -20px;
         }
 
-        .highlight { 
-            background-color: #fffbe6; 
-            border: 2px solid var(--gold);
-            border-radius: 12px; 
-            padding: 25px; 
-            margin: 25px 0; 
+        .privacy-content .highlight {
+            background: var(--bg-primary);
+            border-right: 5px solid transparent;
+            border-image: var(--gold-gradient) 1;
+            border-radius: 16px;
+            padding: 30px 35px;
+            margin: 30px 0;
+            box-shadow: var(--shadow-sm);
         }
 
-        .highlight ol {
+        .privacy-content .highlight ol {
             padding-right: 25px;
+            margin-bottom: 10px;
         }
 
-        .highlight li {
+        .privacy-content .highlight ol li {
             margin-bottom: 15px;
         }
 
-        .contact-info {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 12px;
-            margin-top: 40px;
-            text-align: center;
+        .privacy-content .highlight p {
+            margin-bottom: 5px;
         }
 
-        .contact-info h3 {
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-
-        a { 
-            color: var(--primary-blue); 
+        .privacy-content a {
+            color: var(--primary);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color var(--transition-fast);
+            font-weight: 500;
         }
 
-        a:hover { 
-            color: var(--dark-blue);
+        .privacy-content a:hover {
+            color: var(--primary-dark);
             text-decoration: underline;
         }
 
-        /* For LTR languages */
-        html[dir="ltr"] .container {
-            text-align: left;
+        .privacy-content code {
+            background: var(--bg-primary);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.95em;
+            color: var(--primary);
+            border: 1px solid var(--border-color);
         }
 
-        html[dir="ltr"] ul {
-            padding-right: 0;
-            padding-left: 25px;
-        }
-
-        html[dir="ltr"] li::before {
-            right: auto;
-            left: -20px;
-        }
-
-        html[dir="ltr"] .highlight ol {
-            padding-right: 0;
-            padding-left: 25px;
-        }
-
-        /* الفوتر */
-        .footer {
-            background-color: var(--dark-blue);
+        .privacy-content .contact-box {
+            background: var(--primary-gradient);
             color: white;
-            padding: 30px 20px;
-            margin-top: 60px;
+            padding: 35px 30px;
+            border-radius: 16px;
+            margin-top: 40px;
             text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .privacy-content .contact-box h3 {
+            color: white;
+            font-size: 1.6em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .privacy-content .contact-box p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+            font-size: 1.1em;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: 32px;
+            box-shadow: var(--shadow-lg);
+            margin-top: 80px;
+            border: 1px solid var(--border-color);
+        }
+
+        .cta-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 900;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .download-button { 
+            background: var(--gold-gradient);
+            color: white;
+            padding: 18px 48px;
+            font-size: 1.15em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all var(--transition-base);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 24px rgba(246, 211, 101, 0.3);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .download-button:hover::before {
+            left: 100%;
+        }
+
+        .download-button:hover { 
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(246, 211, 101, 0.4);
+        }
+
+        .footer {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: 50px 24px 30px;
+            margin-top: 80px;
+            border-top: 1px solid var(--border-color);
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 32px;
             flex-wrap: wrap;
-            margin-bottom: 15px;
+            margin-bottom: 24px;
         }
 
         .footer-links a {
-            color: #ccc;
+            color: var(--text-secondary);
             text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.9em;
+            transition: all var(--transition-base);
+            font-size: 0.95em;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: width var(--transition-base);
         }
 
         .footer-links a:hover {
-            color: var(--gold);
+            color: var(--primary);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
         }
 
         .copyright {
-            color: #999;
-            font-size: 0.85em;
+            color: var(--text-muted);
+            font-size: 0.9em;
+            text-align: center;
         }
 
-        /* الوسائط المتجاوبة */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 60px;
-            }
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+            z-index: 999;
+        }
 
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .scroll-top.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
             .navbar-links { 
                 display: none; 
                 flex-direction: column; 
                 position: absolute; 
-                top: 100%; 
-                left: 0; 
-                width: 100%; 
-                background-color: var(--primary-blue); 
-                padding: 20px; 
-                gap: 15px;
+                top: calc(100% + 12px);
+                left: 16px;
+                right: 16px;
+                background: var(--glass-bg);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-radius: 20px;
+                padding: 20px;
+                gap: 8px;
+                box-shadow: var(--shadow-xl);
+                border: 1px solid var(--glass-border);
             }
 
             .navbar-links.active { 
                 display: flex; 
+                animation: slideDown 0.3s var(--bounce);
             }
 
             .menu-toggle { 
@@ -355,112 +695,450 @@
             }
 
             .container {
-                padding: 25px 20px;
-                margin: 20px auto;
+                padding: 100px 16px 40px;
             }
 
-            h1 {
-                font-size: 2em;
+            .page-title {
+                font-size: 2.2em;
             }
 
-            h2 {
+            .privacy-content {
+                padding: 30px 20px;
+            }
+
+            .privacy-content h2 {
                 font-size: 1.5em;
             }
+
+            .privacy-content h3 {
+                font-size: 1.15em;
+            }
+
+            .privacy-content p,
+            .privacy-content ul li,
+            .privacy-content ol li {
+                font-size: 1em;
+            }
+
+            .privacy-content .highlight {
+                padding: 20px;
+            }
+
+            .privacy-content .contact-box {
+                padding: 25px 20px;
+            }
+
+            .privacy-content .contact-box h3 {
+                font-size: 1.3em;
+            }
+
+            .cta-section {
+                padding: 40px 24px;
+            }
+
+            .cta-title {
+                font-size: 1.8em;
+            }
         }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.8em;
+            }
+
+            .privacy-content {
+                padding: 24px 16px;
+            }
+
+            .privacy-content ul,
+            .privacy-content ol {
+                padding-right: 20px;
+            }
+
+            .privacy-content ul li::before {
+                right: -16px;
+            }
+        }
+
+        /* Animations */
+        .privacy-content p,
+        .privacy-content h2,
+        .privacy-content h3,
+        .privacy-content .highlight,
+        .privacy-content .contact-box {
+            animation: fadeInUp 0.6s ease backwards;
+        }
+
+        .privacy-content h2:nth-of-type(1) { animation-delay: 0.1s; }
+        .privacy-content h2:nth-of-type(2) { animation-delay: 0.2s; }
+        .privacy-content h2:nth-of-type(3) { animation-delay: 0.3s; }
+        .privacy-content h2:nth-of-type(4) { animation-delay: 0.4s; }
+        .privacy-content h2:nth-of-type(5) { animation-delay: 0.5s; }
+        .privacy-content h2:nth-of-type(6) { animation-delay: 0.6s; }
+        .privacy-content h2:nth-of-type(7) { animation-delay: 0.7s; }
     </style>
 </head>
 <body>
 
-<nav class="navbar">
-    <a href="index.html" class="navbar-brand">
-        <img src="images/logo.jpg" alt="شعار Zad Bono">
-        Zad Bono
-    </a>
-    <div class="navbar-links" id="navbar-links">
-        <a href="index.html">الرئيسية</a>
-        <a href="features.html">شرح المميزات</a>
-        <a href="install.html">التحميل والتثبيت</a>
-        <a href="privacy-policy.html" class="active">سياسة الخصوصية</a>
+    <!-- زر العودة للأعلى -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand" data-translate="app_name">
+                <img src="images/logo.jpg" alt="شعار Zad Bono">
+                Zad Bono
+            </a>
+            <div class="navbar-links" id="navbar-links">
+                <a href="index.html" data-translate="nav_home">الرئيسية</a>
+                <a href="features.html" data-translate="nav_features">شرح المميزات</a>
+                <a href="install.html" data-translate="nav_install">التحميل والتثبيت</a>
+                <a href="blog.html" data-translate="nav_blog">المدونة</a>
+                <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+                <a href="privacy-policy.html" class="active" data-translate="nav_privacy">سياسة الخصوصية</a>
+                
+                <button class="theme-toggle" id="theme-toggle" title="تبديل الوضع">
+                    <span id="theme-icon">🌙</span>
+                </button>
+                
+                <div class="language-switcher">
+                    <button class="selected-lang" id="lang-toggle-btn">
+                        <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
+                        <span id="lang-text">العربية</span>
+                    </button>
+                    <ul class="lang-menu" id="lang-menu">
+                        <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم العربية"> العربية</a></li>
+                        <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم الإنجليزية"> English</a></li>
+                    </ul>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title" data-translate="privacy_title">سياسة الخصوصية</h1>
+        <p class="last-updated" data-translate="privacy_last_updated">آخر تحديث: 6 ديسمبر 2025</p>
+
+        <div class="privacy-content">
+            <p data-translate="privacy_intro">نحن في تطبيق "Zad Bono" ("نحن"، "تطبيقنا") نأخذ خصوصيتك على محمل الجد. توضح سياسة الخصوصية هذه أنواع المعلومات التي قد نجمعها وكيف نستخدمها ونحميها. باستخدامك للتطبيق، فإنك توافق على الممارسات الموضحة في هذه السياسة.</p>
+
+            <h2 data-translate="section1_title">١. المعلومات التي نجمعها وكيفية استخدامها</h2>
+            
+            <h3 data-translate="section1_account_title">معلومات الحساب (عند التسجيل)</h3>
+            <p data-translate="section1_account_desc">عند استخدامك لخدمة تسجيل الدخول عبر Google أو البريد الإلكتروني، نجمع المعلومات الأساسية التي توافق على مشاركتها مثل الاسم وعنوان البريد الإلكتروني. نستخدم هذه المعلومات لإنشاء حسابك الشخصي، تخصيص تجربتك (مثل عرض اسمك)، وحفظ تقدمك في الميزات التفاعلية مثل ختمة القرآن.</p>
+
+            <h3 data-translate="section1_location_title">بيانات الموقع الجغرافي (<code>ACCESS_FINE_LOCATION</code>)</h3>
+            <p data-translate="section1_location_desc">نطلب إذن الوصول إلى موقعك الجغرافي <strong data-translate="section1_location_strong">لغرض واحد فقط</strong>: وهو حساب مواقيت الصلاة واتجاه القبلة بدقة بناءً على موقعك الحالي. <strong data-translate="section1_location_strong2">نحن لا نخزن تاريخ مواقعك ولا نشارك هذه المعلومات مع أي طرف ثالث.</strong></p>
+
+            <h3 data-translate="section1_storage_title">ملفات الوسائط (الوصول للتخزين)</h3>
+            <p data-translate="section1_storage_desc">يقوم التطبيق بتحميل ملفات وسائط (صوتية ومرئية) لتحسين تجربتك والسماح بالاستخدام دون الحاجة للاتصال بالإنترنت. يتم حفظ هذه الملفات في <strong data-translate="section1_storage_strong">مجلد خاص بالتطبيق</strong> لا يمكن للتطبيقات الأخرى الوصول إليه، ولا نقوم بالوصول إلى أي ملفات شخصية أخرى على جهازك.</p>
+
+            <h2 data-translate="section2_title">٢. الإعلانات (AdMob)</h2>
+            <p data-translate="section2_desc">يستخدم تطبيقنا شبكة Google AdMob لعرض الإعلانات. قد تستخدم AdMob معرفات الأجهزة لجمع بيانات مجهولة المصدر بهدف عرض إعلانات ذات صلة باهتماماتك. نحن لا نشارك أي معلومات شخصية من حسابك (مثل اسمك أو بريدك الإلكتروني) مع AdMob. لمزيد من المعلومات حول كيفية استخدام جوجل للبيانات، يرجى مراجعة <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" data-translate="section2_link">سياسة خصوصية جوجل وشركائها</a>.</p>
+
+            <h2 data-translate="section3_title">٣. الخدمات والأطراف الثالثة (Third-Party Services)</h2>
+            <p data-translate="section3_desc">نحن نستخدم خدمات مقدمة من أطراف ثالثة لضمان عمل التطبيق بكفاءة. هذه الخدمات تشمل:</p>
+            <ul>
+                <li data-translate="section3_service1"><strong>Google Firebase:</strong> نستخدمه للمصادقة (تسجيل الدخول)، قاعدة البيانات (Firestore لحفظ البيانات السحابية)، والتحليلات (Analytics لفهم كيفية استخدام التطبيق بشكل مجهول المصدر لتحسينه).</li>
+                <li data-translate="section3_service2"><strong>Google Play Services:</strong> ضرورية لعمل الإعلانات وخدمات جوجل الأخرى.</li>
+            </ul>
+            <p data-translate="section3_desc2">هذه الخدمات قد تجمع بيانات تعريفية ومجهولة المصدر خاصة بها. نحن نختار شركاءنا بعناية فائقة لضمان التزامهم بأعلى معايير الخصوصية.</p>
+
+            <h2 data-translate="section4_title">٤. أمان البيانات</h2>
+            <p data-translate="section4_desc">نتخذ إجراءات أمنية تقنية وتنظيمية معقولة لحماية معلوماتك من الوصول غير المصرح به أو التغيير أو الكشف. يتم تخزين البيانات على خوادم آمنة وموثوقة.</p>
+            
+            <h2 data-translate="section5_title">٥. حذف بيانات المستخدم</h2>
+            <p data-translate="section5_desc">نحترم حقك الكامل في التحكم ببياناتك. لحذف حسابك وجميع البيانات المرتبطة به نهائياً من خوادمنا، يرجى اتباع الخطوات التالية:</p>
+            <div class="highlight">
+                <ol>
+                    <li data-translate="section5_step1">افتح تطبيق "Zad Bono".</li>
+                    <li data-translate="section5_step2">اذهب إلى قسم "الاقتراحات والدعم".</li>
+                    <li data-translate="section5_step3">في نص الرسالة، اكتب بوضوح: "أرغب في حذف حسابي وبياناتي بشكل دائم".</li>
+                    <li data-translate="section5_step4">اضغط على "إرسال".</li>
+                </ol>
+                <p data-translate="section5_step_note">سنتلقى طلبك ونقوم بمعالجته وحذف جميع بياناتك المرتبطة بحسابك من أنظمتنا في غضون 30 يوماً.</p>
+            </div>
+            
+            <h2 data-translate="section6_title">٦. حقوق الملكية الفكرية للمحتوى</h2>
+            <p data-translate="section6_desc">المحتوى الصوتي والمرئي والمقروء المستخدم في التطبيق إما أن يكون في الملكية العامة (Public Domain)، أو مستخدماً بموجب ترخيص يسمح بإعادة الاستخدام (مثل Creative Commons)، أو تم الحصول على إذن من أصحاب الحقوق. إذا كنت تعتقد أن أي محتوى ينتهك حقوق الملكية الخاصة بك، يرجى التواصل معنا فوراً.</p>
+
+            <h2 data-translate="section7_title">٧. التغييرات على سياسة الخصوصية</h2>
+            <p data-translate="section7_desc">قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنقوم بإعلامك بأي تغييرات جوهرية عن طريق نشر السياسة الجديدة على هذه الصفحة وتحديث تاريخ "آخر تحديث".</p>
+
+            <h2 data-translate="section8_title">٨. كيفية التواصل معنا</h2>
+            <p data-translate="section8_desc">إذا كان لديك أي أسئلة أو استفسارات حول سياسة الخصوصية هذه، يرجى التواصل معنا عبر قسم "الاقتراحات والدعم" داخل التطبيق.</p>
+
+            <div class="contact-box">
+                <h3 data-translate="contact_box_title">📧 تواصل معنا</h3>
+                <p data-translate="contact_box_desc">لديك استفسار؟ نرحب بتواصلك عبر البريد الإلكتروني: <strong>support@zadbono.com</strong></p>
+            </div>
+        </div>
+
+        <!-- دعوة للتحميل -->
+        <div class="cta-section">
+            <h2 class="cta-title" data-translate="cta_title">جاهز لبدء رحلتك الإيمانية؟</h2>
+            <p class="cta-subtitle" data-translate="cta_subtitle">حمّل تطبيق Zad Bono الآن واستمتع بتجربة إيمانية شاملة ومتكاملة</p>
+            <a href="install.html" class="download-button" data-translate="cta_button">📥 حمل التطبيق الآن</a>
+        </div>
     </div>
-    <button class="menu-toggle" id="menu-toggle">☰</button>
-</nav>
 
-<div class="container">
-    <div class="page-header">
-        <h1>سياسة الخصوصية لتطبيق "Zad Bono"</h1>
-        <p class="last-updated">آخر تحديث: 6 ديسمبر 2025</p>
-    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
+                <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+                <a href="features.html" data-translate="nav_features">المميزات</a>
+                <a href="install.html" data-translate="nav_install">التثبيت</a>
+                <a href="blog.html" data-translate="nav_blog">المدونة</a>
+            </div>
+            <div class="copyright">
+                © 2025 Zad Bono. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
 
-    <p>نحن في تطبيق "Zad Bono" ("نحن"، "تطبيقنا") نأخذ خصوصيتك على محمل الجد. توضح سياسة الخصوصية هذه أنواع المعلومات التي قد نجمعها وكيف نستخدمها ونحميها. باستخدامك للتطبيق، فإنك توافق على الممارسات الموضحة في هذه السياسة.</p>
+    <script>
+        // ========================================
+        // Mobile Menu Toggle
+        // ========================================
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarLinks = document.getElementById('navbar-links');
+        
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navbarLinks.classList.toggle('active');
+        });
 
-    <h2>1. المعلومات التي نجمعها وكيفية استخدامها</h2>
-    
-    <h3>معلومات الحساب (عند التسجيل)</h3>
-    <p>عند استخدامك لخدمة تسجيل الدخول عبر Google أو البريد الإلكتروني، نجمع المعلومات الأساسية التي توافق على مشاركتها مثل الاسم وعنوان البريد الإلكتروني. نستخدم هذه المعلومات لإنشاء حسابك الشخصي، تخصيص تجربتك (مثل عرض اسمك)، وحفظ تقدمك في الميزات التفاعلية مثل ختمة القرآن.</p>
+        document.addEventListener('click', (event) => {
+            if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navbarLinks.classList.remove('active');
+            }
+        });
 
-    <h3>بيانات الموقع الجغرافي (<code>ACCESS_FINE_LOCATION</code>)</h3>
-    <p>نطلب إذن الوصول إلى موقعك الجغرافي <strong>لغرض واحد فقط</strong>: وهو حساب مواقيت الصلاة واتجاه القبلة بدقة بناءً على موقعك الحالي. <strong>نحن لا نخزن تاريخ مواقعك ولا نشارك هذه المعلومات مع أي طرف ثالث.</strong></p>
+        // ========================================
+        // Dark Mode Toggle
+        // ========================================
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
 
-    <h3>ملفات الوسائط (الوصول للتخزين)</h3>
-    <p>يقوم التطبيق بتحميل ملفات وسائط (صوتية ومرئية) لتحسين تجربتك والسماح بالاستخدام دون الحاجة للاتصال بالإنترنت. يتم حفظ هذه الملفات في <strong>مجلد خاص بالتطبيق</strong> لا يمكن للتطبيقات الأخرى الوصول إليه، ولا نقوم بالوصول إلى أي ملفات شخصية أخرى على جهازك.</p>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 
-    <h2>2. الإعلانات (AdMob)</h2>
-    <p>يستخدم تطبيقنا شبكة Google AdMob لعرض الإعلانات. قد تستخدم AdMob معرفات الأجهزة لجمع بيانات مجهولة المصدر بهدف عرض إعلانات ذات صلة باهتماماتك. نحن لا نشارك أي معلومات شخصية من حسابك (مثل اسمك أو بريدك الإلكتروني) مع AdMob. لمزيد من المعلومات حول كيفية استخدام جوجل للبيانات، يرجى مراجعة <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">سياسة خصوصية جوجل وشركائها</a>.</p>
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
 
-    <h2>3. الخدمات والأطراف الثالثة (Third-Party Services )</h2>
-    <p>نحن نستخدم خدمات مقدمة من أطراف ثالثة لضمان عمل التطبيق بكفاءة. هذه الخدمات تشمل:</p>
-    <ul>
-        <li><strong>Google Firebase:</strong> نستخدمه للمصادقة (تسجيل الدخول)، قاعدة البيانات (Firestore لحفظ البيانات السحابية)، والتحليلات (Analytics لفهم كيفية استخدام التطبيق بشكل مجهول المصدر لتحسينه).</li>
-        <li><strong>Google Play Services:</strong> ضرورية لعمل الإعلانات وخدمات جوجل الأخرى.</li>
-    </ul>
-    <p>هذه الخدمات قد تجمع بيانات تعريفية ومجهولة المصدر خاصة بها. نحن نختار شركاءنا بعناية فائقة لضمان التزامهم بأعلى معايير الخصوصية.</p>
+        // ========================================
+        // Language Switcher
+        // ========================================
+        const translations = {
+            ar: { 
+                app_name: "Zad Bono", 
+                nav_home: "الرئيسية", 
+                nav_features: "شرح المميزات", 
+                nav_install: "التحميل والتثبيت",
+                nav_blog: "المدونة",
+                nav_contact: "اتصل بنا", 
+                nav_privacy: "سياسة الخصوصية",
+                privacy_title: "سياسة الخصوصية",
+                privacy_last_updated: "آخر تحديث: 6 ديسمبر 2025",
+                privacy_intro: "نحن في تطبيق \"Zad Bono\" (\"نحن\"، \"تطبيقنا\") نأخذ خصوصيتك على محمل الجد. توضح سياسة الخصوصية هذه أنواع المعلومات التي قد نجمعها وكيف نستخدمها ونحميها. باستخدامك للتطبيق، فإنك توافق على الممارسات الموضحة في هذه السياسة.",
+                section1_title: "١. المعلومات التي نجمعها وكيفية استخدامها",
+                section1_account_title: "معلومات الحساب (عند التسجيل)",
+                section1_account_desc: "عند استخدامك لخدمة تسجيل الدخول عبر Google أو البريد الإلكتروني، نجمع المعلومات الأساسية التي توافق على مشاركتها مثل الاسم وعنوان البريد الإلكتروني. نستخدم هذه المعلومات لإنشاء حسابك الشخصي، تخصيص تجربتك (مثل عرض اسمك)، وحفظ تقدمك في الميزات التفاعلية مثل ختمة القرآن.",
+                section1_location_title: "بيانات الموقع الجغرافي (ACCESS_FINE_LOCATION)",
+                section1_location_desc: "نطلب إذن الوصول إلى موقعك الجغرافي لغرض واحد فقط: وهو حساب مواقيت الصلاة واتجاه القبلة بدقة بناءً على موقعك الحالي. نحن لا نخزن تاريخ مواقعك ولا نشارك هذه المعلومات مع أي طرف ثالث.",
+                section1_location_strong: "لغرض واحد فقط",
+                section1_location_strong2: "نحن لا نخزن تاريخ مواقعك ولا نشارك هذه المعلومات مع أي طرف ثالث.",
+                section1_storage_title: "ملفات الوسائط (الوصول للتخزين)",
+                section1_storage_desc: "يقوم التطبيق بتحميل ملفات وسائط (صوتية ومرئية) لتحسين تجربتك والسماح بالاستخدام دون الحاجة للاتصال بالإنترنت. يتم حفظ هذه الملفات في مجلد خاص بالتطبيق لا يمكن للتطبيقات الأخرى الوصول إليه، ولا نقوم بالوصول إلى أي ملفات شخصية أخرى على جهازك.",
+                section1_storage_strong: "مجلد خاص بالتطبيق",
+                section2_title: "٢. الإعلانات (AdMob)",
+                section2_desc: "يستخدم تطبيقنا شبكة Google AdMob لعرض الإعلانات. قد تستخدم AdMob معرفات الأجهزة لجمع بيانات مجهولة المصدر بهدف عرض إعلانات ذات صلة باهتماماتك. نحن لا نشارك أي معلومات شخصية من حسابك (مثل اسمك أو بريدك الإلكتروني) مع AdMob. لمزيد من المعلومات حول كيفية استخدام جوجل للبيانات، يرجى مراجعة ",
+                section2_link: "سياسة خصوصية جوجل وشركائها",
+                section3_title: "٣. الخدمات والأطراف الثالثة (Third-Party Services)",
+                section3_desc: "نحن نستخدم خدمات مقدمة من أطراف ثالثة لضمان عمل التطبيق بكفاءة. هذه الخدمات تشمل:",
+                section3_service1: "Google Firebase: نستخدمه للمصادقة (تسجيل الدخول)، قاعدة البيانات (Firestore لحفظ البيانات السحابية)، والتحليلات (Analytics لفهم كيفية استخدام التطبيق بشكل مجهول المصدر لتحسينه).",
+                section3_service2: "Google Play Services: ضرورية لعمل الإعلانات وخدمات جوجل الأخرى.",
+                section3_desc2: "هذه الخدمات قد تجمع بيانات تعريفية ومجهولة المصدر خاصة بها. نحن نختار شركاءنا بعناية فائقة لضمان التزامهم بأعلى معايير الخصوصية.",
+                section4_title: "٤. أمان البيانات",
+                section4_desc: "نتخذ إجراءات أمنية تقنية وتنظيمية معقولة لحماية معلوماتك من الوصول غير المصرح به أو التغيير أو الكشف. يتم تخزين البيانات على خوادم آمنة وموثوقة.",
+                section5_title: "٥. حذف بيانات المستخدم",
+                section5_desc: "نحترم حقك الكامل في التحكم ببياناتك. لحذف حسابك وجميع البيانات المرتبطة به نهائياً من خوادمنا، يرجى اتباع الخطوات التالية:",
+                section5_step1: "افتح تطبيق \"Zad Bono\".",
+                section5_step2: "اذهب إلى قسم \"الاقتراحات والدعم\".",
+                section5_step3: "في نص الرسالة، اكتب بوضوح: \"أرغب في حذف حسابي وبياناتي بشكل دائم\".",
+                section5_step4: "اضغط على \"إرسال\".",
+                section5_step_note: "سنتلقى طلبك ونقوم بمعالجته وحذف جميع بياناتك المرتبطة بحسابك من أنظمتنا في غضون 30 يوماً.",
+                section6_title: "٦. حقوق الملكية الفكرية للمحتوى",
+                section6_desc: "المحتوى الصوتي والمرئي والمقروء المستخدم في التطبيق إما أن يكون في الملكية العامة (Public Domain)، أو مستخدماً بموجب ترخيص يسمح بإعادة الاستخدام (مثل Creative Commons)، أو تم الحصول على إذن من أصحاب الحقوق. إذا كنت تعتقد أن أي محتوى ينتهك حقوق الملكية الخاصة بك، يرجى التواصل معنا فوراً.",
+                section7_title: "٧. التغييرات على سياسة الخصوصية",
+                section7_desc: "قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنقوم بإعلامك بأي تغييرات جوهرية عن طريق نشر السياسة الجديدة على هذه الصفحة وتحديث تاريخ \"آخر تحديث\".",
+                section8_title: "٨. كيفية التواصل معنا",
+                section8_desc: "إذا كان لديك أي أسئلة أو استفسارات حول سياسة الخصوصية هذه، يرجى التواصل معنا عبر قسم \"الاقتراحات والدعم\" داخل التطبيق.",
+                contact_box_title: "📧 تواصل معنا",
+                contact_box_desc: "لديك استفسار؟ نرحب بتواصلك عبر البريد الإلكتروني: support@zadbono.com",
+                cta_title: "جاهز لبدء رحلتك الإيمانية؟",
+                cta_subtitle: "حمّل تطبيق Zad Bono الآن واستمتع بتجربة إيمانية شاملة ومتكاملة",
+                cta_button: "📥 حمل التطبيق الآن"
+            },
+            en: { 
+                app_name: "Zad Bono", 
+                nav_home: "Home", 
+                nav_features: "Features", 
+                nav_install: "Installation",
+                nav_blog: "Blog",
+                nav_contact: "Contact Us", 
+                nav_privacy: "Privacy Policy",
+                privacy_title: "Privacy Policy",
+                privacy_last_updated: "Last Updated: December 6, 2025",
+                privacy_intro: "At 'Zad Bono' ('we', 'our app'), we take your privacy seriously. This Privacy Policy explains the types of information we may collect, how we use it, and how we protect it. By using the app, you agree to the practices described in this policy.",
+                section1_title: "1. Information We Collect and How We Use It",
+                section1_account_title: "Account Information (When Registering)",
+                section1_account_desc: "When you use Google or email login, we collect basic information you agree to share, such as your name and email address. We use this to create your personal account, personalize your experience, and save your progress in interactive features like Quran Khatma.",
+                section1_location_title: "Location Data (ACCESS_FINE_LOCATION)",
+                section1_location_desc: "We request location permission for one purpose only: to accurately calculate prayer times and Qibla direction based on your current location. We do not store your location history or share this information with any third party.",
+                section1_location_strong: "for one purpose only",
+                section1_location_strong2: "We do not store your location history or share this information with any third party.",
+                section1_storage_title: "Media Files (Storage Access)",
+                section1_storage_desc: "The app downloads media files (audio and video) to enhance your experience and allow offline use. These files are saved in a app-specific folder that other apps cannot access, and we do not access any other personal files on your device.",
+                section1_storage_strong: "app-specific folder",
+                section2_title: "2. Advertisements (AdMob)",
+                section2_desc: "Our app uses Google AdMob to display ads. AdMob may use device identifiers to collect anonymous data in order to serve ads relevant to your interests. We do not share any personal information from your account (like your name or email) with AdMob. For more information on how Google uses data, please review ",
+                section2_link: "Google's Privacy Policy and Partner Sites",
+                section3_title: "3. Third-Party Services",
+                section3_desc: "We use third-party services to ensure the app functions efficiently. These services include:",
+                section3_service1: "Google Firebase: Used for authentication, database (Firestore for cloud data storage), and analytics (to understand app usage anonymously for improvement).",
+                section3_service2: "Google Play Services: Required for ads and other Google services to function.",
+                section3_desc2: "These services may collect their own metadata and anonymous data. We carefully select our partners to ensure they adhere to the highest privacy standards.",
+                section4_title: "4. Data Security",
+                section4_desc: "We take reasonable technical and organizational security measures to protect your information from unauthorized access, alteration, or disclosure. Data is stored on secure and reliable servers.",
+                section5_title: "5. Deleting User Data",
+                section5_desc: "We respect your full right to control your data. To permanently delete your account and all associated data from our servers, please follow these steps:",
+                section5_step1: "Open the 'Zad Bono' app.",
+                section5_step2: "Go to the 'Suggestions & Support' section.",
+                section5_step3: "In the message text, clearly write: 'I want to permanently delete my account and data'.",
+                section5_step4: "Press 'Send'.",
+                section5_step_note: "We will receive your request and process it, deleting all your account-related data from our systems within 30 days.",
+                section6_title: "6. Intellectual Property Rights of Content",
+                section6_desc: "The audio, visual, and written content used in the app is either in the public domain, used under a license that allows reuse (like Creative Commons), or permission has been obtained from the rights holders. If you believe any content infringes on your rights, please contact us immediately.",
+                section7_title: "7. Changes to This Privacy Policy",
+                section7_desc: "We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy on this page and updating the 'Last Updated' date.",
+                section8_title: "8. How to Contact Us",
+                section8_desc: "If you have any questions or concerns about this Privacy Policy, please contact us through the 'Suggestions & Support' section within the app.",
+                contact_box_title: "📧 Contact Us",
+                contact_box_desc: "Have a question? We welcome your contact via email: support@zadbono.com",
+                cta_title: "Ready to Start Your Faith Journey?",
+                cta_subtitle: "Download Zad Bono app now and enjoy a comprehensive, integrated faith experience",
+                cta_button: "📥 Download App Now"
+            }
+        };
 
-    <h2>4. أمان البيانات</h2>
-    <p>نتخذ إجراءات أمنية تقنية وتنظيمية معقولة لحماية معلوماتك من الوصول غير المصرح به أو التغيير أو الكشف. يتم تخزين البيانات على خوادم آمنة وموثوقة.</p>
-    
-    <h2>5. حذف بيانات المستخدم</h2>
-    <p>نحترم حقك الكامل في التحكم ببياناتك. لحذف حسابك وجميع البيانات المرتبطة به نهائياً من خوادمنا، يرجى اتباع الخطوات التالية:</p>
-    <div class="highlight">
-        <ol>
-            <li>افتح تطبيق "Zad Bono".</li>
-            <li>اذهب إلى قسم "الاقتراحات والدعم".</li>
-            <li>في نص الرسالة، اكتب بوضوح: "أرغب في حذف حسابي وبياناتي بشكل دائم".</li>
-            <li>اضغط على "إرسال".</li>
-        </ol>
-        <p>سنتلقى طلبك ونقوم بمعالجته وحذف جميع بياناتك المرتبطة بحسابك من أنظمتنا في غضون 30 يوماً.</p>
-    </div>
-    
-    <h2>6. حقوق الملكية الفكرية للمحتوى</h2>
-    <p>المحتوى الصوتي والمرئي والمقروء المستخدم في التطبيق إما أن يكون في الملكية العامة (Public Domain)، أو مستخدماً بموجب ترخيص يسمح بإعادة الاستخدام (مثل Creative Commons)، أو تم الحصول على إذن من أصحاب الحقوق. إذا كنت تعتقد أن أي محتوى ينتهك حقوق الملكية الخاصة بك، يرجى التواصل معنا فوراً.</p>
-
-    <h2>7. التغييرات على سياسة الخصوصية</h2>
-    <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنقوم بإعلامك بأي تغييرات جوهرية عن طريق نشر السياسة الجديدة على هذه الصفحة وتحديث تاريخ "آخر تحديث".</p>
-
-    <h2>8. كيفية التواصل معنا</h2>
-    <p>إذا كان لديك أي أسئلة أو استفسارات حول سياسة الخصوصية هذه، يرجى التواصل معنا عبر قسم "الاقتراحات والدعم" داخل التطبيق.</p>
-</div>
-
-<footer class="footer">
-    <div class="copyright">
-        © 2025 Zad Bono. جميع الحقوق محفوظة.
-    </div>
-</footer>
-
-<script>
-    // --- Script for Mobile Menu ---
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbarLinks = document.getElementById('navbar-links');
-    
-    menuToggle.addEventListener('click', () => { 
-        navbarLinks.classList.toggle('active'); 
-    });
-
-    document.addEventListener('click', (event) => {
-        if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
-            navbarLinks.classList.remove('active');
+        const langToggleButton = document.getElementById('lang-toggle-btn');
+        const langMenu = document.getElementById('lang-menu');
+        const selectedLangBtnText = document.getElementById('lang-text');
+        const selectedLangBtnFlag = document.getElementById('lang-flag');
+        
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(el => { 
+                const key = el.getAttribute('data-translate'); 
+                if (translations[lang] && translations[lang][key]) { 
+                    el.textContent = translations[lang][key]; 
+                } 
+            });
+            
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
+            selectedLangBtnFlag.src = `images/${lang}.png`;
+            localStorage.setItem('language', lang);
+            
+            if(langMenu) langMenu.classList.remove('show');
         }
-    });
-</script>
+
+        langToggleButton.addEventListener('click', (event) => { 
+            event.stopPropagation(); 
+            langMenu.classList.toggle('show'); 
+        });
+
+        window.addEventListener('click', () => { 
+            if (langMenu.classList.contains('show')) { 
+                langMenu.classList.remove('show'); 
+            } 
+        });
+
+        // ========================================
+        // Scroll to Top Button
+        // ========================================
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ========================================
+        // Navbar Scroll Effect
+        // ========================================
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ========================================
+        // Initialize on Page Load
+        // ========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'ar';
+            setLanguage(savedLang);
+        });
+
+        // ========================================
+        // Intersection Observer for Animations
+        // ========================================
+        const observeElements = document.querySelectorAll('.privacy-content p, .privacy-content h2, .privacy-content h3, .privacy-content .highlight, .privacy-content .contact-box');
+        
+        const elementObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                    setTimeout(() => {
+                        entry.target.style.transition = 'all 0.6s ease';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    elementObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observeElements.forEach(el => elementObserver.observe(el));
+    </script>
 
 </body>
 </html>
