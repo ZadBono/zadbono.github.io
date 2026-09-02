@@ -3,198 +3,1047 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>مدونة زاد بونو | مقالات إيمانية لتغيير حياتك</title>
     <meta name="description" content="اكتشف مقالات متجددة في العبادات، أسرار القرآن، وتطوير الذات الإيماني. دليلك لحياة أكثر قربًا من الله.">
     <link rel="icon" type="image/jpeg" href="images/logo.jpg">
-
+    <title>مدونة زاد بونو | مقالات إيمانية لتغيير حياتك</title>
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zadbono.github.io/blog.html">
     <meta property="og:title" content="مدونة زاد بونو | مقالات إيمانية لتغيير حياتك">
     <meta property="og:description" content="اكتشف مقالات متجددة في العبادات، أسرار القرآن، وتطوير الذات الإيماني. دليلك لحياة أكثر قربًا من الله.">
     <meta property="og:image" content="https://zadbono.github.io/images/logo.jpg">
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://zadbono.github.io/blog.html">
     <meta name="twitter:title" content="مدونة زاد بونو | مقالات إيمانية لتغيير حياتك">
     <meta name="twitter:description" content="اكتشف مقالات متجددة في العبادات، أسرار القرآن، وتطوير الذات الإيماني.">
     <meta name="twitter:image" content="https://zadbono.github.io/images/logo.jpg">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <style>
-        :root { --primary-blue: #0b5394; --dark-blue: #073763; --gold: #ffd700; --light-bg: #f0f4f8; --white: #ffffff; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Cairo', sans-serif; background-color: var(--light-bg  ); color: #333; line-height: 1.7; padding-top: 70px; }
-        .navbar { background-color: var(--primary-blue); padding: 12px 20px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .navbar-brand { color: var(--gold); font-weight: bold; font-size: 1.4em; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-        .navbar-brand img { width: 32px; height: 32px; border-radius: 50%; }
-        .navbar-links { display: flex; align-items: center; gap: 20px; }
-        .navbar-links a { color: var(--white); text-decoration: none; font-size: 1em; transition: color 0.3s; padding: 8px 12px; border-radius: 5px; }
-        .navbar-links a:hover, .navbar-links a.active { color: var(--gold); background-color: rgba(255,215,0,0.1); }
-        .menu-toggle { display: none; font-size: 24px; color: white; background: none; border: none; cursor: pointer; }
-        .footer { background-color: var(--dark-blue); color: white; padding: 30px 20px; margin-top: 40px; text-align: center; }
-        .footer-links { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 15px; }
-        .footer-links a { color: #ccc; text-decoration: none; transition: color 0.3s; font-size: 0.9em; }
-        .footer-links a:hover { color: var(--gold); }
-        .copyright { color: #999; font-size: 0.85em; }
-        
-        .blog-header { text-align: center; padding: 50px 20px; background-color: var(--white); margin-bottom: 40px; }
-        .blog-header h1 { font-size: 2.8em; color: var(--dark-blue); margin-bottom: 10px; }
-        .blog-header p { font-size: 1.2em; color: #666; max-width: 600px; margin: 0 auto; }
+        :root {
+            /* Modern Color Palette 2026 */
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gold-gradient: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            
+            --primary: #667eea;
+            --primary-dark: #5568d3;
+            --secondary: #f5576c;
+            --accent: #00f2fe;
+            --gold: #fda085;
+            
+            /* Light Mode */
+            --bg-primary: #f8f9ff;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --border-color: rgba(103, 126, 234, 0.1);
+            --shadow-sm: 0 2px 8px rgba(103, 126, 234, 0.08);
+            --shadow-md: 0 4px 16px rgba(103, 126, 234, 0.12);
+            --shadow-lg: 0 8px 32px rgba(103, 126, 234, 0.16);
+            --shadow-xl: 0 12px 48px rgba(103, 126, 234, 0.2);
+            
+            /* Glass Effect */
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            
+            /* Animations */
+            --transition-fast: 0.2s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            --bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
 
-        .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .article-card { background-color: var(--white); border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.07); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
-        .article-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        .card-image { width: 100%; height: 200px; object-fit: cover; background-color: var(--dark-blue); }
-        .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-title { font-size: 1.4em; color: var(--dark-blue); margin-bottom: 15px; line-height: 1.4; }
-        .card-excerpt { font-size: 0.95em; color: #555; margin-bottom: 20px; flex-grow: 1; }
-        .read-more-btn { display: inline-block; background-color: var(--primary-blue); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: background-color 0.3s; align-self: flex-start; }
-        .read-more-btn:hover { background-color: var(--dark-blue); }
+        /* Dark Mode Variables */
+        [data-theme="dark"] {
+            --bg-primary: #0f0f23;
+            --bg-secondary: #1a1a2e;
+            --bg-card: rgba(26, 26, 46, 0.9);
+            --text-primary: #e2e8f0;
+            --text-secondary: #cbd5e0;
+            --text-muted: #a0aec0;
+            --border-color: rgba(103, 126, 234, 0.2);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.6);
+            --glass-bg: rgba(26, 26, 46, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body { 
+            font-family: 'Cairo', 'Tajawal', sans-serif; 
+            background: var(--bg-primary);
+            color: var(--text-primary); 
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 87, 108, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 242, 254, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            animation: backgroundMove 20s ease infinite;
+        }
+
+        @keyframes backgroundMove {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* النافبار الحديث */
+        .navbar { 
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 16px 0;
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+        }
+
+        .navbar.scrolled {
+            padding: 12px 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand { 
+            color: var(--text-primary);
+            font-weight: 700; 
+            font-size: 1.5em; 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform var(--transition-base);
+        }
+
+        .navbar-brand:hover {
+            transform: translateY(-2px);
+        }
+
+        .navbar-brand img {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-base);
+        }
+
+        .navbar-brand:hover img {
+            transform: rotate(5deg) scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-links { 
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
+        }
+
+        .navbar-links a { 
+            color: var(--text-secondary);
+            text-decoration: none; 
+            font-size: 0.95em;
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: 12px;
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            opacity: 0;
+            transition: opacity var(--transition-base);
+            z-index: -1;
+        }
+
+        .navbar-links a:hover,
+        .navbar-links a.active { 
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .navbar-links a:hover::before,
+        .navbar-links a.active::before {
+            opacity: 1;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: var(--glass-bg);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            transition: all var(--transition-base);
+            margin-right: 8px;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(15deg) scale(1.05);
+            border-color: var(--primary);
+        }
+
+        /* Language Switcher */
+        .language-switcher { 
+            position: relative; 
+        }
+
+        .selected-lang { 
+            background: var(--glass-bg);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 12px;
+            transition: all var(--transition-base);
+            font-weight: 500;
+        }
+
+        .selected-lang:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .selected-lang img { 
+            width: 24px; 
+            height: 24px; 
+            border-radius: 50%;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lang-menu { 
+            display: none; 
+            position: absolute; 
+            top: calc(100% + 8px);
+            left: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px; 
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-xl);
+            list-style: none; 
+            padding: 8px;
+            min-width: 160px;
+            z-index: 1001;
+            animation: slideDown 0.3s var(--bounce);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .lang-menu.show { 
+            display: block; 
+        }
+
+        .lang-menu li a { 
+            color: var(--text-primary);
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 10px; 
+            transition: all var(--transition-fast);
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .lang-menu li a:hover { 
+            background: var(--primary-gradient);
+            color: white;
+            transform: translateX(-4px);
+        }
+
+        .lang-menu li img { 
+            width: 24px; 
+            height: 24px; 
+            border-radius: 50%;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .menu-toggle { 
+            display: none; 
+            font-size: 28px; 
+            color: var(--text-primary);
+            background: none; 
+            border: none; 
+            cursor: pointer;
+            transition: transform var(--transition-base);
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* المحتوى الرئيسي */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 24px 40px;
+        }
+
+        .page-title { 
+            text-align: center; 
+            font-size: 3em; 
+            margin-bottom: 20px;
+            font-weight: 900;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-subtitle { 
+            text-align: center; 
+            font-size: 1.25em; 
+            color: var(--text-secondary);
+            margin-bottom: 60px; 
+            max-width: 800px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            line-height: 1.8;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        /* فلاتر التصنيفات (اختياري) */
+        .categories-filter {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .category-btn {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 12px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.95em;
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--primary-gradient);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* شبكة المقالات */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: var(--primary-gradient);
+            position: relative;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8em;
+            font-weight: 700;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .blog-content {
+            padding: 28px 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-content h3 {
+            font-size: 1.4em;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .blog-content p {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.85em;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95em;
+            transition: all var(--transition-base);
+            align-self: flex-start;
+            box-shadow: var(--shadow-sm);
+            border: none;
+            cursor: pointer;
+        }
+
+        .read-more-btn:hover {
+            transform: translateX(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* قسم الدعوة للتحميل */
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: 32px;
+            box-shadow: var(--shadow-lg);
+            margin-top: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .cta-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 900;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .download-button { 
+            background: var(--gold-gradient);
+            color: white;
+            padding: 18px 48px;
+            font-size: 1.15em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all var(--transition-base);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 24px rgba(246, 211, 101, 0.3);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .download-button:hover::before {
+            left: 100%;
+        }
+
+        .download-button:hover { 
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(246, 211, 101, 0.4);
+        }
+
+        /* الفوتر */
+        .footer {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: 50px 24px 30px;
+            margin-top: 80px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all var(--transition-base);
+            font-size: 0.95em;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: width var(--transition-base);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+            z-index: 999;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .scroll-top.show {
+            display: flex;
+        }
+
+        /* Fade In Animation for Cards */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-card {
+            animation: fadeIn 0.6s ease backwards;
+        }
+
+        .blog-card:nth-child(1) { animation-delay: 0.1s; }
+        .blog-card:nth-child(2) { animation-delay: 0.2s; }
+        .blog-card:nth-child(3) { animation-delay: 0.3s; }
+        .blog-card:nth-child(4) { animation-delay: 0.4s; }
+        .blog-card:nth-child(5) { animation-delay: 0.5s; }
+        .blog-card:nth-child(6) { animation-delay: 0.6s; }
+        .blog-card:nth-child(7) { animation-delay: 0.7s; }
+        .blog-card:nth-child(8) { animation-delay: 0.8s; }
+        .blog-card:nth-child(9) { animation-delay: 0.9s; }
+        .blog-card:nth-child(10) { animation-delay: 1.0s; }
+
+        /* الوسائط المتجاوبة */
         @media (max-width: 768px) {
-            .navbar-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--primary-blue); padding: 20px; gap: 15px; }
-            .navbar-links.active { display: flex; }
-            .menu-toggle { display: block; }
-            .blog-header h1 { font-size: 2.2em; }
-            .blog-header p { font-size: 1em; }
+            .navbar-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: calc(100% + 12px);
+                left: 16px;
+                right: 16px;
+                background: var(--glass-bg);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-radius: 20px;
+                padding: 20px;
+                gap: 8px;
+                box-shadow: var(--shadow-xl);
+                border: 1px solid var(--glass-border);
+            }
+
+            .navbar-links.active { 
+                display: flex; 
+                animation: slideDown 0.3s var(--bounce);
+            }
+
+            .menu-toggle { 
+                display: block; 
+            }
+
+            .container {
+                padding: 100px 20px 40px;
+            }
+
+            .page-title { 
+                font-size: 2.2em; 
+            }
+
+            .page-subtitle { 
+                font-size: 1.05em; 
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .blog-image {
+                height: 180px;
+            }
+
+            .blog-content h3 {
+                font-size: 1.2em;
+            }
+
+            .categories-filter {
+                gap: 8px;
+            }
+
+            .category-btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            .cta-section {
+                padding: 40px 24px;
+            }
+
+            .cta-title {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.8em;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="index.html" class="navbar-brand">
-            <img src="images/logo.jpg" alt="شعار Zad Bono">
-            Zad Bono
-        </a>
-        <div class="navbar-links" id="navbar-links">
-            <a href="index.html">الرئيسية</a>
-            <a href="features.html">شرح المميزات</a>
-            <a href="install.html">التحميل والتثبيت</a>
-            <a href="blog.html" class="active">المدونة</a>
-            <a href="contact.html">اتصل بنا</a>
-            <a href="privacy-policy.html">سياسة الخصوصية</a>
+    <!-- زر العودة للأعلى -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand" data-translate="app_name">
+                <img src="images/logo.jpg" alt="شعار Zad Bono">
+                Zad Bono
+            </a>
+            <div class="navbar-links" id="navbar-links">
+                <a href="index.html" data-translate="nav_home">الرئيسية</a>
+                <a href="features.html" data-translate="nav_features">شرح المميزات</a>
+                <a href="install.html" data-translate="nav_install">التحميل والتثبيت</a>
+                <a href="blog.html" class="active" data-translate="nav_blog">المدونة</a>
+                <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+                <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
+                
+                <button class="theme-toggle" id="theme-toggle" title="تبديل الوضع">
+                    <span id="theme-icon">🌙</span>
+                </button>
+                
+                <div class="language-switcher">
+                    <button class="selected-lang" id="lang-toggle-btn">
+                        <img id="lang-flag" src="images/ar.png" alt="علم اللغة">
+                        <span id="lang-text">العربية</span>
+                    </button>
+                    <ul class="lang-menu" id="lang-menu">
+                        <li><a href="#" onclick="setLanguage('ar')"><img src="images/ar.png" alt="علم العربية"> العربية</a></li>
+                        <li><a href="#" onclick="setLanguage('en')"><img src="images/en.png" alt="علم الإنجليزية"> English</a></li>
+                    </ul>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
         </div>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
     </nav>
 
-    <header class="blog-header">
-        <h1>مدونة زاد بونو</h1>
-        <p>مقالات إيمانية ملهمة، وأفكار عملية لحياة أكثر قربًا من الله.</p>
-    </header>
+    <div class="container">
+        <h1 class="page-title" data-translate="blog_main_title">مدونة زاد بونو</h1>
+        <p class="page-subtitle" data-translate="blog_subtitle">مقالات إيمانية ملهمة، وأفكار عملية لحياة أكثر قربًا من الله.</p>
 
-    <main class="articles-grid">
-        <!-- المقال العاشر: قراءة القرآن بدون حجاب -->
-        <div class="article-card">
-            <img src="images/logo.jpg" alt="صورة مقال" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">هل يجوز للمرأة قراءة القرآن بدون حجاب؟ (تصحيح مفاهيم)</h2>
-                <p class="card-excerpt">اكتشفي الإجابة الواضحة والفرق بين شروط صحة القراءة وآدابها، لتتلذذي بقراءة القرآن في كل وقت.</p>
-                <a href="articles/reading-quran-without-hijab.html" class="read-more-btn">اقرأ المزيد ←</a>
+        <!-- فلاتر التصنيفات (اختياري) -->
+        <div class="categories-filter">
+            <button class="category-btn active" data-translate="filter_all">الكل</button>
+            <button class="category-btn" data-translate="filter_quran">القرآن</button>
+            <button class="category-btn" data-translate="filter_prayer">الصلاة</button>
+            <button class="category-btn" data-translate="filter_azkar">الأذكار</button>
+            <button class="category-btn" data-translate="filter_stories">قصص</button>
+        </div>
+
+        <!-- شبكة المقالات -->
+        <div class="blog-grid">
+            <!-- المقال 1 -->
+            <div class="blog-card" data-category="azkar">
+                <div class="blog-image">
+                    <img src="images/azkar-card.jpg" alt="صورة مقال الأذكار">
+                    <span class="blog-category" data-translate="cat_azkar">الأذكار</span>
+                </div>
+                <div class="blog-content">
+                    <h3 data-translate="blog1_title">كيف تحافظ على وردك اليومي من الأذكار حتى في أكثر الأيام انشغالاً؟</h3>
+                    <p data-translate="blog1_excerpt">اكتشف 5 طرق عملية للحفاظ على أذكار الصباح والمساء حتى لو لم يكن لديك وقت، وكيف يمكن للتكنولوجيا مساعدتك.</p>
+                    <div class="blog-meta">
+                        <span>📅 ١ يناير ٢٠٢٥</span>
+                        <span>👤 فريق زاد بونو</span>
+                    </div>
+                    <a href="articles/how-to-maintain-azkar.html" class="read-more-btn" data-translate="read_more">اقرأ المزيد ←</a>
+                </div>
+            </div>
+
+            <!-- المقال 2 -->
+            <div class="blog-card" data-category="quran">
+                <div class="blog-image">
+                    <img src="images/quran-card.jpg" alt="صورة مقال أسرار القرآن">
+                    <span class="blog-category" data-translate="cat_quran">القرآن</span>
+                </div>
+                <div class="blog-content">
+                    <h3 data-translate="blog2_title">5 أسرار في القرآن لم يخبرك بها أحد (السر الثالث سيغير حياتك)</h3>
+                    <p data-translate="blog2_excerpt">اكتشف أسرارًا قرآنية قد تغير نظرتك للحياة والرزق والنجاح. السر الثالث قد يكون نقطة تحول حقيقية في يومك.</p>
+                    <div class="blog-meta">
+                        <span>📅 ٢٨ ديسمبر ٢٠٢٤</span>
+                        <span>👤 فريق زاد بونو</span>
+                    </div>
+                    <a href="articles/5-quran-secrets.html" class="read-more-btn" data-translate="read_more">اقرأ المزيد ←</a>
+                </div>
+            </div>
+
+            <!-- المقال 3 -->
+            <div class="blog-card" data-category="prayer">
+                <div class="blog-image">
+                    <img src="images/prayer-card.jpg" alt="صورة مقال الصلاة">
+                    <span class="blog-category" data-translate="cat_prayer">الصلاة</span>
+                </div>
+                <div class="blog-content">
+                    <h3 data-translate="blog3_title">هل صلاتك مقبولة؟ 3 علامات من القرآن والسنة قد تفاجئك</h3>
+                    <p data-translate="blog3_excerpt">اكتشف 3 علامات تدل على قبول الصلاة وتأثيرها في حياتك. ليست مجرد حركات، بل هي اتصال يغير كل شيء.</p>
+                    <div class="blog-meta">
+                        <span>📅 ٢٥ ديسمبر ٢٠٢٤</span>
+                        <span>👤 فريق زاد بونو</span>
+                    </div>
+                    <a href="articles/is-my-prayer-accepted.html" class="read-more-btn" data-translate="read_more">اقرأ المزيد ←</a>
+                </div>
+            </div>
+
+            <!-- المقال 4 -->
+            <div class="blog-card" data-category="prayer">
+                <div class="blog-image">
+                    <img src="images/dua-card.jpg" alt="صورة مقال الدعاء">
+                    <span class="blog-category" data-translate="cat_dua">الدعاء</span>
+                </div>
+                <div class="blog-content">
+                    <h3 data-translate="blog4_title">كيف تجعل دعاءك مستجابًا؟ خطأ شائع يقع فيه 90% من الناس</h3>
+                    <p data-translate="blog4_excerpt">ندعو وندعو، ولكن قد لا نرى الإجابة. اكتشف الخطأ الشائع الذي قد يكون السبب، وتعلم أسرار الدعاء المستجاب.</p>
+                    <div class="blog-meta">
+                        <span>📅 ٢٢ ديسمبر ٢٠٢٤</span>
+                        <span>👤 فريق زاد بونو</span>
+                    </div>
+                    <a href="articles/how-to-make-dua-answered.html" class="read-more-btn" data-translate="read_more">اقرأ المزيد ←</a>
+                </div>
+            </div>
+
+            <!-- المقال 5 -->
+            <div class="blog-card" data-category="stories">
+                <div class="blog-image">
+                    <img src="images/logo.jpg" alt="صورة مقال">
+                    <span class="blog-category" data-translate="cat_entertainment">الترفيه</span>
+                </div>
+                <div class="blog-content">
+                    <h3 data-translate="blog5_title">هل مشاهدة الأفلام والمسلسلات حرام؟ (رأي يفصل النزاع)</h3>
+                    <p data-translate="blog5_excerpt">سؤال محير في عصرنا. اكتشف الضوابط الشرعية التي تفرق بين الحلال والحرام في الترفيه.</p>
+                    <div class="blog-meta">
+                        <span>📅 ٢٠ ديسمبر ٢٠٢٤</span>
+                        <span>👤 فريق زاد بونو</span>
+                    </div>
+                    <a href="articles/is-watching-movies-haram.html" class="read-more-btn" data-translate="read_more">اقرأ المزيد ←</a>
+                </div>
+            </div>
+
+            <!-- المقال 6 -->
+            <div class="blog-card" data-category="prayer">
+                <div class="blog-image">
+                    <img src="images/logo.jpg" alt="صورة مقال">
+                    <span class="blog-category" data-translate="cat_prayer">الصلاة</span>
+                </div>
+                <div class="blog-content">
+                    <h3 data-translate="blog6_title">لماذا يبتليني الله وأنا أصلي وأعبده؟ فهم حكمة الابتلاء</h3>
+                    <p data-translate="blog6_excerpt">إذا كنت تسأل 'لماذا تحدث لي أمور سيئة رغم أني أعبد الله؟'، فهذا المقال لك.</p>
+                    <div class="blog-meta">
+                        <span>📅 ١٨ ديسمبر ٢٠٢٤</span>
+                        <span>👤 فريق زاد بونو</span>
+                    </div>
+                    <a href="articles/why-does-god-test-me.html" class="read-more-btn" data-translate="read_more">اقرأ المزيد ←</a>
+                </div>
+            </div>
+
+            <!-- المقال 7 -->
+            <div class="blog-card" data-category="stories">
+                <div class="blog-image">
+                    <img src="images/logo.jpg" alt="صورة مقال">
+                    <span class="blog-category" data-translate="cat_tawbah">التوبة</span>
+                </div>
+                <div class="blog-content">
+                    <h3 data-translate="blog7_title">ارتكبت ذنباً عظيماً، هل سيغفر الله لي؟ باب التوبة مفتوح</h3>
+                    <p data-translate="blog7_excerpt">مهما كان ذنبك عظيمًا، رحمة الله أعظم. اكتشف لماذا لا يجب أن تيأس من رحمة الله.</p>
+                    <div class="blog-meta">
+                        <span>📅 ١٥ ديسمبر ٢٠٢٤</span>
+                        <span>👤 فريق زاد بونو</span>
+                    </div>
+                    <a href="articles/will-god-forgive-my-sin.html" class="read-more-btn" data-translate="read_more">اقرأ المزيد ←</a>
+                </div>
+            </div>
+
+            <!-- المقال 8 -->
+            <div class="blog-card" data-category="tools">
+                <div class="blog-image">
+                    <img src="images/logo.jpg" alt="صورة مقال">
+                    <span class="blog-category" data-translate="cat_tech">تقني</span>
+                </div>
+                <div class="blog-content">
+                    <h3 data-translate="blog8_title">كيف أتخلص من الإعلانات المخلة التي تظهر لي؟ (دليل عملي)</h3>
+                    <p data-translate="blog8_excerpt">4 خطوات عملية وفعالة لتنظيف تجربتك الرقمية وحماية نفسك من الإعلانات غير اللائقة.</p>
+                    <div class="blog-meta">
+                        <span>📅 ١٢ ديسمبر ٢٠٢٤</span>
+                        <span>👤 فريق زاد بونو</span>
+                    </div>
+                    <a href="articles/how-to-stop-bad-ads.html" class="read-more-btn" data-translate="read_more">اقرأ المزيد ←</a>
+                </div>
+            </div>
+
+            <!-- المقال 9 -->
+            <div class="blog-card" data-category="prayer">
+                <div class="blog-image">
+                    <img src="images/logo.jpg" alt="صورة مقال">
+                    <span class="blog-category" data-translate="cat_prayer">الصلاة</span>
+                </div>
+                <div class="blog-content">
+                    <h3 data-translate="blog9_title">أنا أصلي ولكن لا أشعر بشيء، ما الحل؟ (علاج فتور العبادة)</h3>
+                    <p data-translate="blog9_excerpt">5 خطوات عملية لاستعادة لذة الطاعة والخشوع في الصلاة وقراءة القرآن.</p>
+                    <div class="blog-meta">
+                        <span>📅 ١٠ ديسمبر ٢٠٢٤</span>
+                        <span>👤 فريق زاد بونو</span>
+                    </div>
+                    <a href="articles/i-pray-but-feel-nothing.html" class="read-more-btn" data-translate="read_more">اقرأ المزيد ←</a>
+                </div>
+            </div>
+
+            <!-- المقال 10 -->
+            <div class="blog-card" data-category="quran">
+                <div class="blog-image">
+                    <img src="images/logo.jpg" alt="صورة مقال">
+                    <span class="blog-category" data-translate="cat_quran">القرآن</span>
+                </div>
+                <div class="blog-content">
+                    <h3 data-translate="blog10_title">هل يجوز للمرأة قراءة القرآن بدون حجاب؟ (تصحيح مفاهيم)</h3>
+                    <p data-translate="blog10_excerpt">اكتشفي الإجابة الواضحة والفرق بين شروط صحة القراءة وآدابها، لتتلذذي بقراءة القرآن في كل وقت.</p>
+                    <div class="blog-meta">
+                        <span>📅 ٨ ديسمبر ٢٠٢٤</span>
+                        <span>👤 فريق زاد بونو</span>
+                    </div>
+                    <a href="articles/reading-quran-without-hijab.html" class="read-more-btn" data-translate="read_more">اقرأ المزيد ←</a>
+                </div>
             </div>
         </div>
 
-        <!-- المقال التاسع: فتور العبادة -->
-        <div class="article-card">
-            <img src="images/logo.jpg" alt="صورة مقال" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">أنا أصلي ولكن لا أشعر بشيء، ما الحل؟ (علاج فتور العبادة)</h2>
-                <p class="card-excerpt">5 خطوات عملية لاستعادة لذة الطاعة والخشوع في الصلاة وقراءة القرآن.</p>
-                <a href="articles/i-pray-but-feel-nothing.html" class="read-more-btn">اقرأ المزيد ←</a>
-            </div>
+        <!-- دعوة للتحميل -->
+        <div class="cta-section">
+            <h2 class="cta-title" data-translate="cta_title">استمتع بتجربة إيمانية متكاملة</h2>
+            <p class="cta-subtitle" data-translate="cta_subtitle">حمّل تطبيق Zad Bono الآن واستمتع بكل المميزات في مكان واحد</p>
+            <a href="install.html" class="download-button" data-translate="cta_button">📥 حمل التطبيق الآن</a>
         </div>
+    </div>
 
-        <!-- المقال الثامن: الإعلانات المخلة -->
-        <div class="article-card">
-            <img src="images/logo.jpg" alt="صورة مقال" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">كيف أتخلص من الإعلانات المخلة التي تظهر لي؟ (دليل عملي)</h2>
-                <p class="card-excerpt">4 خطوات عملية وفعالة لتنظيف تجربتك الرقمية وحماية نفسك من الإعلانات غير اللائقة.</p>
-                <a href="articles/how-to-stop-bad-ads.html" class="read-more-btn">اقرأ المزيد ←</a>
-            </div>
-        </div>
-
-        <!-- المقال السابع: التوبة -->
-        <div class="article-card">
-            <img src="images/logo.jpg" alt="صورة مقال" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">ارتكبت ذنباً عظيماً، هل سيغفر الله لي؟ باب التوبة مفتوح</h2>
-                <p class="card-excerpt">مهما كان ذنبك عظيمًا، رحمة الله أعظم. اكتشف لماذا لا يجب أن تيأس من رحمة الله.</p>
-                <a href="articles/will-god-forgive-my-sin.html" class="read-more-btn">اقرأ المزيد ←</a>
-            </div>
-        </div>
-
-        <!-- المقال السادس: الابتلاء -->
-        <div class="article-card">
-            <img src="images/logo.jpg" alt="صورة مقال" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">لماذا يبتليني الله وأنا أصلي وأعبده؟ فهم حكمة الابتلاء</h2>
-                <p class="card-excerpt">إذا كنت تسأل 'لماذا تحدث لي أمور سيئة رغم أني أعبد الله؟'، فهذا المقال لك.</p>
-                <a href="articles/why-does-god-test-me.html" class="read-more-btn">اقرأ المزيد ←</a>
-            </div>
-        </div>
-
-        <!-- المقال الخامس: مشاهدة الأفلام -->
-        <div class="article-card">
-            <img src="images/logo.jpg" alt="صورة مقال" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">هل مشاهدة الأفلام والمسلسلات حرام؟ (رأي يفصل النزاع)</h2>
-                <p class="card-excerpt">سؤال محير في عصرنا. اكتشف الضوابط الشرعية التي تفرق بين الحلال والحرام في الترفيه.</p>
-                <a href="articles/is-watching-movies-haram.html" class="read-more-btn">اقرأ المزيد ←</a>
-            </div>
-        </div>
-
-        <!-- المقال الرابع: الدعاء -->
-        <div class="article-card">
-            <img src="images/dua-card.jpg" alt="صورة مقال الدعاء" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">كيف تجعل دعاءك مستجابًا؟ خطأ شائع يقع فيه 90% من الناس</h2>
-                <p class="card-excerpt">ندعو وندعو، ولكن قد لا نرى الإجابة. اكتشف الخطأ الشائع الذي قد يكون السبب، وتعلم أسرار الدعاء المستجاب.</p>
-                <a href="articles/how-to-make-dua-answered.html" class="read-more-btn">اقرأ المزيد ←</a>
-            </div>
-        </div>
-
-        <!-- المقال الثالث: الصلاة -->
-        <div class="article-card">
-            <img src="images/prayer-card.jpg" alt="صورة مقال الصلاة" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">هل صلاتك مقبولة؟ 3 علامات من القرآن والسنة قد تفاجئك</h2>
-                <p class="card-excerpt">اكتشف 3 علامات تدل على قبول الصلاة وتأثيرها في حياتك. ليست مجرد حركات، بل هي اتصال يغير كل شيء.</p>
-                <a href="articles/is-my-prayer-accepted.html" class="read-more-btn">اقرأ المزيد ←</a>
-            </div>
-        </div>
-
-        <!-- المقال الثاني: القرآن -->
-        <div class="article-card">
-            <img src="images/quran-card.jpg" alt="صورة مقال أسرار القرآن" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">5 أسرار في القرآن لم يخبرك بها أحد (السر الثالث سيغير حياتك)</h2>
-                <p class="card-excerpt">اكتشف أسرارًا قرآنية قد تغير نظرتك للحياة والرزق والنجاح. السر الثالث قد يكون نقطة تحول حقيقية في يومك.</p>
-                <a href="articles/5-quran-secrets.html" class="read-more-btn">اقرأ المزيد ←</a>
-            </div>
-        </div>
-
-        <!-- المقال الأول: الأذكار -->
-        <div class="article-card">
-            <img src="images/azkar-card.jpg" alt="صورة مقال الأذكار" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">كيف تحافظ على وردك اليومي من الأذكار حتى في أكثر الأيام انشغالاً؟</h2>
-                <p class="card-excerpt">اكتشف 5 طرق عملية للحفاظ على أذكار الصباح والمساء حتى لو لم يكن لديك وقت، وكيف يمكن للتكنولوجيا مساعدتك.</p>
-                <a href="articles/how-to-maintain-azkar.html" class="read-more-btn">اقرأ المزيد ←</a>
-            </div>
-        </div>
-    </main>
-
+    <!-- الفوتر -->
     <footer class="footer">
         <div class="container">
             <div class="footer-links">
-                <a href="privacy-policy.html">سياسة الخصوصية</a>
-                <a href="contact.html">اتصل بنا</a>
-                <a href="features.html">المميزات</a>
-                <a href="install.html">التثبيت</a>
+                <a href="privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
+                <a href="contact.html" data-translate="nav_contact">اتصل بنا</a>
+                <a href="features.html" data-translate="nav_features">المميزات</a>
+                <a href="install.html" data-translate="nav_install">التثبيت</a>
             </div>
             <div class="copyright">
                 © 2025 Zad Bono. جميع الحقوق محفوظة.
@@ -203,14 +1052,267 @@
     </footer>
 
     <script>
-        // --- Script for Mobile Menu ---
+        // ========================================
+        // Mobile Menu Toggle
+        // ========================================
         const menuToggle = document.getElementById('menu-toggle');
         const navbarLinks = document.getElementById('navbar-links');
-        menuToggle.addEventListener('click', () => { navbarLinks.classList.toggle('active'); });
+        
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navbarLinks.classList.toggle('active');
+        });
+
         document.addEventListener('click', (event) => {
-            if (navbarLinks && !navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+            if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
                 navbarLinks.classList.remove('active');
             }
+        });
+
+        // ========================================
+        // Dark Mode Toggle
+        // ========================================
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+
+        // ========================================
+        // Language Switcher
+        // ========================================
+        const translations = {
+            ar: {
+                app_name: "Zad Bono",
+                nav_home: "الرئيسية",
+                nav_features: "شرح المميزات",
+                nav_install: "التحميل والتثبيت",
+                nav_blog: "المدونة",
+                nav_contact: "اتصل بنا",
+                nav_privacy: "سياسة الخصوصية",
+                blog_main_title: "مدونة زاد بونو",
+                blog_subtitle: "مقالات إيمانية ملهمة، وأفكار عملية لحياة أكثر قربًا من الله.",
+                filter_all: "الكل",
+                filter_quran: "القرآن",
+                filter_prayer: "الصلاة",
+                filter_azkar: "الأذكار",
+                filter_stories: "قصص",
+                cat_azkar: "الأذكار",
+                cat_quran: "القرآن",
+                cat_prayer: "الصلاة",
+                cat_dua: "الدعاء",
+                cat_entertainment: "الترفيه",
+                cat_tawbah: "التوبة",
+                cat_tech: "تقني",
+                read_more: "اقرأ المزيد ←",
+                cta_title: "استمتع بتجربة إيمانية متكاملة",
+                cta_subtitle: "حمّل تطبيق Zad Bono الآن واستمتع بكل المميزات في مكان واحد",
+                cta_button: "📥 حمل التطبيق الآن",
+                // مقالات
+                blog1_title: "كيف تحافظ على وردك اليومي من الأذكار حتى في أكثر الأيام انشغالاً؟",
+                blog1_excerpt: "اكتشف 5 طرق عملية للحفاظ على أذكار الصباح والمساء حتى لو لم يكن لديك وقت، وكيف يمكن للتكنولوجيا مساعدتك.",
+                blog2_title: "5 أسرار في القرآن لم يخبرك بها أحد (السر الثالث سيغير حياتك)",
+                blog2_excerpt: "اكتشف أسرارًا قرآنية قد تغير نظرتك للحياة والرزق والنجاح. السر الثالث قد يكون نقطة تحول حقيقية في يومك.",
+                blog3_title: "هل صلاتك مقبولة؟ 3 علامات من القرآن والسنة قد تفاجئك",
+                blog3_excerpt: "اكتشف 3 علامات تدل على قبول الصلاة وتأثيرها في حياتك. ليست مجرد حركات، بل هي اتصال يغير كل شيء.",
+                blog4_title: "كيف تجعل دعاءك مستجابًا؟ خطأ شائع يقع فيه 90% من الناس",
+                blog4_excerpt: "ندعو وندعو، ولكن قد لا نرى الإجابة. اكتشف الخطأ الشائع الذي قد يكون السبب، وتعلم أسرار الدعاء المستجاب.",
+                blog5_title: "هل مشاهدة الأفلام والمسلسلات حرام؟ (رأي يفصل النزاع)",
+                blog5_excerpt: "سؤال محير في عصرنا. اكتشف الضوابط الشرعية التي تفرق بين الحلال والحرام في الترفيه.",
+                blog6_title: "لماذا يبتليني الله وأنا أصلي وأعبده؟ فهم حكمة الابتلاء",
+                blog6_excerpt: "إذا كنت تسأل 'لماذا تحدث لي أمور سيئة رغم أني أعبد الله؟'، فهذا المقال لك.",
+                blog7_title: "ارتكبت ذنباً عظيماً، هل سيغفر الله لي؟ باب التوبة مفتوح",
+                blog7_excerpt: "مهما كان ذنبك عظيمًا، رحمة الله أعظم. اكتشف لماذا لا يجب أن تيأس من رحمة الله.",
+                blog8_title: "كيف أتخلص من الإعلانات المخلة التي تظهر لي؟ (دليل عملي)",
+                blog8_excerpt: "4 خطوات عملية وفعالة لتنظيف تجربتك الرقمية وحماية نفسك من الإعلانات غير اللائقة.",
+                blog9_title: "أنا أصلي ولكن لا أشعر بشيء، ما الحل؟ (علاج فتور العبادة)",
+                blog9_excerpt: "5 خطوات عملية لاستعادة لذة الطاعة والخشوع في الصلاة وقراءة القرآن.",
+                blog10_title: "هل يجوز للمرأة قراءة القرآن بدون حجاب؟ (تصحيح مفاهيم)",
+                blog10_excerpt: "اكتشفي الإجابة الواضحة والفرق بين شروط صحة القراءة وآدابها، لتتلذذي بقراءة القرآن في كل وقت."
+            },
+            en: {
+                app_name: "Zad Bono",
+                nav_home: "Home",
+                nav_features: "Features",
+                nav_install: "Installation",
+                nav_blog: "Blog",
+                nav_contact: "Contact Us",
+                nav_privacy: "Privacy Policy",
+                blog_main_title: "Zad Bono Blog",
+                blog_subtitle: "Inspiring faith articles and practical ideas for a life closer to Allah.",
+                filter_all: "All",
+                filter_quran: "Quran",
+                filter_prayer: "Prayer",
+                filter_azkar: "Azkar",
+                filter_stories: "Stories",
+                cat_azkar: "Azkar",
+                cat_quran: "Quran",
+                cat_prayer: "Prayer",
+                cat_dua: "Dua",
+                cat_entertainment: "Entertainment",
+                cat_tawbah: "Tawbah",
+                cat_tech: "Tech",
+                read_more: "Read More →",
+                cta_title: "Enjoy a Complete Faith Experience",
+                cta_subtitle: "Download Zad Bono app now and enjoy all features in one place",
+                cta_button: "📥 Download App Now",
+                // Articles
+                blog1_title: "How to Maintain Your Daily Azkar Even on the Busiest Days?",
+                blog1_excerpt: "Discover 5 practical ways to maintain your morning and evening azkar even if you have no time, and how technology can help you.",
+                blog2_title: "5 Secrets in the Quran Nobody Told You (The Third Will Change Your Life)",
+                blog2_excerpt: "Discover Quranic secrets that might change your perspective on life, provision, and success. The third secret could be a real turning point.",
+                blog3_title: "Is Your Prayer Accepted? 3 Signs from Quran & Sunnah That Might Surprise You",
+                blog3_excerpt: "Discover 3 signs that indicate the acceptance of your prayer and its impact on your life. It's not just movements, it's a connection that changes everything.",
+                blog4_title: "How to Make Your Dua Answered? A Common Mistake 90% of People Make",
+                blog4_excerpt: "We pray and pray, but we might not see the answer. Discover the common mistake that might be the reason, and learn the secrets of answered du'a.",
+                blog5_title: "Is Watching Movies and Series Haram? (A Decisive Opinion)",
+                blog5_excerpt: "A confusing question in our era. Discover the Islamic guidelines that differentiate between halal and haram in entertainment.",
+                blog6_title: "Why Does Allah Test Me While I Pray and Worship Him? Understanding the Wisdom of Trials",
+                blog6_excerpt: "If you're asking 'why do bad things happen to me while I worship Allah?', this article is for you.",
+                blog7_title: "I Committed a Great Sin, Will Allah Forgive Me? The Door of Repentance Is Open",
+                blog7_excerpt: "No matter how great your sin, Allah's mercy is greater. Discover why you should never despair of Allah's mercy.",
+                blog8_title: "How to Get Rid of Inappropriate Ads? (Practical Guide)",
+                blog8_excerpt: "4 effective and practical steps to clean your digital experience and protect yourself from inappropriate ads.",
+                blog9_title: "I Pray but Feel Nothing, What's the Solution? (Curing Spiritual Slump)",
+                blog9_excerpt: "5 practical steps to restore the sweetness of worship and khushu in prayer and Quran reading.",
+                blog10_title: "Is It Permissible for a Woman to Read Quran Without Hijab? (Clarifying Concepts)",
+                blog10_excerpt: "Discover the clear answer and the difference between the conditions of correct recitation and its etiquette, so you can enjoy reading Quran anytime."
+            }
+        };
+
+        const langToggleButton = document.getElementById('lang-toggle-btn');
+        const langMenu = document.getElementById('lang-menu');
+        const selectedLangBtnText = document.getElementById('lang-text');
+        const selectedLangBtnFlag = document.getElementById('lang-flag');
+        
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
+            selectedLangBtnFlag.src = `images/${lang}.png`;
+            localStorage.setItem('language', lang);
+            
+            if(langMenu) langMenu.classList.remove('show');
+        }
+
+        langToggleButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            langMenu.classList.toggle('show');
+        });
+
+        window.addEventListener('click', () => {
+            if (langMenu.classList.contains('show')) {
+                langMenu.classList.remove('show');
+            }
+        });
+
+        // ========================================
+        // Filter Functionality
+        // ========================================
+        function filterPosts(category) {
+            const cards = document.querySelectorAll('.blog-card');
+            const buttons = document.querySelectorAll('.category-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Highlight active button
+            buttons.forEach(btn => {
+                const btnCategory = btn.getAttribute('data-filter');
+                if (btnCategory === category) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Attach filter function to buttons
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter') || 'all';
+                filterPosts(filter);
+            });
+            // Set data-filter attribute for each button
+            if (this.textContent.includes('الكل') || this.textContent.includes('All')) {
+                this.setAttribute('data-filter', 'all');
+            } else if (this.textContent.includes('القرآن') || this.textContent.includes('Quran')) {
+                this.setAttribute('data-filter', 'quran');
+            } else if (this.textContent.includes('الصلاة') || this.textContent.includes('Prayer')) {
+                this.setAttribute('data-filter', 'prayer');
+            } else if (this.textContent.includes('الأذكار') || this.textContent.includes('Azkar')) {
+                this.setAttribute('data-filter', 'azkar');
+            } else if (this.textContent.includes('قصص') || this.textContent.includes('Stories')) {
+                this.setAttribute('data-filter', 'stories');
+            }
+        });
+
+        // ========================================
+        // Scroll to Top Button
+        // ========================================
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ========================================
+        // Navbar Scroll Effect
+        // ========================================
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ========================================
+        // Initialize on Page Load
+        // ========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'ar';
+            setLanguage(savedLang);
+            
+            // Set default filter to all
+            filterPosts('all');
         });
     </script>
 
