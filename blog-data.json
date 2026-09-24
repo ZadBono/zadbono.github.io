@@ -12,6 +12,126 @@
   ],
   "articles": [
     {
+      "id": "times-of-answered-dua",
+      "category": "dua",
+      "image": "images/times-of-answered-dua.webp",
+      "date": { "ar": "١٠ يوليو ٢٠٢٦", "en": "July 10, 2026" },
+      "title": {
+        "ar": "أوقات استجابة الدعاء: متى يكون الدعاء أقرب للإجابة؟",
+        "en": "Times of Answered Dua: When Is Dua Closest to Being Answered?"
+      },
+      "excerpt": {
+        "ar": "الدعاء في وقته المبارك أقرب للإجابة. اكتشف أوقات الاستجابة، والأحوال التي يفتح فيها الله أبواب السماء لدعائك.",
+        "en": "Dua at its blessed time is closer to being answered. Discover the times of answer, and the states in which Allah opens the gates of heaven for your dua."
+      },
+      "url": "articles/times-of-answered-dua.html"
+    },
+    {
+      "id": "quranic-duas",
+      "category": "dua",
+      "image": "images/quranic-duas.webp",
+      "date": { "ar": "٢٠ يوليو ٢٠٢٦", "en": "July 20, 2026" },
+      "title": {
+        "ar": "أدعية القرآن الكريم: كنوز من أعظم الأدعية",
+        "en": "Quranic Duas: Treasures from the Greatest Supplications"
+      },
+      "excerpt": {
+        "ar": "القرآن مليء بالأدعية العظيمة التي جمعت بين الثناء والطلب. اكتشف كنوز الأدعية القرآنية وكيف تدعو بها في حياتك.",
+        "en": "The Quran is full of great supplications that combine praise and request. Discover the treasures of Quranic duas and how to supplicate with them."
+      },
+      "url": "articles/quranic-duas.html"
+    },
+    {
+      "id": "prophets-duas",
+      "category": "dua",
+      "image": "images/prophets-duas.webp",
+      "date": { "ar": "٥ أغسطس ٢٠٢٦", "en": "August 5, 2026" },
+      "title": {
+        "ar": "أدعية الأنبياء: كيف دعا الأنبياء ربهم؟",
+        "en": "Prophets' Duas: How Did the Prophets Supplicate to Their Lord?"
+      },
+      "excerpt": {
+        "ar": "أدعية الأنبياء هي أعظم الأدعية وأقربها للإجابة. اكتشف كيف دعا آدم ونوح وإبراهيم وموسى ومحمد ﷺ، وتعلم منها.",
+        "en": "The prophets' duas are the greatest and closest to being answered. Discover how Adam, Nuh, Ibrahim, Musa, and Muhammad ﷺ supplicated, and learn from them."
+      },
+      "url": "articles/prophets-duas.html"
+    },
+    {
+      "id": "istikhara-dua",
+      "category": "dua",
+      "image": "images/istikhara-dua.webp",
+      "date": { "ar": "١٨ أغسطس ٢٠٢٦", "en": "August 18, 2026" },
+      "title": {
+        "ar": "دعاء الاستخارة: كيف تسأل الله الخير؟",
+        "en": "Istikhara Dua: How to Ask Allah for Goodness?"
+      },
+      "excerpt": {
+        "ar": "دعاء الاستخارة سنة نبوية عند التردد في الأمور. اكتشف صيغته، ووقته، وكيف تستخير الله في قرارات حياتك.",
+        "en": "The Istikhara dua is a prophetic Sunnah when hesitating in matters. Discover its wording, timing, and how to seek Allah's guidance in your life decisions."
+      },
+      "url": "articles/istikhara-dua.html"
+    },
+    {
+      "id": "duas-for-distress",
+      "category": "dua",
+      "image": "images/duas-for-distress.webp",
+      "date": { "ar": "١ سبتمبر ٢٠٢٦", "en": "September 1, 2026" },
+      "title": {
+        "ar": "أدعية تفريج الهم والكرب: ماذا تقول عند الضيق؟",
+        "en": "Duas for Relieving Worry and Distress: What to Say in Hardship?"
+      },
+      "excerpt": {
+        "ar": "الهم والكرب لهما أدعية نبوية تفرج الغم وتزيل الضيق. اكتشف هذه الأدعية وكيف تدعو بها في أحلك اللحظات.",
+        "en": "Worry and distress have prophetic duas that relieve sorrow and remove hardship. Discover these duas and how to supplicate with them in your darkest moments."
+      },
+      "url": "articles/duas-for-distress.html"
+    },
+    {
+      "id": "ramadan-dua",
+      "category": "dua",
+      "image": "images/ramadan-dua.webp",
+      "date": { "ar": "١٥ سبتمبر ٢٠٢٦", "en": "September 15, 2026" },
+      "title": {
+        "ar": "الدعاء في رمضان: أفضل أوقات الدعاء في الشهر الفضيل",
+        "en": "Dua in Ramadan: The Best Times for Supplication in the Blessed Month"
+      },
+      "excerpt": {
+        "ar": "رمضان شهر الدعاء المستجاب. اكتشف أفضل أوقات الدعاء فيه، وكيف تجعل دعاءك مستجاباً في هذا الشهر الفضيل.",
+        "en": "Ramadan is the month of answered dua. Discover the best times for dua in it, and how to make your dua answered in this blessed month."
+      },
+      "url": "articles/ramadan-dua.html"
+    },
+    {
+      "id": "qunoot-dua",
+      "category": "dua",
+      "image": "images/qunoot-dua.webp",
+      "date": { "ar": "٢٥ سبتمبر ٢٠٢٦", "en": "September 25, 2026" },
+      "title": {
+        "ar": "دعاء القنوت: متى يقال، وما صيغته الصحيحة؟",
+        "en": "Qunoot Dua: When Is It Said, and What Is Its Correct Wording?"
+      },
+      "excerpt": {
+        "ar": "دعاء القنوت من الأذكار النبوية في الصلوات. اكتشف متى يقال، وصيغته الصحيحة، وأحكامه الفقهية.",
+        "en": "The Qunoot dua is a prophetic form of remembrance in prayers. Discover when it is said, its correct wording, and its jurisprudential rulings."
+      },
+      "url": "articles/qunoot-dua.html"
+    },
+    {
+      "id": "how-to-make-dua-answered",
+      "category": "dua",
+      "image": "images/how-to-make-dua-answered.webp",
+      "date": { "ar": "٢٢ نوفمبر ٢٠٢٥", "en": "November 22, 2025" },
+      "title": {
+        "ar": "كيف تجعل دعاءك مستجابًا؟ خطأ شائع يقع فيه 90% من الناس",
+        "en": "How to Make Your Dua Answered? A Common Mistake 90% of People Make"
+      },
+      "excerpt": {
+        "ar": "ندعو وندعو، ولكن قد لا نرى الإجابة. اكتشف الخطأ الشائع الذي قد يكون السبب، وتعلم ٧ أسرار للدعاء المستجاب من القرآن والسنة.",
+        "en": "We pray and pray, but we might not see the answer. Discover the common mistake that might be the reason, and learn 7 secrets of answered dua from Quran and Sunnah."
+      },
+      "url": "articles/how-to-make-dua-answered.html"
+    },
+    {
       "id": "morning-evening-azkar",
       "category": "azkar",
       "image": "images/morning-evening-azkar.webp",
@@ -145,21 +265,6 @@
         "en": "Discover 3 signs that indicate the acceptance of your prayer and its impact on your life."
       },
       "url": "articles/is-my-prayer-accepted.html"
-    },
-    {
-      "id": "how-to-make-dua-answered",
-      "category": "dua",
-      "image": "images/how-to-make-dua-answered.webp",
-      "date": { "ar": "٢٢ نوفمبر ٢٠٢٥", "en": "November 22, 2025" },
-      "title": {
-        "ar": "كيف تجعل دعاءك مستجابًا؟ خطأ شائع يقع فيه 90% من الناس",
-        "en": "How to Make Your Dua Answered? A Common Mistake 90% of People Make"
-      },
-      "excerpt": {
-        "ar": "ندعو وندعو، ولكن قد لا نرى الإجابة. اكتشف الخطأ الشائع الذي قد يكون السبب، وتعلم أسرار الدعاء المستجاب.",
-        "en": "We pray and pray, but we might not see the answer. Discover the common mistake that might be the reason."
-      },
-      "url": "articles/how-to-make-dua-answered.html"
     },
     {
       "id": "is-watching-movies-haram",
