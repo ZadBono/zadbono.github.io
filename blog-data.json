@@ -160,6 +160,81 @@
         "en": "Discover the clear answer and the difference between the conditions of correct recitation and its etiquette."
       },
       "url": "articles/reading-quran-without-hijab.html"
+    },
+    {
+      "id": "story-julaybib",
+      "category": "stories",
+      "image": "images/logo.jpg",
+      "date": { "ar": "٢٤ سبتمبر ٢٠٢٥", "en": "September 24, 2025" },
+      "title": {
+        "ar": "جليبيب.. الصحابي الذي زوّجه النبي ﷺ بنفسه",
+        "en": "Julaybib: The Companion Whom the Prophet ﷺ Married Off Himself"
+      },
+      "excerpt": {
+        "ar": "قصة الصحابي الفقير جليبيب الذي خطب له النبي ﷺ بنفسه. قصة تعلمنا أن القيمة عند الله بالتقوى لا بالمال والجاه.",
+        "en": "The story of the poor companion Julaybib whom the Prophet ﷺ himself sought marriage for. A story that teaches us that value with Allah is in piety."
+      },
+      "url": "articles/story-julaybib.html"
+    },
+    {
+      "id": "story-malik-bin-dinar",
+      "category": "stories",
+      "image": "images/logo.jpg",
+      "date": { "ar": "٢٤ سبتمبر ٢٠٢٥", "en": "September 24, 2025" },
+      "title": {
+        "ar": "مالك بن دينار.. من شارب الخمر إلى إمام الزاهدين",
+        "en": "Malik ibn Dinar: From a Drinker of Wine to an Imam of the Ascetics"
+      },
+      "excerpt": {
+        "ar": "كان مالك بن دينار لا يفارق الخمر، حتى رأى رؤيا لطفلته الصغيرة التي كان يحبها، فتاب وصار من أعلام التابعين وأئمة الزاهدين.",
+        "en": "Malik ibn Dinar never left wine, until he saw a dream about his beloved young daughter, which led him to repent and become one of the great scholars of the Tabi'een."
+      },
+      "url": "articles/story-malik-bin-dinar.html"
+    },
+    {
+      "id": "story-bandit-repentance",
+      "category": "stories",
+      "image": "images/logo.jpg",
+      "date": { "ar": "٢٤ سبتمبر ٢٠٢٥", "en": "September 24, 2025" },
+      "title": {
+        "ar": "توبة قاطع الطريق بآية من القرآن",
+        "en": "The Repentance of a Highway Robber by a Single Quranic Verse"
+      },
+      "excerpt": {
+        "ar": "يحكي الأصمعي قصة رجل كان يقطع الطريق، فسمع آية من القرآن كانت سبب هدايته وتوبته. قصة تعلّمنا أن قلوب العُصاة قد تتغير بأعظم كتاب.",
+        "en": "Al-Asma'i narrates the story of a man who used to rob travelers, until he heard a Quranic verse that became the reason for his guidance and repentance."
+      },
+      "url": "articles/story-bandit-repentance.html"
+    },
+    {
+      "id": "story-three-who-stayed-behind",
+      "category": "stories",
+      "image": "images/logo.jpg",
+      "date": { "ar": "٢٤ سبتمبر ٢٠٢٥", "en": "September 24, 2025" },
+      "title": {
+        "ar": "الثلاثة الذين تخلفوا عن غزوة تبوك (كعب بن مالك)",
+        "en": "The Three Who Stayed Behind from the Battle of Tabuk (Ka'b ibn Malik)"
+      },
+      "excerpt": {
+        "ar": "قصة كعب بن مالك وصاحبيه الذين تخلفوا عن غزوة تبوك، وهجرهم النبي ﷺ والصحابة خمسين يوماً، حتى تاب الله عليهم.",
+        "en": "The story of Ka'b ibn Malik and his two companions who stayed behind from the Battle of Tabuk and were boycotted for fifty days, until Allah accepted their repentance."
+      },
+      "url": "articles/story-three-who-stayed-behind.html"
+    },
+    {
+      "id": "story-sea-woman",
+      "category": "stories",
+      "image": "images/logo.jpg",
+      "date": { "ar": "٢٤ سبتمبر ٢٠٢٥", "en": "September 24, 2025" },
+      "title": {
+        "ar": "قصة المرأة البحرية مع أبي موسى الأشعري",
+        "en": "The Story of the Sea Woman with Abu Musa al-Ash'ari"
+      },
+      "excerpt": {
+        "ar": "قصة مؤثرة حدثت في عهد النبي ﷺ يرويها أبو موسى الأشعري، تُظهر صدق الدعاء وقوة التوكل على الله في أحلك اللحظات.",
+        "en": "A touching story from the time of the Prophet ﷺ narrated by Abu Musa al-Ash'ari, showing the truthfulness of supplication and trust in Allah in the darkest moments."
+      },
+      "url": "articles/story-sea-woman.html"
     }
   ]
 }
