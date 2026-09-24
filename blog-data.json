@@ -235,6 +235,126 @@
         "en": "A touching story from the time of the Prophet ﷺ narrated by Abu Musa al-Ash'ari, showing the truthfulness of supplication and trust in Allah in the darkest moments."
       },
       "url": "articles/story-sea-woman.html"
+    },
+    {
+      "id": "how-to-contemplate-quran",
+      "category": "quran",
+      "image": "images/logo.jpg",
+      "date": { "ar": "25 سبتمبر 2026", "en": "September 25, 2026" },
+      "title": {
+        "ar": "كيف تتدبر القرآن؟ 7 خطوات عملية لتغيير حياتك",
+        "en": "How to Contemplate the Quran? 7 Practical Steps to Change Your Life"
+      },
+      "excerpt": {
+        "ar": "التدبر هو مفتاح كنوز القرآن. اكتشف 7 خطوات عملية لتعيش مع آيات الله وتستخرج كنوزها لتحويل حياتك.",
+        "en": "Contemplation is the key to the Quran's treasures. Discover 7 practical steps to live with Allah's verses and extract their treasures to transform your life."
+      },
+      "url": "articles/how-to-contemplate-quran.html"
+    },
+    {
+      "id": "best-times-to-read-quran",
+      "category": "quran",
+      "image": "images/logo.jpg",
+      "date": { "ar": "25 سبتمبر 2026", "en": "September 25, 2026" },
+      "title": {
+        "ar": "أفضل أوقات لقراءة القرآن في يومك المزدحم",
+        "en": "Best Times to Read the Quran in Your Busy Day"
+      },
+      "excerpt": {
+        "ar": "لا وقت لقراءة القرآن؟ اكتشف أفضل الأوقات المباركة لقراءة وردك اليومي، وكيف تستغل دقائقك الثمينة مع كتاب الله.",
+        "en": "No time to read the Quran? Discover the best blessed times to read your daily portion, and how to invest your precious minutes with the Book of Allah."
+      },
+      "url": "articles/best-times-to-read-quran.html"
+    },
+    {
+      "id": "5-short-surahs",
+      "category": "quran",
+      "image": "images/logo.jpg",
+      "date": { "ar": "25 سبتمبر 2026", "en": "September 25, 2026" },
+      "title": {
+        "ar": "5 سور قصيرة تغير حياتك إذا قرأتها كل يوم",
+        "en": "5 Short Surahs That Change Your Life If You Read Them Daily"
+      },
+      "excerpt": {
+        "ar": "سور قصيرة لكنها عظيمة الأجر. اكتشف 5 سور من القرآن الكريم تغير حياتك وتملأ يومك بالبركة والسكينة إذا واظبت عليها.",
+        "en": "Short surahs with great reward. Discover 5 surahs from the Holy Quran that change your life and fill your day with blessing and tranquility if you maintain them."
+      },
+      "url": "articles/5-short-surahs.html"
+    },
+    {
+      "id": "how-to-memorize-quran",
+      "category": "quran",
+      "image": "images/logo.jpg",
+      "date": { "ar": "25 سبتمبر 2026", "en": "September 25, 2026" },
+      "title": {
+        "ar": "كيف تحفظ القرآن؟ دليل عملي للمبتدئين",
+        "en": "How to Memorize the Quran? A Practical Guide for Beginners"
+      },
+      "excerpt": {
+        "ar": "حفظ القرآن حلم لكل مسلم. اكتشف دليلاً عملياً شاملاً لبدء رحلة الحفظ والمراجعة، مع أهم النصائح والطرق المجربة.",
+        "en": "Memorizing the Quran is every Muslim's dream. Discover a comprehensive practical guide to start your memorization and review journey, with the most important tips and tried methods."
+      },
+      "url": "articles/how-to-memorize-quran.html"
+    },
+    {
+      "id": "why-not-affected-by-quran",
+      "category": "quran",
+      "image": "images/logo.jpg",
+      "date": { "ar": "25 سبتمبر 2026", "en": "September 25, 2026" },
+      "title": {
+        "ar": "لماذا لا تتأثر بالقرآن؟ 4 أسباب وحلولها",
+        "en": "Why Aren't You Affected by the Quran? 4 Reasons and Their Solutions"
+      },
+      "excerpt": {
+        "ar": "تقرأ القرآن ولا تشعر بشيء؟ اكتشف الأسباب الخفية لعدم التأثر بالقرآن، والحلول العملية لاستعادة قلبك المتصل بكلام الله.",
+        "en": "You read the Quran but feel nothing? Discover the hidden reasons for not being affected by the Quran, and practical solutions to restore your heart's connection to the Words of Allah."
+      },
+      "url": "articles/why-not-affected-by-quran.html"
+    },
+    {
+      "id": "ayat-al-kursi",
+      "category": "quran",
+      "image": "images/logo.jpg",
+      "date": { "ar": "25 سبتمبر 2026", "en": "September 25, 2026" },
+      "title": {
+        "ar": "أعظم آية في القرآن.. آية الكرسي (فضلها وأسرارها)",
+        "en": "The Greatest Verse in the Quran: Ayat al-Kursi (Its Virtues and Secrets)"
+      },
+      "excerpt": {
+        "ar": "آية الكرسي هي أعظم آية في كتاب الله. اكتشف فضلها العظيم، وأسرارها الربانية، وكيف تجعلها حصنك اليومي وحرزك من الشيطان.",
+        "en": "Ayat al-Kursi is the greatest verse in the Book of Allah. Discover its great virtue, its divine secrets, and how to make it your daily fortress and protection from Satan."
+      },
+      "url": "articles/ayat-al-kursi.html"
+    },
+    {
+      "id": "quran-stories-lessons",
+      "category": "quran",
+      "image": "images/logo.jpg",
+      "date": { "ar": "25 سبتمبر 2026", "en": "September 25, 2026" },
+      "title": {
+        "ar": "قصص القرآن: كيف تستخرج الدروس والعبر؟",
+        "en": "Stories of the Quran: How to Extract Lessons and Morals?"
+      },
+      "excerpt": {
+        "ar": "قصص القرآن ليست للتسلية، بل هي دروس إلهية لحياتك. تعلم منهجية استخراج الدروس والعبر من القصص القرآني لتستفيد منها في واقعك.",
+        "en": "The stories of the Quran are not for entertainment, but divine lessons for your life. Learn the methodology of extracting lessons and morals from Quranic stories to benefit from them in your reality."
+      },
+      "url": "articles/quran-stories-lessons.html"
+    },
+    {
+      "id": "quran-healing",
+      "category": "quran",
+      "image": "images/logo.jpg",
+      "date": { "ar": "25 سبتمبر 2026", "en": "September 25, 2026" },
+      "title": {
+        "ar": "القرآن والشفاء: كيف يشفيك القرآن من الأمراض النفسية؟",
+        "en": "The Quran and Healing: How Does the Quran Heal Psychological Illnesses?"
+      },
+      "excerpt": {
+        "ar": "القرآن هو شفاء لما في الصدور. اكتشف كيف يعالج القرآن القلق والاكتئاب والضغط النفسي، وكيف تجعل التلاوة وسيلتك للشفاء الروحي.",
+        "en": "The Quran is a healing for what is in the hearts. Discover how the Quran treats anxiety, depression, and psychological stress, and how to make recitation your means for spiritual healing."
+      },
+      "url": "articles/quran-healing.html"
     }
   ]
 }
