@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كيف تحفظ القرآن؟ دليل عملي للمبتدئين</title>
+    <link rel="canonical" href="https://zadbono.github.io/articles/how-to-memorize-quran.html">
+    <meta name="description" content="حفظ القرآن حلم لكل مسلم. اكتشف دليلاً عملياً شاملاً لبدء رحلة الحفظ والمراجعة، مع أهم النصائح والطرق المجربة.">
+    <link rel="icon" type="image/jpeg" href="../images/logo.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://zadbono.github.io/articles/how-to-memorize-quran.html">
+    <meta property="og:title" content="كيف تحفظ القرآن؟ دليل عملي للمبتدئين">
+    <meta property="og:description" content="دليل عملي شامل لبدء رحلة حفظ القرآن الكريم.">
+    <meta property="og:image" content="https://zadbono.github.io/images/logo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://zadbono.github.io/articles/how-to-memorize-quran.html">
+    <meta property="twitter:title" content="كيف تحفظ القرآن؟ دليل عملي">
+    <meta property="twitter:description" content="دليل عملي شامل لحفظ القرآن الكريم.">
+    <meta property="twitter:image" content="https://zadbono.github.io/images/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gold-gradient: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            --primary: #667eea; --primary-dark: #5568d3; --secondary: #f5576c; --accent: #00f2fe; --gold: #fda085;
+            --bg-primary: #f8f9ff; --bg-secondary: #ffffff; --bg-card: rgba(255, 255, 255, 0.9);
+            --text-primary: #2d3748; --text-secondary: #4a5568; --text-muted: #718096;
+            --border-color: rgba(103, 126, 234, 0.1);
+            --shadow-sm: 0 2px 8px rgba(103, 126, 234, 0.08); --shadow-md: 0 4px 16px rgba(103, 126, 234, 0.12);
+            --shadow-lg: 0 8px 32px rgba(103, 126, 234, 0.16); --shadow-xl: 0 12px 48px rgba(103, 126, 234, 0.2);
+            --glass-bg: rgba(255, 255, 255, 0.7); --glass-border: rgba(255, 255, 255, 0.18);
+            --transition-fast: 0.2s ease; --transition-base: 0.3s ease; --transition-slow: 0.5s ease;
+            --bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        [data-theme="dark"] {
+            --bg-primary: #0f0f23; --bg-secondary: #1a1a2e; --bg-card: rgba(26, 26, 46, 0.9);
+            --text-primary: #e2e8f0; --text-secondary: #cbd5e0; --text-muted: #a0aec0;
+            --border-color: rgba(103, 126, 234, 0.2);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3); --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5); --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.6);
+            --glass-bg: rgba(26, 26, 46, 0.7); --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { font-family: 'Cairo', 'Tajawal', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; transition: background 0.3s ease, color 0.3s ease; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(245, 87, 108, 0.05) 0%, transparent 50%), radial-gradient(circle at 40% 20%, rgba(0, 242, 254, 0.05) 0%, transparent 50%); z-index: -1; animation: backgroundMove 20s ease infinite; }
+        @keyframes backgroundMove { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+        .navbar { background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 16px 0; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; border-bottom: 1px solid var(--glass-border); box-shadow: var(--shadow-md); transition: all var(--transition-base); }
+        .navbar.scrolled { padding: 12px 0; box-shadow: var(--shadow-lg); }
+        .navbar-container { max-width: 1400px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .navbar-brand { color: var(--text-primary); font-weight: 700; font-size: 1.5em; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: transform var(--transition-base); }
+        .navbar-brand:hover { transform: translateY(-2px); }
+        .navbar-brand img { width: 42px; height: 42px; border-radius: 12px; box-shadow: var(--shadow-sm); transition: all var(--transition-base); }
+        .navbar-brand:hover img { transform: rotate(5deg) scale(1.05); box-shadow: var(--shadow-md); }
+        .navbar-links { display: flex; align-items: center; gap: 8px; }
+        .navbar-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.95em; font-weight: 500; padding: 10px 16px; border-radius: 12px; transition: all var(--transition-base); position: relative; overflow: hidden; }
+        .navbar-links a::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary-gradient); opacity: 0; transition: opacity var(--transition-base); z-index: -1; }
+        .navbar-links a:hover, .navbar-links a.active { color: white; transform: translateY(-2px); }
+        .navbar-links a:hover::before, .navbar-links a.active::before { opacity: 1; }
+        .theme-toggle { background: var(--glass-bg); border: 2px solid var(--border-color); color: var(--text-primary); width: 44px; height: 44px; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2em; transition: all var(--transition-base); margin-right: 8px; }
+        .theme-toggle:hover { transform: rotate(15deg) scale(1.05); border-color: var(--primary); }
+        .language-switcher { position: relative; }
+        .selected-lang { background: var(--glass-bg); border: 2px solid var(--border-color); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 12px; transition: all var(--transition-base); font-weight: 500; }
+        .selected-lang:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .selected-lang img { width: 24px; height: 24px; border-radius: 50%; box-shadow: var(--shadow-sm); }
+        .lang-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: var(--glass-bg); backdrop-filter: blur(20px); border-radius: 16px; border: 1px solid var(--glass-border); box-shadow: var(--shadow-xl); list-style: none; padding: 8px; min-width: 160px; z-index: 1001; animation: slideDown 0.3s var(--bounce); }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .lang-menu.show { display: block; }
+        .lang-menu li a { color: var(--text-primary); text-decoration: none; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; transition: all var(--transition-fast); font-size: 0.9em; font-weight: 500; }
+        .lang-menu li a:hover { background: var(--primary-gradient); color: white; transform: translateX(-4px); }
+        .lang-menu li img { width: 24px; height: 24px; border-radius: 50%; box-shadow: var(--shadow-sm); }
+        .menu-toggle { display: none; font-size: 28px; color: var(--text-primary); background: none; border: none; cursor: pointer; transition: transform var(--transition-base); }
+        .menu-toggle:hover { transform: scale(1.1); }
+        .container { max-width: 1400px; margin: 0 auto; padding: 120px 24px 40px; }
+        .article-wrapper { max-width: 900px; margin: 0 auto; background: var(--bg-card); backdrop-filter: blur(20px); border-radius: 32px; padding: 50px 60px; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); transition: all var(--transition-base); animation: fadeInUp 0.8s ease; }
+        .article-wrapper:hover { box-shadow: var(--shadow-xl); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .article-title { font-size: 2.8em; font-weight: 900; color: var(--text-primary); margin-bottom: 20px; line-height: 1.3; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .article-meta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; color: var(--text-muted); font-size: 0.95em; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--border-color); }
+        .article-meta span { display: flex; align-items: center; gap: 8px; }
+        .back-to-blog { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); text-decoration: none; font-weight: 600; margin-bottom: 30px; transition: all var(--transition-base); }
+        .back-to-blog:hover { transform: translateX(-5px); color: var(--primary-dark); }
+        .article-content h2 { font-size: 1.8em; color: var(--text-primary); margin-top: 45px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); font-weight: 700; }
+        .article-content h3 { font-size: 1.3em; color: var(--text-primary); margin-top: 30px; margin-bottom: 15px; font-weight: 700; }
+        .article-content p { margin-bottom: 20px; font-size: 1.1em; color: var(--text-secondary); line-height: 1.9; }
+        .article-content ul { padding-right: 25px; margin-bottom: 20px; }
+        .article-content li { margin-bottom: 12px; font-size: 1.05em; color: var(--text-secondary); line-height: 1.8; }
+        .article-content strong { color: var(--primary); font-weight: 700; }
+        .internal-link { color: var(--primary); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--primary); padding-bottom: 2px; transition: all var(--transition-base); cursor: pointer; }
+        .internal-link:hover { color: var(--primary-dark); border-bottom-color: var(--primary-dark); opacity: 0.85; }
+        .internal-link::after { content: ' ↗'; font-size: 0.85em; }
+        .article-content .highlight-box { background: var(--primary-gradient); color: white; padding: 30px 35px; border-radius: 20px; margin: 35px 0; position: relative; overflow: hidden; }
+        .article-content .highlight-box::before { content: '"'; position: absolute; top: -20px; right: 20px; font-size: 120px; opacity: 0.1; font-family: Georgia, serif; }
+        .article-content .highlight-box p { color: rgba(255,255,255,0.95); margin-bottom: 0; }
+        .cta-box { background: var(--gold-gradient); padding: 35px 40px; border-radius: 24px; margin: 40px 0; text-align: center; color: white; box-shadow: 0 8px 24px rgba(246, 211, 101, 0.3); }
+        .cta-box h3 { font-size: 1.8em; margin-bottom: 15px; color: white; }
+        .cta-box p { font-size: 1.1em; opacity: 0.95; margin-bottom: 25px; color: rgba(255,255,255,0.95); }
+        .download-button { background: white; color: var(--primary); padding: 16px 40px; font-size: 1.1em; font-weight: 700; text-decoration: none; border-radius: 50px; transition: all var(--transition-base); display: inline-flex; align-items: center; gap: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); border: none; cursor: pointer; position: relative; overflow: hidden; }
+        .download-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.5s; }
+        .download-button:hover::before { left: 100%; }
+        .download-button:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2); }
+        .share-section { margin-top: 50px; padding-top: 30px; border-top: 2px solid var(--border-color); text-align: center; }
+        .share-section h3 { font-size: 1.3em; color: var(--text-primary); margin-bottom: 20px; }
+        .share-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .share-btn { padding: 12px 24px; border-radius: 50px; text-decoration: none; color: white; font-weight: 600; font-size: 0.95em; display: inline-flex; align-items: center; gap: 10px; transition: all var(--transition-base); border: none; cursor: pointer; }
+        .share-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .share-btn.whatsapp { background: #25D366; }
+        .share-btn.facebook { background: #1877F2; }
+        .share-btn.twitter { background: #1DA1F2; }
+        .share-btn.copy-link { background: var(--text-muted); }
+        .copy-feedback { display: block; margin-top: 12px; color: var(--primary); font-weight: 600; opacity: 0; transition: opacity 0.3s; }
+        .copy-feedback.show { opacity: 1; }
+        .footer { background: var(--bg-secondary); color: var(--text-secondary); padding: 50px 24px 30px; margin-top: 80px; border-top: 1px solid var(--border-color); }
+        .footer-links { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-bottom: 24px; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; transition: all var(--transition-base); font-size: 0.95em; font-weight: 500; position: relative; }
+        .footer-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary-gradient); transition: width var(--transition-base); }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-links a:hover::after { width: 100%; }
+        .copyright { color: var(--text-muted); font-size: 0.9em; text-align: center; }
+        .scroll-top { position: fixed; bottom: 30px; left: 30px; width: 50px; height: 50px; background: var(--primary-gradient); color: white; border: none; border-radius: 50%; cursor: pointer; display: none; align-items: center; justify-content: center; font-size: 24px; box-shadow: var(--shadow-lg); transition: all var(--transition-base); z-index: 999; }
+        .scroll-top:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+        .scroll-top.show { display: flex; }
+        @media (max-width: 768px) {
+            .navbar-links { display: none; flex-direction: column; position: absolute; top: calc(100% + 12px); left: 16px; right: 16px; background: var(--glass-bg); backdrop-filter: blur(20px); border-radius: 20px; padding: 20px; gap: 8px; box-shadow: var(--shadow-xl); border: 1px solid var(--glass-border); }
+            .navbar-links.active { display: flex; animation: slideDown 0.3s var(--bounce); }
+            .menu-toggle { display: block; }
+            .container { padding: 100px 20px 40px; }
+            .article-wrapper { padding: 30px 24px; border-radius: 24px; }
+            .article-title { font-size: 2em; }
+            .article-content h2 { font-size: 1.5em; }
+            .article-content p, .article-content li { font-size: 1em; }
+            .cta-box { padding: 25px 20px; }
+            .cta-box h3 { font-size: 1.4em; }
+            .share-buttons { gap: 8px; }
+            .share-btn { padding: 10px 16px; font-size: 0.85em; }
+            .article-meta { font-size: 0.85em; gap: 12px; }
+        }
+        @media (max-width: 480px) { .article-title { font-size: 1.6em; } .article-wrapper { padding: 20px 16px; } }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://zadbono.github.io/articles/how-to-memorize-quran.html" },
+      "headline": "كيف تحفظ القرآن؟ دليل عملي للمبتدئين",
+      "description": "حفظ القرآن حلم لكل مسلم. اكتشف دليلاً عملياً شاملاً لبدء رحلة الحفظ والمراجعة، مع أهم النصائح والطرق المجربة.",
+      "image": "https://zadbono.github.io/images/logo.jpg",
+      "author": { "@type": "Person", "name": "Mahmoud Hussein" },
+      "publisher": { "@type": "Organization", "name": "Zad Bono", "logo": { "@type": "ImageObject", "url": "https://zadbono.github.io/images/logo.jpg" } },
+      "datePublished": "2026-09-25",
+      "dateModified": "2026-09-25"
+    }
+    </script>
+</head>
+<body>
+    <button class="scroll-top" id="scrollTop">↑</button>
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-brand" data-translate="app_name">
+                <img src="../images/logo.jpg" alt="شعار Zad Bono"> Zad Bono
+            </a>
+            <div class="navbar-links" id="navbar-links">
+                <a href="../index.html" data-translate="nav_home">الرئيسية</a>
+                <a href="../features.html" data-translate="nav_features">شرح المميزات</a>
+                <a href="../install.html" data-translate="nav_install">التحميل والتثبيت</a>
+                <a href="../blog.html" data-translate="nav_blog">المدونة</a>
+                <a href="../contact.html" data-translate="nav_contact">اتصل بنا</a>
+                <a href="../privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
+                <button class="theme-toggle" id="theme-toggle" title="تبديل الوضع"><span id="theme-icon">🌙</span></button>
+                <div class="language-switcher">
+                    <button class="selected-lang" id="lang-toggle-btn">
+                        <img id="lang-flag" src="../images/ar.png" alt="علم اللغة">
+                        <span id="lang-text">العربية</span>
+                    </button>
+                    <ul class="lang-menu" id="lang-menu">
+                        <li><a href="#" onclick="setLanguage('ar')"><img src="../images/ar.png" alt="علم العربية"> العربية</a></li>
+                        <li><a href="#" onclick="setLanguage('en')"><img src="../images/en.png" alt="علم الإنجليزية"> English</a></li>
+                    </ul>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+        </div>
+    </nav>
+    <div class="container">
+        <article class="article-wrapper">
+            <a href="../blog.html" class="back-to-blog" data-translate="back_to_blog">← العودة إلى المدونة</a>
+            <header>
+                <h1 class="article-title" data-translate="article_title">كيف تحفظ القرآن؟ دليل عملي للمبتدئين</h1>
+                <div class="article-meta">
+                    <span>📅 <span data-translate="article_date">٢٥ سبتمبر ٢٠٢٦</span></span>
+                    <span>👤 <span data-translate="article_author">محمد حسين</span></span>
+                    <span>⏱️ <span data-translate="article_read_time">٧ دقائق قراءة</span></span>
+                </div>
+            </header>
+            <div class="article-content">
+                <p data-translate="article_intro">حفظ القرآن الكريم هو أعظم أمنية لكل مسلم. قال النبي ﷺ: <strong>"خيركم من تعلم القرآن وعلمه"</strong>. وقال: <strong>"يقال لصاحب القرآن: اقرأ وارتقِ ورتل كما كنت ترتل في الدنيا، فإن منزلتك عند آخر آية تقرؤها"</strong>.</p>
+                <p data-translate="article_intro2">لكن كثيرين يعتقدون أن الحفظ صعب، أو يحتاج إلى ذاكرة خارقة، أو أنهم فاتهم القطار. الحقيقة أن الحفظ رحلة روحانية، تحتاج إلى نية صادقة، وخطة عملية، ومداومة. وفي هذا المقال، نقدم لك دليلاً عملياً شاملاً لتبدأ رحلتك في حفظ كتاب الله، حتى لو كنت مبتدئاً تماماً.</p>
+                <h2 data-translate="step1_title">١. النية الخالصة والدعاء</h2>
+                <p data-translate="step1_text1">قبل أن تحفظ حرفاً واحداً، انوِ نية صادقة: أن تحفظ القرآن لله وحده، لا للرياء ولا للمظاهر. قال تعالى: <strong>"فَاعْبُدِ اللَّهَ مُخْلِصًا لَّهُ الدِّينَ"</strong> (الزمر: 2).</p>
+                <p data-translate="step1_text2">ثم أكثر من الدعاء. اطلب من الله أن يعينك على الحفظ، وأن يجعل القرآن ربيع قلبك. قال بعض السلف: <strong>"من أراد أن يحفظ القرآن، فليجعل همّه أن يحفظه، وليكثر من الدعاء"</strong>.</p>
+                <h2 data-translate="step2_title">٢. حدد هدفك ومقدارك اليومي</h2>
+                <p data-translate="step2_text1">لا تبدأ بحفظ صفحة كاملة من أول يوم. ابدأ بما تستطيع المداومة عليه. قال النبي ﷺ: <strong>"أحب الأعمال إلى الله أدومها وإن قل"</strong>.</p>
+                <p data-translate="step2_text2">المقترح:</p>
+                <ul>
+                    <li data-translate="step2_li1"><strong>للمبتدئ:</strong> ٣-٥ آيات يومياً (سطر أو سطرين من المصحف).</li>
+                    <li data-translate="step2_li2"><strong>للمتوسط:</strong> ربع صفحة يومياً (٦-٨ آيات).</li>
+                    <li data-translate="step2_li3"><strong>للمتقدم:</strong> نصف صفحة أو صفحة كاملة يومياً.</li>
+                </ul>
+                <p data-translate="step2_text3">الأهم هو <strong>الاستمرارية</strong>، وليس الكم.</p>
+                <h2 data-translate="step3_title">٣. اختر وقتاً ومكاناً ثابتاً</h2>
+                <p data-translate="step3_text1">الحفظ يحتاج إلى تركيز وصفاء ذهن. أفضل الأوقات للحفظ:</p>
+                <ul>
+                    <li data-translate="step3_li1"><strong>بعد الفجر:</strong> أفضل الأوقات على الإطلاق، فالذهن صافٍ والبركة حاضرة.</li>
+                    <li data-translate="step3_li2"><strong>قبل النوم:</strong> وقت هدوء وصفاء.</li>
+                    <li data-translate="step3_li3"><strong>بعد أي صلاة:</strong> اجعلها عادة ثابتة.</li>
+                </ul>
+                <p data-translate="step3_text2">واختر مكاناً هادئاً، بعيداً عن الضوضاء والمقاطعات. وإن أردت معرفة أفضل الأوقات بالتفصيل، فأنصحك بمقال <a href="best-times-to-read-quran.html" class="internal-link">أفضل أوقات لقراءة القرآن في يومك المزدحم</a>.</p>
+                <h2 data-translate="step4_title">٤. استخدم طريقة التكرار</h2>
+                <p data-translate="step4_text1">طريقة التكرار هي أساس الحفظ. كرر الآية ٢٠ مرة، ثم كررها مرة أخرى ٢٠ مرة أخرى، ثم اربطها بالآية السابقة. إليك خطوات عملية:</p>
+                <ul>
+                    <li data-translate="step4_li1"><strong>الخطوة ١:</strong> اقرأ الآية من المصحف ٥ مرات بتركيز.</li>
+                    <li data-translate="step4_li2"><strong>الخطوة ٢:</strong> اقرأها ١٠ مرات من غير نظر (أو بالنظر في البداية).</li>
+                    <li data-translate="step4_li3"><strong>الخطوة ٣:</strong> اربطها بالآية التي قبلها، وكرر المقطع كاملاً ٥ مرات.</li>
+                    <li data-translate="step4_li4"><strong>الخطوة ٤:</strong> كرر المقطع في الصلاة، أو في أوقات الفراغ.</li>
+                </ul>
+                <p data-translate="step4_text2">قال ابن مسعود رضي الله عنه: <strong>"إن الرجل لا يحفظ القرآن حتى يقرأه في الصلاة"</strong>.</p>
+                <div class="highlight-box">
+                    <p data-translate="quote_text">قال أحد السلف: "كنت أحفظ الآية بعشرين مرة، فإذا حفظتها قرأتها في الصلاة، فما نسيتها بعد ذلك".</p>
+                </div>
+                <h2 data-translate="step5_title">٥. المراجعة اليومية (سر الثبات)</h2>
+                <p data-translate="step5_text1">الحفظ بدون مراجعة كبناء بيت بدون أساس. المراجعة هي التي تُثبّت الحفظ. اجعل جدولك كالتالي:</p>
+                <ul>
+                    <li data-translate="step5_li1"><strong>الورد الجديد:</strong> المقدار الذي ستحفظه اليوم.</li>
+                    <li data-translate="step5_li2"><strong>الورد القريب:</strong> مراجعة ما حفظته في آخر أسبوع.</li>
+                    <li data-translate="step5_li3"><strong>الورد البعيد:</strong> مراجعة ما حفظته قبل شهر (وهذا سيأتي مع الوقت).</li>
+                </ul>
+                <p data-translate="step5_text2">قال النبي ﷺ: <strong>"تعاهدوا القرآن، فوالذي نفسي بيده لهو أشد تفصيّاً من الإبل في عقلها"</strong>. أي أن القرآن يهرب سريعاً من الذاكرة، فلا بد من المراجعة المستمرة.</p>
+                <h2 data-translate="step6_title">٦. استعن بالتكنولوجيا</h2>
+                <p data-translate="step6_text1">في عصرنا هذا، سخر الله لنا أدوات تسهّل الحفظ:</p>
+                <ul>
+                    <li data-translate="step6_li1"><strong>تطبيقات المصحف:</strong> تتيح لك الاستماع للآية وتكرارها بسهولة.</li>
+                    <li data-translate="step6_li2"><strong>التلاوات المرتلة:</strong> اسمع للشيخ الحصري أو المنشاوي، فهم الأفضل في الترتيل والوقف.</li>
+                    <li data-translate="step6_li3"><strong>أدوات التكرار:</strong> كرر الآية تلقائياً حتى ترسخ في ذهنك.</li>
+                </ul>
+                <p data-translate="step6_text2">تطبيق <strong>Zad Bono</strong> يوفر لك القرآن كاملاً مع الاستماع لأكثر من ١١ قارئاً، مع إمكانية التكرار والتحميل. اجعل التكنولوجيا عوناً لك على الحفظ.</p>
+                <h2 data-translate="step7_title">٧. ابحث عن شيخ أو رفيق</h2>
+                <p data-translate="step7_text1">الحفظ بمفردك صعب، ويسهل فيه الخطأ. ابحث عن شيخ يسمّع لك، أو رفيق يشاركك الرحلة. قال النبي ﷺ: <strong>"ما اجتمع قوم في بيت من بيوت الله يتلون كتاب الله ويتدارسونه بينهم، إلا نزلت عليهم السكينة"</strong>.</p>
+                <p data-translate="step7_text2">لو لم تجد شيخاً أو رفيقاً، فاستخدم التسجيلات الصوتية واسمّع لنفسك، أو سجّل تلاوتك واسمعها، فهذا يكشف لك الأخطاء.</p>
+                <div class="cta-box">
+                    <h3 data-translate="cta_title">تطبيق زاد بونو: رفيقك في رحلة الحفظ</h3>
+                    <p data-translate="cta_text">في تطبيق <strong>Zad Bono</strong>، تجد القرآن الكريم كاملاً مع الاستماع لأكثر من ١١ قارئاً، مع إمكانية التكرار والتحميل للاستماع بدون إنترنت. وخصصنا لك "متتبع الختمة" الذي يساعدك على متابعة تقدمك وحفظك. ابدأ رحلتك اليوم.</p>
+                    <a href="../install.html" class="download-button" data-translate="cta_btn">📥 حمّل التطبيق الآن</a>
+                </div>
+                <h2 data-translate="lessons_title">العبر المستفادة من المقال</h2>
+                <ul>
+                    <li data-translate="lesson1"><strong>١. النية أولاً:</strong> الحفظ لله وحده، لا للرياء.</li>
+                    <li data-translate="lesson2"><strong>٢. ابدأ صغيراً:</strong> القليل الدائم خير من الكثير المنقطع.</li>
+                    <li data-translate="lesson3"><strong>٣. الاستمرارية أساس:</strong> ٣ آيات يومياً تختم القرآن حفظاً في سنوات قليلة.</li>
+                    <li data-translate="lesson4"><strong>٤. المراجعة سر الثبات:</strong> لا حفظ بدون مراجعة.</li>
+                    <li data-translate="lesson5"><strong>٥. الحفظ يغير حياتك:</strong> من حَفِظ القرآن، تغير قلبه وحياته وسلوكه.</li>
+                </ul>
+                <div style="background: var(--bg-primary); padding: 25px; border-radius: 16px; margin-top: 30px; border-right: 4px solid var(--gold);">
+                    <p data-translate="article_conclusion"><strong>الخلاصة:</strong> حفظ القرآن ليس مستحيلاً، بل هو رحلة تحتاج إلى نية صادقة، وخطة عملية، ومداومة، ودعاء. ابدأ اليوم بآية واحدة، واثبت عليها، ثم زد تدريجياً. وتذكر أن كل حرف تحفظه سيكون لك أجراً عظيماً، ودرجة في الجنة. قال النبي ﷺ: "من قرأ حرفاً من كتاب الله فله به حسنة، والحسنة بعشر أمثالها". فابدأ، ولا تتوقف، فربك يسمعك ويراك ويبارك في جهدك.</p>
+                </div>
+            </div>
+            <section class="share-section">
+                <h3 data-translate="share_title">أعجبك المقال؟ شاركه مع أحبائك!</h3>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn whatsapp" id="share-whatsapp" target="_blank" data-translate="share_whatsapp">📱 واتساب</a>
+                    <a href="#" class="share-btn facebook" id="share-facebook" target="_blank" data-translate="share_facebook">📘 فيسبوك</a>
+                    <a href="#" class="share-btn twitter" id="share-twitter" target="_blank" data-translate="share_twitter">🐦 تويتر</a>
+                    <button class="share-btn copy-link" id="copy-link-btn" data-translate="share_copy">📋 نسخ الرابط</button>
+                </div>
+                <span class="copy-feedback" id="copy-feedback">✅ تم نسخ الرابط!</span>
+            </section>
+        </article>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="../privacy-policy.html" data-translate="nav_privacy">سياسة الخصوصية</a>
+                <a href="../contact.html" data-translate="nav_contact">اتصل بنا</a>
+                <a href="../features.html" data-translate="nav_features">المميزات</a>
+                <a href="../install.html" data-translate="nav_install">التثبيت</a>
+                <a href="../blog.html" data-translate="nav_blog">المدونة</a>
+            </div>
+            <div class="copyright">© 2026 Zad Bono. جميع الحقوق محفوظة.</div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarLinks = document.getElementById('navbar-links');
+        menuToggle.addEventListener('click', (e) => { e.stopPropagation(); navbarLinks.classList.toggle('active'); });
+        document.addEventListener('click', (event) => { if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) { navbarLinks.classList.remove('active'); } });
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+        const translations = {
+            ar: {
+                app_name: "Zad Bono", nav_home: "الرئيسية", nav_features: "شرح المميزات", nav_install: "التحميل والتثبيت", nav_blog: "المدونة", nav_contact: "اتصل بنا", nav_privacy: "سياسة الخصوصية",
+                back_to_blog: "← العودة إلى المدونة",
+                article_title: "كيف تحفظ القرآن؟ دليل عملي للمبتدئين",
+                article_date: "٢٥ سبتمبر ٢٠٢٦", article_author: "محمد حسين", article_read_time: "٧ دقائق قراءة",
+                article_intro: 'حفظ القرآن الكريم هو أعظم أمنية لكل مسلم. قال النبي ﷺ: "خيركم من تعلم القرآن وعلمه". وقال: "يقال لصاحب القرآن: اقرأ وارتقِ ورتل كما كنت ترتل في الدنيا، فإن منزلتك عند آخر آية تقرؤها".',
+                article_intro2: "لكن كثيرين يعتقدون أن الحفظ صعب، أو يحتاج إلى ذاكرة خارقة، أو أنهم فاتهم القطار. الحقيقة أن الحفظ رحلة روحانية، تحتاج إلى نية صادقة، وخطة عملية، ومداومة. وفي هذا المقال، نقدم لك دليلاً عملياً شاملاً لتبدأ رحلتك في حفظ كتاب الله، حتى لو كنت مبتدئاً تماماً.",
+                step1_title: "١. النية الخالصة والدعاء",
+                step1_text1: 'قبل أن تحفظ حرفاً واحداً، انوِ نية صادقة: أن تحفظ القرآن لله وحده، لا للرياء ولا للمظاهر. قال تعالى: "فَاعْبُدِ اللَّهَ مُخْلِصًا لَّهُ الدِّينَ" (الزمر: 2).',
+                step1_text2: 'ثم أكثر من الدعاء. اطلب من الله أن يعينك على الحفظ، وأن يجعل القرآن ربيع قلبك. قال بعض السلف: "من أراد أن يحفظ القرآن، فليجعل همّه أن يحفظه، وليكثر من الدعاء".',
+                step2_title: "٢. حدد هدفك ومقدارك اليومي",
+                step2_text1: 'لا تبدأ بحفظ صفحة كاملة من أول يوم. ابدأ بما تستطيع المداومة عليه. قال النبي ﷺ: "أحب الأعمال إلى الله أدومها وإن قل".',
+                step2_text2: "المقترح:",
+                step2_li1: "للمبتدئ: ٣-٥ آيات يومياً (سطر أو سطرين من المصحف).",
+                step2_li2: "للمتوسط: ربع صفحة يومياً (٦-٨ آيات).",
+                step2_li3: "للمتقدم: نصف صفحة أو صفحة كاملة يومياً.",
+                step2_text3: "الأهم هو الاستمرارية، وليس الكم.",
+                step3_title: "٣. اختر وقتاً ومكاناً ثابتاً",
+                step3_text1: "الحفظ يحتاج إلى تركيز وصفاء ذهن. أفضل الأوقات للحفظ:",
+                step3_li1: "بعد الفجر: أفضل الأوقات على الإطلاق، فالذهن صافٍ والبركة حاضرة.",
+                step3_li2: "قبل النوم: وقت هدوء وصفاء.",
+                step3_li3: "بعد أي صلاة: اجعلها عادة ثابتة.",
+                step3_text2: "واختر مكاناً هادئاً، بعيداً عن الضوضاء والمقاطعات.",
+                step4_title: "٤. استخدم طريقة التكرار",
+                step4_text1: "طريقة التكرار هي أساس الحفظ. كرر الآية ٢٠ مرة، ثم كررها مرة أخرى ٢٠ مرة أخرى، ثم اربطها بالآية السابقة. إليك خطوات عملية:",
+                step4_li1: "الخطوة ١: اقرأ الآية من المصحف ٥ مرات بتركيز.",
+                step4_li2: "الخطوة ٢: اقرأها ١٠ مرات من غير نظر (أو بالنظر في البداية).",
+                step4_li3: "الخطوة ٣: اربطها بالآية التي قبلها، وكرر المقطع كاملاً ٥ مرات.",
+                step4_li4: "الخطوة ٤: كرر المقطع في الصلاة، أو في أوقات الفراغ.",
+                step4_text2: 'قال ابن مسعود رضي الله عنه: "إن الرجل لا يحفظ القرآن حتى يقرأه في الصلاة".',
+                quote_text: 'قال أحد السلف: "كنت أحفظ الآية بعشرين مرة، فإذا حفظتها قرأتها في الصلاة، فما نسيتها بعد ذلك".',
+                step5_title: "٥. المراجعة اليومية (سر الثبات)",
+                step5_text1: "الحفظ بدون مراجعة كبناء بيت بدون أساس. المراجعة هي التي تُثبّت الحفظ. اجعل جدولك كالتالي:",
+                step5_li1: "الورد الجديد: المقدار الذي ستحفظه اليوم.",
+                step5_li2: "الورد القريب: مراجعة ما حفظته في آخر أسبوع.",
+                step5_li3: "الورد البعيد: مراجعة ما حفظته قبل شهر (وهذا سيأتي مع الوقت).",
+                step5_text2: 'قال النبي ﷺ: "تعاهدوا القرآن، فوالذي نفسي بيده لهو أشد تفصيّاً من الإبل في عقلها". أي أن القرآن يهرب سريعاً من الذاكرة، فلا بد من المراجعة المستمرة.',
+                step6_title: "٦. استعن بالتكنولوجيا",
+                step6_text1: "في عصرنا هذا، سخر الله لنا أدوات تسهّل الحفظ:",
+                step6_li1: "تطبيقات المصحف: تتيح لك الاستماع للآية وتكرارها بسهولة.",
+                step6_li2: "التلاوات المرتلة: اسمع للشيخ الحصري أو المنشاوي، فهم الأفضل في الترتيل والوقف.",
+                step6_li3: "أدوات التكرار: كرر الآية تلقائياً حتى ترسخ في ذهنك.",
+                step6_text2: "تطبيق Zad Bono يوفر لك القرآن كاملاً مع الاستماع لأكثر من ١١ قارئاً، مع إمكانية التكرار والتحميل. اجعل التكنولوجيا عوناً لك على الحفظ.",
+                step7_title: "٧. ابحث عن شيخ أو رفيق",
+                step7_text1: 'الحفظ بمفردك صعب، ويسهل فيه الخطأ. ابحث عن شيخ يسمّع لك، أو رفيق يشاركك الرحلة. قال النبي ﷺ: "ما اجتمع قوم في بيت من بيوت الله يتلون كتاب الله ويتدارسونه بينهم، إلا نزلت عليهم السكينة".',
+                step7_text2: "لو لم تجد شيخاً أو رفيقاً، فاستخدم التسجيلات الصوتية واسمّع لنفسك، أو سجّل تلاوتك واسمعها، فهذا يكشف لك الأخطاء.",
+                cta_title: "تطبيق زاد بونو: رفيقك في رحلة الحفظ",
+                cta_text: "في تطبيق Zad Bono، تجد القرآن الكريم كاملاً مع الاستماع لأكثر من ١١ قارئاً، مع إمكانية التكرار والتحميل للاستماع بدون إنترنت. وخصصنا لك 'متتبع الختمة' الذي يساعدك على متابعة تقدمك وحفظك. ابدأ رحلتك اليوم.",
+                cta_btn: "📥 حمّل التطبيق الآن",
+                lessons_title: "العبر المستفادة من المقال",
+                lesson1: "١. النية أولاً: الحفظ لله وحده، لا للرياء.",
+                lesson2: "٢. ابدأ صغيراً: القليل الدائم خير من الكثير المنقطع.",
+                lesson3: "٣. الاستمرارية أساس: ٣ آيات يومياً تختم القرآن حفظاً في سنوات قليلة.",
+                lesson4: "٤. المراجعة سر الثبات: لا حفظ بدون مراجعة.",
+                lesson5: "٥. الحفظ يغير حياتك: من حَفِظ القرآن، تغير قلبه وحياته وسلوكه.",
+                article_conclusion: 'الخلاصة: حفظ القرآن ليس مستحيلاً، بل هو رحلة تحتاج إلى نية صادقة، وخطة عملية، ومداومة، ودعاء. ابدأ اليوم بآية واحدة، واثبت عليها، ثم زد تدريجياً. وتذكر أن كل حرف تحفظه سيكون لك أجراً عظيماً، ودرجة في الجنة. قال النبي ﷺ: "من قرأ حرفاً من كتاب الله فله به حسنة، والحسنة بعشر أمثالها". فابدأ، ولا تتوقف، فربك يسمعك ويراك ويبارك في جهدك.',
+                share_title: "أعجبك المقال؟ شاركه مع أحبائك!",
+                share_whatsapp: "📱 واتساب", share_facebook: "📘 فيسبوك", share_twitter: "🐦 تويتر", share_copy: "📋 نسخ الرابط"
+            },
+            en: {
+                app_name: "Zad Bono", nav_home: "Home", nav_features: "Features", nav_install: "Installation", nav_blog: "Blog", nav_contact: "Contact Us", nav_privacy: "Privacy Policy",
+                back_to_blog: "← Back to Blog",
+                article_title: "How to Memorize the Quran? A Practical Guide for Beginners",
+                article_date: "September 25, 2026", article_author: "Mahmoud Hussein", article_read_time: "7 min read",
+                article_intro: 'Memorizing the Holy Quran is the greatest wish of every Muslim. The Prophet ﷺ said: "The best of you are those who learn the Quran and teach it." And he said: "It will be said to the companion of the Quran: Recite and rise in rank as you used to recite in the world, for your rank will be at the last verse you recite."',
+                article_intro2: "But many believe that memorization is difficult, or requires a super memory, or that they have missed the train. The truth is that memorization is a spiritual journey that needs sincere intention, a practical plan, and consistency. In this article, we present a comprehensive practical guide to start your journey of memorizing the Book of Allah, even if you are a complete beginner.",
+                step1_title: "1. Sincere Intention and Supplication",
+                step1_text1: 'Before memorizing a single letter, make a sincere intention: to memorize the Quran for Allah alone, not for showing off. Allah says: "So worship Allah, [being] sincere to Him in religion" (Az-Zumar: 2).',
+                step1_text2: 'Then increase in supplication. Ask Allah to help you memorize and to make the Quran the spring of your heart. One of the pious predecessors said: "Whoever wants to memorize the Quran, let him make his concern to memorize it, and let him increase in supplication."',
+                step2_title: "2. Determine Your Goal and Daily Amount",
+                step2_text1: 'Do not start by memorizing a full page from the first day. Start with what you can maintain. The Prophet ﷺ said: "The most beloved deeds to Allah are the most consistent, even if small."',
+                step2_text2: "The suggestion:",
+                step2_li1: "For beginners: 3-5 verses daily (a line or two of the Mushaf).",
+                step2_li2: "For intermediate: A quarter page daily (6-8 verses).",
+                step2_li3: "For advanced: Half a page or a full page daily.",
+                step2_text3: "The most important is consistency, not quantity.",
+                step3_title: "3. Choose a Fixed Time and Place",
+                step3_text1: "Memorization needs focus and clarity of mind. The best times for memorization:",
+                step3_li1: "After Fajr: The best time ever, for the mind is clear and blessing is present.",
+                step3_li2: "Before sleep: A time of calm and clarity.",
+                step3_li3: "After any prayer: Make it a fixed habit.",
+                step3_text2: "Choose a quiet place, away from noise and distractions.",
+                step4_title: "4. Use the Repetition Method",
+                step4_text1: "The repetition method is the foundation of memorization. Repeat the verse 20 times, then repeat it another 20 times, then link it to the previous verse. Here are practical steps:",
+                step4_li1: "Step 1: Read the verse from the Mushaf 5 times with focus.",
+                step4_li2: "Step 2: Read it 10 times without looking (or with looking initially).",
+                step4_li3: "Step 3: Link it to the previous verse, and repeat the full passage 5 times.",
+                step4_li4: "Step 4: Repeat the passage in prayer, or in free time.",
+                step4_text2: 'Ibn Mas\'ud (may Allah be pleased with him) said: "A man does not memorize the Quran until he recites it in prayer."',
+                quote_text: 'One of the pious predecessors said: "I used to memorize a verse with twenty repetitions, then I would recite it in prayer, and I never forgot it after that."',
+                step5_title: "5. Daily Review (The Secret of Stability)",
+                step5_text1: "Memorization without review is like building a house without a foundation. Review is what stabilizes memorization. Make your schedule as follows:",
+                step5_li1: "The new portion: The amount you will memorize today.",
+                step5_li2: "The near portion: Reviewing what you memorized in the last week.",
+                step5_li3: "The far portion: Reviewing what you memorized a month ago (this will come with time).",
+                step5_text2: 'The Prophet ﷺ said: "Keep revisiting the Quran, for by the One in whose hand is my soul, it is more likely to escape than a camel from its tether." This means the Quran escapes quickly from memory, so constant review is necessary.',
+                step6_title: "6. Use Technology",
+                step6_text1: "In our time, Allah has provided us with tools that facilitate memorization:",
+                step6_li1: "Mushaf apps: Allow you to listen to the verse and repeat it easily.",
+                step6_li2: "Melodious recitations: Listen to Sheikh Al-Husary or Al-Minshawi, they are the best in recitation and pauses.",
+                step6_li3: "Repeat tools: Repeat the verse automatically until it sticks in your mind.",
+                step6_text2: "The Zad Bono app provides the complete Quran with listening to more than 11 reciters, with the ability to repeat and download. Let technology help you in memorization.",
+                step7_title: "7. Find a Teacher or a Companion",
+                step7_text1: 'Memorizing alone is difficult, and mistakes are easy. Find a teacher to recite to, or a companion to share the journey. The Prophet ﷺ said: "No people gather in a house of the houses of Allah, reciting the Book of Allah and studying it among themselves, except that tranquility descends upon them."',
+                step7_text2: "If you don't find a teacher or companion, use audio recordings and recite to yourself, or record your recitation and listen to it, as this reveals your mistakes.",
+                cta_title: "Zad Bono App: Your Companion in the Journey of Memorization",
+                cta_text: "In the Zad Bono app, you will find the complete Holy Quran with listening to more than 11 reciters, with the ability to repeat and download for offline listening. We've created a 'Khatma Tracker' to help you follow your progress and memorization. Start your journey today.",
+                cta_btn: "📥 Download the App Now",
+                lessons_title: "Lessons from the Article",
+                lesson1: "1. Intention first: Memorization for Allah alone, not for showing off.",
+                lesson2: "2. Start small: A little consistent is better than a lot interrupted.",
+                lesson3: "3. Consistency is the foundation: 3 verses daily completes the Quran in memorization in a few years.",
+                lesson4: "4. Review is the secret of stability: No memorization without review.",
+                lesson5: "5. Memorization changes your life: Whoever memorizes the Quran, their heart, life, and behavior change.",
+                article_conclusion: 'Conclusion: Memorizing the Quran is not impossible; it is a journey that needs sincere intention, a practical plan, consistency, and supplication. Start today with one verse, be consistent, then gradually increase. Remember that every letter you memorize will be a great reward for you, and a rank in Paradise. The Prophet ﷺ said: "Whoever recites a letter from the Book of Allah will have a reward, and the reward is tenfold." So begin, and do not stop, for your Lord hears you, sees you, and blesses your effort.',
+                share_title: "Enjoyed this article? Share it with your loved ones!",
+                share_whatsapp: "📱 WhatsApp", share_facebook: "📘 Facebook", share_twitter: "🐦 Twitter", share_copy: "📋 Copy Link"
+            }
+        };
+        const langToggleButton = document.getElementById('lang-toggle-btn');
+        const langMenu = document.getElementById('lang-menu');
+        const selectedLangBtnText = document.getElementById('lang-text');
+        const selectedLangBtnFlag = document.getElementById('lang-flag');
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    if (el.tagName === 'A' && el.classList.contains('internal-link')) {
+                        return;
+                    }
+                    el.textContent = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
+            selectedLangBtnFlag.src = `../images/${lang}.png`;
+            localStorage.setItem('language', lang);
+            if(langMenu) langMenu.classList.remove('show');
+        }
+        langToggleButton.addEventListener('click', (event) => { event.stopPropagation(); langMenu.classList.toggle('show'); });
+        window.addEventListener('click', () => { if (langMenu.classList.contains('show')) { langMenu.classList.remove('show'); } });
+        const articleUrl = window.location.href;
+        const articleTitle = document.title;
+        document.getElementById('share-whatsapp').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(articleTitle + "\n" + articleUrl)}`;
+        document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleUrl)}`;
+        document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(articleUrl)}&text=${encodeURIComponent(articleTitle)}`;
+        const copyBtn = document.getElementById('copy-link-btn');
+        const copyFeedback = document.getElementById('copy-feedback');
+        copyBtn.addEventListener('click', () => { navigator.clipboard.writeText(articleUrl).then(() => { copyFeedback.classList.add('show'); setTimeout(() => { copyFeedback.classList.remove('show'); }, 2000); }); });
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => { if (window.pageYOffset > 300) { scrollTopBtn.classList.add('show'); } else { scrollTopBtn.classList.remove('show'); } });
+        scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { if (window.pageYOffset > 50) { navbar.classList.add('scrolled'); } else { navbar.classList.remove('scrolled'); } });
+        document.addEventListener('DOMContentLoaded', () => { const savedLang = localStorage.getItem('language') || 'ar'; setLanguage(savedLang); });
+    </script>
+</body>
+</html>
