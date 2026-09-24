@@ -111,12 +111,12 @@
         .faq-section { margin-top: 45px; }
         .faq-item { background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all var(--transition-base); }
         .faq-item:hover { border-color: var(--primary); }
-        .faq-question { padding: 20px 24px; font-weight: 700; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all var(--transition-base); }
+        .faq-question { padding: 20px 24px; font-weight: 700; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all var(--transition-base); user-select: none; }
         .faq-question:hover { background: rgba(102, 126, 234, 0.05); }
-        .faq-question::after { content: '+'; font-size: 1.5em; color: var(--primary); transition: transform var(--transition-base); }
+        .faq-question::after { content: '+'; font-size: 1.5em; color: var(--primary); transition: transform var(--transition-base); flex-shrink: 0; margin-right: 15px; }
         .faq-item.open .faq-question::after { transform: rotate(45deg); }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; padding: 0 24px; color: var(--text-secondary); line-height: 1.9; }
-        .faq-item.open .faq-answer { max-height: 600px; padding: 0 24px 20px; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; padding: 0 24px; color: var(--text-secondary); line-height: 1.9; }
+        .faq-item.open .faq-answer { max-height: 800px; padding: 0 24px 20px; }
         .summary-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: var(--bg-card); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md); }
         .summary-table th { background: var(--primary-gradient); color: white; padding: 16px; text-align: right; font-weight: 700; font-size: 1.05em; }
         .summary-table td { padding: 16px; text-align: right; border-bottom: 1px solid var(--border-color); color: var(--text-secondary); }
@@ -165,12 +165,12 @@
             .share-buttons { gap: 8px; }
             .share-btn { padding: 10px 16px; font-size: 0.85em; }
             .article-meta { font-size: 0.85em; gap: 12px; }
-            .summary-table th, .summary-table td { padding: 12px 10px; font-size: 0.9em; }
+            .summary-table th, .summary-table td { padding: 12px 10px; font-size: 0.85em; }
             .steps-timeline { padding-right: 30px; }
             .step-item { padding: 15px 20px; }
             .step-item::before { right: -25px; width: 28px; height: 28px; font-size: 0.8em; }
         }
-        @media (max-width: 480px) { .article-title { font-size: 1.6em; } .article-wrapper { padding: 20px 16px; } }
+        @media (max-width: 480px) { .article-title { font-size: 1.6em; } .article-wrapper { padding: 20px 16px; } .summary-table th, .summary-table td { padding: 10px 6px; font-size: 0.8em; } }
     </style>
     <script type="application/ld+json">
     {
@@ -321,7 +321,7 @@
                     <li data-translate="mistake5"><strong>٥. التوقف عن العمل:</strong> قراءة كثير من الدروس دون تطبيق.</li>
                 </ul>
 
-                <h2 data-translate="table_title">جدول ملخص: خريطة القصص في القرآن</h2>
+                <h2 data-translate="table_title">جدول ملخص: أشهر القصص في القرآن الكريم</h2>
                 <table class="summary-table">
                     <thead>
                         <tr>
@@ -332,34 +332,74 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td data-translate="table_row1_surah">يوسف</td>
-                            <td data-translate="table_row1_story">قصة يوسف كاملة</td>
-                            <td data-translate="table_row1_lesson">الصبر الجميل والعفة عند الفتنة</td>
+                            <td data-translate="table_row1_surah">البقرة</td>
+                            <td data-translate="table_row1_story">آدم وإبليس</td>
+                            <td data-translate="table_row1_lesson">الكبر والحسد يهويان بصاحبهما</td>
                         </tr>
                         <tr>
-                            <td data-translate="table_row2_surah">الكهف</td>
-                            <td data-translate="table_row2_story">أصحاب الكهف</td>
-                            <td data-translate="table_row2_lesson">الثبات على الإيمان في وجه الفتنة</td>
+                            <td data-translate="table_row2_surah">البقرة</td>
+                            <td data-translate="table_row2_story">قصة بني إسرائيل والبقرة</td>
+                            <td data-translate="table_row2_lesson">التلكؤ في الطاعة يضيع الفرص</td>
                         </tr>
                         <tr>
-                            <td data-translate="table_row3_surah">القصص</td>
-                            <td data-translate="table_row3_story">موسى وفرعون</td>
-                            <td data-translate="table_row3_lesson">نهاية الطغيان الهلاك</td>
+                            <td data-translate="table_row3_surah">البقرة</td>
+                            <td data-translate="table_row3_story">طالوت وداود وجالوت</td>
+                            <td data-translate="table_row3_lesson">النصر بالإيمان لا بالعدد والعتاد</td>
                         </tr>
                         <tr>
-                            <td data-translate="table_row4_surah">الأنبياء</td>
-                            <td data-translate="table_row4_story">إبراهيم والنار</td>
-                            <td data-translate="table_row4_lesson">التوكل على الله والثبات</td>
+                            <td data-translate="table_row4_surah">البقرة</td>
+                            <td data-translate="table_row4_story">إبراهيم والطير</td>
+                            <td data-translate="table_row4_lesson">اليقين بالبعث والإيمان القلبي</td>
                         </tr>
                         <tr>
-                            <td data-translate="table_row5_surah">ص</td>
-                            <td data-translate="table_row5_story">أيوب والصبر</td>
-                            <td data-translate="table_row5_lesson">الصبر على البلاء والرضا</td>
+                            <td data-translate="table_row5_surah">آل عمران</td>
+                            <td data-translate="table_row5_story">مريم وزكريا</td>
+                            <td data-translate="table_row5_lesson">الدعاء لا يعجزه شيء</td>
                         </tr>
                         <tr>
-                            <td data-translate="table_row6_surah">نوح</td>
-                            <td data-translate="table_row6_story">دعوة نوح ٩٥٠ سنة</td>
-                            <td data-translate="table_row6_lesson">الدعوة بالصبر والاستمرار</td>
+                            <td data-translate="table_row6_surah">يوسف</td>
+                            <td data-translate="table_row6_story">قصة يوسف كاملة</td>
+                            <td data-translate="table_row6_lesson">الصبر الجميل والعفة عند الفتنة</td>
+                        </tr>
+                        <tr>
+                            <td data-translate="table_row7_surah">الكهف</td>
+                            <td data-translate="table_row7_story">أصحاب الكهف</td>
+                            <td data-translate="table_row7_lesson">الثبات على الإيمان في وجه الفتنة</td>
+                        </tr>
+                        <tr>
+                            <td data-translate="table_row8_surah">الكهف</td>
+                            <td data-translate="table_row8_story">موسى والخضر</td>
+                            <td data-translate="table_row8_lesson">الصبر على ما لا نعلم حكمته</td>
+                        </tr>
+                        <tr>
+                            <td data-translate="table_row9_surah">الكهف</td>
+                            <td data-translate="table_row9_story">ذو القرنين</td>
+                            <td data-translate="table_row9_lesson">العدل والتمكين للمؤمن</td>
+                        </tr>
+                        <tr>
+                            <td data-translate="table_row10_surah">القصص</td>
+                            <td data-translate="table_row10_story">موسى وفرعون</td>
+                            <td data-translate="table_row10_lesson">نهاية الطغيان الهلاك</td>
+                        </tr>
+                        <tr>
+                            <td data-translate="table_row11_surah">الأنبياء</td>
+                            <td data-translate="table_row11_story">إبراهيم والنار</td>
+                            <td data-translate="table_row11_lesson">التوكل على الله والثبات</td>
+                        </tr>
+                        <tr>
+                            <td data-translate="table_row12_surah">ص</td>
+                            <td data-translate="table_row12_story">أيوب والصبر</td>
+                            <td data-translate="table_row12_lesson">الصبر على البلاء والرضا</td>
+                        </tr>
+                        <tr>
+                            <td data-translate="table_row13_surah">نوح</td>
+                            <td data-translate="table_row13_story">دعوة نوح ٩٥٠ سنة</td>
+                            <td data-translate="table_row13_lesson">الدعوة بالصبر والاستمرار</td>
+                        </tr>
+                        <tr>
+                            <td data-translate="table_row14_surah">الفيل</td>
+                            <td data-translate="table_row14_story">أصحاب الفيل</td>
+                            <td data-translate="table_row14_lesson">حماية الله لبيته الحرام</td>
                         </tr>
                     </tbody>
                 </table>
@@ -382,6 +422,10 @@
                         <div class="faq-question" data-translate="faq4_q">هل كل قصة في القرآن لها دروس متعددة؟</div>
                         <div class="faq-answer"><p data-translate="faq4_a">نعم، كل قصة في القرآن لها دروس متعددة، وقد يستخرج منها كل قارئ ما يتناسب مع حاله. فالقرآن كلام الله الذي لا تنقضي عجائبه، وكلما قرأت القصة بقلب جديد، استخرجت دروساً جديدة.</p></div>
                     </div>
+                    <div class="faq-item">
+                        <div class="faq-question" data-translate="faq5_q">ما هي أطول قصة في القرآن الكريم؟</div>
+                        <div class="faq-answer"><p data-translate="faq5_a">أطول قصة في القرآن الكريم هي قصة موسى عليه السلام، فقد تكررت في أكثر من ٢٠ سورة، وتفصيلها الكامل في سورة القصص. أما أطول قصة متصلة في سورة واحدة فهي قصة يوسف عليه السلام في سورة يوسف، وقد ساقها الله كاملة في سورة واحدة بأسلوب بديع.</p></div>
+                    </div>
                 </div>
 
                 <div class="cta-box">
@@ -395,7 +439,7 @@
                     <li data-translate="lesson1"><strong>١. القصص ليست للتسلية:</strong> ثلث القرآن قصص، والغرض منها تربوي.</li>
                     <li data-translate="lesson2"><strong>٢. منهجية الاستخراج:</strong> اقرأ كاملة، حدد الشخصيات، تأمل التصرفات، اربط بواقعك.</li>
                     <li data-translate="lesson3"><strong>٣. السنة الإلهية ثابتة:</strong> ما حدث للأمم السابقة يحدث لنا.</li>
-                    <li data-translate"><strong>٤. العمل هو الغاية:</strong> القصة التي لا تُغير سلوكك، لم تستفد منها حقاً.</li>
+                    <li data-translate="lesson4"><strong>٤. العمل هو الغاية:</strong> القصة التي لا تُغير سلوكك، لم تستفد منها حقاً.</li>
                     <li data-translate="lesson5"><strong>٥. القرآن كله دروس:</strong> كل قصة تُعلمك درساً، وكل درس يرفعك درجة.</li>
                 </ul>
 
@@ -445,10 +489,15 @@
             localStorage.setItem('theme', newTheme);
             themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
         });
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.addEventListener('click', () => {
-                q.parentElement.classList.toggle('open');
-            });
+        // FAQ Toggle - Event Delegation (يعمل حتى بعد تغيير النصوص أو اللغة)
+        document.addEventListener('click', function(e) {
+            const question = e.target.closest('.faq-question');
+            if (question) {
+                const item = question.closest('.faq-item');
+                if (item) {
+                    item.classList.toggle('open');
+                }
+            }
         });
         const translations = {
             ar: {
@@ -456,79 +505,89 @@
                 back_to_blog: "← العودة إلى المدونة",
                 article_title: "قصص القرآن: كيف تستخرج الدروس والعبر؟",
                 article_date: "٢٥ سبتمبر ٢٠٢٦", article_author: "محمد حسين", article_read_time: "٩ دقائق قراءة",
-                article_intro: "ثلث القرآن الكريم تقريباً قصص. لماذا كل هذا الكم من القصص في كتاب الله؟ هل هو للتسلية؟ أم أن هناك حكمة عظيمة؟ الحقيقة أن القصص القرآني ليس للتسلية، بل هو منهج إلهي لتربية النفوس وتثبيت القلوب. الله يقص علينا قصص الأمم السابقة لنأخذ العبر، ونتجنب أخطاءهم، ونسير على طريق الصالحين.",
-                article_intro2: "لكن المشكلة أن كثيراً منا يقرأ القصص القرآني كأنه رواية تاريخية، يمر عليها مرور الكرام، دون أن يتوقف عند الدروس والعبر. في هذا المقال، نقدم لك منهجية عملية لاستخراج الدروس والعبر من قصص القرآن، لتحوّل كل قصة تقرأها إلى درس يغيّر حياتك.",
+                article_intro: "ثلث القرآن الكريم تقريباً قصص. لماذا كل هذا الكم من القصص في كتاب الله؟ هل هو للتسلية؟ أم أن هناك حكمة عظيمة؟ الحقيقة أن القصص القرآني ليس للتسلية، بل هو منهج إلهي لتربية النفوس وتثبيت القلوب.",
+                article_intro2: "لكن المشكلة أن كثيراً منا يقرأ القصص القرآني كأنه رواية تاريخية، يمر عليها مرور الكرام، دون أن يتوقف عند الدروس والعبر. في هذا المقال، نقدم لك منهجية عملية لاستخراج الدروس والعبر من قصص القرآن.",
                 "why-stories_title": "لماذا أكثر الله من القصص في القرآن؟",
-                why-stories_text1: 'قال تعالى: "لَقَدْ كَانَ فِي يُوسُفَ وَإِخْوَتِهِ آيَاتٌ لِّلسَّائِلِينَ" (يوسف: 7). وقال: "لَقَدْ كَانَ فِي قَصَصِهِمْ عِبْرَةٌ لِّأُولِي الْأَلْبَابِ" (يوسف: 111). فالقصص القرآني هو منهج تربوي متكامل. ومن حكمه:',
+                why-stories_text1: 'قال تعالى: "لَقَدْ كَانَ فِي يُوسُفَ وَإِخْوَتِهِ آيَاتٌ لِّلسَّائِلِينَ" (يوسف: 7). وقال: "لَقَدْ كَانَ فِي قَصَصِهِمْ عِبْرَةٌ لِّأُولِي الْأَلْبَابِ" (يوسف: 111).',
                 why_li1: "تثبيت قلب النبي ﷺ والمؤمنين: قال تعالى: \"وَكُلًّا نَّقُصُّ عَلَيْكَ مِنْ أَنبَاءِ الرُّسُلِ مَا نُثَبِّتُ بِهِ فُؤَادَكَ\" (هود: 120).",
                 why_li2: "العبرة للأجيال: القصة تبقى في الذاكرة أكثر من النصيحة المباشرة.",
                 why_li3: "بيان سنن الله في الأمم: كسنة النصر للصابرين، والهلاك للمكذبين.",
                 why_li4: "تربية النفس على الصبر واليقين: عندما تقرأ قصة يعقوب مع يوسف، تتعلم الصبر الجميل.",
                 why_li5: "إظهار وحدة الرسالة: كل الأنبياء دعوا إلى التوحيد.",
-                quote_text: 'قال ابن كثير: "القصص القرآني في القرآن كثير، والغرض منه تثبيت قلب النبي ﷺ وتسلية قلوب المؤمنين، وأخذ العبرة من أخبار الأمم السابقة".',
+                quote_text: 'قال ابن كثير: "القصص القرآني في القرآن كثير، والغرض منه تثبيت قلب النبي ﷺ وتسلية قلوب المؤمنين".',
                 types_title: "أنواع القصص في القرآن الكريم",
                 types_text1: "ينقسم القصص القرآني إلى ثلاثة أنواع رئيسية:",
                 type1_title: "١. قصص الأنبياء والرسل",
-                type1_text: "وهي أكثر القصص في القرآن، وتشمل قصص نوح، وإبراهيم، وموسى، وعيسى، ومحمد ﷺ، وغيرهم. والغرض منها: تثبيت القلب، والاقتداء بالصالحين.",
+                type1_text: "وهي أكثر القصص في القرآن، وتشمل قصص نوح، وإبراهيم، وموسى، وعيسى، ومحمد ﷺ.",
                 type1_lesson: "العبرة: كل نبي ابتُلي وصبر، فثبت الله قلبه وأعلى ذكره.",
                 type2_title: "٢. قصص الأمم السابقة",
-                type2_text: "قصص عاد، وثمود، وفرعون، وقارون، وأصحاب الكهف، وأصحاب الأخدود. والغرض منها: التحذير من الكفر والطغيان، وبيان سنة الله في إهلاك المكذبين.",
+                type2_text: "قصص عاد، وثمود، وفرعون، وقارون، وأصحاب الكهف، وأصحاب الأخدود.",
                 type2_lesson: "العبرة: من استكبر وتجبر، أهلكه الله، مهما كانت قوته.",
                 type3_title: "٣. قصص الأفراد والأحداث",
-                type3_text: "مثل قصة مريم، وقصة طالوت وداود، وقصة ذي القرنين، وقصة أصحاب الجنتين. والغرض منها: تربية النفس، وأخذ العبر من أحداث محددة.",
+                type3_text: "مثل قصة مريم، وقصة طالوت وداود، وقصة ذي القرنين، وقصة أصحاب الجنتين.",
                 type3_lesson: "العبرة: الله يعلم الغيب ويجازي كل نفس بما كسبت.",
                 method_title: "منهجية استخراج الدروس من القصص القرآني",
                 method_intro: "هذه خطوات عملية يمكنك تطبيقها مع كل قصة تقرؤها:",
                 method1_title: "اقرأ القصة كاملة",
                 method1_text: "احرص على قراءة القصة كاملة من المصحف، مع التفسير الميسر. لا تقرأ جزءاً منها فقط، فالسياق مهم لفهم الدروس.",
                 method2_title: "حدد الشخصيات الرئيسية",
-                method2_text: "من هي الشخصيات؟ وما دور كل شخصية؟ في قصة موسى مثلاً: موسى، فرعون، هارون، السحرة، بنو إسرائيل. كل شخصية تمثل نموذجاً معيناً.",
+                method2_text: "من هي الشخصيات؟ وما دور كل شخصية؟ في قصة موسى مثلاً: موسى، فرعون، هارون، السحرة، بنو إسرائيل.",
                 method3_title: "تأمل تصرفات كل شخصية",
-                method3_text: "لماذا تصرفت الشخصية بهذا الشكل؟ ما الدافع؟ ما النتيجة؟ تأمل كيف تعامل الله مع كل شخصية.",
+                method3_text: "لماذا تصرفت الشخصية بهذا الشكل؟ ما الدافع؟ ما النتيجة؟",
                 method4_title: "اسأل: ما السنة الإلهية في القصة؟",
-                method4_text: "هل هناك سنة ثابتة تكشف عنها القصة؟ كسنة النصر للصابرين، أو سنة الهلاك للمكذبين، أو سنة التمكين للمؤمنين.",
+                method4_text: "هل هناك سنة ثابتة تكشف عنها القصة؟ كسنة النصر للصابرين، أو سنة الهلاك للمكذبين.",
                 method5_title: "اربط القصة بواقعك",
-                method5_text: "هذا هو أهم خطوة. اسأل: هل أنا أشبه أحد شخصيات هذه القصة؟ هل هناك موقف في حياتي يشبه موقفاً في القصة؟ ماذا يريد الله أن يفعل بي؟",
+                method5_text: "هذا هو أهم خطوة. اسأل: هل أنا أشبه أحد شخصيات هذه القصة؟",
                 method6_title: "استخرج الدروس واكتبها",
-                method6_text: "اكتب ٣-٥ دروس من كل قصة. راجعها بين فترة وأخرى، وحدّث تطبيقك لها.",
+                method6_text: "اكتب ٣-٥ دروس من كل قصة. راجعها بين فترة وأخرى.",
                 method7_title: "حوّل الدروس إلى عمل",
-                method7_text: "اختر درساً واحداً وطبقه فوراً. مثلاً: إذا تعلمت من قصة موسى أهمية التوكل، فتوكل على الله في أمر يقلقك اليوم.",
+                method7_text: "اختر درساً واحداً وطبقه فوراً.",
                 example_title: "مثال تطبيقي: قصة موسى وفرعون",
                 example_intro: "لنطبق المنهجية على قصة موسى وفرعون، وهي أطول قصة في القرآن:",
-                example_text1: "الشخصيات الرئيسية: موسى (المؤمن القوي)، فرعون (الطاغية المستكبر)، هارون (الأخ المعين)، السحرة (أهل العلم الفاسد)، بنو إسرائيل (المستضعفون).",
+                example_text1: "الشخصيات الرئيسية: موسى، فرعون، هارون، السحرة، بنو إسرائيل.",
                 example_text2: 'السنة الإلهية في القصة: سنة "التمكين للمستضعفين". قال تعالى: "وَنُرِيدُ أَن نَّمُنَّ عَلَى الَّذِينَ اسْتُضْعِفُوا فِي الْأَرْضِ وَنَجْعَلَهُمْ أَئِمَّةً وَنَجْعَلَهُمُ الْوَارِثِينَ" (القصص: 5).',
                 example_text3: "الدروس المستفادة:",
                 example_lesson1: "١. الطغيان نهايته الهلاك: فرعون تحدى الله، فغرقه الله في نفس المكان الذي طغى فيه.",
                 example_lesson2: "٢. العلم نور: السحرة كانوا كفرة، فلما أبصروا الحق آمنوا رغم التهديد.",
                 example_lesson3: "٣. الأخ المعين: هارون كان عوناً لأخيه، فكان من أنبياء الله.",
                 example_lesson4: "٤. التربية بالنعم والنقم: الله يربي عباده بالنعم ليشكروا، وبالنقم ليصبروا.",
-                example_lesson5: "٥. المستضعفون هم ورثة الأرض: من صبر واستقام، أعزه الله، مهما طال الظلم.",
+                example_lesson5: "٥. المستضعفون هم ورثة الأرض: من صبر واستقام، أعزه الله.",
                 example_quote: 'قال تعالى عن فرعون: "فَأَخَذْنَاهُ وَجُنُودَهُ فَنَبَذْنَاهُمْ فِي الْيَمِّ ۖ فَانظُرْ كَيْفَ كَانَ عَاقِبَةُ الظَّالِمِينَ" (القصص: 40).',
                 mistakes_title: "أخطاء شائعة عند قراءة القصص القرآني",
                 mistake1: "١. قراءتها للتسلية فقط: كأنها رواية تاريخية، دون تدبر الدروس.",
                 mistake2: "٢. التركيز على التفاصيل: كأسماء الأشخاص والأماكن، وتجاهل العبر.",
-                mistake3: "٣. البحث عن روايات ضعيفة: بعض الناس يستكملون القصة من الإسرائيليات، ويفسدون فهمهم.",
+                mistake3: "٣. البحث عن روايات ضعيفة: بعض الناس يستكملون القصة من الإسرائيليات.",
                 mistake4: "٤. عدم ربطها بالواقع: قراءة القصة وكأنها حدثت لأمة لا علاقة لنا بها.",
                 mistake5: "٥. التوقف عن العمل: قراءة كثير من الدروس دون تطبيق.",
-                table_title: "جدول ملخص: خريطة القصص في القرآن",
+                table_title: "جدول ملخص: أشهر القصص في القرآن الكريم",
                 table_col1: "السورة", table_col2: "القصة", table_col3: "الدرس الرئيسي",
-                table_row1_surah: "يوسف", table_row1_story: "قصة يوسف كاملة", table_row1_lesson: "الصبر الجميل والعفة عند الفتنة",
-                table_row2_surah: "الكهف", table_row2_story: "أصحاب الكهف", table_row2_lesson: "الثبات على الإيمان في وجه الفتنة",
-                table_row3_surah: "القصص", table_row3_story: "موسى وفرعون", table_row3_lesson: "نهاية الطغيان الهلاك",
-                table_row4_surah: "الأنبياء", table_row4_story: "إبراهيم والنار", table_row4_lesson: "التوكل على الله والثبات",
-                table_row5_surah: "ص", table_row5_story: "أيوب والصبر", table_row5_lesson: "الصبر على البلاء والرضا",
-                table_row6_surah: "نوح", table_row6_story: "دعوة نوح ٩٥٠ سنة", table_row6_lesson: "الدعوة بالصبر والاستمرار",
+                table_row1_surah: "البقرة", table_row1_story: "آدم وإبليس", table_row1_lesson: "الكبر والحسد يهويان بصاحبهما",
+                table_row2_surah: "البقرة", table_row2_story: "قصة بني إسرائيل والبقرة", table_row2_lesson: "التلكؤ في الطاعة يضيع الفرص",
+                table_row3_surah: "البقرة", table_row3_story: "طالوت وداود وجالوت", table_row3_lesson: "النصر بالإيمان لا بالعدد والعتاد",
+                table_row4_surah: "البقرة", table_row4_story: "إبراهيم والطير", table_row4_lesson: "اليقين بالبعث والإيمان القلبي",
+                table_row5_surah: "آل عمران", table_row5_story: "مريم وزكريا", table_row5_lesson: "الدعاء لا يعجزه شيء",
+                table_row6_surah: "يوسف", table_row6_story: "قصة يوسف كاملة", table_row6_lesson: "الصبر الجميل والعفة عند الفتنة",
+                table_row7_surah: "الكهف", table_row7_story: "أصحاب الكهف", table_row7_lesson: "الثبات على الإيمان في وجه الفتنة",
+                table_row8_surah: "الكهف", table_row8_story: "موسى والخضر", table_row8_lesson: "الصبر على ما لا نعلم حكمته",
+                table_row9_surah: "الكهف", table_row9_story: "ذو القرنين", table_row9_lesson: "العدل والتمكين للمؤمن",
+                table_row10_surah: "القصص", table_row10_story: "موسى وفرعون", table_row10_lesson: "نهاية الطغيان الهلاك",
+                table_row11_surah: "الأنبياء", table_row11_story: "إبراهيم والنار", table_row11_lesson: "التوكل على الله والثبات",
+                table_row12_surah: "ص", table_row12_story: "أيوب والصبر", table_row12_lesson: "الصبر على البلاء والرضا",
+                table_row13_surah: "نوح", table_row13_story: "دعوة نوح ٩٥٠ سنة", table_row13_lesson: "الدعوة بالصبر والاستمرار",
+                table_row14_surah: "الفيل", table_row14_story: "أصحاب الفيل", table_row14_lesson: "حماية الله لبيته الحرام",
                 faq_title: "أسئلة شائعة عن قصص القرآن",
                 faq1_q: "هل يمكن قراءة الإسرائيليات لاستكمال القصص القرآني؟",
-                faq1_a: 'لا يجوز الاعتماد على الإسرائيليات في القصص القرآني، لأنها لم تُثبت عن النبي ﷺ. قال النبي ﷺ: "لا تصدقوا أهل الكتاب ولا تكذبوهم". فما وافق القرآن فمقبول، وما خالفه فمردود، وما سكت عنه فلا نصدقه ولا نكذبه. والأفضل الاكتفاء بالقرآن والتفسير المعتمد.',
+                faq1_a: 'لا يجوز الاعتماد على الإسرائيليات في القصص القرآني، لأنها لم تُثبت عن النبي ﷺ. قال النبي ﷺ: "لا تصدقوا أهل الكتاب ولا تكذبوهم". فما وافق القرآن فمقبول، وما خالفه فمردود.',
                 faq2_q: "لماذا بعض القصص مكررة في القرآن؟",
-                faq2_a: "تكرار القصص في القرآن له حكم عظيمة، منها: تثبيت القلب، وتأكيد المعنى، ومراعاة اختلاف السياقات والمقامات. فكل مرة تُذكر القصة، تُذكر معها دروس جديدة، وأحكام جديدة، وعبر جديدة.",
+                faq2_a: "تكرار القصص في القرآن له حكم عظيمة، منها: تثبيت القلب، وتأكيد المعنى، ومراعاة اختلاف السياقات والمقامات.",
                 faq3_q: "كيف أستفيد من قصة أقرؤها في موقف يواجهني؟",
-                faq3_a: "اسأل نفسك ثلاثة أسئلة: ما المشكلة التي كانت تواجه الشخصية؟ كيف تصرفت؟ ما نتيجة تصرفها؟ ثم اربط هذا بواقعك: هل هناك موقف مشابه لي؟ ماذا يمكنني أن أتعلم من تصرف الشخصية؟ ثم طبّق الدرس فوراً.",
+                faq3_a: "اسأل نفسك ثلاثة أسئلة: ما المشكلة التي كانت تواجه الشخصية؟ كيف تصرفت؟ ما نتيجة تصرفها؟ ثم اربط هذا بواقعك.",
                 faq4_q: "هل كل قصة في القرآن لها دروس متعددة؟",
-                faq4_a: "نعم، كل قصة في القرآن لها دروس متعددة، وقد يستخرج منها كل قارئ ما يتناسب مع حاله. فالقرآن كلام الله الذي لا تنقضي عجائبه، وكلما قرأت القصة بقلب جديد، استخرجت دروساً جديدة.",
+                faq4_a: "نعم، كل قصة في القرآن لها دروس متعددة، وقد يستخرج منها كل قارئ ما يتناسب مع حاله.",
+                faq5_q: "ما هي أطول قصة في القرآن الكريم؟",
+                faq5_a: "أطول قصة في القرآن الكريم هي قصة موسى عليه السلام، فقد تكررت في أكثر من ٢٠ سورة. أما أطول قصة متصلة في سورة واحدة فهي قصة يوسف عليه السلام في سورة يوسف.",
                 cta_title: "تطبيق زاد بونو: مكتبتك القرآنية الشاملة",
-                cta_text: "في تطبيق Zad Bono، تجد القرآن الكريم كاملاً مع التفسير الميسر، وقسم \"قصص الأنبياء\" الذي يضم جميع قصص القرآن بأسلوب سهل وممتع. احصل على العبر والدروس من كل قصة.",
+                cta_text: "في تطبيق Zad Bono، تجد القرآن الكريم كاملاً مع التفسير الميسر، وقسم \"قصص الأنبياء\" الذي يضم جميع قصص القرآن بأسلوب سهل وممتع.",
                 cta_btn: "📥 حمّل التطبيق الآن",
                 lessons_title: "العبر المستفادة من المقال",
                 lesson1: "١. القصص ليست للتسلية: ثلث القرآن قصص، والغرض منها تربوي.",
@@ -536,7 +595,7 @@
                 lesson3: "٣. السنة الإلهية ثابتة: ما حدث للأمم السابقة يحدث لنا.",
                 lesson4: "٤. العمل هو الغاية: القصة التي لا تُغير سلوكك، لم تستفد منها حقاً.",
                 lesson5: "٥. القرآن كله دروس: كل قصة تُعلمك درساً، وكل درس يرفعك درجة.",
-                article_conclusion: 'الخلاصة: القصص القرآني هو كنز من الدروس والعبر، لكن الكنز لا يُفتح إلا بالتدبر والتفكر. ابدأ اليوم بقصة واحدة، وطبق عليها المنهجية السبعية، واستخرج منها الدروس، وحوّلها إلى عمل. وستجد أن كل قصة تفتح لك باباً جديداً من الفهم، وباباً من القرب من الله. قال تعالى: "لَقَدْ كَانَ فِي قَصَصِهِمْ عِبْرَةٌ لِّأُولِي الْأَلْبَابِ" (يوسف: 111).',
+                article_conclusion: 'الخلاصة: القصص القرآني هو كنز من الدروس والعبر، لكن الكنز لا يُفتح إلا بالتدبر والتفكر. ابدأ اليوم بقصة واحدة، وطبق عليها المنهجية السبعية، واستخرج منها الدروس، وحوّلها إلى عمل. قال تعالى: "لَقَدْ كَانَ فِي قَصَصِهِمْ عِبْرَةٌ لِّأُولِي الْأَلْبَابِ" (يوسف: 111).',
                 share_title: "أعجبك المقال؟ شاركه مع أحبائك!",
                 share_whatsapp: "📱 واتساب", share_facebook: "📘 فيسبوك", share_twitter: "🐦 تويتر", share_copy: "📋 نسخ الرابط"
             },
@@ -545,87 +604,97 @@
                 back_to_blog: "← Back to Blog",
                 article_title: "Quranic Stories: How to Extract Lessons and Morals?",
                 article_date: "September 25, 2026", article_author: "Mahmoud Hussein", article_read_time: "9 min read",
-                article_intro: "Nearly a third of the Holy Quran consists of stories. Why is there so much storytelling in the Book of Allah? Is it for entertainment? Or is there great wisdom? The truth is that Quranic stories are not for entertainment, but a divine method for nurturing souls and stabilizing hearts. Allah tells us the stories of previous nations so we may take lessons, avoid their mistakes, and follow the path of the righteous.",
-                article_intro2: "But the problem is that many of us read the Quranic stories as if they were historical novels, passing by them without pausing at the lessons. In this article, we present a practical methodology to extract lessons from Quranic stories, to turn every story you read into a lesson that changes your life.",
+                article_intro: "Nearly a third of the Holy Quran consists of stories. Why is there so much storytelling in the Book of Allah? Is it for entertainment? Or is there great wisdom? The truth is that Quranic stories are not for entertainment, but a divine method for nurturing souls and stabilizing hearts.",
+                article_intro2: "But the problem is that many of us read the Quranic stories as if they were historical novels, passing by them without pausing at the lessons. In this article, we present a practical methodology to extract lessons from Quranic stories.",
                 "why-stories_title": "Why Did Allah Include Many Stories in the Quran?",
-                why-stories_text1: 'Allah says: "There was certainly in [the stories of] Joseph and his brothers a lesson for those who ask" (Yusuf: 7). And He said: "There was certainly in their stories a lesson for those of understanding" (Yusuf: 111). Quranic stories are a complete educational method. Among their wisdoms:',
-                why_li1: "Stabilizing the heart of the Prophet ﷺ and the believers: Allah says: \"And each [story] We relate to you from the news of the messengers is that by which We make firm your heart\" (Hud: 120).",
+                why-stories_text1: 'Allah says: "There was certainly in [the stories of] Joseph and his brothers a lesson for those who ask" (Yusuf: 7). And He said: "There was certainly in their stories a lesson for those of understanding" (Yusuf: 111).',
+                why_li1: "Stabilizing the heart of the Prophet ﷺ and the believers.",
                 why_li2: "Lessons for generations: Stories stay in memory more than direct advice.",
-                why_li3: "Showing Allah's laws among nations: like the law of victory for the patient, and destruction for those who deny.",
-                why_li4: "Training the self on patience and certainty: when you read the story of Ya'qub with Yusuf, you learn beautiful patience.",
+                why_li3: "Showing Allah's laws among nations.",
+                why_li4: "Training the self on patience and certainty.",
                 why_li5: "Showing the unity of the message: all prophets called to Tawhid.",
-                quote_text: 'Ibn Kathir said: "Quranic stories in the Quran are many, and the purpose is to stabilize the heart of the Prophet ﷺ, console the hearts of believers, and take lessons from the news of previous nations."',
+                quote_text: 'Ibn Kathir said: "Quranic stories in the Quran are many, and the purpose is to stabilize the heart of the Prophet ﷺ and console the hearts of believers."',
                 types_title: "Types of Stories in the Holy Quran",
                 types_text1: "Quranic stories are divided into three main types:",
                 type1_title: "1. Stories of the Prophets and Messengers",
-                type1_text: "These are the most common stories in the Quran, including the stories of Nuh, Ibrahim, Musa, 'Isa, Muhammad ﷺ, and others. Their purpose: stabilizing the heart and following the righteous.",
-                type1_lesson: "Lesson: Every prophet was tested and patient, so Allah strengthened his heart and raised his mention.",
+                type1_text: "These are the most common stories in the Quran, including the stories of Nuh, Ibrahim, Musa, 'Isa, Muhammad ﷺ.",
+                type1_lesson: "Lesson: Every prophet was tested and patient, so Allah strengthened his heart.",
                 type2_title: "2. Stories of Previous Nations",
-                type2_text: "The stories of 'Ad, Thamud, Pharaoh, Qarun, the People of the Cave, and the People of the Ditch. Their purpose: warning against disbelief and tyranny, and showing Allah's law in destroying those who deny.",
+                type2_text: "The stories of 'Ad, Thamud, Pharaoh, Qarun, the People of the Cave, and the People of the Ditch.",
                 type2_lesson: "Lesson: Whoever is arrogant and tyrannical, Allah destroys him, no matter his power.",
                 type3_title: "3. Stories of Individuals and Events",
-                type3_text: "Like the story of Maryam, the story of Talut and Dawud, the story of Dhul-Qarnayn, and the story of the Owners of the Two Gardens. Their purpose: nurturing the self and taking lessons from specific events.",
+                type3_text: "Like the story of Maryam, Talut and Dawud, Dhul-Qarnayn, and the Owners of the Two Gardens.",
                 type3_lesson: "Lesson: Allah knows the unseen and rewards every soul for what it earns.",
                 method_title: "Methodology for Extracting Lessons from Quranic Stories",
                 method_intro: "These are practical steps you can apply to every story you read:",
                 method1_title: "Read the story completely",
-                method1_text: "Make sure to read the complete story from the Mushaf, with a simplified interpretation. Don't read only part of it, as context is important for understanding the lessons.",
+                method1_text: "Make sure to read the complete story from the Mushaf, with a simplified interpretation.",
                 method2_title: "Identify the main characters",
-                method2_text: "Who are the characters? What is each character's role? In Musa's story, for example: Musa, Pharaoh, Harun, the magicians, the Children of Israel. Each character represents a certain model.",
+                method2_text: "Who are the characters? What is each character's role?",
                 method3_title: "Reflect on each character's actions",
-                method3_text: "Why did the character act this way? What was the motive? What was the result? Reflect on how Allah dealt with each character.",
+                method3_text: "Why did the character act this way? What was the motive? What was the result?",
                 method4_title: "Ask: What is the divine law in this story?",
-                method4_text: "Is there a fixed law revealed by the story? Like the law of victory for the patient, destruction for deniers, or empowerment for believers.",
+                method4_text: "Is there a fixed law revealed by the story?",
                 method5_title: "Connect the story to your reality",
-                method5_text: "This is the most important step. Ask: Do I resemble any character in this story? Is there a situation in my life similar to one in the story? What does Allah want to do with me?",
+                method5_text: "This is the most important step. Ask: Do I resemble any character?",
                 method6_title: "Extract and write down the lessons",
-                method6_text: "Write 3-5 lessons from each story. Review them from time to time, and update your application of them.",
+                method6_text: "Write 3-5 lessons from each story. Review them from time to time.",
                 method7_title: "Turn the lessons into action",
-                method7_text: "Choose one lesson and apply it immediately. For example: if you learned from Musa's story the importance of reliance on Allah, then rely on Allah in a matter that worries you today.",
+                method7_text: "Choose one lesson and apply it immediately.",
                 example_title: "Applied Example: The Story of Musa and Pharaoh",
                 example_intro: "Let's apply the methodology to the story of Musa and Pharaoh, the longest story in the Quran:",
-                example_text1: "Main characters: Musa (the strong believer), Pharaoh (the arrogant tyrant), Harun (the supporting brother), the magicians (people of corrupt knowledge), the Children of Israel (the oppressed).",
-                example_text2: 'The divine law in the story: the law of "empowerment for the oppressed." Allah says: "And We wanted to confer favor upon those who were oppressed in the land and make them leaders and make them inheritors" (Al-Qasas: 5).',
+                example_text1: "Main characters: Musa, Pharaoh, Harun, the magicians, the Children of Israel.",
+                example_text2: 'The divine law in the story: the law of "empowerment for the oppressed."',
                 example_text3: "Lessons learned:",
-                example_lesson1: "1. Tyranny ends in destruction: Pharaoh challenged Allah, so Allah drowned him in the very place where he tyrannized.",
-                example_lesson2: "2. Knowledge is light: The magicians were disbelievers, but when they saw the truth, they believed despite threats.",
-                example_lesson3: "3. A supporting brother: Harun supported his brother, and became one of Allah's prophets.",
-                example_lesson4: "4. Education through blessings and trials: Allah trains His servants with blessings to be grateful, and with trials to be patient.",
-                example_lesson5: "5. The oppressed are the heirs of the earth: Whoever is patient and upright, Allah honors him, no matter how long the injustice lasts.",
+                example_lesson1: "1. Tyranny ends in destruction.",
+                example_lesson2: "2. Knowledge is light.",
+                example_lesson3: "3. A supporting brother.",
+                example_lesson4: "4. Education through blessings and trials.",
+                example_lesson5: "5. The oppressed are the heirs of the earth.",
                 example_quote: 'Allah says about Pharaoh: "So We seized him and his soldiers and cast them into the sea, so look how was the end of the wrongdoers" (Al-Qasas: 40).',
                 mistakes_title: "Common Mistakes When Reading Quranic Stories",
-                mistake1: "1. Reading them only for entertainment: as if they were historical novels, without reflecting on the lessons.",
-                mistake2: "2. Focusing on details: like names of people and places, and ignoring the lessons.",
-                mistake3: "3. Seeking weak narrations: some people complete the story from Isra'iliyyat, corrupting their understanding.",
-                mistake4: "4. Not linking to reality: reading the story as if it happened to a nation with no relation to us.",
-                mistake5: "5. Stopping at action: reading many lessons without applying.",
-                table_title: "Summary Table: Map of Stories in the Quran",
+                mistake1: "1. Reading them only for entertainment.",
+                mistake2: "2. Focusing on details.",
+                mistake3: "3. Seeking weak narrations.",
+                mistake4: "4. Not linking to reality.",
+                mistake5: "5. Stopping at action.",
+                table_title: "Summary Table: Famous Stories in the Holy Quran",
                 table_col1: "Surah", table_col2: "Story", table_col3: "Main Lesson",
-                table_row1_surah: "Yusuf", table_row1_story: "The complete story of Yusuf", table_row1_lesson: "Beautiful patience and chastity at temptation",
-                table_row2_surah: "Al-Kahf", table_row2_story: "The People of the Cave", table_row2_lesson: "Firmness upon faith in the face of trials",
-                table_row3_surah: "Al-Qasas", table_row3_story: "Musa and Pharaoh", table_row3_lesson: "The end of tyranny is destruction",
-                table_row4_surah: "Al-Anbiya", table_row4_story: "Ibrahim and the fire", table_row4_lesson: "Reliance on Allah and firmness",
-                table_row5_surah: "Sad", table_row5_story: "Ayyub and patience", table_row5_lesson: "Patience in trials and contentment",
-                table_row6_surah: "Nuh", table_row6_story: "Nuh's call for 950 years", table_row6_lesson: "Calling with patience and persistence",
+                table_row1_surah: "Al-Baqarah", table_row1_story: "Adam and Iblis", table_row1_lesson: "Arrogance and envy destroy their owner",
+                table_row2_surah: "Al-Baqarah", table_row2_story: "The Children of Israel and the Cow", table_row2_lesson: "Hesitation in obedience wastes opportunities",
+                table_row3_surah: "Al-Baqarah", table_row3_story: "Talut, Dawud, and Jalut", table_row3_lesson: "Victory is through faith, not numbers",
+                table_row4_surah: "Al-Baqarah", table_row4_story: "Ibrahim and the Birds", table_row4_lesson: "Certainty in resurrection",
+                table_row5_surah: "Al-Imran", table_row5_story: "Maryam and Zakariyya", table_row5_lesson: "Supplication is never beyond Allah",
+                table_row6_surah: "Yusuf", table_row6_story: "Complete story of Yusuf", table_row6_lesson: "Beautiful patience and chastity",
+                table_row7_surah: "Al-Kahf", table_row7_story: "The People of the Cave", table_row7_lesson: "Firmness upon faith in the face of trials",
+                table_row8_surah: "Al-Kahf", table_row8_story: "Musa and Al-Khidr", table_row8_lesson: "Patience with what we don't understand",
+                table_row9_surah: "Al-Kahf", table_row9_story: "Dhul-Qarnayn", table_row9_lesson: "Justice and empowerment",
+                table_row10_surah: "Al-Qasas", table_row10_story: "Musa and Pharaoh", table_row10_lesson: "The end of tyranny is destruction",
+                table_row11_surah: "Al-Anbiya", table_row11_story: "Ibrahim and the fire", table_row11_lesson: "Reliance on Allah and firmness",
+                table_row12_surah: "Sad", table_row12_story: "Ayyub and patience", table_row12_lesson: "Patience in trials and contentment",
+                table_row13_surah: "Nuh", table_row13_story: "Nuh's call for 950 years", table_row13_lesson: "Calling with patience and persistence",
+                table_row14_surah: "Al-Fil", table_row14_story: "The People of the Elephant", table_row14_lesson: "Allah's protection of His Sacred House",
                 faq_title: "Frequently Asked Questions about Quranic Stories",
                 faq1_q: "Can I read Isra'iliyyat to complete the Quranic stories?",
-                faq1_a: 'It is not permissible to rely on Isra\'iliyyat in Quranic stories, because they are not established from the Prophet ﷺ. The Prophet ﷺ said: "Do not believe the People of the Book and do not disbelieve them." What agrees with the Quran is accepted, what contradicts it is rejected, and what is silent about, we neither believe nor disbelieve. The best is to limit to the Quran and trusted interpretation.',
+                faq1_a: 'It is not permissible to rely on Isra\'iliyyat in Quranic stories, because they are not established from the Prophet ﷺ.',
                 faq2_q: "Why are some stories repeated in the Quran?",
-                faq2_a: "Repetition of stories in the Quran has great wisdom, including: stabilizing the heart, emphasizing the meaning, and accommodating different contexts and situations. Each time the story is mentioned, new lessons, rulings, and morals are mentioned with it.",
+                faq2_a: "Repetition of stories in the Quran has great wisdom, including: stabilizing the heart, emphasizing the meaning.",
                 faq3_q: "How can I benefit from a story I read in a situation I face?",
-                faq3_a: "Ask yourself three questions: What problem was the character facing? How did they act? What was the result of their action? Then connect this to your reality: Is there a similar situation for me? What can I learn from the character's action? Then apply the lesson immediately.",
+                faq3_a: "Ask yourself three questions: What problem was the character facing? How did they act? What was the result?",
                 faq4_q: "Does every story in the Quran have multiple lessons?",
-                faq4_a: "Yes, every story in the Quran has multiple lessons, and each reader can extract what suits their state. The Quran is the Word of Allah whose wonders never cease, and every time you read the story with a new heart, you extract new lessons.",
+                faq4_a: "Yes, every story in the Quran has multiple lessons, and each reader can extract what suits their state.",
+                faq5_q: "What is the longest story in the Holy Quran?",
+                faq5_a: "The longest story in the Holy Quran is the story of Musa (peace be upon him), which is repeated in more than 20 surahs. The longest continuous story in one surah is the story of Yusuf (peace be upon him).",
                 cta_title: "Zad Bono App: Your Comprehensive Quranic Library",
-                cta_text: "In the Zad Bono app, you will find the complete Holy Quran with simplified interpretation, and a \"Stories of the Prophets\" section that includes all Quranic stories in an easy and enjoyable style. Get the lessons and morals from every story.",
+                cta_text: "In the Zad Bono app, you will find the complete Holy Quran with simplified interpretation, and a \"Stories of the Prophets\" section.",
                 cta_btn: "📥 Download the App Now",
                 lessons_title: "Lessons from the Article",
-                lesson1: "1. Stories are not for entertainment: A third of the Quran is stories, and their purpose is educational.",
-                lesson2: "2. Extraction methodology: Read fully, identify characters, reflect on actions, connect to reality.",
+                lesson1: "1. Stories are not for entertainment: A third of the Quran is stories.",
+                lesson2: "2. Extraction methodology: Read fully, identify characters, reflect on actions.",
                 lesson3: "3. Divine law is fixed: What happened to previous nations happens to us.",
-                lesson4: "4. Action is the goal: A story that doesn't change your behavior, you haven't truly benefited from it.",
-                lesson5: "5. The Quran is all lessons: Every story teaches you a lesson, and every lesson raises you a degree.",
-                article_conclusion: 'Conclusion: Quranic stories are a treasure of lessons and morals, but the treasure is only opened with reflection and contemplation. Start today with one story, apply the seven-step methodology, extract the lessons, and turn them into action. You will find that every story opens a new door of understanding, and a door of closeness to Allah. Allah says: "There was certainly in their stories a lesson for those of understanding" (Yusuf: 111).',
+                lesson4: "4. Action is the goal: A story that doesn't change your behavior, you haven't benefited from it.",
+                lesson5: "5. The Quran is all lessons: Every story teaches you a lesson.",
+                article_conclusion: 'Conclusion: Quranic stories are a treasure of lessons and morals, but the treasure is only opened with reflection. Start today with one story, apply the methodology, extract the lessons, and turn them into action. Allah says: "There was certainly in their stories a lesson for those of understanding" (Yusuf: 111).',
                 share_title: "Enjoyed this article? Share it with your loved ones!",
                 share_whatsapp: "📱 WhatsApp", share_facebook: "📘 Facebook", share_twitter: "🐦 Twitter", share_copy: "📋 Copy Link"
             }
