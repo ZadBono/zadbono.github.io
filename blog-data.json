@@ -1,21 +1,60 @@
 {
   "categories": [
-    { "id": "all", "ar": "الكل", "en": "All" },
-    { "id": "quran", "ar": "القرآن", "en": "Quran" },
-    { "id": "prayer", "ar": "الصلاة", "en": "Prayer" },
-    { "id": "azkar", "ar": "الأذكار", "en": "Azkar" },
-    { "id": "stories", "ar": "القصص", "en": "Stories" },
-    { "id": "dua", "ar": "الدعاء", "en": "Dua" },
-    { "id": "entertainment", "ar": "الترفيه", "en": "Entertainment" },
-    { "id": "tawbah", "ar": "التوبة", "en": "Tawbah" },
-    { "id": "tech", "ar": "تقني", "en": "Tech" }
+    {
+      "id": "all",
+      "ar": "الكل",
+      "en": "All"
+    },
+    {
+      "id": "quran",
+      "ar": "القرآن",
+      "en": "Quran"
+    },
+    {
+      "id": "prayer",
+      "ar": "الصلاة",
+      "en": "Prayer"
+    },
+    {
+      "id": "azkar",
+      "ar": "الأذكار",
+      "en": "Azkar"
+    },
+    {
+      "id": "stories",
+      "ar": "القصص",
+      "en": "Stories"
+    },
+    {
+      "id": "dua",
+      "ar": "الدعاء",
+      "en": "Dua"
+    },
+    {
+      "id": "entertainment",
+      "ar": "الترفيه",
+      "en": "Entertainment"
+    },
+    {
+      "id": "tawbah",
+      "ar": "التوبة",
+      "en": "Tawbah"
+    },
+    {
+      "id": "tech",
+      "ar": "تقني",
+      "en": "Tech"
+    }
   ],
   "articles": [
     {
       "id": "times-of-answered-dua",
       "category": "dua",
       "image": "images/times-of-answered-dua.webp",
-      "date": { "ar": "١٠ يوليو ٢٠٢٦", "en": "July 10, 2026" },
+      "date": {
+        "ar": "١٠ يوليو ٢٠٢٦",
+        "en": "July 10, 2026"
+      },
       "title": {
         "ar": "أوقات استجابة الدعاء: متى يكون الدعاء أقرب للإجابة؟",
         "en": "Times of Answered Dua: When Is Dua Closest to Being Answered?"
@@ -30,7 +69,10 @@
       "id": "quranic-duas",
       "category": "dua",
       "image": "images/quranic-duas.webp",
-      "date": { "ar": "٢٠ يوليو ٢٠٢٦", "en": "July 20, 2026" },
+      "date": {
+        "ar": "٢٠ يوليو ٢٠٢٦",
+        "en": "July 20, 2026"
+      },
       "title": {
         "ar": "أدعية القرآن الكريم: كنوز من أعظم الأدعية",
         "en": "Quranic Duas: Treasures from the Greatest Supplications"
@@ -45,7 +87,10 @@
       "id": "prophets-duas",
       "category": "dua",
       "image": "images/prophets-duas.webp",
-      "date": { "ar": "٥ أغسطس ٢٠٢٦", "en": "August 5, 2026" },
+      "date": {
+        "ar": "٥ أغسطس ٢٠٢٦",
+        "en": "August 5, 2026"
+      },
       "title": {
         "ar": "أدعية الأنبياء: كيف دعا الأنبياء ربهم؟",
         "en": "Prophets' Duas: How Did the Prophets Supplicate to Their Lord?"
@@ -60,7 +105,10 @@
       "id": "istikhara-dua",
       "category": "dua",
       "image": "images/istikhara-dua.webp",
-      "date": { "ar": "١٨ أغسطس ٢٠٢٦", "en": "August 18, 2026" },
+      "date": {
+        "ar": "١٨ أغسطس ٢٠٢٦",
+        "en": "August 18, 2026"
+      },
       "title": {
         "ar": "دعاء الاستخارة: كيف تسأل الله الخير؟",
         "en": "Istikhara Dua: How to Ask Allah for Goodness?"
@@ -75,7 +123,10 @@
       "id": "duas-for-distress",
       "category": "dua",
       "image": "images/duas-for-distress.webp",
-      "date": { "ar": "١ سبتمبر ٢٠٢٦", "en": "September 1, 2026" },
+      "date": {
+        "ar": "١ سبتمبر ٢٠٢٦",
+        "en": "September 1, 2026"
+      },
       "title": {
         "ar": "أدعية تفريج الهم والكرب: ماذا تقول عند الضيق؟",
         "en": "Duas for Relieving Worry and Distress: What to Say in Hardship?"
@@ -90,7 +141,10 @@
       "id": "ramadan-dua",
       "category": "dua",
       "image": "images/ramadan-dua.webp",
-      "date": { "ar": "١٥ سبتمبر ٢٠٢٦", "en": "September 15, 2026" },
+      "date": {
+        "ar": "١٥ سبتمبر ٢٠٢٦",
+        "en": "September 15, 2026"
+      },
       "title": {
         "ar": "الدعاء في رمضان: أفضل أوقات الدعاء في الشهر الفضيل",
         "en": "Dua in Ramadan: The Best Times for Supplication in the Blessed Month"
@@ -105,7 +159,10 @@
       "id": "qunoot-dua",
       "category": "dua",
       "image": "images/qunoot-dua.webp",
-      "date": { "ar": "٢٥ سبتمبر ٢٠٢٦", "en": "September 25, 2026" },
+      "date": {
+        "ar": "٢٥ سبتمبر ٢٠٢٦",
+        "en": "September 25, 2026"
+      },
       "title": {
         "ar": "دعاء القنوت: متى يقال، وما صيغته الصحيحة؟",
         "en": "Qunoot Dua: When Is It Said, and What Is Its Correct Wording?"
@@ -120,7 +177,10 @@
       "id": "how-to-make-dua-answered",
       "category": "dua",
       "image": "images/how-to-make-dua-answered.webp",
-      "date": { "ar": "٢٢ نوفمبر ٢٠٢٥", "en": "November 22, 2025" },
+      "date": {
+        "ar": "٢٢ نوفمبر ٢٠٢٥",
+        "en": "November 22, 2025"
+      },
       "title": {
         "ar": "كيف تجعل دعاءك مستجابًا؟ خطأ شائع يقع فيه 90% من الناس",
         "en": "How to Make Your Dua Answered? A Common Mistake 90% of People Make"
@@ -135,7 +195,10 @@
       "id": "morning-evening-azkar",
       "category": "azkar",
       "image": "images/morning-evening-azkar.webp",
-      "date": { "ar": "٢٨ أغسطس ٢٠٢٦", "en": "August 28, 2026" },
+      "date": {
+        "ar": "٢٨ أغسطس ٢٠٢٦",
+        "en": "August 28, 2026"
+      },
       "title": {
         "ar": "أذكار الصباح والمساء: حصنك اليومي من كل سوء",
         "en": "Morning and Evening Azkar: Your Daily Fortress from All Harm"
@@ -150,7 +213,10 @@
       "id": "sleep-wake-azkar",
       "category": "azkar",
       "image": "images/sleep-wake-azkar.webp",
-      "date": { "ar": "١٥ أغسطس ٢٠٢٦", "en": "August 15, 2026" },
+      "date": {
+        "ar": "١٥ أغسطس ٢٠٢٦",
+        "en": "August 15, 2026"
+      },
       "title": {
         "ar": "أذكار النوم والاستيقاظ: كيف تنام في حفظ الله؟",
         "en": "Sleep and Wake-up Azkar: How to Sleep Under Allah's Protection?"
@@ -165,7 +231,10 @@
       "id": "azkar-after-prayer",
       "category": "azkar",
       "image": "images/azkar-after-prayer.webp",
-      "date": { "ar": "٥ أغسطس ٢٠٢٦", "en": "August 5, 2026" },
+      "date": {
+        "ar": "٥ أغسطس ٢٠٢٦",
+        "en": "August 5, 2026"
+      },
       "title": {
         "ar": "أذكار بعد الصلاة: كنز من الأجر والبركة",
         "en": "Azkar After Prayer: A Treasure of Reward and Blessing"
@@ -180,7 +249,10 @@
       "id": "enter-leave-azkar",
       "category": "azkar",
       "image": "images/enter-leave-azkar.webp",
-      "date": { "ar": "٢٠ يوليو ٢٠٢٦", "en": "July 20, 2026" },
+      "date": {
+        "ar": "٢٠ يوليو ٢٠٢٦",
+        "en": "July 20, 2026"
+      },
       "title": {
         "ar": "أذكار الدخول والخروج: حصّن بيتك ويومك بالذكر",
         "en": "Entering and Leaving Azkar: Fortify Your Home and Day with Remembrance"
@@ -195,7 +267,10 @@
       "id": "food-drink-azkar",
       "category": "azkar",
       "image": "images/food-drink-azkar.webp",
-      "date": { "ar": "١٠ يوليو ٢٠٢٦", "en": "July 10, 2026" },
+      "date": {
+        "ar": "١٠ يوليو ٢٠٢٦",
+        "en": "July 10, 2026"
+      },
       "title": {
         "ar": "أذكار الطعام والشراب: سنن نبوية ينساها كثيرون",
         "en": "Food and Drink Azkar: Prophetic Sunnahs Many Forget"
@@ -210,7 +285,10 @@
       "id": "friday-azkar",
       "category": "azkar",
       "image": "images/friday-azkar.webp",
-      "date": { "ar": "١ سبتمبر ٢٠٢٦", "en": "September 1, 2026" },
+      "date": {
+        "ar": "١ سبتمبر ٢٠٢٦",
+        "en": "September 1, 2026"
+      },
       "title": {
         "ar": "أذكار وآداب يوم الجمعة: كيف تعظّم يومك المبارك؟",
         "en": "Friday Azkar and Etiquette: How to Honor Your Blessed Day?"
@@ -225,7 +303,10 @@
       "id": "how-to-maintain-azkar",
       "category": "azkar",
       "image": "images/how-to-maintain-azkar.webp",
-      "date": { "ar": "١ يناير ٢٠٢٥", "en": "January 1, 2025" },
+      "date": {
+        "ar": "١ يناير ٢٠٢٥",
+        "en": "January 1, 2025"
+      },
       "title": {
         "ar": "كيف تحافظ على وردك اليومي من الأذكار حتى في أكثر الأيام انشغالاً؟",
         "en": "How to Maintain Your Daily Azkar Even on the Busiest Days?"
@@ -240,7 +321,10 @@
       "id": "5-quran-secrets",
       "category": "quran",
       "image": "images/5-quran-secrets.webp",
-      "date": { "ar": "٢١ أكتوبر ٢٠٢٥", "en": "October 21, 2025" },
+      "date": {
+        "ar": "٢١ أكتوبر ٢٠٢٥",
+        "en": "October 21, 2025"
+      },
       "title": {
         "ar": "5 أسرار في القرآن لم يخبرك بها أحد (السر الثالث سيغير حياتك)",
         "en": "5 Secrets in the Quran Nobody Told You (The Third Will Change Your Life)"
@@ -255,7 +339,10 @@
       "id": "is-my-prayer-accepted",
       "category": "prayer",
       "image": "images/is-my-prayer-accepted.webp",
-      "date": { "ar": "٢٥ ديسمبر ٢٠٢٥", "en": "December 25, 2025" },
+      "date": {
+        "ar": "٢٥ ديسمبر ٢٠٢٥",
+        "en": "December 25, 2025"
+      },
       "title": {
         "ar": "هل صلاتك مقبولة؟ 3 علامات من القرآن والسنة قد تفاجئك",
         "en": "Is Your Prayer Accepted? 3 Signs from Quran & Sunnah That Might Surprise You"
@@ -270,7 +357,10 @@
       "id": "is-watching-movies-haram",
       "category": "entertainment",
       "image": "images/is-watching-movies-haram.webp",
-      "date": { "ar": "٢٠ أكتوبر ٢٠٢٥", "en": "October 20, 2025" },
+      "date": {
+        "ar": "٢٠ أكتوبر ٢٠٢٥",
+        "en": "October 20, 2025"
+      },
       "title": {
         "ar": "هل مشاهدة الأفلام والمسلسلات حرام؟ (رأي يفصل النزاع)",
         "en": "Is Watching Movies and Series Haram? (A Decisive Opinion)"
@@ -282,10 +372,139 @@
       "url": "articles/is-watching-movies-haram.html"
     },
     {
+      "id": "entertainment-in-islam",
+      "category": "entertainment",
+      "image": "images/entertainment-in-islam.webp",
+      "date": {
+        "ar": "١ أغسطس ٢٠٢٦",
+        "en": "August 1, 2026"
+      },
+      "title": {
+        "ar": "الترفيه في الإسلام: ما المباح وما ضوابطه؟",
+        "en": "Entertainment in Islam: What Is Permissible and What Are Its Guidelines?"
+      },
+      "excerpt": {
+        "ar": "الترفيه جزء طبيعي من الحياة، لكن له ضوابط تحفظ الوقت والقيم. تعرّف على صور الترفيه المباح وأهم الضوابط التي ينبغي مراعاتها.",
+        "en": "Entertainment is a natural part of life, but it has guidelines that protect time and values. Learn about permissible forms of leisure and the key principles to keep in mind."
+      },
+      "url": "articles/entertainment-in-islam.html"
+    },
+    {
+      "id": "is-music-haram",
+      "category": "entertainment",
+      "image": "images/is-music-haram.webp",
+      "date": {
+        "ar": "٨ أغسطس ٢٠٢٦",
+        "en": "August 8, 2026"
+      },
+      "title": {
+        "ar": "هل الموسيقى حرام؟ عرض لأبرز الأقوال والأدلة",
+        "en": "Is Music Haram? A Review of the Main Views and Evidence"
+      },
+      "excerpt": {
+        "ar": "مسألة الموسيقى من الموضوعات التي دار حولها خلاف فقهي. تعرّف على أبرز الأقوال وأدلتها، وكيف يفهم المسلم المسألة بوعي واتزان.",
+        "en": "Music is a subject of well-known juristic disagreement. Explore the main views and their evidence, and how a Muslim can approach the issue thoughtfully and responsibly."
+      },
+      "url": "articles/is-music-haram.html"
+    },
+    {
+      "id": "video-games-islam",
+      "category": "entertainment",
+      "image": "images/video-games-islam.webp",
+      "date": {
+        "ar": "١٥ أغسطس ٢٠٢٦",
+        "en": "August 15, 2026"
+      },
+      "title": {
+        "ar": "ألعاب الفيديو: ما الضوابط الشرعية للترفيه الرقمي؟",
+        "en": "Video Games: What Are the Islamic Guidelines for Digital Entertainment?"
+      },
+      "excerpt": {
+        "ar": "الألعاب الإلكترونية أصبحت جزءًا من حياة كثير من الشباب. تعرّف على ضوابط اللعب، وإدارة الوقت، والمحتوى، والتعامل مع المنافسة والشراء داخل الألعاب.",
+        "en": "Video games are now part of everyday life for many young people. Learn about guidelines for play, time management, content, competition, and in-game purchases."
+      },
+      "url": "articles/video-games-islam.html"
+    },
+    {
+      "id": "productive-leisure-islam",
+      "category": "entertainment",
+      "image": "images/productive-leisure-islam.webp",
+      "date": {
+        "ar": "٢٢ أغسطس ٢٠٢٦",
+        "en": "August 22, 2026"
+      },
+      "title": {
+        "ar": "كيف تستغل وقت فراغك فيما ينفع؟ 7 بدائل ممتعة ومفيدة",
+        "en": "How to Use Your Free Time Well: 7 Fun and Beneficial Alternatives"
+      },
+      "excerpt": {
+        "ar": "وقت الفراغ يمكن أن يتحول إلى مساحة للمتعة والفائدة معًا. اكتشف 7 أفكار عملية تجمع بين الراحة، والهوايات، والتعلم، والنشاط.",
+        "en": "Free time can become a space for both enjoyment and benefit. Discover 7 practical ideas that combine rest, hobbies, learning, and activity."
+      },
+      "url": "articles/productive-leisure-islam.html"
+    },
+    {
+      "id": "is-watching-football-halal",
+      "category": "entertainment",
+      "image": "images/is-watching-football-halal.webp",
+      "date": {
+        "ar": "٢٩ أغسطس ٢٠٢٦",
+        "en": "August 29, 2026"
+      },
+      "title": {
+        "ar": "مشاهدة كرة القدم والرياضة: ما الضوابط التي ينبغي مراعاتها؟",
+        "en": "Watching Football and Sports: What Guidelines Should Be Observed?"
+      },
+      "excerpt": {
+        "ar": "متابعة الرياضة من أكثر وسائل الترفيه انتشارًا. تعرّف على الضوابط المتعلقة بالوقت، والتعصب، والرهان، والواجبات حتى تبقى المتابعة في إطار متوازن.",
+        "en": "Watching sports is one of the most popular forms of entertainment. Learn about guidelines concerning time, fanaticism, betting, and responsibilities so that viewing stays balanced."
+      },
+      "url": "articles/is-watching-football-halal.html"
+    },
+    {
+      "id": "humor-in-islam",
+      "category": "entertainment",
+      "image": "images/humor-in-islam.webp",
+      "date": {
+        "ar": "٥ سبتمبر ٢٠٢٦",
+        "en": "September 5, 2026"
+      },
+      "title": {
+        "ar": "الضحك والمزاح في الإسلام: كيف تمزح دون أن تخطئ؟",
+        "en": "Humor and Joking in Islam: How Can You Joke Without Crossing the Line?"
+      },
+      "excerpt": {
+        "ar": "المزاح يضيف البهجة للعلاقات، لكن له آداب وحدود. تعرّف على ضوابط المزاح، وتجنّب الكذب والسخرية والأذى، وكيف تحافظ على روح خفيفة باحترام.",
+        "en": "Humor adds joy to relationships, but it has manners and limits. Learn how to avoid lying, mockery, and harm while keeping a lighthearted and respectful spirit."
+      },
+      "url": "articles/humor-in-islam.html"
+    },
+    {
+      "id": "islamic-movies-halal",
+      "category": "entertainment",
+      "image": "images/islamic-movies-halal.webp",
+      "date": {
+        "ar": "١٢ سبتمبر ٢٠٢٦",
+        "en": "September 12, 2026"
+      },
+      "title": {
+        "ar": "الأفلام والمسلسلات الهادفة: هل تكون بديلًا مناسبًا؟",
+        "en": "Purposeful Films and Series: Can They Be a Suitable Alternative?"
+      },
+      "excerpt": {
+        "ar": "ليست كل الأعمال المرئية متشابهة. تعرّف على معايير اختيار الأفلام والمسلسلات الهادفة، وكيف توازن بين المتعة وجودة المحتوى والقيم.",
+        "en": "Not all visual content is the same. Learn how to choose purposeful films and series while balancing enjoyment, content quality, and values."
+      },
+      "url": "articles/islamic-movies-halal.html"
+    },
+    {
       "id": "why-does-god-test-me",
       "category": "prayer",
       "image": "images/why-does-god-test-me.webp",
-      "date": { "ar": "١٨ نوفمبر ٢٠٢٥", "en": "November 18, 2025" },
+      "date": {
+        "ar": "١٨ نوفمبر ٢٠٢٥",
+        "en": "November 18, 2025"
+      },
       "title": {
         "ar": "لماذا يبتليني الله وأنا أصلي وأعبده؟ فهم حكمة الابتلاء",
         "en": "Why Does Allah Test Me While I Pray and Worship Him?"
@@ -300,7 +519,10 @@
       "id": "will-god-forgive-my-sin",
       "category": "tawbah",
       "image": "images/will-god-forgive-my-sin.webp",
-      "date": { "ar": "١٥ أكتوبر ٢٠٢٥", "en": "October 15, 2025" },
+      "date": {
+        "ar": "١٥ أكتوبر ٢٠٢٥",
+        "en": "October 15, 2025"
+      },
       "title": {
         "ar": "ارتكبت ذنباً عظيماً، هل سيغفر الله لي؟ باب التوبة مفتوح",
         "en": "I Committed a Great Sin, Will Allah Forgive Me? The Door of Repentance Is Open"
@@ -315,7 +537,10 @@
       "id": "how-to-stop-bad-ads",
       "category": "tech",
       "image": "images/how-to-stop-bad-ads.webp",
-      "date": { "ar": "١٢ سبتمبر ٢٠٢٥", "en": "September 12, 2025" },
+      "date": {
+        "ar": "١٢ سبتمبر ٢٠٢٥",
+        "en": "September 12, 2025"
+      },
       "title": {
         "ar": "كيف أتخلص من الإعلانات المخلة التي تظهر لي؟ (دليل عملي)",
         "en": "How to Get Rid of Inappropriate Ads? (Practical Guide)"
@@ -330,7 +555,10 @@
       "id": "i-pray-but-feel-nothing",
       "category": "prayer",
       "image": "images/i-pray-but-feel-nothing.webp",
-      "date": { "ar": "١٥ أغسطس ٢٠٢٥", "en": "August 15, 2025" },
+      "date": {
+        "ar": "١٥ أغسطس ٢٠٢٥",
+        "en": "August 15, 2025"
+      },
       "title": {
         "ar": "أنا أصلي ولكن لا أشعر بشيء، ما الحل؟ (علاج فتور العبادة)",
         "en": "I Pray but Feel Nothing, What's the Solution? (Curing Spiritual Slump)"
@@ -345,7 +573,10 @@
       "id": "reading-quran-without-hijab",
       "category": "quran",
       "image": "images/reading-quran-without-hijab.webp",
-      "date": { "ar": "٨ سبتمبر ٢٠٢٥", "en": "September 8, 2025" },
+      "date": {
+        "ar": "٨ سبتمبر ٢٠٢٥",
+        "en": "September 8, 2025"
+      },
       "title": {
         "ar": "هل يجوز للمرأة قراءة القرآن بدون حجاب؟ (تصحيح مفاهيم)",
         "en": "Is It Permissible for a Woman to Read Quran Without Hijab? (Clarifying Concepts)"
@@ -360,7 +591,10 @@
       "id": "story-julaybib",
       "category": "stories",
       "image": "images/story-julaybib.webp",
-      "date": { "ar": "١٠ سبتمبر ٢٠٢٦", "en": "September 10, 2026" },
+      "date": {
+        "ar": "١٠ سبتمبر ٢٠٢٦",
+        "en": "September 10, 2026"
+      },
       "title": {
         "ar": "جليبيب.. الصحابي الذي زوّجه النبي ﷺ بنفسه",
         "en": "Julaybib: The Companion Whom the Prophet ﷺ Married Off Himself"
@@ -375,7 +609,10 @@
       "id": "story-malik-bin-dinar",
       "category": "stories",
       "image": "images/story-malik-bin-dinar.webp",
-      "date": { "ar": "١٥ سبتمبر ٢٠٢٦", "en": "September 15, 2026" },
+      "date": {
+        "ar": "١٥ سبتمبر ٢٠٢٦",
+        "en": "September 15, 2026"
+      },
       "title": {
         "ar": "مالك بن دينار.. من شارب الخمر إلى إمام الزاهدين",
         "en": "Malik ibn Dinar: From a Drinker of Wine to an Imam of the Ascetics"
@@ -390,7 +627,10 @@
       "id": "story-bandit-repentance",
       "category": "stories",
       "image": "images/story-bandit-repentance.webp",
-      "date": { "ar": "٢٠ سبتمبر ٢٠٢٦", "en": "September 20, 2026" },
+      "date": {
+        "ar": "٢٠ سبتمبر ٢٠٢٦",
+        "en": "September 20, 2026"
+      },
       "title": {
         "ar": "توبة قاطع الطريق بآية من القرآن",
         "en": "The Repentance of a Highway Robber by a Single Quranic Verse"
@@ -405,7 +645,10 @@
       "id": "story-three-who-stayed-behind",
       "category": "stories",
       "image": "images/story-three-who-stayed-behind.webp",
-      "date": { "ar": "٢٢ سبتمبر ٢٠٢٦", "en": "September 22, 2026" },
+      "date": {
+        "ar": "٢٢ سبتمبر ٢٠٢٦",
+        "en": "September 22, 2026"
+      },
       "title": {
         "ar": "الثلاثة الذين تخلفوا عن غزوة تبوك (كعب بن مالك)",
         "en": "The Three Who Stayed Behind from the Battle of Tabuk (Ka'b ibn Malik)"
@@ -420,7 +663,10 @@
       "id": "story-sea-woman",
       "category": "stories",
       "image": "images/story-sea-woman.webp",
-      "date": { "ar": "٢٤ سبتمبر ٢٠٢٦", "en": "September 24, 2026" },
+      "date": {
+        "ar": "٢٤ سبتمبر ٢٠٢٦",
+        "en": "September 24, 2026"
+      },
       "title": {
         "ar": "قصة المرأة البحرية مع أبي موسى الأشعري",
         "en": "The Story of the Sea Woman with Abu Musa al-Ash'ari"
@@ -435,7 +681,10 @@
       "id": "how-to-contemplate-quran",
       "category": "quran",
       "image": "images/how-to-contemplate-quran.webp",
-      "date": { "ar": "١٥ يونيو ٢٠٢٦", "en": "June 15, 2026" },
+      "date": {
+        "ar": "١٥ يونيو ٢٠٢٦",
+        "en": "June 15, 2026"
+      },
       "title": {
         "ar": "كيف تتدبر القرآن؟ 7 خطوات عملية لتغيير حياتك",
         "en": "How to Contemplate the Quran? 7 Practical Steps to Change Your Life"
@@ -450,7 +699,10 @@
       "id": "best-times-to-read-quran",
       "category": "quran",
       "image": "images/best-times-to-read-quran.webp",
-      "date": { "ar": "٢٠ يونيو ٢٠٢٦", "en": "June 20, 2026" },
+      "date": {
+        "ar": "٢٠ يونيو ٢٠٢٦",
+        "en": "June 20, 2026"
+      },
       "title": {
         "ar": "أفضل أوقات لقراءة القرآن في يومك المزدحم",
         "en": "Best Times to Read the Quran in Your Busy Day"
@@ -465,7 +717,10 @@
       "id": "5-short-surahs",
       "category": "quran",
       "image": "images/5-short-surahs.webp",
-      "date": { "ar": "٢٥ يونيو ٢٠٢٦", "en": "June 25, 2026" },
+      "date": {
+        "ar": "٢٥ يونيو ٢٠٢٦",
+        "en": "June 25, 2026"
+      },
       "title": {
         "ar": "5 سور قصيرة تغير حياتك إذا قرأتها كل يوم",
         "en": "5 Short Surahs That Change Your Life If You Read Them Daily"
@@ -480,7 +735,10 @@
       "id": "how-to-memorize-quran",
       "category": "quran",
       "image": "images/how-to-memorize-quran.webp",
-      "date": { "ar": "١ يوليو ٢٠٢٦", "en": "July 1, 2026" },
+      "date": {
+        "ar": "١ يوليو ٢٠٢٦",
+        "en": "July 1, 2026"
+      },
       "title": {
         "ar": "كيف تحفظ القرآن؟ دليل عملي للمبتدئين",
         "en": "How to Memorize the Quran? A Practical Guide for Beginners"
@@ -495,7 +753,10 @@
       "id": "why-not-affected-by-quran",
       "category": "quran",
       "image": "images/why-not-affected-by-quran.webp",
-      "date": { "ar": "٥ يوليو ٢٠٢٦", "en": "July 5, 2026" },
+      "date": {
+        "ar": "٥ يوليو ٢٠٢٦",
+        "en": "July 5, 2026"
+      },
       "title": {
         "ar": "لماذا لا تتأثر بالقرآن؟ 4 أسباب وحلولها",
         "en": "Why Aren't You Affected by the Quran? 4 Reasons and Their Solutions"
@@ -510,7 +771,10 @@
       "id": "ayat-al-kursi",
       "category": "quran",
       "image": "images/ayat-al-kursi.webp",
-      "date": { "ar": "١٠ يوليو ٢٠٢٦", "en": "July 10, 2026" },
+      "date": {
+        "ar": "١٠ يوليو ٢٠٢٦",
+        "en": "July 10, 2026"
+      },
       "title": {
         "ar": "أعظم آية في القرآن.. آية الكرسي (فضلها وأسرارها)",
         "en": "The Greatest Verse in the Quran: Ayat al-Kursi (Its Virtues and Secrets)"
@@ -525,7 +789,10 @@
       "id": "quran-stories-lessons",
       "category": "quran",
       "image": "images/quran-stories-lessons.webp",
-      "date": { "ar": "١٨ يوليو ٢٠٢٦", "en": "July 18, 2026" },
+      "date": {
+        "ar": "١٨ يوليو ٢٠٢٦",
+        "en": "July 18, 2026"
+      },
       "title": {
         "ar": "قصص القرآن: كيف تستخرج الدروس والعبر؟",
         "en": "Stories of the Quran: How to Extract Lessons and Morals?"
@@ -540,7 +807,10 @@
       "id": "quran-healing",
       "category": "quran",
       "image": "images/quran-healing.webp",
-      "date": { "ar": "٢٢ يوليو ٢٠٢٦", "en": "July 22, 2026" },
+      "date": {
+        "ar": "٢٢ يوليو ٢٠٢٦",
+        "en": "July 22, 2026"
+      },
       "title": {
         "ar": "القرآن والشفاء: كيف يشفيك القرآن من الأمراض النفسية؟",
         "en": "The Quran and Healing: How Does the Quran Heal Psychological Illnesses?"
