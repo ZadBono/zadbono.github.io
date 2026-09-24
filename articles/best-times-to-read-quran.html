@@ -67,7 +67,7 @@
         .selected-lang { background: var(--glass-bg); border: 2px solid var(--border-color); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 12px; transition: all var(--transition-base); font-weight: 500; }
         .selected-lang:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
         .selected-lang img { width: 24px; height: 24px; border-radius: 50%; box-shadow: var(--shadow-sm); }
-        .lang-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 16px; border: 1px solid var(--glass-border); box-shadow: var(--shadow-xl); list-style: none; padding: 8px; min-width: 160px; z-index: 1001; animation: slideDown 0.3s var(--bounce); }
+        .lang-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: var(--glass-bg); backdrop-filter: blur(20px); border-radius: 16px; border: 1px solid var(--glass-border); box-shadow: var(--shadow-xl); list-style: none; padding: 8px; min-width: 160px; z-index: 1001; animation: slideDown 0.3s var(--bounce); }
         @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         .lang-menu.show { display: block; }
         .lang-menu li a { color: var(--text-primary); text-decoration: none; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; transition: all var(--transition-fast); font-size: 0.9em; font-weight: 500; }
@@ -90,6 +90,9 @@
         .article-content ul { padding-right: 25px; margin-bottom: 20px; }
         .article-content li { margin-bottom: 12px; font-size: 1.05em; color: var(--text-secondary); line-height: 1.8; }
         .article-content strong { color: var(--primary); font-weight: 700; }
+        .internal-link { color: var(--primary); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--primary); padding-bottom: 2px; transition: all var(--transition-base); cursor: pointer; }
+        .internal-link:hover { color: var(--primary-dark); border-bottom-color: var(--primary-dark); opacity: 0.85; }
+        .internal-link::after { content: ' ↗'; font-size: 0.85em; }
         .article-content .highlight-box { background: var(--primary-gradient); color: white; padding: 30px 35px; border-radius: 20px; margin: 35px 0; position: relative; overflow: hidden; }
         .article-content .highlight-box::before { content: '"'; position: absolute; top: -20px; right: 20px; font-size: 120px; opacity: 0.1; font-family: Georgia, serif; }
         .article-content .highlight-box p { color: rgba(255,255,255,0.95); margin-bottom: 0; }
@@ -195,13 +198,13 @@
             </header>
             <div class="article-content">
                 <p data-translate="article_intro">"لا أجد وقتاً لقراءة القرآن!" هذه أكثر جملة يقولها المسلم في زمننا هذا. بين العمل، والالتزامات الأسرية، والتكنولوجيا التي تسرق ساعاتنا، يجد كثيرون صعوبة في تخصيص وقت يومي لكلام الله.</p>
-                <p data-translate="article_intro2">لكن الحقيقة أن المشكلة <strong>ليست في ضيق الوقت</strong>، بل في <strong>ترتيب الأولويات</strong>. يومك فيه ٢٤ ساعة، وأنت تصرف منها ساعات على أمور كثيرة. لو أضفت ١٥ دقيقة فقط للقرآن، فهل سيتأثر يومك؟ يقيناً لا. تعال نكتشف أفضل الأوقات لقراءة القرآن في يومك المزدحم.</p>
+                <p data-translate="article_intro2">لكن الحقيقة أن المشكلة <strong>ليست في ضيق الوقت</strong>، بل في <strong>ترتيب الأولويات</strong>. يومك فيه ٢٤ ساعة، وأنت تصرف منها ساعات على أمور كثيرة. لو أضفت ١٥ دقيقة فقط للقرآن، فهل سيتأثر يومك؟ يقيناً لا. تعال نكتشف أفضل الأوقات لقراءة القرآن. وإذا أردت أن تعرف كيف تجعل قراءتك مؤثرة فعلاً، فننصحك بمقال <a href="how-to-contemplate-quran.html" class="internal-link">كيف تتدبر القرآن؟ 7 خطوات عملية لتغيير حياتك</a>.</p>
                 <h2 data-translate="time1_title">١. بعد صلاة الفجر (أفضل الأوقات على الإطلاق)</h2>
                 <p data-translate="time1_text1">قال تعالى: <strong>"وَقُرْآنَ الْفَجْرِ ۖ إِنَّ قُرْآنَ الْفَجْرِ كَانَ مَشْهُودًا"</strong> (الإسراء: 78). وقت الفجر هو وقت البركة، والقلب فيه صافٍ، والذهن متقد، وتشهده الملائكة.</p>
                 <p data-translate="time1_text2">اجعل لك ورداً بعد صلاة الفجر، ولو صفحة واحدة. هذا الوقت يكفي لقراءة ما يعادل جزءاً كاملاً في شهر، وربع جزء يومياً يختم بك القرآن في سنة. ابدأ يومك بالقرآن، وسيبارك الله في باقي يومك.</p>
                 <h2 data-translate="time2_title">٢. قبل النوم (وقت السكينة والتدبر)</h2>
                 <p data-translate="time2_text1">قبل النوم، يهدأ الضجيج، ويصفو الذهن، ويهدأ القلب. هذا وقت مثالي للقراءة بتدبر وتأمل. اجعل عادتك أن تقرأ صفحة أو صفحتين قبل النوم، ثم تنام على ذكر الله.</p>
-                <p data-translate="time2_text2">قال النبي ﷺ: <strong>"من قرأ آية الكرسي عند منامه، لم يزل عليه من الله حافظ"</strong>. ابدأ بالآيات والسور التي وردت في السنة عند النوم، ثم أضف إليها وردك.</p>
+                <p data-translate="time2_text2">قال النبي ﷺ: <strong>"من قرأ آية الكرسي عند منامه، لم يزل عليه من الله حافظ"</strong>. وإذا أردت أن تعرف المزيد عن فضل آية الكرسي وأسرارها، فننصحك بقراءة مقال <a href="ayat-al-kursi.html" class="internal-link">أعظم آية في القرآن.. آية الكرسي (فضلها وأسرارها)</a>.</p>
                 <div class="highlight-box">
                     <p data-translate="quote_text">قال ابن مسعود رضي الله عنه: "من أراد أن يعلم أنه يحب الله، فليعرض نفسه على القرآن، فإن أحب القرآن، فهو يحب الله".</p>
                 </div>
@@ -213,7 +216,7 @@
                 <p data-translate="time4_text2">احمل معك مصحفاً صغيراً، أو استخدم هاتفك، واقرأ بضع آيات بين الأذان والإقامة. اجعلها عادة يومية لكل صلاة.</p>
                 <h2 data-translate="time5_title">٥. أوقات الانتظار (في العيادة، الطابور، إلخ)</h2>
                 <p data-translate="time5_text1">كم من الوقت نضيع في الانتظار؟ في عيادة الطبيب، في الطابور، في انتظار موعد، في مكتب، أو في مطعم. هذه الأوقات القصيرة لو جمعتها، لكانت ساعات كاملة.</p>
-                <p data-translate="time5_text2">بدل أن تفتح السوشيال ميديا في كل دقيقة انتظار، افتح تطبيق القرآن واقرأ صفحة. وسترى البركة في يومك.</p>
+                <p data-translate="time5_text2">بدل أن تفتح السوشيال ميديا في كل دقيقة انتظار، افتح تطبيق القرآن واقرأ صفحة. وسترى البركة في يومك. وإذا كنت تريد أن تبدأ حفظ القرآن، فأنصحك بقراءة مقال <a href="how-to-memorize-quran.html" class="internal-link">كيف تحفظ القرآن؟ دليل عملي للمبتدئين</a>.</p>
                 <h2 data-translate="tips_title">نصائح ذهبية لتحقيق الاستمرارية</h2>
                 <ul>
                     <li data-translate="tip1"><strong>ابدأ صغيراً:</strong> ابدأ بصفحة واحدة، واثبت عليها، ثم زد تدريجياً.</li>
@@ -236,7 +239,7 @@
                     <li data-translate="lesson5"><strong>٥. القرآن حياة:</strong> من عاش مع القرآن، عاش في بركة وسعادة وسكينة.</li>
                 </ul>
                 <div style="background: var(--bg-primary); padding: 25px; border-radius: 16px; margin-top: 30px; border-right: 4px solid var(--gold);">
-                    <p data-translate="article_conclusion"><strong>الخلاصة:</strong> الوقت الذي تقضيه مع القرآن ليس مضيعة، بل هو استثمار في الدنيا والآخرة. ابدأ اليوم بورق واحد صغير، وحدد وقتاً ثابتاً، واثبت عليه. قليل دائم خير من كثير منقطع. قال النبي ﷺ: "اقرؤوا القرآن فإنه يأتي يوم القيامة شفيعاً لأصحابه". اجعل القرآن رفيقك الدائم، ولن تندم أبداً.</p>
+                    <p data-translate="article_conclusion"><strong>الخلاصة:</strong> الوقت الذي تقضيه مع القرآن ليس مضيعة، بل هو استثمار في الدنيا والآخرة. ابدأ اليوم بصفحة واحدة صغيرة، وحدد وقتاً ثابتاً، واثبت عليه. قليل دائم خير من كثير منقطع. قال النبي ﷺ: "اقرؤوا القرآن فإنه يأتي يوم القيامة شفيعاً لأصحابه". اجعل القرآن رفيقك الدائم، ولن تندم أبداً.</p>
                 </div>
             </div>
             <section class="share-section">
@@ -288,13 +291,13 @@
                 article_title: "أفضل أوقات لقراءة القرآن في يومك المزدحم",
                 article_date: "٢٥ سبتمبر ٢٠٢٦", article_author: "محمد حسين", article_read_time: "٥ دقائق قراءة",
                 article_intro: '"لا أجد وقتاً لقراءة القرآن!" هذه أكثر جملة يقولها المسلم في زمننا هذا. بين العمل، والالتزامات الأسرية، والتكنولوجيا التي تسرق ساعاتنا، يجد كثيرون صعوبة في تخصيص وقت يومي لكلام الله.',
-                article_intro2: "لكن الحقيقة أن المشكلة ليست في ضيق الوقت، بل في ترتيب الأولويات. يومك فيه ٢٤ ساعة، وأنت تصرف منها ساعات على أمور كثيرة. لو أضفت ١٥ دقيقة فقط للقرآن، فهل سيتأثر يومك؟ يقيناً لا. تعال نكتشف أفضل الأوقات لقراءة القرآن في يومك المزدحم.",
+                article_intro2: "لكن الحقيقة أن المشكلة ليست في ضيق الوقت، بل في ترتيب الأولويات. يومك فيه ٢٤ ساعة، وأنت تصرف منها ساعات على أمور كثيرة. لو أضفت ١٥ دقيقة فقط للقرآن، فهل سيتأثر يومك؟ يقيناً لا. تعال نكتشف أفضل الأوقات لقراءة القرآن.",
                 time1_title: "١. بعد صلاة الفجر (أفضل الأوقات على الإطلاق)",
                 time1_text1: 'قال تعالى: "وَقُرْآنَ الْفَجْرِ ۖ إِنَّ قُرْآنَ الْفَجْرِ كَانَ مَشْهُودًا" (الإسراء: 78). وقت الفجر هو وقت البركة، والقلب فيه صافٍ، والذهن متقد، وتشهده الملائكة.',
                 time1_text2: "اجعل لك ورداً بعد صلاة الفجر، ولو صفحة واحدة. هذا الوقت يكفي لقراءة ما يعادل جزءاً كاملاً في شهر، وربع جزء يومياً يختم بك القرآن في سنة. ابدأ يومك بالقرآن، وسيبارك الله في باقي يومك.",
                 time2_title: "٢. قبل النوم (وقت السكينة والتدبر)",
                 time2_text1: "قبل النوم، يهدأ الضجيج، ويصفو الذهن، ويهدأ القلب. هذا وقت مثالي للقراءة بتدبر وتأمل. اجعل عادتك أن تقرأ صفحة أو صفحتين قبل النوم، ثم تنام على ذكر الله.",
-                time2_text2: 'قال النبي ﷺ: "من قرأ آية الكرسي عند منامه، لم يزل عليه من الله حافظ". ابدأ بالآيات والسور التي وردت في السنة عند النوم، ثم أضف إليها وردك.',
+                time2_text2: 'قال النبي ﷺ: "من قرأ آية الكرسي عند منامه، لم يزل عليه من الله حافظ".',
                 quote_text: 'قال ابن مسعود رضي الله عنه: "من أراد أن يعلم أنه يحب الله، فليعرض نفسه على القرآن، فإن أحب القرآن، فهو يحب الله".',
                 time3_title: "٣. في المواصلات (الوقت الميت الثمين)",
                 time3_text1: "هل تعلم أن متوسط الوقت الذي يقضيه الإنسان في المواصلات يومياً يصل إلى ساعة أو أكثر؟ لو استغليت هذه الساعة في قراءة القرآن أو الاستماع إليه، لكنت قد ختمت المصحف في أشهر قليلة.",
@@ -320,7 +323,7 @@
                 lesson3: "٣. الأوقات الميتة كنز: استغلال دقائق الانتظار والمواصلات يضاعف وردك.",
                 lesson4: "٤. الاستمرار أهم من الكم: صفحة يومياً خير من جزء في أسبوع ثم انقطاع.",
                 lesson5: "٥. القرآن حياة: من عاش مع القرآن، عاش في بركة وسعادة وسكينة.",
-                article_conclusion: 'الخلاصة: الوقت الذي تقضيه مع القرآن ليس مضيعة، بل هو استثمار في الدنيا والآخرة. ابدأ اليوم بورق واحد صغير، وحدد وقتاً ثابتاً، واثبت عليه. قليل دائم خير من كثير منقطع. قال النبي ﷺ: "اقرؤوا القرآن فإنه يأتي يوم القيامة شفيعاً لأصحابه". اجعل القرآن رفيقك الدائم، ولن تندم أبداً.',
+                article_conclusion: 'الخلاصة: الوقت الذي تقضيه مع القرآن ليس مضيعة، بل هو استثمار في الدنيا والآخرة. ابدأ اليوم بصفحة واحدة صغيرة، وحدد وقتاً ثابتاً، واثبت عليه. قليل دائم خير من كثير منقطع. قال النبي ﷺ: "اقرؤوا القرآن فإنه يأتي يوم القيامة شفيعاً لأصحابه". اجعل القرآن رفيقك الدائم، ولن تندم أبداً.',
                 share_title: "أعجبك المقال؟ شاركه مع أحبائك!",
                 share_whatsapp: "📱 واتساب", share_facebook: "📘 فيسبوك", share_twitter: "🐦 تويتر", share_copy: "📋 نسخ الرابط"
             },
@@ -330,13 +333,13 @@
                 article_title: "Best Times to Read the Quran in Your Busy Day",
                 article_date: "September 25, 2026", article_author: "Mahmoud Hussein", article_read_time: "5 min read",
                 article_intro: '"I can\'t find time to read the Quran!" This is the most common phrase a Muslim says in our time. Between work, family commitments, and technology that steals our hours, many find it difficult to allocate daily time for the Words of Allah.',
-                article_intro2: "But the truth is that the problem is not in the lack of time, but in prioritizing. Your day has 24 hours, and you spend hours on many things. If you added just 15 minutes for the Quran, would your day be affected? Certainly not. Let's discover the best times to read the Quran in your busy day.",
+                article_intro2: "But the truth is that the problem is not in the lack of time, but in prioritizing. Your day has 24 hours, and you spend hours on many things. If you added just 15 minutes for the Quran, would your day be affected? Certainly not. Let's discover the best times to read the Quran.",
                 time1_title: "1. After Fajr Prayer (The Best Time Ever)",
                 time1_text1: 'Allah says: "And [recite] the Quran at dawn. Indeed, the recitation of dawn is ever witnessed" (Al-Isra: 78). The Fajr time is a time of blessing, the heart is clear, the mind is sharp, and the angels witness it.',
                 time1_text2: "Make a portion for yourself after Fajr prayer, even one page. This time is enough to read the equivalent of a complete juz in a month, and a quarter juz daily completes the Quran in a year. Start your day with the Quran, and Allah will bless the rest of your day.",
                 time2_title: "2. Before Sleep (Time of Tranquility and Contemplation)",
                 time2_text1: "Before sleep, the noise quiets, the mind clears, and the heart calms. This is an ideal time for reading with contemplation and reflection. Make it your habit to read a page or two before sleep, then sleep on the remembrance of Allah.",
-                time2_text2: 'The Prophet ﷺ said: "Whoever recites Ayat al-Kursi before sleeping, a protector from Allah remains upon him." Start with the verses and surahs mentioned in the Sunnah for sleep, then add your portion.',
+                time2_text2: 'The Prophet ﷺ said: "Whoever recites Ayat al-Kursi before sleeping, a protector from Allah remains upon him."',
                 quote_text: 'Ibn Mas\'ud (may Allah be pleased with him) said: "Whoever wants to know if he loves Allah, let him present himself to the Quran. If he loves the Quran, he loves Allah."',
                 time3_title: "3. During Commute (The Precious Dead Time)",
                 time3_text1: "Did you know that the average time a person spends commuting daily reaches an hour or more? If you used this hour to read or listen to the Quran, you would have completed the Mushaf in a few months.",
@@ -373,7 +376,15 @@
         const selectedLangBtnFlag = document.getElementById('lang-flag');
         function setLanguage(lang) {
             const elements = document.querySelectorAll('[data-translate]');
-            elements.forEach(el => { const key = el.getAttribute('data-translate'); if (translations[lang] && translations[lang][key]) { el.textContent = translations[lang][key]; } });
+            elements.forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    if (el.tagName === 'A' && el.classList.contains('internal-link')) {
+                        return;
+                    }
+                    el.textContent = translations[lang][key];
+                }
+            });
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
