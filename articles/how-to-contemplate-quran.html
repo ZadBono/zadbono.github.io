@@ -67,7 +67,7 @@
         .selected-lang { background: var(--glass-bg); border: 2px solid var(--border-color); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 12px; transition: all var(--transition-base); font-weight: 500; }
         .selected-lang:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
         .selected-lang img { width: 24px; height: 24px; border-radius: 50%; box-shadow: var(--shadow-sm); }
-        .lang-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 16px; border: 1px solid var(--glass-border); box-shadow: var(--shadow-xl); list-style: none; padding: 8px; min-width: 160px; z-index: 1001; animation: slideDown 0.3s var(--bounce); }
+        .lang-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: var(--glass-bg); backdrop-filter: blur(20px); border-radius: 16px; border: 1px solid var(--glass-border); box-shadow: var(--shadow-xl); list-style: none; padding: 8px; min-width: 160px; z-index: 1001; animation: slideDown 0.3s var(--bounce); }
         @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         .lang-menu.show { display: block; }
         .lang-menu li a { color: var(--text-primary); text-decoration: none; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; transition: all var(--transition-fast); font-size: 0.9em; font-weight: 500; }
@@ -90,6 +90,9 @@
         .article-content ul { padding-right: 25px; margin-bottom: 20px; }
         .article-content li { margin-bottom: 12px; font-size: 1.05em; color: var(--text-secondary); line-height: 1.8; }
         .article-content strong { color: var(--primary); font-weight: 700; }
+        .internal-link { color: var(--primary); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--primary); padding-bottom: 2px; transition: all var(--transition-base); cursor: pointer; }
+        .internal-link:hover { color: var(--primary-dark); border-bottom-color: var(--primary-dark); opacity: 0.85; }
+        .internal-link::after { content: ' ↗'; font-size: 0.85em; }
         .article-content .highlight-box { background: var(--primary-gradient); color: white; padding: 30px 35px; border-radius: 20px; margin: 35px 0; position: relative; overflow: hidden; }
         .article-content .highlight-box::before { content: '"'; position: absolute; top: -20px; right: 20px; font-size: 120px; opacity: 0.1; font-family: Georgia, serif; }
         .article-content .highlight-box p { color: rgba(255,255,255,0.95); margin-bottom: 0; }
@@ -195,7 +198,7 @@
             </header>
             <div class="article-content">
                 <p data-translate="article_intro">لماذا يقرأ أحدنا القرآن كاملاً في رمضان، ثم لا يشعر بتغيير حقيقي في حياته؟ ولماذا يبكي أحدنا عند سماع آية، بينما يقرأ آخر السورة كاملة ولا يتأثر؟ الفرق ليس في القرآن، فالقرآن واحد، بل الفرق في <strong>التدبر</strong>.</p>
-                <p data-translate="article_intro2">التدبر هو أن تقرأ القرآن بقلبك، لا بلسانك فقط. هو أن تتوقف عند الآية، وتتساءل: لماذا قال الله هذا؟ ما علاقته بحياتي؟ ماذا يريد مني؟ وفي هذا المقال، نقدم لك ٧ خطوات عملية لتحويل قراءتك إلى تدبر حقيقي يُغير حياتك.</p>
+                <p data-translate="article_intro2">التدبر هو أن تقرأ القرآن بقلبك، لا بلسانك فقط. هو أن تتوقف عند الآية، وتتساءل: لماذا قال الله هذا؟ ما علاقته بحياتي؟ ماذا يريد مني؟ وفي هذا المقال، نقدم لك ٧ خطوات عملية لتحويل قراءتك إلى تدبر حقيقي يُغير حياتك. وإذا كنت تعاني من عدم التأثر بالقرآن، فننصحك بقراءة مقال <a href="why-not-affected-by-quran.html" class="internal-link">لماذا لا تتأثر بالقرآن؟ 4 أسباب وحلولها</a>.</p>
                 <h2 data-translate="step1_title">١. استحضر قلبك قبل أن تفتح المصحف</h2>
                 <p data-translate="step1_text1">المشكلة الأولى في قراءتنا هي الغفلة. نفتح المصحف بعقل مشتت، ونقرأ وقلوبنا في مكان آخر. قبل أن تقرأ، توقف لحظة، استعذ بالله من الشيطان، وتذكر أنك أنت الآن بين يدي الله، تستمع إلى كلامه هو.</p>
                 <p data-translate="step1_text2">قال أحد السلف: "إذا أردت أن تتلذذ بالقرآن، فاجعل قلبك حاضراً، وتخيل أن الله يخاطبك أنت بهذه الآيات".</p>
@@ -213,7 +216,7 @@
                     <li data-translate="step4_li3">هل هناك خطأ في حياتي تخبرني هذه الآية بتركه؟</li>
                     <li data-translate="step4_li4">هل هناك خير في حياتي تخبرني الآية بفعله؟</li>
                 </ul>
-                <p data-translate="step4_text2">هذه الأسئلة تحوّل القرآن من كتاب يُقرأ إلى دليل حياة يُعاش.</p>
+                <p data-translate="step4_text2">هذه الأسئلة تحوّل القرآن من كتاب يُقرأ إلى دليل حياة يُعاش. وإذا كنت تشد إليك معرفة قصص القرآن وكيف تستخرج منها الدروس، فأنصحك بقراءة مقال <a href="quran-stories-lessons.html" class="internal-link">قصص القرآن: كيف تستخرج الدروس والعبر؟</a>.</p>
                 <div class="highlight-box">
                     <p data-translate="quote_text">قالت عائشة رضي الله عنها عن خُلق النبي ﷺ: "كان خُلقه القرآن". أي أنه عاش القرآن، ولم يقرأه فقط.</p>
                 </div>
@@ -222,7 +225,7 @@
                 <p data-translate="step5_text2">قال بعض السلف: "بقيت مع آية أتدبرها عشرين سنة، وما شبعت منها". هذا هو التدبر الحقيقي.</p>
                 <h2 data-translate="step6_title">٦. اجعل لك ورداً يومياً ثابتاً</h2>
                 <p data-translate="step6_text1">التدبر لا يأتي من قراءة متقطعة، بل من ممارسة يومية ثابتة. خصص صفحة واحدة على الأقل يومياً، والأفضل أن تكون بعد صلاة الفجر أو قبل النوم.</p>
-                <p data-translate="step6_text2">قال النبي ﷺ: "أحب الأعمال إلى الله أدومها وإن قل". صفحة بتدبر يومياً خير من جزء في أسبوع.</p>
+                <p data-translate="step6_text2">وقد تحدثنا بالتفصيل عن أفضل الأوقات لقراءة القرآن في مقال <a href="best-times-to-read-quran.html" class="internal-link">أفضل أوقات لقراءة القرآن في يومك المزدحم</a>، فارجع إليه إذا كنت تشعر أنك لا تجد وقتاً للقراءة.</p>
                 <h2 data-translate="step7_title">٧. اكتب ما تعلمته وطبقه في حياتك</h2>
                 <p data-translate="step7_text1">الخطوة الأخيرة هي الأهم: حوّل التدبر إلى عمل. خصص دفتراً صغيراً، وكل يوم اكتب فيه:</p>
                 <ul>
@@ -297,7 +300,7 @@
                 article_title: "كيف تتدبر القرآن؟ ٧ خطوات عملية لتغيير حياتك",
                 article_date: "٢٥ سبتمبر ٢٠٢٦", article_author: "محمد حسين", article_read_time: "٦ دقائق قراءة",
                 article_intro: "لماذا يقرأ أحدنا القرآن كاملاً في رمضان، ثم لا يشعر بتغيير حقيقي في حياته؟ ولماذا يبكي أحدنا عند سماع آية، بينما يقرأ آخر السورة كاملة ولا يتأثر؟ الفرق ليس في القرآن، فالقرآن واحد، بل الفرق في التدبر.",
-                article_intro2: "التدبر هو أن تقرأ القرآن بقلبك، لا بلسانك فقط. هو أن تتوقف عند الآية، وتتساءل: لماذا قال الله هذا؟ ما علاقته بحياتي؟ ماذا يريد مني؟ وفي هذا المقال، نقدم لك ٧ خطوات عملية لتحويل قراءتك إلى تدبر حقيقي يُغير حياتك.",
+                article_intro2: "التدبر هو أن تقرأ القرآن بقلبك، لا بلسانك فقط. هو أن تتوقف عند الآية، وتتساءل: لماذا قال الله هذا؟ ما علاقته بحياتي؟ ماذا يريد مني؟ وفي هذا المقال، نقدم لك ٧ خطوات عملية لتحويل قراءتك إلى تدبر حقيقي يُغير حياتك. وإذا كنت تعاني من عدم التأثر بالقرآن، فننصحك بقراءة مقال لماذا لا تتأثر بالقرآن؟ 4 أسباب وحلولها.",
                 step1_title: "١. استحضر قلبك قبل أن تفتح المصحف",
                 step1_text1: "المشكلة الأولى في قراءتنا هي الغفلة. نفتح المصحف بعقل مشتت، ونقرأ وقلوبنا في مكان آخر. قبل أن تقرأ، توقف لحظة، استعذ بالله من الشيطان، وتذكر أنك أنت الآن بين يدي الله، تستمع إلى كلامه هو.",
                 step1_text2: 'قال أحد السلف: "إذا أردت أن تتلذذ بالقرآن، فاجعل قلبك حاضراً، وتخيل أن الله يخاطبك أنت بهذه الآيات".',
@@ -313,14 +316,14 @@
                 step4_li2: "كيف أطبقها في يومي؟",
                 step4_li3: "هل هناك خطأ في حياتي تخبرني هذه الآية بتركه؟",
                 step4_li4: "هل هناك خير في حياتي تخبرني الآية بفعله؟",
-                step4_text2: "هذه الأسئلة تحوّل القرآن من كتاب يُقرأ إلى دليل حياة يُعاش.",
+                step4_text2: "هذه الأسئلة تحوّل القرآن من كتاب يُقرأ إلى دليل حياة يُعاش. وإذا كنت تشد إليك معرفة قصص القرآن وكيف تستخرج منها الدروس، فأنصحك بقراءة مقال قصص القرآن: كيف تستخرج الدروس والعبر؟.",
                 quote_text: 'قالت عائشة رضي الله عنها عن خُلق النبي ﷺ: "كان خُلقه القرآن". أي أنه عاش القرآن، ولم يقرأه فقط.',
                 step5_title: "٥. توقف عند آية أثرت فيك وكررها",
                 step5_text1: "إذا مررت بآية أثّرت في قلبك، لا تتجاوزها بسرعة. توقف عندها، وكررها، وتأملها من كل زاوية. كثيراً ما نمر على آيات عظيمة ولا نتوقف.",
                 step5_text2: 'قال بعض السلف: "بقيت مع آية أتدبرها عشرين سنة، وما شبعت منها". هذا هو التدبر الحقيقي.',
                 step6_title: "٦. اجعل لك ورداً يومياً ثابتاً",
                 step6_text1: "التدبر لا يأتي من قراءة متقطعة، بل من ممارسة يومية ثابتة. خصص صفحة واحدة على الأقل يومياً، والأفضل أن تكون بعد صلاة الفجر أو قبل النوم.",
-                step6_text2: 'قال النبي ﷺ: "أحب الأعمال إلى الله أدومها وإن قل". صفحة بتدبر يومياً خير من جزء في أسبوع.',
+                step6_text2: "وقد تحدثنا بالتفصيل عن أفضل الأوقات لقراءة القرآن في مقال أفضل أوقات لقراءة القرآن في يومك المزدحم، فارجع إليه إذا كنت تشعر أنك لا تجد وقتاً للقراءة.",
                 step7_title: "٧. اكتب ما تعلمته وطبقه في حياتك",
                 step7_text1: "الخطوة الأخيرة هي الأهم: حوّل التدبر إلى عمل. خصص دفتراً صغيراً، وكل يوم اكتب فيه:",
                 step7_li1: "آية واحدة أثرت فيّ اليوم",
@@ -346,7 +349,7 @@
                 article_title: "How to Contemplate the Quran? 7 Practical Steps to Change Your Life",
                 article_date: "September 25, 2026", article_author: "Mahmoud Hussein", article_read_time: "6 min read",
                 article_intro: "Why do some of us read the entire Quran in Ramadan, then feel no real change in life? Why does one weep upon hearing a verse, while another reads an entire surah and is not affected? The difference is not in the Quran, for the Quran is one, but the difference is in contemplation.",
-                article_intro2: "Contemplation means reading the Quran with your heart, not just your tongue. It means pausing at a verse and asking: Why did Allah say this? How does it relate to my life? What does He want from me? In this article, we present 7 practical steps to turn your reading into true contemplation that changes your life.",
+                article_intro2: "Contemplation means reading the Quran with your heart, not just your tongue. It means pausing at a verse and asking: Why did Allah say this? How does it relate to my life? What does He want from me? In this article, we present 7 practical steps to turn your reading into true contemplation. If you struggle with not being affected by the Quran, we recommend reading 'Why Aren't You Affected by the Quran? 4 Reasons and Their Solutions'.",
                 step1_title: "1. Bring Your Heart Before Opening the Mushaf",
                 step1_text1: "The first problem in our reading is heedlessness. We open the Mushaf with a distracted mind, and read while our hearts are elsewhere. Before you read, pause a moment, seek refuge in Allah from Satan, and remember that you are now before Allah, listening to His words.",
                 step1_text2: 'One of the pious predecessors said: "If you want to enjoy the Quran, make your heart present, and imagine that Allah is addressing you with these verses."',
@@ -362,14 +365,14 @@
                 step4_li2: "How do I apply it in my day?",
                 step4_li3: "Is there a mistake in my life that this verse tells me to abandon?",
                 step4_li4: "Is there a good in my life that the verse tells me to do?",
-                step4_text2: "These questions transform the Quran from a book that is read to a guide of life that is lived.",
+                step4_text2: "These questions transform the Quran from a book that is read to a guide of life that is lived. If you'd like to learn about Quranic stories and how to extract lessons from them, we recommend reading 'Quranic Stories: How to Extract Lessons and Morals?'.",
                 quote_text: 'Aisha (may Allah be pleased with her) said about the character of the Prophet ﷺ: "His character was the Quran." Meaning he lived the Quran, not just read it.',
                 step5_title: "5. Pause at a Verse That Touches You and Repeat It",
                 step5_text1: "If you pass a verse that touches your heart, don't move past it quickly. Pause at it, repeat it, and reflect on it from every angle. We often pass great verses without pausing.",
                 step5_text2: 'One of the pious predecessors said: "I stayed with a verse contemplating it for twenty years, and was never satisfied with it." This is true contemplation.',
                 step6_title: "6. Have a Fixed Daily Portion",
                 step6_text1: "Contemplation does not come from intermittent reading, but from a fixed daily practice. Dedicate at least one page daily, preferably after Fajr prayer or before sleep.",
-                step6_text2: 'The Prophet ﷺ said: "The most beloved deeds to Allah are the most consistent, even if small." One page with contemplation daily is better than an entire juz in a week.',
+                step6_text2: "We discussed in detail the best times to read the Quran in the article 'Best Times to Read the Quran in Your Busy Day'. Return to it if you feel you cannot find time to read.",
                 step7_title: "7. Write What You Learned and Apply It",
                 step7_text1: "The last step is the most important: turn contemplation into action. Dedicate a small notebook, and every day write in it:",
                 step7_li1: "One verse that touched me today",
@@ -396,7 +399,15 @@
         const selectedLangBtnFlag = document.getElementById('lang-flag');
         function setLanguage(lang) {
             const elements = document.querySelectorAll('[data-translate]');
-            elements.forEach(el => { const key = el.getAttribute('data-translate'); if (translations[lang] && translations[lang][key]) { el.textContent = translations[lang][key]; } });
+            elements.forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    if (el.tagName === 'A' && el.classList.contains('internal-link')) {
+                        return;
+                    }
+                    el.textContent = translations[lang][key];
+                }
+            });
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             selectedLangBtnText.textContent = lang === 'ar' ? 'العربية' : 'English';
