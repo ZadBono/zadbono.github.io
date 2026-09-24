@@ -1,0 +1,165 @@
+{
+  "categories": [
+    { "id": "all", "ar": "الكل", "en": "All" },
+    { "id": "quran", "ar": "القرآن", "en": "Quran" },
+    { "id": "prayer", "ar": "الصلاة", "en": "Prayer" },
+    { "id": "azkar", "ar": "الأذكار", "en": "Azkar" },
+    { "id": "stories", "ar": "القصص", "en": "Stories" },
+    { "id": "dua", "ar": "الدعاء", "en": "Dua" },
+    { "id": "entertainment", "ar": "الترفيه", "en": "Entertainment" },
+    { "id": "tawbah", "ar": "التوبة", "en": "Tawbah" },
+    { "id": "tech", "ar": "تقني", "en": "Tech" }
+  ],
+  "articles": [
+    {
+      "id": "how-to-maintain-azkar",
+      "category": "azkar",
+      "image": "images/azkar-card.jpg",
+      "date": { "ar": "١ يناير ٢٠٢٥", "en": "January 1, 2025" },
+      "title": {
+        "ar": "كيف تحافظ على وردك اليومي من الأذكار حتى في أكثر الأيام انشغالاً؟",
+        "en": "How to Maintain Your Daily Azkar Even on the Busiest Days?"
+      },
+      "excerpt": {
+        "ar": "اكتشف 5 طرق عملية للحفاظ على أذكار الصباح والمساء حتى لو لم يكن لديك وقت، وكيف يمكن للتكنولوجيا مساعدتك.",
+        "en": "Discover 5 practical ways to maintain your morning and evening azkar even if you have no time, and how technology can help you."
+      },
+      "url": "articles/how-to-maintain-azkar.html"
+    },
+    {
+      "id": "5-quran-secrets",
+      "category": "quran",
+      "image": "images/quran-card.jpg",
+      "date": { "ar": "٢١ أكتوبر ٢٠٢٥", "en": "October 21, 2025" },
+      "title": {
+        "ar": "5 أسرار في القرآن لم يخبرك بها أحد (السر الثالث سيغير حياتك)",
+        "en": "5 Secrets in the Quran Nobody Told You (The Third Will Change Your Life)"
+      },
+      "excerpt": {
+        "ar": "اكتشف أسرارًا قرآنية قد تغير نظرتك للحياة والرزق والنجاح. السر الثالث قد يكون نقطة تحول حقيقية في يومك.",
+        "en": "Discover Quranic secrets that might change your perspective on life, provision, and success. The third secret could be a real turning point."
+      },
+      "url": "articles/5-quran-secrets.html"
+    },
+    {
+      "id": "is-my-prayer-accepted",
+      "category": "prayer",
+      "image": "images/prayer-card.jpg",
+      "date": { "ar": "٢٥ ديسمبر ٢٠٢٤", "en": "December 25, 2024" },
+      "title": {
+        "ar": "هل صلاتك مقبولة؟ 3 علامات من القرآن والسنة قد تفاجئك",
+        "en": "Is Your Prayer Accepted? 3 Signs from Quran & Sunnah That Might Surprise You"
+      },
+      "excerpt": {
+        "ar": "اكتشف 3 علامات تدل على قبول الصلاة وتأثيرها في حياتك. ليست مجرد حركات، بل هي اتصال يغير كل شيء.",
+        "en": "Discover 3 signs that indicate the acceptance of your prayer and its impact on your life."
+      },
+      "url": "articles/is-my-prayer-accepted.html"
+    },
+    {
+      "id": "how-to-make-dua-answered",
+      "category": "dua",
+      "image": "images/dua-card.jpg",
+      "date": { "ar": "٢٢ ديسمبر ٢٠٢٤", "en": "December 22, 2024" },
+      "title": {
+        "ar": "كيف تجعل دعاءك مستجابًا؟ خطأ شائع يقع فيه 90% من الناس",
+        "en": "How to Make Your Dua Answered? A Common Mistake 90% of People Make"
+      },
+      "excerpt": {
+        "ar": "ندعو وندعو، ولكن قد لا نرى الإجابة. اكتشف الخطأ الشائع الذي قد يكون السبب، وتعلم أسرار الدعاء المستجاب.",
+        "en": "We pray and pray, but we might not see the answer. Discover the common mistake that might be the reason."
+      },
+      "url": "articles/how-to-make-dua-answered.html"
+    },
+    {
+      "id": "is-watching-movies-haram",
+      "category": "entertainment",
+      "image": "images/logo.jpg",
+      "date": { "ar": "٢٠ ديسمبر ٢٠٢٤", "en": "December 20, 2024" },
+      "title": {
+        "ar": "هل مشاهدة الأفلام والمسلسلات حرام؟ (رأي يفصل النزاع)",
+        "en": "Is Watching Movies and Series Haram? (A Decisive Opinion)"
+      },
+      "excerpt": {
+        "ar": "سؤال محير في عصرنا. اكتشف الضوابط الشرعية التي تفرق بين الحلال والحرام في الترفيه.",
+        "en": "A confusing question in our era. Discover the Islamic guidelines that differentiate between halal and haram in entertainment."
+      },
+      "url": "articles/is-watching-movies-haram.html"
+    },
+    {
+      "id": "why-does-god-test-me",
+      "category": "prayer",
+      "image": "images/logo.jpg",
+      "date": { "ar": "١٨ ديسمبر ٢٠٢٤", "en": "December 18, 2024" },
+      "title": {
+        "ar": "لماذا يبتليني الله وأنا أصلي وأعبده؟ فهم حكمة الابتلاء",
+        "en": "Why Does Allah Test Me While I Pray and Worship Him?"
+      },
+      "excerpt": {
+        "ar": "إذا كنت تسأل 'لماذا تحدث لي أمور سيئة رغم أني أعبد الله؟'، فهذا المقال لك.",
+        "en": "If you're asking 'why do bad things happen to me while I worship Allah?', this article is for you."
+      },
+      "url": "articles/why-does-god-test-me.html"
+    },
+    {
+      "id": "will-god-forgive-my-sin",
+      "category": "tawbah",
+      "image": "images/taoba.jpg",
+      "date": { "ar": "١٥ ديسمبر ٢٠٢٤", "en": "December 15, 2024" },
+      "title": {
+        "ar": "ارتكبت ذنباً عظيماً، هل سيغفر الله لي؟ باب التوبة مفتوح",
+        "en": "I Committed a Great Sin, Will Allah Forgive Me? The Door of Repentance Is Open"
+      },
+      "excerpt": {
+        "ar": "مهما كان ذنبك عظيمًا، رحمة الله أعظم. اكتشف لماذا لا يجب أن تيأس من رحمة الله.",
+        "en": "No matter how great your sin, Allah's mercy is greater. Discover why you should never despair."
+      },
+      "url": "articles/will-god-forgive-my-sin.html"
+    },
+    {
+      "id": "how-to-stop-bad-ads",
+      "category": "tech",
+      "image": "images/stop-bad-ads.jpg",
+      "date": { "ar": "١٢ ديسمبر ٢٠٢٤", "en": "December 12, 2024" },
+      "title": {
+        "ar": "كيف أتخلص من الإعلانات المخلة التي تظهر لي؟ (دليل عملي)",
+        "en": "How to Get Rid of Inappropriate Ads? (Practical Guide)"
+      },
+      "excerpt": {
+        "ar": "4 خطوات عملية وفعالة لتنظيف تجربتك الرقمية وحماية نفسك من الإعلانات غير اللائقة.",
+        "en": "4 effective and practical steps to clean your digital experience and protect yourself from inappropriate ads."
+      },
+      "url": "articles/how-to-stop-bad-ads.html"
+    },
+    {
+      "id": "i-pray-but-feel-nothing",
+      "category": "prayer",
+      "image": "images/ftor_fe_el3bada.jpg",
+      "date": { "ar": "١٥ مايو ٢٠٢٤", "en": "May 15, 2024" },
+      "title": {
+        "ar": "أنا أصلي ولكن لا أشعر بشيء، ما الحل؟ (علاج فتور العبادة)",
+        "en": "I Pray but Feel Nothing, What's the Solution? (Curing Spiritual Slump)"
+      },
+      "excerpt": {
+        "ar": "5 خطوات عملية لاستعادة لذة الطاعة والخشوع في الصلاة وقراءة القرآن.",
+        "en": "5 practical steps to restore the sweetness of worship and khushu in prayer and Quran reading."
+      },
+      "url": "articles/i-pray-but-feel-nothing.html"
+    },
+    {
+      "id": "reading-quran-without-hijab",
+      "category": "quran",
+      "image": "images/logo.jpg",
+      "date": { "ar": "٨ ديسمبر ٢٠٢٤", "en": "December 8, 2024" },
+      "title": {
+        "ar": "هل يجوز للمرأة قراءة القرآن بدون حجاب؟ (تصحيح مفاهيم)",
+        "en": "Is It Permissible for a Woman to Read Quran Without Hijab? (Clarifying Concepts)"
+      },
+      "excerpt": {
+        "ar": "اكتشفي الإجابة الواضحة والفرق بين شروط صحة القراءة وآدابها، لتتلذذي بقراءة القرآن في كل وقت.",
+        "en": "Discover the clear answer and the difference between the conditions of correct recitation and its etiquette."
+      },
+      "url": "articles/reading-quran-without-hijab.html"
+    }
+  ]
+}
